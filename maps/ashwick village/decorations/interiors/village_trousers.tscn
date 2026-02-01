@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca4qxdmakjmbn"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_pd51q"]
+
+[node name="VillageTrousers" type="Sprite2D"]
+texture = ExtResource("1_pd51q")
+region_enabled = true
+region_rect = Rect2(713, 387, 15, 25)

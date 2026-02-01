@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://bn5r837t8vifp"]
+
+[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="1_77tf2"]
+
+[resource]
+script = ExtResource("1_77tf2")
+patrol_speed = 100.0
+chase_speed = 140.0
+attack_damage = 20
+detect_range = 250.0
+defense = 10
+metadata/_custom_type_script = "uid://cejj3rlveapht"

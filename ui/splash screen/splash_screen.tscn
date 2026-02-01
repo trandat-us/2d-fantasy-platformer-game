@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c3amc4riqkix8"]
+
+[ext_resource type="Script" uid="uid://cpu6hvvng3vxk" path="res://ui/splash screen/splash_screen.gd" id="1_mhdex"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhdex"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_sj7lp"]
+font_size = 96
+
+[sub_resource type="Animation" id="Animation_mhdex"]
+length = 0.001
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelContainter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sj7lp"]
+resource_name = "show"
+length = 5.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelContainter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 3.75, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhdex"]
+_data = {
+&"RESET": SubResource("Animation_mhdex"),
+&"show": SubResource("Animation_sj7lp")
+}
+
+[node name="SplashScreen" type="ColorRect" unique_id=1932634888]
+texture_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_mhdex")
+
+[node name="LabelContainter" type="Control" parent="." unique_id=1692692123]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PresentationLabel" type="Label" parent="LabelContainter" unique_id=1287249319]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 208.0
+offset_bottom = 256.0
+grow_horizontal = 2
+text = "SPLASH_SCREEN_GAME_DEV_BY"
+label_settings = SubResource("LabelSettings_mhdex")
+horizontal_alignment = 1
+
+[node name="BrandLabel" type="Label" parent="LabelContainter" unique_id=1100122554]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -72.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SPLASH_SCREEN_AUTHOR"
+label_settings = SubResource("LabelSettings_sj7lp")
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=161628441]
+libraries/ = SubResource("AnimationLibrary_mhdex")
+autoplay = &"show"

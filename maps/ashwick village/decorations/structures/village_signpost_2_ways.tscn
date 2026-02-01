@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsw70cpbkedmf"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_3k71a"]
+
+[node name="VillageSignpost2Ways" type="Sprite2D"]
+texture = ExtResource("1_3k71a")
+region_enabled = true
+region_rect = Rect2(416, 11, 31, 53)

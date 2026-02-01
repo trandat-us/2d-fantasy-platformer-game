@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctwk17ila650k"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_o2wqw"]
+[ext_resource type="Texture2D" uid="uid://bmykdab7nkwq2" path="res://assets/textures/sprites/others/torch_fire.png" id="1_pql37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpk3w"]
+atlas = ExtResource("1_pql37")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabvo"]
+atlas = ExtResource("1_pql37")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d5re"]
+atlas = ExtResource("1_pql37")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji3b2"]
+atlas = ExtResource("1_pql37")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nudju"]
+atlas = ExtResource("1_pql37")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfq0f"]
+atlas = ExtResource("1_pql37")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nujom"]
+atlas = ExtResource("1_pql37")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7alx"]
+atlas = ExtResource("1_pql37")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2wqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpk3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dabvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d5re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji3b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nudju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfq0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nujom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7alx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="VillageTorch" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -19.835938)
+scale = Vector2(0.5, 0.51025385)
+sprite_frames = SubResource("SpriteFrames_o2wqw")
+frame_progress = 0.79477274
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o2wqw")
+region_enabled = true
+region_rect = Rect2(653, 37, 8, 24)

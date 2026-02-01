@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://b84int73mwduf"]
+
+[ext_resource type="Texture2D" uid="uid://dxedt23xk6ybs" path="res://assets/textures/sprites/others/campfire.png" id="1_7k1rb"]
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_x5e21"]
+[ext_resource type="Script" uid="uid://bue5lx4rre3t7" path="res://maps/ashwick village/decorations/structures/campfire/point_light_2d.gd" id="3_ohhy8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2f83"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqkmr"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u1vh"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssqmk"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mss8h"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7suqf"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4mir"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ngyl"]
+atlas = ExtResource("1_7k1rb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bfvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2f83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqkmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u1vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssqmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mss8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7suqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4mir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ngyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_yf4s0"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0.35514018, 0.7056075, 1)
+colors = PackedColorArray(0.9647059, 1, 0.015686275, 1, 1, 0.23921569, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7k1rb"]
+gradient = SubResource("Gradient_yf4s0")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="VillageCampfire" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(1.6874999, 1.2578126)
+sprite_frames = SubResource("SpriteFrames_7bfvi")
+autoplay = "default"
+frame_progress = 0.23943226
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x5e21")
+region_enabled = true
+region_rect = Rect2(354, 265, 61, 23)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -10)
+energy = 0.8
+texture = SubResource("GradientTexture2D_7k1rb")
+script = ExtResource("3_ohhy8")

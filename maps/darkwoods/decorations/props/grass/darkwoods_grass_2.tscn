@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dskowapd31etk"]
+
+[ext_resource type="Texture2D" uid="uid://beonoie044wr" path="res://assets/textures/tilemap/darkwoods/props/grass_2.png" id="1_m7lpw"]
+
+[node name="DarkwoodsGrass2" type="Sprite2D"]
+texture = ExtResource("1_m7lpw")

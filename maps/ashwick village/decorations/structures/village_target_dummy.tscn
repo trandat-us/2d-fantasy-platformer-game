@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://5b08galng5q8"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_wvalg"]
+
+[node name="VillageTargetDummy" type="Sprite2D"]
+texture = ExtResource("1_wvalg")
+region_enabled = true
+region_rect = Rect2(777, 253, 47, 67)

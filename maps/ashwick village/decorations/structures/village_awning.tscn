@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctxvgyk4r6laa"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_puivb"]
+
+[node name="VillageAwning" type="Sprite2D"]
+texture = ExtResource("1_puivb")
+region_enabled = true
+region_rect = Rect2(387, 320, 90, 28)

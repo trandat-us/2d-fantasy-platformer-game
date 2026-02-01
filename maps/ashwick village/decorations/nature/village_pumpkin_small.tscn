@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cydc56lpka7li"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_l0y18"]
+
+[node name="VillagePumpkinSmall" type="Sprite2D"]
+texture = ExtResource("1_l0y18")
+region_enabled = true
+region_rect = Rect2(614, 105, 21, 23)

@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo36yngvyp4ll"]
+
+[ext_resource type="Script" uid="uid://bbck66162tk73" path="res://ui/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="AudioStream" uid="uid://c4jcxnmq814qt" path="res://assets/sounds/bgm/Genshin Impact Main Theme.mp3" id="2_0dkrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl0q7"]
+bg_color = Color(0.3137255, 0.4392157, 0.6, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7e0r")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gl0q7")
+
+[node name="GameButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -196.0
+offset_right = 192.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="StartButton" type="Button" parent="GameButtonsContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "MENU_BUTTON_START"
+
+[node name="SettingsButton" type="Button" parent="GameButtonsContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "MENU_BUTTON_SETTINGS"
+
+[node name="QuitButton" type="Button" parent="GameButtonsContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 48
+text = "MENU_BUTTON_QUIT"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0dkrt")
+autoplay = true
+bus = &"BGM"
+parameters/looping = true
+
+[connection signal="pressed" from="GameButtonsContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="GameButtonsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="GameButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

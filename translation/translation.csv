@@ -1,0 +1,42 @@
+keys,en,es,ja,vi
+GAME_DOOR_LABEL_ENTER,Enter,Entrar,入る,Đi vào
+GAME_LABEL_GAME_SAVED,Game saved,Guardado,セーブしました,Đã lưu
+GAME_LABEL_SAVE_GAME,Save game,Guardar,セーブ,Lưu trò chơi
+KEYBINDINGS_ACTION_ATTACK,"Normal attack, Charge attack","Ataque normal, Ataque cargado","通常攻撃, チャージ攻撃","Tấn công thường, Trọng kích"
+KEYBINDINGS_ACTION_CROUCH,Crouch,Agacharse,しゃがむ,Ngồi xuống
+KEYBINDINGS_ACTION_DASH,Dash,Esprintar,ダッシュ,Lướt nhanh
+KEYBINDINGS_ACTION_INTERACT,Interact,Interactuar,調べる,Tương tác
+KEYBINDINGS_ACTION_JUMP,Jump,Saltar,ジャンプ,Nhảy
+KEYBINDINGS_ACTION_MOVE_LEFT,Move left,Mover a la izquierda,左に移動,Di chuyển trái
+KEYBINDINGS_ACTION_MOVE_RIGHT,Move right,Mover a la derecha,右に移動,Di chuyển phải
+KEYBINDINGS_ACTION_OPEN_MAP,Open map,Abrir mapa,マップを開く,Mở bản đồ
+KEYBINDINGS_ACTION_SHIELD_UP,Shield up,Levantar escudo,ガード,Giơ khiên
+KEYBINDINGS_ACTION_STOP_GRABBING,Stop grabbing,Soltar borde,掴み解除,Buông bám
+KEYBINDINGS_INPUT_LEFT_MOUSE_BUTTON,Left mouse button,Botón izquierdo del ratón,マウス左,Chuột trái
+KEYBINDINGS_INPUT_RIGHT_MOUSE_BUTTON,Right mouse button,Botón derecho del ratón,右ボタン,Chuột phải
+KEYBINDINGS_INPUT_SPACE,Space,Espacio,スペース,Phím cách
+KEYBINDINGS_LABEL_PRESS_KEY_TO_BIND,Press key to bind,Pulsa una tecla,キーを入力,Nhấn phím để gán
+MENU_BUTTON_EXIT,Exit,Salir,終了,Thoát
+MENU_BUTTON_QUIT,Quit,Salir,終了,Thoát
+MENU_BUTTON_RESUME,Resume,Guardar,セーブ,Tiếp tục
+MENU_BUTTON_SAVE,Save,Reanudar,再開,Lưu
+MENU_BUTTON_SETTINGS,Settings,Opciones,設定,Cài đặt
+MENU_BUTTON_START,Start,Iniciar,スタート,Bắt đầu
+MENU_LABEL_BACKGROUND_MUSIC,Background music,Música de fondo,BGM,Nhạc nền
+MENU_LABEL_BRIGHTNESS,Brightness,Brillo,明るさ,Độ sáng
+MENU_LABEL_LANGUAGE,Language,Idioma,言語,Ngôn ngữ
+MENU_LABEL_MASTER_VOLUME,Master volume,Volumen maestro,マスター音量,Âm lượng tổng
+MENU_LABEL_PAUSED,Paused,Pausa,一時停止,Tạm dừng
+MENU_LABEL_SETTINGS_MENU,Settings,Opciones,設定,Cài đặt
+MENU_LABEL_SFX,Sound effect,Efectos de sonido,効果音,Hiệu ứng âm thanh
+MENU_LABEL_WINDOW_MODE,Window mode,Modo de ventana,ウィンドウモード,Chế độ cửa sổ
+MENU_OPTION_FULLSCREEN,Fullscreen,Pantalla completa,フルスクリーン,Toàn màn hình
+MENU_OPTION_MAXIMIZED,Maximized,Maximizada,最大化,Phóng to
+MENU_OPTION_WINDOWED,Windowed,Ventana,ウィンドウ,Cửa sổ
+MENU_SETTINGS_AUDIO,Audio,Audio,音量設定,Âm thanh
+MENU_SETTINGS_CONTROLS,Controls,Controles,操作設定,Điều khiển
+MENU_SETTINGS_DISPLAY,Display,Pantalla,表示,Hiển thị
+MENU_SETTINGS_KEYBINDINGS,Keybindings,Teclas,キー割り当て,Gán phím
+MENU_SETTINGS_OTHERS,Others,Otros,その他,Khác
+SPLASH_SCREEN_AUTHOR,Tran Minh Dat,Tran Minh Dat,Tran Minh Dat,Trần Minh Đạt
+SPLASH_SCREEN_GAME_DEV_BY,A game dev by,Desarrollado por,開発：,Phát triển bởi

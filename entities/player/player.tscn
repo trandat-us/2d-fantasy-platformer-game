@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://d0h40664kdbv0"]
+
+[ext_resource type="Script" uid="uid://deffhhq36a3i1" path="res://entities/player/player.gd" id="1_nqnt1"]
+[ext_resource type="Script" uid="uid://bp21l5note7pw" path="res://entities/player/interactive_area.gd" id="3_bls4j"]
+[ext_resource type="PackedScene" uid="uid://chrse6p5qhosa" path="res://components/hurtbox/hurt_box_component.tscn" id="16_d0p3g"]
+[ext_resource type="PackedScene" uid="uid://dpr1frg0w0y41" path="res://components/movement/movement_component.tscn" id="22_3dig0"]
+
+[sub_resource type="Gradient" id="Gradient_yf4s0"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0.35514018, 0.7056075, 1)
+colors = PackedColorArray(0.9647059, 1, 0.015686275, 1, 1, 0.23921569, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_37l4b"]
+gradient = SubResource("Gradient_yf4s0")
+width = 160
+height = 160
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Player" type="CharacterBody2D" unique_id=292074632 groups=["player"]]
+collision_layer = 2
+floor_snap_length = 32.0
+script = ExtResource("1_nqnt1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=822148082]
+offset = Vector2(0, -100)
+zoom = Vector2(1.5, 1.5)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="FlipNodes" type="Node2D" parent="." unique_id=2047166497]
+
+[node name="Sprite2D" type="Sprite2D" parent="FlipNodes" unique_id=1166565321]
+
+[node name="DefaultCShape" type="CollisionShape2D" parent="." unique_id=145030464]
+
+[node name="MovementComponent" parent="." unique_id=1956996488 instance=ExtResource("22_3dig0")]
+
+[node name="HurtBoxComponent" parent="." unique_id=1605605533 instance=ExtResource("16_d0p3g")]
+collision_layer = 2
+
+[node name="InteractiveArea" type="Area2D" parent="." unique_id=1054160542 node_paths=PackedStringArray("player")]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("3_bls4j")
+player = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=845040554]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1008060817]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=437396018]
+enabled = false
+color = Color(0.81167305, 0.48620504, 0.21515435, 1)
+texture = SubResource("GradientTexture2D_37l4b")
+
+[connection signal="area_entered" from="InteractiveArea" to="InteractiveArea" method="_on_area_entered"]
+[connection signal="area_exited" from="InteractiveArea" to="InteractiveArea" method="_on_area_exited"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://p5tmuti4ow8o"]
+
+[ext_resource type="Script" uid="uid://di83utwirecj4" path="res://ui/game time tracker/game_time_tracker.gd" id="1_qhd2g"]
+
+[node name="GameTimeTracker" type="Control"]
+layout_mode = 3
+anchor_left = 0.81500006
+anchor_right = 1.0
+anchor_bottom = 0.135
+offset_left = 213.11993
+offset_bottom = -87.48
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_qhd2g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -213.0
+offset_bottom = 88.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="TimeLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1

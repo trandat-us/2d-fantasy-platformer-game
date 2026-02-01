@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjuyawmv81sx6"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_ajfdp"]
+
+[node name="VillageClothesline2" type="Sprite2D"]
+texture = ExtResource("1_ajfdp")
+region_enabled = true
+region_rect = Rect2(582, 390, 83, 19)

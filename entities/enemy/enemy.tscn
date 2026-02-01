@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://derpn2hvab42v"]
+
+[ext_resource type="Script" uid="uid://feh4ixqqp88u" path="res://entities/enemy/enemy.gd" id="1_4fhu8"]
+[ext_resource type="PackedScene" uid="uid://dpr1frg0w0y41" path="res://components/movement/movement_component.tscn" id="2_pqkjo"]
+[ext_resource type="PackedScene" uid="uid://chrse6p5qhosa" path="res://components/hurtbox/hurt_box_component.tscn" id="2_vbcv0"]
+[ext_resource type="PackedScene" uid="uid://c38ixe7yt4v2f" path="res://entities/enemy/health bar/enemy_health_bar.tscn" id="4_dt443"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+script = ExtResource("1_4fhu8")
+
+[node name="FlipNodes" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FlipNodes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_pqkjo")]
+
+[node name="HurtBoxComponent" parent="." instance=ExtResource("2_vbcv0")]
+collision_layer = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource("4_dt443")]
+show_mode = 1

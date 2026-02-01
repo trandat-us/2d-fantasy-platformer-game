@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://lit7d0hisf7e"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_pg7r6"]
+
+[node name="VillageWineBottle" type="Sprite2D"]
+texture = ExtResource("1_pg7r6")
+region_enabled = true
+region_rect = Rect2(330, 174, 7, 18)

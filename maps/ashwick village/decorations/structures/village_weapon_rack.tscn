@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkepunkq2pqet"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_pvw5j"]
+
+[node name="VillageWeaponRack" type="Sprite2D"]
+texture = ExtResource("1_pvw5j")
+region_enabled = true
+region_rect = Rect2(254, 95, 68, 33)

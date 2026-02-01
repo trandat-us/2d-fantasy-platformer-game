@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://phpumvk55j1c"]
+
+[ext_resource type="Script" uid="uid://buo2juu0n4s0d" path="res://utils/game controller/game_controller.gd" id="1_vq0e2"]
+[ext_resource type="PackedScene" uid="uid://bdokr815lfb6j" path="res://ui/menus/pause/pause_menu.tscn" id="2_vc4nx"]
+[ext_resource type="Script" uid="uid://bl8kfqw1wblft" path="res://utils/game controller/event_bus.gd" id="3_ah02m"]
+[ext_resource type="PackedScene" uid="uid://b8wkjcq2o7t55" path="res://entities/player/knight/knight.tscn" id="3_ohry2"]
+[ext_resource type="PackedScene" uid="uid://bheaxykbajhrl" path="res://ui/hud/player health bar/player_health_bar.tscn" id="7_ah02m"]
+
+[node name="GameController" type="Node" unique_id=283328238 groups=["game_controller"]]
+script = ExtResource("1_vq0e2")
+player_scene = ExtResource("3_ohry2")
+
+[node name="EventBus" type="Node" parent="." unique_id=1918376393 groups=["event_bus"]]
+script = ExtResource("3_ah02m")
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=1662906411]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1988327369]
+
+[node name="PlayerHealthBar" parent="HUD" unique_id=1177663320 instance=ExtResource("7_ah02m")]
+
+[node name="PauseMenu" parent="HUD" unique_id=368787748 instance=ExtResource("2_vc4nx")]
+
+[connection signal="player_died" from="EventBus" to="." method="_on_event_bus_player_died"]
+[connection signal="option_pressed" from="HUD/PauseMenu" to="." method="_on_pause_menu_option_pressed"]

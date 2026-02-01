@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvuc2dnq2jpk4"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_wbmxb"]
+
+[node name="VillageTextLine5" type="Sprite2D"]
+texture = ExtResource("1_wbmxb")
+region_enabled = true
+region_rect = Rect2(521, 35, 15, 5)

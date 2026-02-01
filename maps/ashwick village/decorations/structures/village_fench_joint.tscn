@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://de05cl75vtnow"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_c8ykq"]
+
+[node name="VillageFenchJoint" type="Sprite2D"]
+texture = ExtResource("1_c8ykq")
+region_enabled = true
+region_rect = Rect2(83, 110, 4, 4)

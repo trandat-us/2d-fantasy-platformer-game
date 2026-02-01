@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs34skiqheguo"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_nc11v"]
+
+[node name="VillageAnvil" type="Sprite2D"]
+texture = ExtResource("1_nc11v")
+region_enabled = true
+region_rect = Rect2(857, 172, 42, 20)

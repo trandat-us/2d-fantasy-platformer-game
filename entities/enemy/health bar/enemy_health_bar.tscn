@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c38ixe7yt4v2f"]
+
+[ext_resource type="Script" uid="uid://csjofjgcbttfw" path="res://entities/enemy/health bar/enemy_health_bar.gd" id="1_sa6sv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psspj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wwj3"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psspj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg7tt"]
+bg_color = Color(0.8784314, 0.84313726, 0.050980393, 1)
+
+[node name="EnemyHealthBar" type="ProgressBar"]
+custom_minimum_size = Vector2(30, 2)
+anchors_preset = -1
+anchor_right = 0.026
+anchor_bottom = 0.003
+offset_right = 0.048000336
+offset_bottom = 0.055999994
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_psspj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4wwj3")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_sa6sv")
+
+[node name="DamageBar" type="ProgressBar" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_psspj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wg7tt")
+value = 70.0
+show_percentage = false
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ShowTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="ShowTimer" to="." method="_on_show_timer_timeout"]

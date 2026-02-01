@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnax0b3i4ojr6"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_b1obk"]
+
+[node name="VillageScaffolding3" type="Sprite2D"]
+texture = ExtResource("1_b1obk")
+region_enabled = true
+region_rect = Rect2(224, 640, 32, 33)

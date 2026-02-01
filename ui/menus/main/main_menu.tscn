@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bo36yngvyp4ll"]
+
+[ext_resource type="Script" uid="uid://bbck66162tk73" path="res://ui/menus/main/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="AudioStream" uid="uid://c4jcxnmq814qt" path="res://assets/sounds/bgm/Genshin Impact Main Theme.mp3" id="2_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://bhqk2yesp2rsi" path="res://assets/textures/title_screen.png" id="2_wk0pr"]
+[ext_resource type="FontFile" uid="uid://c7c08ol255ssr" path="res://assets/fonts/grenze.ttf" id="3_27bbg"]
+
+[node name="MainMenu" type="Control" unique_id=1425780010]
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7e0r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=986684069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wk0pr")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="." unique_id=1755420679]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.5
+offset_top = 16.0
+offset_right = 392.5
+offset_bottom = 307.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8326415, 0.00557898, 0.10623475, 1)
+theme_override_colors/font_shadow_color = Color(0.0020737555, 0.09611576, 0.16585988, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -16
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 24
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("3_27bbg")
+theme_override_font_sizes/font_size = 96
+text = "KNIGHTFALL
+SHATTERED  REALM"
+horizontal_alignment = 1
+
+[node name="GameButtonsContainer" type="VBoxContainer" parent="." unique_id=1611649136]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -12.0
+offset_right = 125.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="StartButton" type="Button" parent="GameButtonsContainer" unique_id=1014721256]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+text = "MENU_BUTTON_START"
+text_overrun_behavior = 1
+
+[node name="SettingsButton" type="Button" parent="GameButtonsContainer" unique_id=784690331]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+text = "MENU_BUTTON_SETTINGS"
+text_overrun_behavior = 1
+
+[node name="QuitButton" type="Button" parent="GameButtonsContainer" unique_id=1909423203]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+text = "MENU_BUTTON_QUIT"
+text_overrun_behavior = 1
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1556714697]
+stream = ExtResource("2_0dkrt")
+autoplay = true
+bus = &"BGM"
+parameters/looping = true
+
+[connection signal="pressed" from="GameButtonsContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="GameButtonsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="GameButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

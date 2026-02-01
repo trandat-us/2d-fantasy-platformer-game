@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jj0uv1mbiewf"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_tlr2j"]
+
+[node name="VillageGrass8" type="Sprite2D"]
+texture = ExtResource("1_tlr2j")
+region_enabled = true
+region_rect = Rect2(458.00146, 473, 10.998535, 7)

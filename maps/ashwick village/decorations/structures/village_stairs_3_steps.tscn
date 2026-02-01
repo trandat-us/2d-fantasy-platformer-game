@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbvu1f12n7gcw"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_ye6f6"]
+
+[node name="VillageStairs3Steps" type="Sprite2D"]
+texture = ExtResource("1_ye6f6")
+region_enabled = true
+region_rect = Rect2(478, 709, 48, 28)

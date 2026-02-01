@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq4ldfvbxqyrs"]
+
+[ext_resource type="Texture2D" uid="uid://d22by1ipst2xb" path="res://assets/textures/tilemap/cave/tileset.png" id="1_5ytr0"]
+
+[node name="CaveCornerOutside10" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ytr0")
+region_enabled = true
+region_rect = Rect2(511.44, 128, 16, 16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -8, 8, 8, 8, -8)

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://i0iygnfg1j6x"]
+
+[ext_resource type="Script" uid="uid://ciy85kgm37kw5" path="res://maps/map.gd" id="1_gebk2"]
+[ext_resource type="PackedScene" uid="uid://ddyr3ngl0yuxc" path="res://utils/level bounds/level_bounds.tscn" id="2_ers5l"]
+
+[node name="Map" type="Node2D" unique_id=1402783727 groups=["map"]]
+script = ExtResource("1_gebk2")
+
+[node name="LevelBounds" parent="." unique_id=1979604406 instance=ExtResource("2_ers5l")]
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=137230786]

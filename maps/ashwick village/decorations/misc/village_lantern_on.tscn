@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc8lx3gxe4pj3"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_n1tne"]
+
+[node name="VillageLanternOn" type="Sprite2D"]
+texture = ExtResource("1_n1tne")
+region_enabled = true
+region_rect = Rect2(969, 6, 13, 18)

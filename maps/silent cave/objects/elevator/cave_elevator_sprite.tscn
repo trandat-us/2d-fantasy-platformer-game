@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi7rqp6h8rxwy"]
+
+[ext_resource type="Texture2D" uid="uid://d22by1ipst2xb" path="res://assets/textures/tilemap/cave/tileset.png" id="1_yxr76"]
+
+[node name="Sprite" type="Node2D"]
+
+[node name="AbovePlate" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_yxr76")
+region_enabled = true
+region_rect = Rect2(960, 192, 48, 16)
+
+[node name="BelowPlate" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("1_yxr76")
+region_enabled = true
+region_rect = Rect2(960, 224, 48, 16)

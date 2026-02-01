@@ -1,0 +1,120 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="2D Fantasy Platformer Game"
+config/tags=PackedStringArray("2d", "fantasy", "platformer")
+run/main_scene="uid://c3amc4riqkix8"
+config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://audio_bus_layout.tres"
+
+[autoload]
+
+SceneManager="*res://autoloads/scene_manager.gd"
+SettingsManager="*res://autoloads/settings_manager.gd"
+SaveManager="*res://autoloads/save_manager.gd"
+GlobalWorldEnvironment="*res://autoloads/world_environment.tscn"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
+
+[display]
+
+window/size/resizable=false
+window/size/maximize_disabled=true
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="uid://dls532il25ydj"
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+crouch={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+dash={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(447, 29),"global_position":Vector2(456, 77),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+attack={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(112, 19),"global_position":Vector2(121, 67),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+shield_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+stop_grabbing={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+]
+}
+open_map={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":109,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation/translation.en.translation", "res://translation/translation.es.translation", "res://translation/translation.ja.translation", "res://translation/translation.vi.translation")
+locale/locale_filter_mode=0
+
+[layer_names]
+
+2d_physics/layer_1="ground"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="floating platform"
+2d_physics/layer_5="hazards"
+2d_physics/layer_6="interactives"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

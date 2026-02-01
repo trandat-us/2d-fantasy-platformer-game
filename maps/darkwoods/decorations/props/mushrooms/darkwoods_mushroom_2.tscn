@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxlqvqyrkxhms"]
+
+[ext_resource type="Texture2D" uid="uid://5yi6dq2b1osl" path="res://assets/textures/tilemap/darkwoods/props/mushroom_2.png" id="1_n5aro"]
+
+[node name="DarkwoodsMushroom2" type="Sprite2D"]
+texture = ExtResource("1_n5aro")

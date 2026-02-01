@@ -1,0 +1,2395 @@
+[gd_scene load_steps=120 format=4 uid="uid://dt7mtt5j61v01"]
+
+[ext_resource type="PackedScene" uid="uid://i0iygnfg1j6x" path="res://maps/map.tscn" id="1_0n3fn"]
+[ext_resource type="PackedScene" uid="uid://cl2htne3wtn0p" path="res://maps/ashwick village/decorations/ashwick_village_tileset.tscn" id="1_35upl"]
+[ext_resource type="PackedScene" uid="uid://ch3bsgi3a718a" path="res://maps/ashwick village/decorations/ashwick_village_background.tscn" id="1_gign4"]
+[ext_resource type="PackedScene" uid="uid://ct2sp82xxurwp" path="res://maps/ashwick village/decorations/structures/village_well.tscn" id="1_q5nrs"]
+[ext_resource type="Script" uid="uid://cuo83m1hlbq0y" path="res://maps/ashwick village/ashwick_village.gd" id="1_ugybf"]
+[ext_resource type="PackedScene" uid="uid://cs8au4wfwcwqo" path="res://maps/ashwick village/decorations/structures/village_fench_post_mortise.tscn" id="2_8bsq4"]
+[ext_resource type="PackedScene" uid="uid://buvyb0ln736oo" path="res://maps/ashwick village/decorations/structures/village_wooden_bucket.tscn" id="2_8eiqh"]
+[ext_resource type="PackedScene" uid="uid://b6m08jfsed0ld" path="res://maps/ashwick village/decorations/structures/village_clothesline_1.tscn" id="2_ajf7t"]
+[ext_resource type="PackedScene" uid="uid://b7otc8ll4runj" path="res://maps/ashwick village/decorations/nature/village_bush_small.tscn" id="2_g85gi"]
+[ext_resource type="PackedScene" uid="uid://dotdif2ymehgk" path="res://maps/ashwick village/decorations/nature/village_bush_big.tscn" id="2_iaf4j"]
+[ext_resource type="PackedScene" uid="uid://bxj5jansr3vte" path="res://maps/ashwick village/decorations/structures/village_notice_board.tscn" id="2_sq3sw"]
+[ext_resource type="PackedScene" uid="uid://bp6jot3u1qs2p" path="res://maps/ashwick village/decorations/structures/village_clothesline_pole_1.tscn" id="2_url0e"]
+[ext_resource type="PackedScene" uid="uid://b282sa4qqf0nq" path="res://maps/ashwick village/decorations/nature/village_tree_big.tscn" id="2_ym2l8"]
+[ext_resource type="PackedScene" uid="uid://buyrm3m0g5nft" path="res://maps/ashwick village/decorations/misc/village_notice_paper_1.tscn" id="3_0btfk"]
+[ext_resource type="PackedScene" uid="uid://c062asug3k5d6" path="res://maps/ashwick village/decorations/structures/village_clothesline_pole_2.tscn" id="3_1bvyu"]
+[ext_resource type="PackedScene" uid="uid://bqbmvot73n812" path="res://maps/ashwick village/decorations/structures/village_house_brick.tscn" id="3_1dxqi"]
+[ext_resource type="PackedScene" uid="uid://b8o1lct8vnafe" path="res://maps/ashwick village/decorations/nature/village_tree_small.tscn" id="3_ar6db"]
+[ext_resource type="PackedScene" uid="uid://ccdbmxmp7xoip" path="res://maps/ashwick village/decorations/structures/village_fench_rail_mortise.tscn" id="3_iaf4j"]
+[ext_resource type="PackedScene" uid="uid://cjuyawmv81sx6" path="res://maps/ashwick village/decorations/structures/village_clothesline_2.tscn" id="3_y34ak"]
+[ext_resource type="PackedScene" uid="uid://bnkf7eay5gbhr" path="res://maps/ashwick village/decorations/nature/village_bush_medium.tscn" id="3_ym2l8"]
+[ext_resource type="PackedScene" uid="uid://ceaf0odlbmue8" path="res://maps/ashwick village/decorations/misc/village_notice_paper_2.tscn" id="4_la0qa"]
+[ext_resource type="PackedScene" uid="uid://trt3iet2db4e" path="res://maps/ashwick village/decorations/misc/village_notice_paper_3.tscn" id="5_ytdmm"]
+[ext_resource type="PackedScene" uid="uid://blnynlu484nh2" path="res://maps/ashwick village/decorations/misc/village_notice_paper_4.tscn" id="6_3ag3b"]
+[ext_resource type="PackedScene" uid="uid://c82cfms2qcl3j" path="res://maps/ashwick village/decorations/interiors/village_cloth_banner.tscn" id="6_jxyov"]
+[ext_resource type="PackedScene" uid="uid://nyy4xsi0qwgc" path="res://maps/ashwick village/decorations/misc/village_clothesline_pin.tscn" id="6_o7xun"]
+[ext_resource type="PackedScene" uid="uid://iy65ktdbdi1t" path="res://maps/ashwick village/decorations/containers/village_x_crate.tscn" id="7_3ag3b"]
+[ext_resource type="PackedScene" uid="uid://cosl34uap7j5e" path="res://maps/ashwick village/decorations/structures/village_bench.tscn" id="7_nbra3"]
+[ext_resource type="PackedScene" uid="uid://b2wcuq16co2rj" path="res://maps/ashwick village/decorations/interiors/village_sock.tscn" id="7_q7844"]
+[ext_resource type="PackedScene" uid="uid://ghhvh4wwgojh" path="res://maps/ashwick village/decorations/structures/village_house_3.tscn" id="7_xkvbi"]
+[ext_resource type="PackedScene" uid="uid://bgcy57h53mwb1" path="res://maps/ashwick village/decorations/interiors/village_wooden_table.tscn" id="8_7wo7h"]
+[ext_resource type="PackedScene" uid="uid://clxyulsuyp0vb" path="res://maps/ashwick village/decorations/interiors/village_skirt.tscn" id="8_apm5f"]
+[ext_resource type="PackedScene" uid="uid://b3iiv4ux6l6id" path="res://maps/ashwick village/decorations/interiors/village_mug.tscn" id="9_5jo4k"]
+[ext_resource type="PackedScene" uid="uid://t1xl7v51x8er" path="res://maps/ashwick village/decorations/interiors/village_chair.tscn" id="9_7wo7h"]
+[ext_resource type="PackedScene" uid="uid://cseehnxcpioc5" path="res://maps/ashwick village/decorations/interiors/village_sleeve_shirt.tscn" id="9_8bsq4"]
+[ext_resource type="PackedScene" uid="uid://lit7d0hisf7e" path="res://maps/ashwick village/decorations/interiors/village_wine_bottle.tscn" id="9_67k71"]
+[ext_resource type="PackedScene" uid="uid://cfa36ce47tmfq" path="res://maps/ashwick village/decorations/structures/village_fench_post_rough_1.tscn" id="11_nnhc8"]
+[ext_resource type="PackedScene" uid="uid://b1gkglm1fkj3p" path="res://maps/ashwick village/decorations/structures/village_fench_rail_rough_3.tscn" id="11_nshy8"]
+[ext_resource type="PackedScene" uid="uid://dqkqgas7aiy12" path="res://maps/ashwick village/decorations/structures/village_fench_post_rough_2.tscn" id="12_vm5vj"]
+[ext_resource type="PackedScene" uid="uid://drbiommi2lodl" path="res://maps/ashwick village/decorations/containers/village_crate.tscn" id="13_2awqr"]
+[ext_resource type="PackedScene" uid="uid://cdyksitv53qpl" path="res://maps/ashwick village/decorations/interiors/village_bread_plate.tscn" id="13_67k71"]
+[ext_resource type="PackedScene" uid="uid://cpxxt4cmqor7g" path="res://maps/ashwick village/decorations/nature/village_rock_big.tscn" id="13_lydh0"]
+[ext_resource type="PackedScene" uid="uid://d3suawo2pc3qp" path="res://maps/ashwick village/decorations/structures/village_fench_post_rough_3.tscn" id="13_nshy8"]
+[ext_resource type="PackedScene" uid="uid://yoyg3vklfa7s" path="res://maps/ashwick village/decorations/structures/village_fench_rail_rough_1.tscn" id="14_ox0bs"]
+[ext_resource type="PackedScene" uid="uid://bdlj0in3wr1s1" path="res://maps/ashwick village/decorations/interiors/village_apple.tscn" id="14_oylef"]
+[ext_resource type="PackedScene" uid="uid://dnkt3a03hnpeh" path="res://maps/ashwick village/decorations/nature/village_rock_small.tscn" id="14_pcnsp"]
+[ext_resource type="PackedScene" uid="uid://dghgghibwg64a" path="res://maps/ashwick village/decorations/structures/village_fench_rail_rough_2.tscn" id="15_6rp8x"]
+[ext_resource type="PackedScene" uid="uid://csertlw2im61x" path="res://maps/ashwick village/decorations/nature/village_rock_medium.tscn" id="15_m1yhv"]
+[ext_resource type="PackedScene" uid="uid://de05cl75vtnow" path="res://maps/ashwick village/decorations/structures/village_fench_joint.tscn" id="17_ox0bs"]
+[ext_resource type="PackedScene" uid="uid://2h67ai778pwi" path="res://maps/ashwick village/decorations/containers/village_barrel.tscn" id="17_oylef"]
+[ext_resource type="PackedScene" uid="uid://cs34skiqheguo" path="res://maps/ashwick village/decorations/interiors/village_anvil.tscn" id="18_6rykw"]
+[ext_resource type="PackedScene" uid="uid://dygj4dv2bhjg0" path="res://maps/ashwick village/decorations/containers/village_tied_sack.tscn" id="18_36g5p"]
+[ext_resource type="PackedScene" uid="uid://chrl5qo35vhss" path="res://maps/ashwick village/decorations/structures/village_stairs_7_steps.tscn" id="18_hqely"]
+[ext_resource type="PackedScene" uid="uid://d1l15piqckjtg" path="res://maps/ashwick village/decorations/tools/village_hammer.tscn" id="18_nvbp7"]
+[ext_resource type="PackedScene" uid="uid://em3gy7ypxxqt" path="res://maps/ashwick village/decorations/nature/village_grass_1.tscn" id="18_wkwxy"]
+[ext_resource type="PackedScene" uid="uid://dc8lx3gxe4pj3" path="res://maps/ashwick village/decorations/misc/village_lantern_on.tscn" id="19_dsnwk"]
+[ext_resource type="PackedScene" uid="uid://cuj6kfmwb8tig" path="res://maps/ashwick village/decorations/nature/village_grass_2.tscn" id="19_t0jfg"]
+[ext_resource type="PackedScene" uid="uid://v4kfaa6ilyrp" path="res://maps/ashwick village/decorations/structures/village_wooden_pillar.tscn" id="19_xau0n"]
+[ext_resource type="PackedScene" uid="uid://dqe74x0dx28gx" path="res://maps/ashwick village/decorations/structures/village_wooden_pillar_branch.tscn" id="20_dsnwk"]
+[ext_resource type="PackedScene" uid="uid://bp2bkyxc85bjp" path="res://maps/ashwick village/decorations/nature/village_grass_3.tscn" id="20_fqvw6"]
+[ext_resource type="PackedScene" uid="uid://b8fbev2ficp8c" path="res://maps/ashwick village/decorations/misc/village_chain.tscn" id="21_dsnwk"]
+[ext_resource type="PackedScene" uid="uid://nmf1jdcl5wgx" path="res://maps/ashwick village/decorations/nature/village_grass_4.tscn" id="21_gwkdq"]
+[ext_resource type="PackedScene" uid="uid://dsy0dklwcwhmn" path="res://maps/ashwick village/decorations/nature/village_grass_9.tscn" id="21_xr47q"]
+[ext_resource type="PackedScene" uid="uid://dht8qgv284u7f" path="res://maps/ashwick village/decorations/nature/village_grass_5.tscn" id="22_gwkdq"]
+[ext_resource type="PackedScene" uid="uid://b4ysugn6n12fs" path="res://maps/ashwick village/decorations/nature/village_sunflower_2.tscn" id="22_sfqk0"]
+[ext_resource type="PackedScene" uid="uid://bq8cxkko1ep18" path="res://maps/ashwick village/decorations/structures/village_house_1.tscn" id="23_ce7no"]
+[ext_resource type="PackedScene" uid="uid://djv2v7fnqvbap" path="res://maps/ashwick village/decorations/nature/village_hay_bale.tscn" id="23_jnxuy"]
+[ext_resource type="PackedScene" uid="uid://b81n5lly1hj7v" path="res://maps/ashwick village/decorations/nature/village_grass_6.tscn" id="23_ngfgd"]
+[ext_resource type="PackedScene" uid="uid://cbkpff0fvdvs0" path="res://maps/ashwick village/decorations/nature/village_sunflower_3.tscn" id="23_tq1v7"]
+[ext_resource type="PackedScene" uid="uid://c1i1qcl3v0ss5" path="res://maps/ashwick village/decorations/structures/village_house_2.tscn" id="24_iavqy"]
+[ext_resource type="PackedScene" uid="uid://di2oy6d1tiq28" path="res://maps/ashwick village/decorations/nature/village_sunflower_1.tscn" id="24_mxmy5"]
+[ext_resource type="PackedScene" uid="uid://bcraxq2ryrptb" path="res://maps/ashwick village/decorations/nature/village_grass_7.tscn" id="24_unrpw"]
+[ext_resource type="PackedScene" uid="uid://bivnfepi5lu0w" path="res://maps/ashwick village/decorations/tools/village_pitchfork.tscn" id="25_amsgc"]
+[ext_resource type="PackedScene" uid="uid://jj0uv1mbiewf" path="res://maps/ashwick village/decorations/nature/village_grass_8.tscn" id="25_fbxfr"]
+[ext_resource type="PackedScene" uid="uid://be8xbvrebfl31" path="res://maps/ashwick village/decorations/structures/village_wagon.tscn" id="25_j12ok"]
+[ext_resource type="PackedScene" uid="uid://beguoirlhsko3" path="res://maps/ashwick village/decorations/structures/village_wagon_wheel.tscn" id="26_ii8tv"]
+[ext_resource type="PackedScene" uid="uid://5mknsc7nkfox" path="res://maps/ashwick village/decorations/containers/village_sack.tscn" id="27_j11mb"]
+[ext_resource type="PackedScene" uid="uid://dhr3k18unc5c7" path="res://maps/ashwick village/decorations/interiors/village_grain_box.tscn" id="28_5tepg"]
+[ext_resource type="PackedScene" uid="uid://bkepunkq2pqet" path="res://maps/ashwick village/decorations/structures/village_weapon_rack.tscn" id="30_hjhq0"]
+[ext_resource type="PackedScene" uid="uid://bu43tq7cngios" path="res://maps/ashwick village/decorations/structures/village_house_brick_door.tscn" id="30_xkvbi"]
+[ext_resource type="PackedScene" uid="uid://bwhgj5ap61anf" path="res://maps/ashwick village/decorations/tools/village_spear.tscn" id="31_gjfyh"]
+[ext_resource type="PackedScene" uid="uid://ncar58p64qu7" path="res://maps/ashwick village/decorations/tools/village_sword.tscn" id="32_nvbp7"]
+[ext_resource type="PackedScene" uid="uid://dh0kfsqr2yp66" path="res://maps/ashwick village/decorations/tools/village_blade.tscn" id="33_oa7j1"]
+[ext_resource type="PackedScene" uid="uid://byhvuegesy5uy" path="res://maps/ashwick village/decorations/nature/village_pumpkin_big.tscn" id="37_eh3rk"]
+[ext_resource type="PackedScene" uid="uid://b1kcaaa0dtwqy" path="res://maps/ashwick village/decorations/nature/village_stacked_logs.tscn" id="47_vw7b0"]
+[ext_resource type="PackedScene" uid="uid://bghclyiy6v0rg" path="res://maps/ashwick village/decorations/structures/village_banner_pole.tscn" id="52_12n5y"]
+[ext_resource type="PackedScene" uid="uid://03df6ocu2s1q" path="res://maps/ashwick village/decorations/structures/village_banner.tscn" id="53_f21no"]
+[ext_resource type="PackedScene" uid="uid://cdxms0aundkel" path="res://maps/ashwick village/decorations/structures/village_wooden_sign.tscn" id="60_tq1v7"]
+[ext_resource type="PackedScene" uid="uid://cywwngytm2mtn" path="res://maps/ashwick village/decorations/misc/village_text_line_4.tscn" id="63_j0awi"]
+[ext_resource type="PackedScene" uid="uid://8n7ta3b80nsq" path="res://maps/ashwick village/decorations/misc/village_arrow.tscn" id="63_wexfs"]
+[ext_resource type="PackedScene" uid="uid://jdg75osmndst" path="res://maps/ashwick village/decorations/misc/village_text_line_3.tscn" id="64_hqely"]
+[ext_resource type="PackedScene" uid="uid://cm2okatc3cvlu" path="res://maps/ashwick village/decorations/structures/village_archery_target.tscn" id="64_jw0ur"]
+[ext_resource type="PackedScene" uid="uid://dcc7c7lx2taqr" path="res://maps/ashwick village/decorations/structures/village_wooden_defense_x.tscn" id="64_pcnsp"]
+[ext_resource type="PackedScene" uid="uid://76cqhuehuwf2" path="res://maps/ashwick village/decorations/interiors/village_broom.tscn" id="66_eh3rk"]
+[ext_resource type="PackedScene" uid="uid://cydc56lpka7li" path="res://maps/ashwick village/decorations/nature/village_pumpkin_small.tscn" id="67_echf5"]
+[ext_resource type="PackedScene" uid="uid://by4m7wimirrjx" path="res://maps/ashwick village/decorations/nature/village_wheat_1.tscn" id="72_b6b0b"]
+[ext_resource type="PackedScene" uid="uid://ofvutuq75idt" path="res://maps/ashwick village/decorations/nature/village_wheat_2.tscn" id="73_5i11f"]
+[ext_resource type="PackedScene" uid="uid://c71r72haap51r" path="res://maps/ashwick village/decorations/nature/village_wheat_3.tscn" id="74_echf5"]
+[ext_resource type="PackedScene" uid="uid://mkqrnx5x5kw2" path="res://maps/ashwick village/decorations/nature/village_wheat_5.tscn" id="75_5i11f"]
+[ext_resource type="PackedScene" uid="uid://bv7oyac2caeat" path="res://maps/ashwick village/decorations/nature/village_wheat_4.tscn" id="75_xdy3b"]
+[ext_resource type="PackedScene" uid="uid://byme2hphgeg8v" path="res://maps/ashwick village/decorations/nature/village_hay_pile.tscn" id="80_57rwu"]
+[ext_resource type="PackedScene" uid="uid://5b08galng5q8" path="res://maps/ashwick village/decorations/structures/village_target_dummy.tscn" id="82_y7i30"]
+[ext_resource type="PackedScene" uid="uid://cj51u5pwhdom1" path="res://maps/ashwick village/decorations/structures/village_scarecrow.tscn" id="85_xdy3b"]
+[ext_resource type="PackedScene" uid="uid://bumtuvltr4jxp" path="res://maps/ashwick village/decorations/nature/village_tree_trunk.tscn" id="86_2js2e"]
+[ext_resource type="PackedScene" uid="uid://d2h7m7740ayew" path="res://maps/ashwick village/decorations/tools/village_axe.tscn" id="86_wb18f"]
+[ext_resource type="PackedScene" uid="uid://cier0v1mwl2qs" path="res://maps/ashwick village/decorations/nature/village_log.tscn" id="87_hmabm"]
+[ext_resource type="PackedScene" uid="uid://be3kde5dj2iyx" path="res://maps/ashwick village/decorations/structures/village_market_stall.tscn" id="103_f21no"]
+[ext_resource type="PackedScene" uid="uid://bkcixupywe2gw" path="res://maps/ashwick village/decorations/interiors/village_kettle.tscn" id="103_saj6i"]
+[ext_resource type="PackedScene" uid="uid://ofi41xay3qkp" path="res://maps/ashwick village/decorations/structures/village_support_beam.tscn" id="104_7l8c1"]
+[ext_resource type="PackedScene" uid="uid://dhkdsjtgxkbip" path="res://maps/ashwick village/decorations/interiors/village_spice_jar.tscn" id="104_aldiw"]
+[ext_resource type="PackedScene" uid="uid://ctxvgyk4r6laa" path="res://maps/ashwick village/decorations/structures/village_awning.tscn" id="105_paey5"]
+[ext_resource type="PackedScene" uid="uid://cp8hgag6nsum" path="res://maps/ashwick village/decorations/misc/village_product_pile_red_1.tscn" id="106_ghqai"]
+[ext_resource type="PackedScene" uid="uid://d4drbh7xudi0j" path="res://maps/ashwick village/decorations/misc/village_product_pile_red_2.tscn" id="107_se7i2"]
+[ext_resource type="PackedScene" uid="uid://b7istm8wkt3eo" path="res://maps/ashwick village/decorations/misc/village_product_pile_yellow.tscn" id="108_olegf"]
+[ext_resource type="PackedScene" uid="uid://fmueuw4jj8q0" path="res://maps/ashwick village/decorations/misc/village_product_pile_green.tscn" id="109_66rwb"]
+[ext_resource type="PackedScene" uid="uid://dk6ugep0ot5ki" path="res://maps/ashwick village/decorations/interiors/village_cauldron.tscn" id="110_66rwb"]
+[ext_resource type="Texture2D" uid="uid://cyu63j52aom34" path="res://assets/textures/light_stream.png" id="116_60mbm"]
+[ext_resource type="PackedScene" uid="uid://byqo2ihktqid0" path="res://utils/map transition area/map_transition_area.tscn" id="117_jdjy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n3fn"]
+size = Vector2(64, 64)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_475xm"]
+blend_mode = 1
+
+[node name="AshwickVillage" instance=ExtResource("1_0n3fn")]
+script = ExtResource("1_ugybf")
+
+[node name="LevelBounds" parent="." index="0"]
+position = Vector2(-1916, -1)
+width = 4221
+height = 800
+
+[node name="Background" parent="." index="1" instance=ExtResource("1_gign4")]
+
+[node name="BackgroundProps" type="Node2D" parent="." index="2"]
+modulate = Color(0.7750634, 0.7750634, 0.7750633, 1)
+
+[node name="Props" type="Node2D" parent="BackgroundProps" index="0"]
+
+[node name="VillageTreeBig" parent="BackgroundProps/Props" index="0" instance=ExtResource("2_ym2l8")]
+position = Vector2(-8, 495)
+
+[node name="VillageTreeBig3" parent="BackgroundProps/Props" index="1" instance=ExtResource("2_ym2l8")]
+position = Vector2(303, 465)
+
+[node name="VillageTreeBig5" parent="BackgroundProps/Props" index="2" instance=ExtResource("2_ym2l8")]
+position = Vector2(842, 432)
+
+[node name="VillageTreeBig6" parent="BackgroundProps/Props" index="3" instance=ExtResource("2_ym2l8")]
+position = Vector2(1297, 432)
+
+[node name="VillageTreeBig7" parent="BackgroundProps/Props" index="4" instance=ExtResource("2_ym2l8")]
+position = Vector2(1713, 433)
+
+[node name="VillageTreeBig9" parent="BackgroundProps/Props" index="5" instance=ExtResource("2_ym2l8")]
+position = Vector2(2208, 432)
+
+[node name="VillageTreeBig2" parent="BackgroundProps/Props" index="6" instance=ExtResource("2_ym2l8")]
+position = Vector2(-1038, 399)
+
+[node name="VillageTreeBig8" parent="BackgroundProps/Props" index="7" instance=ExtResource("2_ym2l8")]
+position = Vector2(-1516, 433)
+
+[node name="VillageTreeBig4" parent="BackgroundProps/Props" index="8" instance=ExtResource("2_ym2l8")]
+position = Vector2(-466, 464)
+
+[node name="VillageTreeSmall" parent="BackgroundProps/Props" index="9" instance=ExtResource("3_ar6db")]
+position = Vector2(-243, 508)
+
+[node name="VillageTreeSmall2" parent="BackgroundProps/Props" index="10" instance=ExtResource("3_ar6db")]
+position = Vector2(-243, 508)
+
+[node name="VillageTreeSmall3" parent="BackgroundProps/Props" index="11" instance=ExtResource("3_ar6db")]
+position = Vector2(-662, 445)
+
+[node name="VillageTreeSmall7" parent="BackgroundProps/Props" index="12" instance=ExtResource("3_ar6db")]
+position = Vector2(-1327, 412)
+
+[node name="VillageTreeSmall4" parent="BackgroundProps/Props" index="13" instance=ExtResource("3_ar6db")]
+position = Vector2(494, 444)
+
+[node name="VillageTreeSmall8" parent="BackgroundProps/Props" index="14" instance=ExtResource("3_ar6db")]
+position = Vector2(494, 444)
+
+[node name="VillageTreeSmall9" parent="BackgroundProps/Props" index="15" instance=ExtResource("3_ar6db")]
+position = Vector2(116, 508)
+
+[node name="VillageTreeSmall5" parent="BackgroundProps/Props" index="16" instance=ExtResource("3_ar6db")]
+position = Vector2(1089, 444)
+
+[node name="VillageTreeSmall6" parent="BackgroundProps/Props" index="17" instance=ExtResource("3_ar6db")]
+position = Vector2(1979, 445)
+
+[node name="VillageBushSmall" parent="BackgroundProps/Props" index="18" instance=ExtResource("2_g85gi")]
+position = Vector2(-507, 531)
+
+[node name="VillageBushSmall4" parent="BackgroundProps/Props" index="19" instance=ExtResource("2_g85gi")]
+position = Vector2(-37, 563)
+
+[node name="VillageBushSmall2" parent="BackgroundProps/Props" index="20" instance=ExtResource("2_g85gi")]
+position = Vector2(-681, 498)
+
+[node name="VillageBushSmall9" parent="BackgroundProps/Props" index="21" instance=ExtResource("2_g85gi")]
+position = Vector2(-1248, 467)
+
+[node name="VillageBushSmall5" parent="BackgroundProps/Props" index="22" instance=ExtResource("2_g85gi")]
+position = Vector2(435, 530)
+
+[node name="VillageBushSmall6" parent="BackgroundProps/Props" index="23" instance=ExtResource("2_g85gi")]
+position = Vector2(769, 498)
+
+[node name="VillageBushSmall7" parent="BackgroundProps/Props" index="24" instance=ExtResource("2_g85gi")]
+position = Vector2(1354, 500)
+
+[node name="VillageBushSmall10" parent="BackgroundProps/Props" index="25" instance=ExtResource("2_g85gi")]
+position = Vector2(1902, 498)
+
+[node name="VillageBushSmall11" parent="BackgroundProps/Props" index="26" instance=ExtResource("2_g85gi")]
+position = Vector2(2142, 499)
+
+[node name="VillageBushSmall8" parent="BackgroundProps/Props" index="27" instance=ExtResource("2_g85gi")]
+position = Vector2(1672, 499)
+
+[node name="VillageBushSmall3" parent="BackgroundProps/Props" index="28" instance=ExtResource("2_g85gi")]
+position = Vector2(64, 562)
+
+[node name="VillageBushMedium" parent="BackgroundProps/Props" index="29" instance=ExtResource("3_ym2l8")]
+position = Vector2(-294, 559)
+
+[node name="VillageBushMedium3" parent="BackgroundProps/Props" index="30" instance=ExtResource("3_ym2l8")]
+position = Vector2(1032, 495)
+
+[node name="VillageBushMedium4" parent="BackgroundProps/Props" index="31" instance=ExtResource("3_ym2l8")]
+position = Vector2(1581, 495)
+
+[node name="VillageBushMedium5" parent="BackgroundProps/Props" index="32" instance=ExtResource("3_ym2l8")]
+position = Vector2(2043, 496)
+
+[node name="VillageBushMedium2" parent="BackgroundProps/Props" index="33" instance=ExtResource("3_ym2l8")]
+position = Vector2(-401, 527)
+
+[node name="VillageBushBig" parent="BackgroundProps/Props" index="34" instance=ExtResource("2_iaf4j")]
+position = Vector2(-600, 526)
+
+[node name="VillageBushBig4" parent="BackgroundProps/Props" index="35" instance=ExtResource("2_iaf4j")]
+position = Vector2(214, 558)
+
+[node name="VillageBushBig5" parent="BackgroundProps/Props" index="36" instance=ExtResource("2_iaf4j")]
+position = Vector2(342, 526)
+
+[node name="VillageBushBig6" parent="BackgroundProps/Props" index="37" instance=ExtResource("2_iaf4j")]
+position = Vector2(906, 495)
+
+[node name="VillageBushBig7" parent="BackgroundProps/Props" index="38" instance=ExtResource("2_iaf4j")]
+position = Vector2(1247, 495)
+
+[node name="VillageBushBig8" parent="BackgroundProps/Props" index="39" instance=ExtResource("2_iaf4j")]
+position = Vector2(1452, 495)
+
+[node name="VillageBushBig11" parent="BackgroundProps/Props" index="40" instance=ExtResource("2_iaf4j")]
+position = Vector2(1806, 494)
+
+[node name="VillageBushBig2" parent="BackgroundProps/Props" index="41" instance=ExtResource("2_iaf4j")]
+position = Vector2(-969, 461)
+
+[node name="VillageBushBig9" parent="BackgroundProps/Props" index="42" instance=ExtResource("2_iaf4j")]
+position = Vector2(-1124, 463)
+
+[node name="VillageBushBig10" parent="BackgroundProps/Props" index="43" instance=ExtResource("2_iaf4j")]
+position = Vector2(-1430, 495)
+
+[node name="VillageBushBig3" parent="BackgroundProps/Props" index="44" instance=ExtResource("2_iaf4j")]
+position = Vector2(-161, 558)
+
+[node name="VillageHouse3" parent="BackgroundProps/Props" index="45" instance=ExtResource("7_xkvbi")]
+position = Vector2(-830, 358)
+scale = Vector2(0.5, 0.5)
+
+[node name="VillageChair5" parent="BackgroundProps/Props" index="46" instance=ExtResource("9_7wo7h")]
+position = Vector2(-759, 467)
+rotation = 3.1415927
+scale = Vector2(0.75, -0.75)
+
+[node name="VillageWoodenTable3" parent="BackgroundProps/Props" index="47" instance=ExtResource("8_7wo7h")]
+position = Vector2(-803, 470)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailMortise" parent="BackgroundProps/Props" index="48" instance=ExtResource("3_iaf4j")]
+position = Vector2(-336, 555)
+
+[node name="VillageFenchRailMortise41" parent="BackgroundProps/Props" index="49" instance=ExtResource("3_iaf4j")]
+position = Vector2(-357, 555)
+
+[node name="VillageFenchRailMortise28" parent="BackgroundProps/Props" index="50" instance=ExtResource("3_iaf4j")]
+position = Vector2(-373, 523)
+
+[node name="VillageFenchRailMortise29" parent="BackgroundProps/Props" index="51" instance=ExtResource("3_iaf4j")]
+position = Vector2(-395, 523)
+
+[node name="VillageFenchRailMortise30" parent="BackgroundProps/Props" index="52" instance=ExtResource("3_iaf4j")]
+position = Vector2(-417, 523)
+
+[node name="VillageFenchRailMortise31" parent="BackgroundProps/Props" index="53" instance=ExtResource("3_iaf4j")]
+position = Vector2(-439, 523)
+
+[node name="VillageFenchRailMortise32" parent="BackgroundProps/Props" index="54" instance=ExtResource("3_iaf4j")]
+position = Vector2(-461, 523)
+
+[node name="VillageFenchRailMortise33" parent="BackgroundProps/Props" index="55" instance=ExtResource("3_iaf4j")]
+position = Vector2(-483, 523)
+
+[node name="VillageFenchRailMortise34" parent="BackgroundProps/Props" index="56" instance=ExtResource("3_iaf4j")]
+position = Vector2(-505, 523)
+
+[node name="VillageFenchRailMortise35" parent="BackgroundProps/Props" index="57" instance=ExtResource("3_iaf4j")]
+position = Vector2(-527, 523)
+
+[node name="VillageFenchRailMortise36" parent="BackgroundProps/Props" index="58" instance=ExtResource("3_iaf4j")]
+position = Vector2(-549, 523)
+
+[node name="VillageFenchRailMortise37" parent="BackgroundProps/Props" index="59" instance=ExtResource("3_iaf4j")]
+position = Vector2(-571, 523)
+
+[node name="VillageFenchRailMortise38" parent="BackgroundProps/Props" index="60" instance=ExtResource("3_iaf4j")]
+position = Vector2(-593, 523)
+
+[node name="VillageFenchRailMortise39" parent="BackgroundProps/Props" index="61" instance=ExtResource("3_iaf4j")]
+position = Vector2(-615, 523)
+
+[node name="VillageFenchRailMortise2" parent="BackgroundProps/Props" index="62" instance=ExtResource("3_iaf4j")]
+position = Vector2(-292, 555)
+
+[node name="VillageFenchRailMortise3" parent="BackgroundProps/Props" index="63" instance=ExtResource("3_iaf4j")]
+position = Vector2(-314, 555)
+
+[node name="VillageFenchRailMortise4" parent="BackgroundProps/Props" index="64" instance=ExtResource("3_iaf4j")]
+position = Vector2(-248, 555)
+
+[node name="VillageFenchRailMortise5" parent="BackgroundProps/Props" index="65" instance=ExtResource("3_iaf4j")]
+position = Vector2(-270, 555)
+
+[node name="VillageFenchRailMortise6" parent="BackgroundProps/Props" index="66" instance=ExtResource("3_iaf4j")]
+position = Vector2(-204, 555)
+
+[node name="VillageFenchRailMortise7" parent="BackgroundProps/Props" index="67" instance=ExtResource("3_iaf4j")]
+position = Vector2(-226, 555)
+
+[node name="VillageFenchRailMortise8" parent="BackgroundProps/Props" index="68" instance=ExtResource("3_iaf4j")]
+position = Vector2(-182, 555)
+
+[node name="VillageFenchRailMortise9" parent="BackgroundProps/Props" index="69" instance=ExtResource("3_iaf4j")]
+position = Vector2(-160, 555)
+
+[node name="VillageFenchRailMortise10" parent="BackgroundProps/Props" index="70" instance=ExtResource("3_iaf4j")]
+position = Vector2(-138, 555)
+
+[node name="VillageFenchRailMortise11" parent="BackgroundProps/Props" index="71" instance=ExtResource("3_iaf4j")]
+position = Vector2(-116, 555)
+
+[node name="VillageFenchRailMortise12" parent="BackgroundProps/Props" index="72" instance=ExtResource("3_iaf4j")]
+position = Vector2(-94, 555)
+
+[node name="VillageFenchRailMortise13" parent="BackgroundProps/Props" index="73" instance=ExtResource("3_iaf4j")]
+position = Vector2(-72, 555)
+
+[node name="VillageFenchRailMortise14" parent="BackgroundProps/Props" index="74" instance=ExtResource("3_iaf4j")]
+position = Vector2(-50, 555)
+
+[node name="VillageFenchRailMortise15" parent="BackgroundProps/Props" index="75" instance=ExtResource("3_iaf4j")]
+position = Vector2(-28, 555)
+
+[node name="VillageFenchRailMortise16" parent="BackgroundProps/Props" index="76" instance=ExtResource("3_iaf4j")]
+position = Vector2(-6, 555)
+
+[node name="VillageFenchRailMortise17" parent="BackgroundProps/Props" index="77" instance=ExtResource("3_iaf4j")]
+position = Vector2(16, 555)
+
+[node name="VillageFenchRailMortise18" parent="BackgroundProps/Props" index="78" instance=ExtResource("3_iaf4j")]
+position = Vector2(38, 555)
+
+[node name="VillageFenchRailMortise19" parent="BackgroundProps/Props" index="79" instance=ExtResource("3_iaf4j")]
+position = Vector2(60, 555)
+
+[node name="VillageFenchRailMortise20" parent="BackgroundProps/Props" index="80" instance=ExtResource("3_iaf4j")]
+position = Vector2(82, 555)
+
+[node name="VillageFenchRailMortise21" parent="BackgroundProps/Props" index="81" instance=ExtResource("3_iaf4j")]
+position = Vector2(104, 555)
+
+[node name="VillageFenchRailMortise22" parent="BackgroundProps/Props" index="82" instance=ExtResource("3_iaf4j")]
+position = Vector2(126, 555)
+
+[node name="VillageFenchRailMortise23" parent="BackgroundProps/Props" index="83" instance=ExtResource("3_iaf4j")]
+position = Vector2(148, 555)
+
+[node name="VillageFenchRailMortise24" parent="BackgroundProps/Props" index="84" instance=ExtResource("3_iaf4j")]
+position = Vector2(170, 555)
+
+[node name="VillageFenchRailMortise25" parent="BackgroundProps/Props" index="85" instance=ExtResource("3_iaf4j")]
+position = Vector2(192, 555)
+
+[node name="VillageFenchRailMortise26" parent="BackgroundProps/Props" index="86" instance=ExtResource("3_iaf4j")]
+position = Vector2(214, 555)
+
+[node name="VillageFenchRailMortise27" parent="BackgroundProps/Props" index="87" instance=ExtResource("3_iaf4j")]
+position = Vector2(236, 555)
+
+[node name="VillageFenchRailRough3" parent="BackgroundProps/Props" index="88" instance=ExtResource("11_nshy8")]
+position = Vector2(1069, 495.61307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough8" parent="BackgroundProps/Props" index="89" instance=ExtResource("11_nshy8")]
+position = Vector2(1114, 505.61307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough4" parent="BackgroundProps/Props" index="90" instance=ExtResource("15_6rp8x")]
+position = Vector2(1069, 505.61307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough7" parent="BackgroundProps/Props" index="91" instance=ExtResource("15_6rp8x")]
+position = Vector2(1113, 495.61307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough73" parent="BackgroundProps/Props" index="92" instance=ExtResource("11_nshy8")]
+position = Vector2(1027.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough74" parent="BackgroundProps/Props" index="93" instance=ExtResource("15_6rp8x")]
+position = Vector2(1027.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough1" parent="BackgroundProps/Props" index="94" instance=ExtResource("11_nnhc8")]
+position = Vector2(1038, 499.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough2" parent="BackgroundProps/Props" index="95" instance=ExtResource("12_vm5vj")]
+position = Vector2(1058, 499.6131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough4" parent="BackgroundProps/Props" index="96" instance=ExtResource("12_vm5vj")]
+position = Vector2(1102, 500.6131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough3" parent="BackgroundProps/Props" index="97" instance=ExtResource("13_nshy8")]
+position = Vector2(1081, 499.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough6" parent="BackgroundProps/Props" index="98" instance=ExtResource("11_nshy8")]
+position = Vector2(1091, 495.61313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough1" parent="BackgroundProps/Props" index="99" instance=ExtResource("14_ox0bs")]
+position = Vector2(1048, 495.61313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough5" parent="BackgroundProps/Props" index="100" instance=ExtResource("14_ox0bs")]
+position = Vector2(1091, 505.61307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough2" parent="BackgroundProps/Props" index="101" instance=ExtResource("15_6rp8x")]
+position = Vector2(1048, 505.61313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint" parent="BackgroundProps/Props" index="102" instance=ExtResource("17_ox0bs")]
+position = Vector2(1038, 495.6131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint3" parent="BackgroundProps/Props" index="103" instance=ExtResource("17_ox0bs")]
+position = Vector2(1058, 496.1131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint5" parent="BackgroundProps/Props" index="104" instance=ExtResource("17_ox0bs")]
+position = Vector2(1080, 495.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint7" parent="BackgroundProps/Props" index="105" instance=ExtResource("17_ox0bs")]
+position = Vector2(1102.5, 496.1131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint2" parent="BackgroundProps/Props" index="106" instance=ExtResource("17_ox0bs")]
+position = Vector2(1038, 505.61307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint6" parent="BackgroundProps/Props" index="107" instance=ExtResource("17_ox0bs")]
+position = Vector2(1080, 505.6131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint8" parent="BackgroundProps/Props" index="108" instance=ExtResource("17_ox0bs")]
+position = Vector2(1102, 506.1131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint4" parent="BackgroundProps/Props" index="109" instance=ExtResource("17_ox0bs")]
+position = Vector2(1058, 506.1131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough79" parent="BackgroundProps/Props" index="110" instance=ExtResource("11_nshy8")]
+position = Vector2(986.10864, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough80" parent="BackgroundProps/Props" index="111" instance=ExtResource("15_6rp8x")]
+position = Vector2(986.10864, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough37" parent="BackgroundProps/Props" index="112" instance=ExtResource("11_nnhc8")]
+position = Vector2(996.10864, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough38" parent="BackgroundProps/Props" index="113" instance=ExtResource("12_vm5vj")]
+position = Vector2(1016.1086, 499.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough75" parent="BackgroundProps/Props" index="114" instance=ExtResource("14_ox0bs")]
+position = Vector2(1006.10864, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough76" parent="BackgroundProps/Props" index="115" instance=ExtResource("15_6rp8x")]
+position = Vector2(1006.10864, 505.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint73" parent="BackgroundProps/Props" index="116" instance=ExtResource("17_ox0bs")]
+position = Vector2(996.1086, 495.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint74" parent="BackgroundProps/Props" index="117" instance=ExtResource("17_ox0bs")]
+position = Vector2(1016.1086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint75" parent="BackgroundProps/Props" index="118" instance=ExtResource("17_ox0bs")]
+position = Vector2(996.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint76" parent="BackgroundProps/Props" index="119" instance=ExtResource("17_ox0bs")]
+position = Vector2(1016.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough9" parent="BackgroundProps/Props" index="120" instance=ExtResource("11_nshy8")]
+position = Vector2(1156.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough10" parent="BackgroundProps/Props" index="121" instance=ExtResource("11_nshy8")]
+position = Vector2(1201.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough11" parent="BackgroundProps/Props" index="122" instance=ExtResource("15_6rp8x")]
+position = Vector2(1156.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough12" parent="BackgroundProps/Props" index="123" instance=ExtResource("15_6rp8x")]
+position = Vector2(1200.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough5" parent="BackgroundProps/Props" index="124" instance=ExtResource("11_nnhc8")]
+position = Vector2(1125.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough6" parent="BackgroundProps/Props" index="125" instance=ExtResource("12_vm5vj")]
+position = Vector2(1145.1086, 499.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough7" parent="BackgroundProps/Props" index="126" instance=ExtResource("12_vm5vj")]
+position = Vector2(1189.1086, 500.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough8" parent="BackgroundProps/Props" index="127" instance=ExtResource("13_nshy8")]
+position = Vector2(1168.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough13" parent="BackgroundProps/Props" index="128" instance=ExtResource("11_nshy8")]
+position = Vector2(1178.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough14" parent="BackgroundProps/Props" index="129" instance=ExtResource("14_ox0bs")]
+position = Vector2(1135.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough15" parent="BackgroundProps/Props" index="130" instance=ExtResource("14_ox0bs")]
+position = Vector2(1178.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough16" parent="BackgroundProps/Props" index="131" instance=ExtResource("15_6rp8x")]
+position = Vector2(1135.1086, 505.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint9" parent="BackgroundProps/Props" index="132" instance=ExtResource("17_ox0bs")]
+position = Vector2(1125.1086, 495.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint10" parent="BackgroundProps/Props" index="133" instance=ExtResource("17_ox0bs")]
+position = Vector2(1145.1086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint11" parent="BackgroundProps/Props" index="134" instance=ExtResource("17_ox0bs")]
+position = Vector2(1167.1086, 495.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint12" parent="BackgroundProps/Props" index="135" instance=ExtResource("17_ox0bs")]
+position = Vector2(1189.6086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint13" parent="BackgroundProps/Props" index="136" instance=ExtResource("17_ox0bs")]
+position = Vector2(1125.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint14" parent="BackgroundProps/Props" index="137" instance=ExtResource("17_ox0bs")]
+position = Vector2(1167.1085, 505.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint15" parent="BackgroundProps/Props" index="138" instance=ExtResource("17_ox0bs")]
+position = Vector2(1189.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint16" parent="BackgroundProps/Props" index="139" instance=ExtResource("17_ox0bs")]
+position = Vector2(1145.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough41" parent="BackgroundProps/Props" index="140" instance=ExtResource("11_nnhc8")]
+position = Vector2(955.10864, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough42" parent="BackgroundProps/Props" index="141" instance=ExtResource("12_vm5vj")]
+position = Vector2(975.10864, 499.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough81" parent="BackgroundProps/Props" index="142" instance=ExtResource("14_ox0bs")]
+position = Vector2(965.10864, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough82" parent="BackgroundProps/Props" index="143" instance=ExtResource("15_6rp8x")]
+position = Vector2(965.10864, 505.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint81" parent="BackgroundProps/Props" index="144" instance=ExtResource("17_ox0bs")]
+position = Vector2(955.10864, 495.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint82" parent="BackgroundProps/Props" index="145" instance=ExtResource("17_ox0bs")]
+position = Vector2(975.10864, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint83" parent="BackgroundProps/Props" index="146" instance=ExtResource("17_ox0bs")]
+position = Vector2(955.10864, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint84" parent="BackgroundProps/Props" index="147" instance=ExtResource("17_ox0bs")]
+position = Vector2(975.10864, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough17" parent="BackgroundProps/Props" index="148" instance=ExtResource("11_nshy8")]
+position = Vector2(1244.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough18" parent="BackgroundProps/Props" index="149" instance=ExtResource("11_nshy8")]
+position = Vector2(1289.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough19" parent="BackgroundProps/Props" index="150" instance=ExtResource("15_6rp8x")]
+position = Vector2(1244.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough20" parent="BackgroundProps/Props" index="151" instance=ExtResource("15_6rp8x")]
+position = Vector2(1288.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough9" parent="BackgroundProps/Props" index="152" instance=ExtResource("11_nnhc8")]
+position = Vector2(1213.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough10" parent="BackgroundProps/Props" index="153" instance=ExtResource("12_vm5vj")]
+position = Vector2(1233.1086, 499.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough11" parent="BackgroundProps/Props" index="154" instance=ExtResource("12_vm5vj")]
+position = Vector2(1277.1086, 500.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough12" parent="BackgroundProps/Props" index="155" instance=ExtResource("13_nshy8")]
+position = Vector2(1256.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough21" parent="BackgroundProps/Props" index="156" instance=ExtResource("11_nshy8")]
+position = Vector2(1266.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough22" parent="BackgroundProps/Props" index="157" instance=ExtResource("14_ox0bs")]
+position = Vector2(1223.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough23" parent="BackgroundProps/Props" index="158" instance=ExtResource("14_ox0bs")]
+position = Vector2(1266.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough24" parent="BackgroundProps/Props" index="159" instance=ExtResource("15_6rp8x")]
+position = Vector2(1223.1086, 505.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint17" parent="BackgroundProps/Props" index="160" instance=ExtResource("17_ox0bs")]
+position = Vector2(1213.1086, 495.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint18" parent="BackgroundProps/Props" index="161" instance=ExtResource("17_ox0bs")]
+position = Vector2(1233.1086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint19" parent="BackgroundProps/Props" index="162" instance=ExtResource("17_ox0bs")]
+position = Vector2(1255.1086, 495.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint20" parent="BackgroundProps/Props" index="163" instance=ExtResource("17_ox0bs")]
+position = Vector2(1277.6086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint21" parent="BackgroundProps/Props" index="164" instance=ExtResource("17_ox0bs")]
+position = Vector2(1213.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint22" parent="BackgroundProps/Props" index="165" instance=ExtResource("17_ox0bs")]
+position = Vector2(1255.1085, 505.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint23" parent="BackgroundProps/Props" index="166" instance=ExtResource("17_ox0bs")]
+position = Vector2(1277.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint24" parent="BackgroundProps/Props" index="167" instance=ExtResource("17_ox0bs")]
+position = Vector2(1233.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough25" parent="BackgroundProps/Props" index="168" instance=ExtResource("11_nshy8")]
+position = Vector2(1332.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough26" parent="BackgroundProps/Props" index="169" instance=ExtResource("11_nshy8")]
+position = Vector2(1377.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough27" parent="BackgroundProps/Props" index="170" instance=ExtResource("15_6rp8x")]
+position = Vector2(1332.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough28" parent="BackgroundProps/Props" index="171" instance=ExtResource("15_6rp8x")]
+position = Vector2(1376.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough13" parent="BackgroundProps/Props" index="172" instance=ExtResource("11_nnhc8")]
+position = Vector2(1301.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough14" parent="BackgroundProps/Props" index="173" instance=ExtResource("12_vm5vj")]
+position = Vector2(1321.1086, 499.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough15" parent="BackgroundProps/Props" index="174" instance=ExtResource("12_vm5vj")]
+position = Vector2(1365.1086, 500.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough16" parent="BackgroundProps/Props" index="175" instance=ExtResource("13_nshy8")]
+position = Vector2(1344.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough29" parent="BackgroundProps/Props" index="176" instance=ExtResource("11_nshy8")]
+position = Vector2(1354.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough30" parent="BackgroundProps/Props" index="177" instance=ExtResource("14_ox0bs")]
+position = Vector2(1311.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough31" parent="BackgroundProps/Props" index="178" instance=ExtResource("14_ox0bs")]
+position = Vector2(1354.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough32" parent="BackgroundProps/Props" index="179" instance=ExtResource("15_6rp8x")]
+position = Vector2(1311.1086, 505.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint25" parent="BackgroundProps/Props" index="180" instance=ExtResource("17_ox0bs")]
+position = Vector2(1301.1086, 495.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint26" parent="BackgroundProps/Props" index="181" instance=ExtResource("17_ox0bs")]
+position = Vector2(1321.1086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint27" parent="BackgroundProps/Props" index="182" instance=ExtResource("17_ox0bs")]
+position = Vector2(1343.1086, 495.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint28" parent="BackgroundProps/Props" index="183" instance=ExtResource("17_ox0bs")]
+position = Vector2(1365.6086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint29" parent="BackgroundProps/Props" index="184" instance=ExtResource("17_ox0bs")]
+position = Vector2(1301.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint30" parent="BackgroundProps/Props" index="185" instance=ExtResource("17_ox0bs")]
+position = Vector2(1343.1085, 505.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint31" parent="BackgroundProps/Props" index="186" instance=ExtResource("17_ox0bs")]
+position = Vector2(1365.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint32" parent="BackgroundProps/Props" index="187" instance=ExtResource("17_ox0bs")]
+position = Vector2(1321.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough33" parent="BackgroundProps/Props" index="188" instance=ExtResource("11_nshy8")]
+position = Vector2(1419.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough34" parent="BackgroundProps/Props" index="189" instance=ExtResource("11_nshy8")]
+position = Vector2(1464.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough35" parent="BackgroundProps/Props" index="190" instance=ExtResource("15_6rp8x")]
+position = Vector2(1419.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough36" parent="BackgroundProps/Props" index="191" instance=ExtResource("15_6rp8x")]
+position = Vector2(1463.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough17" parent="BackgroundProps/Props" index="192" instance=ExtResource("11_nnhc8")]
+position = Vector2(1388.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough18" parent="BackgroundProps/Props" index="193" instance=ExtResource("12_vm5vj")]
+position = Vector2(1408.2173, 500.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough19" parent="BackgroundProps/Props" index="194" instance=ExtResource("12_vm5vj")]
+position = Vector2(1452.2173, 501.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough20" parent="BackgroundProps/Props" index="195" instance=ExtResource("13_nshy8")]
+position = Vector2(1431.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough37" parent="BackgroundProps/Props" index="196" instance=ExtResource("11_nshy8")]
+position = Vector2(1441.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough38" parent="BackgroundProps/Props" index="197" instance=ExtResource("14_ox0bs")]
+position = Vector2(1398.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough39" parent="BackgroundProps/Props" index="198" instance=ExtResource("14_ox0bs")]
+position = Vector2(1441.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough40" parent="BackgroundProps/Props" index="199" instance=ExtResource("15_6rp8x")]
+position = Vector2(1398.2173, 506.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint33" parent="BackgroundProps/Props" index="200" instance=ExtResource("17_ox0bs")]
+position = Vector2(1388.2173, 496.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint34" parent="BackgroundProps/Props" index="201" instance=ExtResource("17_ox0bs")]
+position = Vector2(1408.2173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint35" parent="BackgroundProps/Props" index="202" instance=ExtResource("17_ox0bs")]
+position = Vector2(1430.2173, 496.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint36" parent="BackgroundProps/Props" index="203" instance=ExtResource("17_ox0bs")]
+position = Vector2(1452.7173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint37" parent="BackgroundProps/Props" index="204" instance=ExtResource("17_ox0bs")]
+position = Vector2(1388.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint38" parent="BackgroundProps/Props" index="205" instance=ExtResource("17_ox0bs")]
+position = Vector2(1430.217, 506.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint39" parent="BackgroundProps/Props" index="206" instance=ExtResource("17_ox0bs")]
+position = Vector2(1452.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint40" parent="BackgroundProps/Props" index="207" instance=ExtResource("17_ox0bs")]
+position = Vector2(1408.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough41" parent="BackgroundProps/Props" index="208" instance=ExtResource("11_nshy8")]
+position = Vector2(1507.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough42" parent="BackgroundProps/Props" index="209" instance=ExtResource("11_nshy8")]
+position = Vector2(1552.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough43" parent="BackgroundProps/Props" index="210" instance=ExtResource("15_6rp8x")]
+position = Vector2(1507.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough44" parent="BackgroundProps/Props" index="211" instance=ExtResource("15_6rp8x")]
+position = Vector2(1551.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough21" parent="BackgroundProps/Props" index="212" instance=ExtResource("11_nnhc8")]
+position = Vector2(1476.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough22" parent="BackgroundProps/Props" index="213" instance=ExtResource("12_vm5vj")]
+position = Vector2(1496.2173, 500.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough23" parent="BackgroundProps/Props" index="214" instance=ExtResource("12_vm5vj")]
+position = Vector2(1540.2173, 501.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough24" parent="BackgroundProps/Props" index="215" instance=ExtResource("13_nshy8")]
+position = Vector2(1519.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough45" parent="BackgroundProps/Props" index="216" instance=ExtResource("11_nshy8")]
+position = Vector2(1529.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough46" parent="BackgroundProps/Props" index="217" instance=ExtResource("14_ox0bs")]
+position = Vector2(1486.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough47" parent="BackgroundProps/Props" index="218" instance=ExtResource("14_ox0bs")]
+position = Vector2(1529.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough48" parent="BackgroundProps/Props" index="219" instance=ExtResource("15_6rp8x")]
+position = Vector2(1486.2173, 506.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint41" parent="BackgroundProps/Props" index="220" instance=ExtResource("17_ox0bs")]
+position = Vector2(1476.2173, 496.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint42" parent="BackgroundProps/Props" index="221" instance=ExtResource("17_ox0bs")]
+position = Vector2(1496.2173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint43" parent="BackgroundProps/Props" index="222" instance=ExtResource("17_ox0bs")]
+position = Vector2(1518.2173, 496.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint44" parent="BackgroundProps/Props" index="223" instance=ExtResource("17_ox0bs")]
+position = Vector2(1540.7173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint45" parent="BackgroundProps/Props" index="224" instance=ExtResource("17_ox0bs")]
+position = Vector2(1476.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint46" parent="BackgroundProps/Props" index="225" instance=ExtResource("17_ox0bs")]
+position = Vector2(1518.217, 506.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint47" parent="BackgroundProps/Props" index="226" instance=ExtResource("17_ox0bs")]
+position = Vector2(1540.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint48" parent="BackgroundProps/Props" index="227" instance=ExtResource("17_ox0bs")]
+position = Vector2(1496.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough49" parent="BackgroundProps/Props" index="228" instance=ExtResource("11_nshy8")]
+position = Vector2(1593.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough50" parent="BackgroundProps/Props" index="229" instance=ExtResource("11_nshy8")]
+position = Vector2(1638.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough51" parent="BackgroundProps/Props" index="230" instance=ExtResource("15_6rp8x")]
+position = Vector2(1593.1086, 505.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough52" parent="BackgroundProps/Props" index="231" instance=ExtResource("15_6rp8x")]
+position = Vector2(1637.1086, 495.98807)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough25" parent="BackgroundProps/Props" index="232" instance=ExtResource("11_nnhc8")]
+position = Vector2(1562.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough26" parent="BackgroundProps/Props" index="233" instance=ExtResource("12_vm5vj")]
+position = Vector2(1582.1086, 499.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough27" parent="BackgroundProps/Props" index="234" instance=ExtResource("12_vm5vj")]
+position = Vector2(1626.1086, 500.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough28" parent="BackgroundProps/Props" index="235" instance=ExtResource("13_nshy8")]
+position = Vector2(1605.1086, 499.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough53" parent="BackgroundProps/Props" index="236" instance=ExtResource("11_nshy8")]
+position = Vector2(1615.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough54" parent="BackgroundProps/Props" index="237" instance=ExtResource("14_ox0bs")]
+position = Vector2(1572.1086, 495.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough55" parent="BackgroundProps/Props" index="238" instance=ExtResource("14_ox0bs")]
+position = Vector2(1615.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough56" parent="BackgroundProps/Props" index="239" instance=ExtResource("15_6rp8x")]
+position = Vector2(1572.1086, 505.98813)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint49" parent="BackgroundProps/Props" index="240" instance=ExtResource("17_ox0bs")]
+position = Vector2(1562.1086, 495.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint50" parent="BackgroundProps/Props" index="241" instance=ExtResource("17_ox0bs")]
+position = Vector2(1582.1086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint51" parent="BackgroundProps/Props" index="242" instance=ExtResource("17_ox0bs")]
+position = Vector2(1604.1086, 495.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint52" parent="BackgroundProps/Props" index="243" instance=ExtResource("17_ox0bs")]
+position = Vector2(1626.6086, 496.4881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint53" parent="BackgroundProps/Props" index="244" instance=ExtResource("17_ox0bs")]
+position = Vector2(1562.1086, 505.98807)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint54" parent="BackgroundProps/Props" index="245" instance=ExtResource("17_ox0bs")]
+position = Vector2(1604.1085, 505.9881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint55" parent="BackgroundProps/Props" index="246" instance=ExtResource("17_ox0bs")]
+position = Vector2(1626.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint56" parent="BackgroundProps/Props" index="247" instance=ExtResource("17_ox0bs")]
+position = Vector2(1582.1086, 506.4881)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough57" parent="BackgroundProps/Props" index="248" instance=ExtResource("11_nshy8")]
+position = Vector2(1680.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough58" parent="BackgroundProps/Props" index="249" instance=ExtResource("11_nshy8")]
+position = Vector2(1725.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough59" parent="BackgroundProps/Props" index="250" instance=ExtResource("15_6rp8x")]
+position = Vector2(1680.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough60" parent="BackgroundProps/Props" index="251" instance=ExtResource("15_6rp8x")]
+position = Vector2(1724.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough29" parent="BackgroundProps/Props" index="252" instance=ExtResource("11_nnhc8")]
+position = Vector2(1649.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough30" parent="BackgroundProps/Props" index="253" instance=ExtResource("12_vm5vj")]
+position = Vector2(1669.2173, 500.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough31" parent="BackgroundProps/Props" index="254" instance=ExtResource("12_vm5vj")]
+position = Vector2(1713.2173, 501.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough32" parent="BackgroundProps/Props" index="255" instance=ExtResource("13_nshy8")]
+position = Vector2(1692.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough61" parent="BackgroundProps/Props" index="256" instance=ExtResource("11_nshy8")]
+position = Vector2(1702.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough62" parent="BackgroundProps/Props" index="257" instance=ExtResource("14_ox0bs")]
+position = Vector2(1659.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough63" parent="BackgroundProps/Props" index="258" instance=ExtResource("14_ox0bs")]
+position = Vector2(1702.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough64" parent="BackgroundProps/Props" index="259" instance=ExtResource("15_6rp8x")]
+position = Vector2(1659.2173, 506.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint57" parent="BackgroundProps/Props" index="260" instance=ExtResource("17_ox0bs")]
+position = Vector2(1649.2173, 496.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint58" parent="BackgroundProps/Props" index="261" instance=ExtResource("17_ox0bs")]
+position = Vector2(1669.2173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint59" parent="BackgroundProps/Props" index="262" instance=ExtResource("17_ox0bs")]
+position = Vector2(1691.2173, 496.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint60" parent="BackgroundProps/Props" index="263" instance=ExtResource("17_ox0bs")]
+position = Vector2(1713.7173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint61" parent="BackgroundProps/Props" index="264" instance=ExtResource("17_ox0bs")]
+position = Vector2(1649.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint62" parent="BackgroundProps/Props" index="265" instance=ExtResource("17_ox0bs")]
+position = Vector2(1691.217, 506.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint63" parent="BackgroundProps/Props" index="266" instance=ExtResource("17_ox0bs")]
+position = Vector2(1713.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint64" parent="BackgroundProps/Props" index="267" instance=ExtResource("17_ox0bs")]
+position = Vector2(1669.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough65" parent="BackgroundProps/Props" index="268" instance=ExtResource("11_nshy8")]
+position = Vector2(1768.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough66" parent="BackgroundProps/Props" index="269" instance=ExtResource("11_nshy8")]
+position = Vector2(1813.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough67" parent="BackgroundProps/Props" index="270" instance=ExtResource("15_6rp8x")]
+position = Vector2(1768.2173, 506.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough68" parent="BackgroundProps/Props" index="271" instance=ExtResource("15_6rp8x")]
+position = Vector2(1812.2173, 496.36307)
+rotation = -0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough33" parent="BackgroundProps/Props" index="272" instance=ExtResource("11_nnhc8")]
+position = Vector2(1737.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough34" parent="BackgroundProps/Props" index="273" instance=ExtResource("12_vm5vj")]
+position = Vector2(1757.2173, 500.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough35" parent="BackgroundProps/Props" index="274" instance=ExtResource("12_vm5vj")]
+position = Vector2(1801.2173, 501.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough39" parent="BackgroundProps/Props" index="275" instance=ExtResource("12_vm5vj")]
+position = Vector2(1824, 500.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough40" parent="BackgroundProps/Props" index="276" instance=ExtResource("12_vm5vj")]
+position = Vector2(1846, 500.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostRough36" parent="BackgroundProps/Props" index="277" instance=ExtResource("13_nshy8")]
+position = Vector2(1780.2173, 500.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough69" parent="BackgroundProps/Props" index="278" instance=ExtResource("11_nshy8")]
+position = Vector2(1790.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough78" parent="BackgroundProps/Props" index="279" instance=ExtResource("11_nshy8")]
+position = Vector2(1835, 506.6131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough70" parent="BackgroundProps/Props" index="280" instance=ExtResource("14_ox0bs")]
+position = Vector2(1747.2173, 496.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough71" parent="BackgroundProps/Props" index="281" instance=ExtResource("14_ox0bs")]
+position = Vector2(1790.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough77" parent="BackgroundProps/Props" index="282" instance=ExtResource("14_ox0bs")]
+position = Vector2(1835, 496.6131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchRailRough72" parent="BackgroundProps/Props" index="283" instance=ExtResource("15_6rp8x")]
+position = Vector2(1747.2173, 506.36313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint65" parent="BackgroundProps/Props" index="284" instance=ExtResource("17_ox0bs")]
+position = Vector2(1737.2173, 496.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint66" parent="BackgroundProps/Props" index="285" instance=ExtResource("17_ox0bs")]
+position = Vector2(1757.2173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint67" parent="BackgroundProps/Props" index="286" instance=ExtResource("17_ox0bs")]
+position = Vector2(1779.2173, 496.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint68" parent="BackgroundProps/Props" index="287" instance=ExtResource("17_ox0bs")]
+position = Vector2(1801.7173, 496.8631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint77" parent="BackgroundProps/Props" index="288" instance=ExtResource("17_ox0bs")]
+position = Vector2(1824.0001, 496.6131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint79" parent="BackgroundProps/Props" index="289" instance=ExtResource("17_ox0bs")]
+position = Vector2(1846.5, 497.1131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint69" parent="BackgroundProps/Props" index="290" instance=ExtResource("17_ox0bs")]
+position = Vector2(1737.2173, 506.36307)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint70" parent="BackgroundProps/Props" index="291" instance=ExtResource("17_ox0bs")]
+position = Vector2(1779.217, 506.3631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint71" parent="BackgroundProps/Props" index="292" instance=ExtResource("17_ox0bs")]
+position = Vector2(1801.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint78" parent="BackgroundProps/Props" index="293" instance=ExtResource("17_ox0bs")]
+position = Vector2(1824.0001, 506.61313)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint80" parent="BackgroundProps/Props" index="294" instance=ExtResource("17_ox0bs")]
+position = Vector2(1846.5, 507.1131)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchJoint72" parent="BackgroundProps/Props" index="295" instance=ExtResource("17_ox0bs")]
+position = Vector2(1757.2173, 506.8631)
+rotation = 0.034906585
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat3" parent="BackgroundProps/Props" index="296" instance=ExtResource("74_echf5")]
+position = Vector2(1051.625, 491.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat6" parent="BackgroundProps/Props" index="297" instance=ExtResource("74_echf5")]
+position = Vector2(1024, 491.6131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat2" parent="BackgroundProps/Props" index="298" instance=ExtResource("73_5i11f")]
+position = Vector2(1069.625, 493.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat4" parent="BackgroundProps/Props" index="299" instance=ExtResource("75_xdy3b")]
+position = Vector2(1030.625, 492.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat8" parent="BackgroundProps/Props" index="300" instance=ExtResource("75_xdy3b")]
+position = Vector2(1089, 493.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat5" parent="BackgroundProps/Props" index="301" instance=ExtResource("75_5i11f")]
+position = Vector2(1063.625, 494.98813)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat1" parent="BackgroundProps/Props" index="302" instance=ExtResource("72_b6b0b")]
+position = Vector2(1038.625, 493.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat9" parent="BackgroundProps/Props" index="303" instance=ExtResource("74_echf5")]
+position = Vector2(1010.625, 491.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat10" parent="BackgroundProps/Props" index="304" instance=ExtResource("74_echf5")]
+position = Vector2(983, 490.9881)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat11" parent="BackgroundProps/Props" index="305" instance=ExtResource("75_xdy3b")]
+position = Vector2(989.625, 492.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat12" parent="BackgroundProps/Props" index="306" instance=ExtResource("75_5i11f")]
+position = Vector2(1022.625, 494.36313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat13" parent="BackgroundProps/Props" index="307" instance=ExtResource("72_b6b0b")]
+position = Vector2(997.625, 493.3631)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWheat7" parent="BackgroundProps/Props" index="308" instance=ExtResource("72_b6b0b")]
+position = Vector2(1080, 494.6131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageHayBale3" parent="BackgroundProps/Props" index="309" instance=ExtResource("23_jnxuy")]
+position = Vector2(1186, 480.6131)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageHayBale" parent="BackgroundProps/Props" index="310" instance=ExtResource("23_jnxuy")]
+position = Vector2(1171, 501.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageHayBale2" parent="BackgroundProps/Props" index="311" instance=ExtResource("23_jnxuy")]
+position = Vector2(1201, 501.61313)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageFenchPostMortise" parent="BackgroundProps/Props" index="312" instance=ExtResource("2_8bsq4")]
+position = Vector2(-347, 560)
+
+[node name="VillageFenchPostMortise29" parent="BackgroundProps/Props" index="313" instance=ExtResource("2_8bsq4")]
+position = Vector2(-362, 528)
+
+[node name="VillageFenchPostMortise30" parent="BackgroundProps/Props" index="314" instance=ExtResource("2_8bsq4")]
+position = Vector2(-384, 528)
+
+[node name="VillageFenchPostMortise31" parent="BackgroundProps/Props" index="315" instance=ExtResource("2_8bsq4")]
+position = Vector2(-406, 528)
+
+[node name="VillageFenchPostMortise32" parent="BackgroundProps/Props" index="316" instance=ExtResource("2_8bsq4")]
+position = Vector2(-428, 528)
+
+[node name="VillageFenchPostMortise33" parent="BackgroundProps/Props" index="317" instance=ExtResource("2_8bsq4")]
+position = Vector2(-450, 528)
+
+[node name="VillageFenchPostMortise34" parent="BackgroundProps/Props" index="318" instance=ExtResource("2_8bsq4")]
+position = Vector2(-472, 528)
+
+[node name="VillageFenchPostMortise35" parent="BackgroundProps/Props" index="319" instance=ExtResource("2_8bsq4")]
+position = Vector2(-494, 528)
+
+[node name="VillageFenchPostMortise36" parent="BackgroundProps/Props" index="320" instance=ExtResource("2_8bsq4")]
+position = Vector2(-516, 528)
+
+[node name="VillageFenchPostMortise37" parent="BackgroundProps/Props" index="321" instance=ExtResource("2_8bsq4")]
+position = Vector2(-538, 528)
+
+[node name="VillageFenchPostMortise38" parent="BackgroundProps/Props" index="322" instance=ExtResource("2_8bsq4")]
+position = Vector2(-560, 528)
+
+[node name="VillageFenchPostMortise39" parent="BackgroundProps/Props" index="323" instance=ExtResource("2_8bsq4")]
+position = Vector2(-582, 528)
+
+[node name="VillageFenchPostMortise40" parent="BackgroundProps/Props" index="324" instance=ExtResource("2_8bsq4")]
+position = Vector2(-604, 528)
+
+[node name="VillageFenchPostMortise41" parent="BackgroundProps/Props" index="325" instance=ExtResource("2_8bsq4")]
+position = Vector2(-626, 528)
+
+[node name="VillageFenchPostMortise2" parent="BackgroundProps/Props" index="326" instance=ExtResource("2_8bsq4")]
+position = Vector2(-325, 560)
+
+[node name="VillageFenchPostMortise3" parent="BackgroundProps/Props" index="327" instance=ExtResource("2_8bsq4")]
+position = Vector2(-303, 560)
+
+[node name="VillageFenchPostMortise4" parent="BackgroundProps/Props" index="328" instance=ExtResource("2_8bsq4")]
+position = Vector2(-281, 560)
+
+[node name="VillageFenchPostMortise5" parent="BackgroundProps/Props" index="329" instance=ExtResource("2_8bsq4")]
+position = Vector2(-259, 560)
+
+[node name="VillageFenchPostMortise6" parent="BackgroundProps/Props" index="330" instance=ExtResource("2_8bsq4")]
+position = Vector2(-237, 560)
+
+[node name="VillageFenchPostMortise7" parent="BackgroundProps/Props" index="331" instance=ExtResource("2_8bsq4")]
+position = Vector2(-215, 560)
+
+[node name="VillageFenchPostMortise8" parent="BackgroundProps/Props" index="332" instance=ExtResource("2_8bsq4")]
+position = Vector2(-193, 560)
+
+[node name="VillageFenchPostMortise9" parent="BackgroundProps/Props" index="333" instance=ExtResource("2_8bsq4")]
+position = Vector2(-171, 560)
+
+[node name="VillageFenchPostMortise10" parent="BackgroundProps/Props" index="334" instance=ExtResource("2_8bsq4")]
+position = Vector2(-149, 560)
+
+[node name="VillageFenchPostMortise11" parent="BackgroundProps/Props" index="335" instance=ExtResource("2_8bsq4")]
+position = Vector2(-127, 560)
+
+[node name="VillageFenchPostMortise12" parent="BackgroundProps/Props" index="336" instance=ExtResource("2_8bsq4")]
+position = Vector2(-105, 560)
+
+[node name="VillageFenchPostMortise13" parent="BackgroundProps/Props" index="337" instance=ExtResource("2_8bsq4")]
+position = Vector2(-83, 560)
+
+[node name="VillageFenchPostMortise14" parent="BackgroundProps/Props" index="338" instance=ExtResource("2_8bsq4")]
+position = Vector2(-61, 560)
+
+[node name="VillageFenchPostMortise15" parent="BackgroundProps/Props" index="339" instance=ExtResource("2_8bsq4")]
+position = Vector2(-39, 560)
+
+[node name="VillageFenchPostMortise16" parent="BackgroundProps/Props" index="340" instance=ExtResource("2_8bsq4")]
+position = Vector2(-17, 560)
+
+[node name="VillageFenchPostMortise17" parent="BackgroundProps/Props" index="341" instance=ExtResource("2_8bsq4")]
+position = Vector2(5, 560)
+
+[node name="VillageFenchPostMortise18" parent="BackgroundProps/Props" index="342" instance=ExtResource("2_8bsq4")]
+position = Vector2(27, 560)
+
+[node name="VillageFenchPostMortise19" parent="BackgroundProps/Props" index="343" instance=ExtResource("2_8bsq4")]
+position = Vector2(49, 560)
+
+[node name="VillageFenchPostMortise20" parent="BackgroundProps/Props" index="344" instance=ExtResource("2_8bsq4")]
+position = Vector2(71, 560)
+
+[node name="VillageFenchPostMortise21" parent="BackgroundProps/Props" index="345" instance=ExtResource("2_8bsq4")]
+position = Vector2(93, 560)
+
+[node name="VillageFenchPostMortise22" parent="BackgroundProps/Props" index="346" instance=ExtResource("2_8bsq4")]
+position = Vector2(115, 560)
+
+[node name="VillageFenchPostMortise23" parent="BackgroundProps/Props" index="347" instance=ExtResource("2_8bsq4")]
+position = Vector2(137, 560)
+
+[node name="VillageFenchPostMortise24" parent="BackgroundProps/Props" index="348" instance=ExtResource("2_8bsq4")]
+position = Vector2(159, 560)
+
+[node name="VillageFenchPostMortise25" parent="BackgroundProps/Props" index="349" instance=ExtResource("2_8bsq4")]
+position = Vector2(181, 560)
+
+[node name="VillageFenchPostMortise26" parent="BackgroundProps/Props" index="350" instance=ExtResource("2_8bsq4")]
+position = Vector2(203, 560)
+
+[node name="VillageFenchPostMortise27" parent="BackgroundProps/Props" index="351" instance=ExtResource("2_8bsq4")]
+position = Vector2(225, 560)
+
+[node name="VillageFenchPostMortise28" parent="BackgroundProps/Props" index="352" instance=ExtResource("2_8bsq4")]
+position = Vector2(247, 560)
+
+[node name="VillageHouseBrickDoor" parent="BackgroundProps/Props" index="353" instance=ExtResource("30_xkvbi")]
+position = Vector2(617, 425)
+scale = Vector2(0.5, 0.5)
+
+[node name="VillageRockBig" parent="BackgroundProps/Props" index="354" instance=ExtResource("13_lydh0")]
+position = Vector2(609, 506)
+scale = Vector2(0.5, 0.5)
+
+[node name="VillageRockSmall" parent="BackgroundProps/Props" index="355" instance=ExtResource("14_pcnsp")]
+position = Vector2(616, 509)
+scale = Vector2(0.5, 0.5)
+
+[node name="VillageRockMedium" parent="BackgroundProps/Props" index="356" instance=ExtResource("15_m1yhv")]
+position = Vector2(598, 508)
+scale = Vector2(0.5, 0.5)
+
+[node name="VillageClothesline" type="Node2D" parent="BackgroundProps/Props" index="357"]
+position = Vector2(-504, 509)
+metadata/_edit_group_ = true
+
+[node name="VillageClothesline1" parent="BackgroundProps/Props/VillageClothesline" index="0" instance=ExtResource("2_ajf7t")]
+position = Vector2(-47, -24.5)
+
+[node name="VillageClothesline2" parent="BackgroundProps/Props/VillageClothesline" index="1" instance=ExtResource("3_y34ak")]
+position = Vector2(42, -13)
+
+[node name="VillageClotheslinePole1" parent="BackgroundProps/Props/VillageClothesline" index="2" instance=ExtResource("2_url0e")]
+position = Vector2(-93, -0.5)
+
+[node name="VillageClotheslinePole3" parent="BackgroundProps/Props/VillageClothesline" index="3" instance=ExtResource("2_url0e")]
+position = Vector2(83, -1)
+
+[node name="VillageClotheslinePole2" parent="BackgroundProps/Props/VillageClothesline" index="4" instance=ExtResource("3_1bvyu")]
+position = Vector2(0, -0.5)
+
+[node name="VillageClothBanner" parent="BackgroundProps/Props/VillageClothesline" index="5" instance=ExtResource("6_jxyov")]
+position = Vector2(-50, 2)
+
+[node name="VillageSock" parent="BackgroundProps/Props/VillageClothesline" index="6" instance=ExtResource("7_q7844")]
+position = Vector2(15, -3)
+
+[node name="VillageSkirt" parent="BackgroundProps/Props/VillageClothesline" index="7" instance=ExtResource("8_apm5f")]
+position = Vector2(-15.000061, -11)
+rotation = -0.034906585
+
+[node name="VillageSleeveShirt" parent="BackgroundProps/Props/VillageClothesline" index="8" instance=ExtResource("9_8bsq4")]
+position = Vector2(61, 10)
+
+[node name="VillageClotheslinePin" parent="BackgroundProps/Props/VillageClothesline" index="9" instance=ExtResource("6_o7xun")]
+position = Vector2(-60, -18)
+
+[node name="VillageClotheslinePin8" parent="BackgroundProps/Props/VillageClothesline" index="10" instance=ExtResource("6_o7xun")]
+position = Vector2(-10, -22)
+
+[node name="VillageClotheslinePin7" parent="BackgroundProps/Props/VillageClothesline" index="11" instance=ExtResource("6_o7xun")]
+position = Vector2(-20, -20)
+
+[node name="VillageClotheslinePin4" parent="BackgroundProps/Props/VillageClothesline" index="12" instance=ExtResource("6_o7xun")]
+position = Vector2(14, -11)
+
+[node name="VillageClotheslinePin5" parent="BackgroundProps/Props/VillageClothesline" index="13" instance=ExtResource("6_o7xun")]
+position = Vector2(67, -2)
+
+[node name="VillageClotheslinePin6" parent="BackgroundProps/Props/VillageClothesline" index="14" instance=ExtResource("6_o7xun")]
+position = Vector2(55, -2)
+
+[node name="VillageClotheslinePin2" parent="BackgroundProps/Props/VillageClothesline" index="15" instance=ExtResource("6_o7xun")]
+position = Vector2(-40, -18)
+
+[node name="VillageHammer" parent="BackgroundProps/Props" index="358" instance=ExtResource("18_nvbp7")]
+position = Vector2(634.00006, 502)
+rotation = -1.0367255
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageAnvil" parent="BackgroundProps/Props" index="359" instance=ExtResource("18_6rykw")]
+position = Vector2(653, 506)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageClotheslinePin3" parent="BackgroundProps/Props" index="360" instance=ExtResource("6_o7xun")]
+position = Vector2(-490, 498)
+
+[node name="VillageCrate" parent="BackgroundProps/Props" index="361" instance=ExtResource("13_2awqr")]
+position = Vector2(434, 531)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageCrate2" parent="BackgroundProps/Props" index="362" instance=ExtResource("13_2awqr")]
+position = Vector2(487.00003, 499)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageCrate3" parent="BackgroundProps/Props" index="363" instance=ExtResource("13_2awqr")]
+position = Vector2(461.00003, 499.00003)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageXCrate" parent="BackgroundProps/Props" index="364" instance=ExtResource("7_3ag3b")]
+position = Vector2(464, 529)
+scale = Vector2(0.75, 0.75)
+
+[node name="LightPole5" type="Node2D" parent="BackgroundProps/Props" index="365"]
+position = Vector2(499, 476.00003)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="BackgroundProps/Props/LightPole5" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="BackgroundProps/Props/LightPole5" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="BackgroundProps/Props/LightPole5" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="BackgroundProps/Props/LightPole5" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="LightPole6" type="Node2D" parent="BackgroundProps/Props" index="366"]
+position = Vector2(-724, 444)
+scale = Vector2(-0.75, 0.75)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="BackgroundProps/Props/LightPole6" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="BackgroundProps/Props/LightPole6" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="BackgroundProps/Props/LightPole6" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="BackgroundProps/Props/LightPole6" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="VillageStairs7Steps" parent="BackgroundProps/Props" index="367" instance=ExtResource("18_hqely")]
+position = Vector2(-999.00006, 445.00003)
+scale = Vector2(1.2, 1.2)
+
+[node name="VillageStackedLogs" parent="BackgroundProps/Props" index="368" instance=ExtResource("47_vw7b0")]
+position = Vector2(802, 494)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWeaponRack" parent="BackgroundProps/Props" index="369" instance=ExtResource("30_hjhq0")]
+position = Vector2(729, 500.00003)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_group_ = true
+
+[node name="VillageSpear" parent="BackgroundProps/Props/VillageWeaponRack" index="0" instance=ExtResource("31_gjfyh")]
+position = Vector2(-5.333313, -10.666728)
+rotation = -1.5707964
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageSpear2" parent="BackgroundProps/Props/VillageWeaponRack" index="1" instance=ExtResource("31_gjfyh")]
+position = Vector2(6.666688, -10.666728)
+rotation = -1.5707964
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageSword" parent="BackgroundProps/Props/VillageWeaponRack" index="2" instance=ExtResource("32_nvbp7")]
+position = Vector2(-17.333334, -2.6667075)
+rotation = -1.5707964
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageBlade" parent="BackgroundProps/Props/VillageWeaponRack" index="3" instance=ExtResource("33_oa7j1")]
+position = Vector2(18.666666, -2.6667073)
+rotation = -1.5707964
+scale = Vector2(0.76, 0.76)
+
+[node name="VillageBannerPole" parent="BackgroundProps/Props" index="370" instance=ExtResource("52_12n5y")]
+position = Vector2(846, 479.00003)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageBanner" parent="BackgroundProps/Props/VillageBannerPole" index="0" instance=ExtResource("53_f21no")]
+position = Vector2(4.0650368e-05, -8.00006)
+
+[node name="VillageWoodenDefenseX" parent="BackgroundProps/Props" index="371" instance=ExtResource("64_pcnsp")]
+position = Vector2(871, 496.00003)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageWoodenDefenseX2" parent="BackgroundProps/Props" index="372" instance=ExtResource("64_pcnsp")]
+position = Vector2(886.00006, 496.00003)
+scale = Vector2(0.75, 0.75)
+
+[node name="VillageGrass1" parent="BackgroundProps/Props" index="373" instance=ExtResource("18_wkwxy")]
+position = Vector2(-531, 539)
+
+[node name="VillageGrass2" parent="BackgroundProps/Props" index="374" instance=ExtResource("19_t0jfg")]
+position = Vector2(-682, 506)
+
+[node name="VillageGrass3" parent="BackgroundProps/Props" index="375" instance=ExtResource("20_fqvw6")]
+position = Vector2(-752, 474)
+
+[node name="VillageGrass4" parent="BackgroundProps/Props" index="376" instance=ExtResource("21_gwkdq")]
+position = Vector2(-956, 474)
+
+[node name="VillageGrass5" parent="BackgroundProps/Props" index="377" instance=ExtResource("22_gwkdq")]
+position = Vector2(-389, 540)
+
+[node name="VillageGrass6" parent="BackgroundProps/Props" index="378" instance=ExtResource("23_ngfgd")]
+position = Vector2(-332, 571)
+
+[node name="VillageGrass7" parent="BackgroundProps/Props" index="379" instance=ExtResource("24_unrpw")]
+position = Vector2(-271, 572)
+
+[node name="VillageGrass8" parent="BackgroundProps/Props" index="380" instance=ExtResource("25_fbxfr")]
+position = Vector2(-611, 540)
+
+[node name="VillageGrass9" parent="BackgroundProps/Props" index="381" instance=ExtResource("25_fbxfr")]
+position = Vector2(-573, 540)
+
+[node name="VillageTileset" parent="BackgroundProps" index="1" instance=ExtResource("1_35upl")]
+tile_map_data = PackedByteArray("AAAYABEAAAAAAAQAAAAXABEAAAABAAEAAAAWABEAAAABAAEAAAAVABEAAAABAAEAAAAUABEAAAABAAEAAAATABEAAAABAAEAAAASABEAAAABAAEAAAARABEAAAABAAEAAAAQABEAAAABAAEAAAAPABEAAAACAAYAAAAOABEAAAABAAAAAAANABEAAAABAAAAAAAMABEAAAABAAYAAAALABEAAAABAAYAAAAKABEAAAABAAYAAAAJABEAAAABAAYAAAAIABEAAAAAAAAAAAAnABAAAAABAAYAAAAmABAAAAABAAYAAAAlABAAAAABAAAAAAAkABAAAAABAAAAAAAjABAAAAABAAAAAAAiABAAAAABAAYAAAAhABAAAAABAAAAAAAgABAAAAABAAAAAAAfABAAAAABAAYAAAAeABAAAAABAAAAAAAdABAAAAABAAAAAAAcABAAAAABAAYAAAAbABAAAAABAAAAAAAaABAAAAABAAYAAAAZABAAAAABAAYAAAAYABAAAAABAAYAAAAXABAAAAABAAAAAAAWABAAAAABAAAAAAAVABAAAAABAAYAAAAUABAAAAABAAAAAAATABAAAAABAAYAAAASABAAAAABAAYAAAARABAAAAABAAYAAAAQABAAAAABAAAAAAAPABAAAAAAAAAAAAAYABIAAAACAAIAAAAXABIAAAABAAQAAAAWABIAAAABAAQAAAAVABIAAAABAAQAAAAUABIAAAABAAIAAAATABIAAAABAAQAAAASABIAAAABAAQAAAARABIAAAABAAIAAAAQABIAAAABAAQAAAAPABIAAAABAAQAAAAOABIAAAABAAIAAAANABIAAAABAAQAAAAMABIAAAABAAIAAAALABIAAAABAAIAAAAKABIAAAABAAQAAAAJABIAAAABAAQAAAAIABIAAAAAAAIAAAAsABEAAAACAAIAAAAsABAAAAABAAYAAAArABEAAAABAAIAAAArABAAAAABAAAAAAAqABEAAAABAAIAAAAqABAAAAABAAAAAAApABEAAAABAAQAAAApABAAAAABAAYAAAAoABEAAAABAAQAAAAoABAAAAABAAAAAAAnABEAAAABAAIAAAAmABEAAAABAAQAAAAlABEAAAABAAIAAAAkABEAAAABAAIAAAAjABEAAAABAAQAAAAiABEAAAABAAQAAAAhABEAAAABAAIAAAAgABEAAAABAAIAAAAfABEAAAABAAQAAAAeABEAAAABAAQAAAAdABEAAAABAAQAAAAcABEAAAABAAQAAAAbABEAAAABAAIAAAAaABEAAAABAAIAAAAZABEAAAABAAIAAAAvABEAAAABAAQAAAAuABEAAAABAAQAAAAtABEAAAAAAAIAAAAvABAAAAABAAYAAAAuABAAAAABAAAAAAAtABAAAAABAAAAAAD0/xIAAAACAAIAAAD0/xEAAAACAAAAAADz/xIAAAABAAIAAADz/xEAAAABAAYAAADy/xIAAAABAAQAAADy/xEAAAABAAYAAADx/xIAAAABAAQAAADx/xEAAAABAAAAAADw/xIAAAABAAIAAADw/xEAAAABAAYAAADv/xIAAAABAAIAAADv/xEAAAABAAYAAADu/xIAAAABAAQAAADu/xEAAAABAAAAAADt/xIAAAABAAIAAADt/xEAAAABAAYAAADs/xIAAAABAAQAAADs/xEAAAABAAAAAADr/xIAAAABAAQAAADr/xEAAAAAAAYAAADq/xIAAAABAAIAAADq/xEAAAABAAEAAADp/xIAAAABAAIAAADp/xEAAAABAAEAAADo/xIAAAABAAQAAADo/xEAAAABAAEAAADn/xIAAAAAAAQAAADn/xEAAAABAAEAAADm/xIAAAABAAEAAADm/xEAAAABAAEAAADl/xIAAAABAAEAAADl/xEAAAABAAEAAADr/xAAAAACAAAAAADq/xAAAAABAAAAAADp/xAAAAAAAAYAAADo/xAAAAABAAEAAADn/xAAAAABAAEAAADm/xAAAAABAAEAAADl/xAAAAABAAEAAADk/xEAAAABAAEAAADk/xAAAAABAAEAAADj/xEAAAABAAEAAADj/xAAAAABAAEAAADi/xEAAAABAAEAAADi/xAAAAABAAEAAADh/xEAAAABAAEAAADh/xAAAAABAAEAAADg/xEAAAABAAEAAADg/xAAAAABAAEAAADf/xEAAAABAAEAAADf/xAAAAABAAEAAADe/xEAAAABAAEAAADe/xAAAAABAAEAAADd/xEAAAABAAEAAADd/xAAAAABAAEAAADc/xEAAAABAAEAAADc/xAAAAABAAEAAADb/xEAAAABAAEAAADb/xAAAAABAAEAAADa/xEAAAABAAEAAADZ/xEAAAABAAEAAADY/xEAAAABAAEAAADX/xEAAAABAAEAAADW/xEAAAABAAEAAADV/xEAAAABAAEAAADU/xEAAAABAAEAAADT/xEAAAACAAUAAADa/xAAAAABAAEAAADZ/xAAAAABAAEAAADY/xAAAAABAAEAAADX/xAAAAABAAEAAADX/xIAAAACAAQAAADW/xIAAAABAAQAAADV/xIAAAABAAQAAADU/xIAAAABAAQAAADT/xIAAAAAAAIAAADp/w8AAAACAAAAAADo/w8AAAABAAAAAADn/w8AAAABAAYAAADm/w8AAAABAAYAAADl/w8AAAABAAAAAADk/w8AAAABAAYAAADj/w8AAAABAAYAAADi/w8AAAABAAAAAADh/w8AAAABAAYAAADg/w8AAAABAAYAAADf/w8AAAABAAYAAADe/w8AAAABAAYAAADn/xMAAAACAAIAAADm/xMAAAABAAQAAADl/xMAAAABAAQAAADk/xMAAAABAAIAAADk/xIAAAABAAEAAADj/xMAAAABAAIAAADj/xIAAAABAAEAAADi/xMAAAABAAIAAADi/xIAAAABAAEAAADh/xMAAAABAAIAAADh/xIAAAABAAEAAADg/xMAAAABAAQAAADg/xIAAAABAAEAAADf/xMAAAABAAIAAADf/xIAAAABAAEAAADe/xMAAAABAAQAAADe/xIAAAABAAEAAADd/xMAAAABAAIAAADd/xIAAAABAAEAAADc/xMAAAABAAIAAADc/xIAAAABAAEAAADb/xMAAAABAAIAAADb/xIAAAABAAEAAADa/xMAAAABAAQAAADa/xIAAAABAAEAAADZ/xMAAAABAAQAAADZ/xIAAAABAAEAAADY/xMAAAABAAIAAADY/xIAAAABAAEAAADX/xMAAAAAAAIAAADd/w8AAAABAAYAAADc/w8AAAABAAAAAADb/w8AAAABAAYAAADa/w8AAAABAAYAAADZ/w8AAAABAAAAAADY/w8AAAABAAYAAADX/w8AAAABAAYAAADW/xAAAAABAAEAAADW/w8AAAABAAYAAADV/xAAAAACAAYAAADU/xAAAAABAAAAAADT/xAAAAABAAAAAADS/xAAAAABAAAAAADR/xAAAAABAAAAAADQ/xAAAAABAAYAAADP/xAAAAAAAAAAAADV/w8AAAAAAAAAAAA3ABAAAAABAAYAAAA2ABAAAAABAAYAAAA1ABAAAAABAAYAAAA0ABAAAAABAAYAAAAzABAAAAABAAAAAAAyABAAAAABAAYAAAAxABAAAAABAAYAAAAwABAAAAABAAYAAABBABEAAAABAAQAAABAABEAAAABAAQAAAA/ABEAAAABAAIAAAA+ABEAAAABAAQAAAA9ABEAAAABAAQAAAA8ABEAAAABAAIAAAA7ABEAAAABAAIAAAA6ABEAAAABAAIAAAA6ABAAAAABAAYAAAA5ABEAAAABAAQAAAA5ABAAAAABAAAAAAA4ABEAAAABAAQAAAA4ABAAAAABAAYAAAA3ABEAAAABAAIAAAA2ABEAAAABAAIAAAA1ABEAAAABAAQAAAA0ABEAAAABAAIAAAAzABEAAAABAAQAAAAyABEAAAABAAIAAAAxABEAAAABAAIAAAAwABEAAAABAAQAAAA7ABAAAAABAAYAAABCABEAAAABAAQAAABDABEAAAABAAIAAABEABEAAAABAAIAAABFABEAAAABAAQAAABGABEAAAABAAIAAABHABEAAAABAAQAAABHABAAAAABAAYAAABGABAAAAABAAYAAABFABAAAAABAAYAAABEABAAAAABAAAAAABDABAAAAABAAAAAABCABAAAAABAAAAAABBABAAAAABAAYAAABAABAAAAABAAYAAAA/ABAAAAABAAYAAAA+ABAAAAABAAAAAAA9ABAAAAABAAYAAAA8ABAAAAABAAYAAABNABEAAAACAAIAAABNABAAAAACAAAAAABMABEAAAABAAQAAABMABAAAAABAAYAAABLABEAAAABAAIAAABLABAAAAABAAAAAABKABEAAAABAAIAAABKABAAAAABAAAAAABJABEAAAABAAIAAABJABAAAAABAAYAAABIABEAAAABAAQAAABIABAAAAABAAYAAAA=")
+collision_enabled = false
+
+[node name="ForegroundProps" type="Node2D" parent="." index="3"]
+
+[node name="VillageTreeBig" parent="ForegroundProps" index="0" instance=ExtResource("2_ym2l8")]
+position = Vector2(1922, 464)
+
+[node name="VillageTreeBig2" parent="ForegroundProps" index="1" instance=ExtResource("2_ym2l8")]
+position = Vector2(346, 497)
+
+[node name="VillageTreeSmall" parent="ForegroundProps" index="2" instance=ExtResource("3_ar6db")]
+position = Vector2(2116, 476)
+
+[node name="VillageTreeSmall2" parent="ForegroundProps" index="3" instance=ExtResource("3_ar6db")]
+position = Vector2(-1838, 477)
+
+[node name="VillageBushBig" parent="ForegroundProps" index="4" instance=ExtResource("2_iaf4j")]
+position = Vector2(-1665, 526)
+
+[node name="VillageBushMedium" parent="ForegroundProps" index="5" instance=ExtResource("3_ym2l8")]
+position = Vector2(2005, 527)
+
+[node name="VillageBushSmall" parent="ForegroundProps" index="6" instance=ExtResource("2_g85gi")]
+position = Vector2(2187, 530)
+
+[node name="VillageHouseBrick" parent="ForegroundProps" index="7" instance=ExtResource("3_1dxqi")]
+position = Vector2(-88, 443.00003)
+
+[node name="VillageHouse1" parent="ForegroundProps" index="8" instance=ExtResource("23_ce7no")]
+position = Vector2(1473, 411)
+
+[node name="VillageHouse2" parent="ForegroundProps" index="9" instance=ExtResource("24_iavqy")]
+position = Vector2(-1239, 360)
+
+[node name="VillageFenchPostMortise" parent="ForegroundProps" index="10" instance=ExtResource("2_8bsq4")]
+position = Vector2(-626, 544)
+
+[node name="VillageFenchPostMortise2" parent="ForegroundProps" index="11" instance=ExtResource("2_8bsq4")]
+position = Vector2(-626, 560)
+
+[node name="VillageFenchPostMortise3" parent="ForegroundProps" index="12" instance=ExtResource("2_8bsq4")]
+position = Vector2(247, 560)
+
+[node name="VillageSunflower2" parent="ForegroundProps" index="13" instance=ExtResource("22_sfqk0")]
+position = Vector2(-589, 546)
+
+[node name="VillageSunflower4" parent="ForegroundProps" index="14" instance=ExtResource("22_sfqk0")]
+position = Vector2(-542, 547)
+
+[node name="VillageSunflower3" parent="ForegroundProps" index="15" instance=ExtResource("23_tq1v7")]
+position = Vector2(-559, 548)
+
+[node name="VillageSunflower1" parent="ForegroundProps" index="16" instance=ExtResource("24_mxmy5")]
+position = Vector2(-576, 548)
+
+[node name="VillageSunflower5" parent="ForegroundProps" index="17" instance=ExtResource("24_mxmy5")]
+position = Vector2(-530, 549)
+
+[node name="VillagePumpkinBig" parent="ForegroundProps" index="18" instance=ExtResource("37_eh3rk")]
+position = Vector2(1324, 529.6131)
+
+[node name="VillagePumpkinSmall" parent="ForegroundProps" index="19" instance=ExtResource("67_echf5")]
+position = Vector2(1294, 533.6131)
+
+[node name="VillagePumpkinSmall2" parent="ForegroundProps" index="20" instance=ExtResource("67_echf5")]
+position = Vector2(1309, 533.6131)
+
+[node name="VillageWell" parent="ForegroundProps" index="21" instance=ExtResource("1_q5nrs")]
+position = Vector2(-402, 531)
+
+[node name="VillageWoodenBucket" parent="ForegroundProps" index="22" instance=ExtResource("2_8eiqh")]
+position = Vector2(-453, 564)
+
+[node name="NoticeBoard" type="Node2D" parent="ForegroundProps" index="23"]
+position = Vector2(-1226, 514)
+metadata/_edit_group_ = true
+
+[node name="VillageNoticeBoard" parent="ForegroundProps/NoticeBoard" index="0" instance=ExtResource("2_sq3sw")]
+
+[node name="VillageNoticePaper4" parent="ForegroundProps/NoticeBoard" index="1" instance=ExtResource("6_3ag3b")]
+position = Vector2(19, -16)
+
+[node name="VillageNoticePaper1" parent="ForegroundProps/NoticeBoard" index="2" instance=ExtResource("3_0btfk")]
+position = Vector2(6, -1)
+
+[node name="VillageNoticePaper2" parent="ForegroundProps/NoticeBoard" index="3" instance=ExtResource("4_la0qa")]
+position = Vector2(-9, -16)
+
+[node name="VillageNoticePaper3" parent="ForegroundProps/NoticeBoard" index="4" instance=ExtResource("5_ytdmm")]
+position = Vector2(-21, 0)
+
+[node name="VillageBench" parent="ForegroundProps" index="24" instance=ExtResource("7_nbra3")]
+position = Vector2(175, 558)
+
+[node name="VillageTableWineMug" type="Node2D" parent="ForegroundProps" index="25"]
+position = Vector2(-957, 531)
+metadata/_edit_group_ = true
+
+[node name="VillageWoodenTable" parent="ForegroundProps/VillageTableWineMug" index="0" instance=ExtResource("8_7wo7h")]
+
+[node name="VillageWineBottle" parent="ForegroundProps/VillageTableWineMug" index="1" instance=ExtResource("9_67k71")]
+position = Vector2(-14, -23)
+
+[node name="VillageMug" parent="ForegroundProps/VillageTableWineMug" index="2" instance=ExtResource("9_5jo4k")]
+position = Vector2(10, -19)
+
+[node name="VillageChair" parent="ForegroundProps/VillageTableWineMug" index="3" instance=ExtResource("9_7wo7h")]
+position = Vector2(-51, -4.5)
+
+[node name="VillageChair2" parent="ForegroundProps/VillageTableWineMug" index="4" instance=ExtResource("9_7wo7h")]
+position = Vector2(51, -4.5)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="VillageFenchPostRough2" parent="ForegroundProps" index="26" instance=ExtResource("12_vm5vj")]
+position = Vector2(954.99994, 512.61304)
+scale = Vector2(0.85, 0.85)
+
+[node name="VillageFenchPostRough1" parent="ForegroundProps" index="27" instance=ExtResource("11_nnhc8")]
+position = Vector2(954, 527.6131)
+
+[node name="VillageFenchPostRough3" parent="ForegroundProps" index="28" instance=ExtResource("12_vm5vj")]
+position = Vector2(1845.9999, 515.6131)
+scale = Vector2(0.85, 0.85)
+
+[node name="VillageFenchPostRough4" parent="ForegroundProps" index="29" instance=ExtResource("11_nnhc8")]
+position = Vector2(1846, 527.6131)
+
+[node name="VillageScarecrow" parent="ForegroundProps" index="30" instance=ExtResource("85_xdy3b")]
+position = Vector2(1036, 499.61307)
+rotation = -0.052359883
+
+[node name="VillageHayPile" parent="ForegroundProps" index="31" instance=ExtResource("80_57rwu")]
+position = Vector2(1204.0001, 522.61316)
+scale = Vector2(1.3, 1.3)
+
+[node name="VillagePitchfork" parent="ForegroundProps" index="32" instance=ExtResource("25_amsgc")]
+position = Vector2(1190, 510.61304)
+rotation = 2.4678955
+
+[node name="VillageHayPile2" parent="ForegroundProps" index="33" instance=ExtResource("80_57rwu")]
+position = Vector2(1154, 527.6131)
+
+[node name="VillageWheat1" parent="ForegroundProps" index="34" instance=ExtResource("72_b6b0b")]
+position = Vector2(1033.5, 519.1131)
+
+[node name="VillageWheat2" parent="ForegroundProps" index="35" instance=ExtResource("73_5i11f")]
+position = Vector2(1061.5, 515.1131)
+
+[node name="VillageWheat3" parent="ForegroundProps" index="36" instance=ExtResource("74_echf5")]
+position = Vector2(1051.5, 516.1131)
+
+[node name="VillageWheat6" parent="ForegroundProps" index="37" instance=ExtResource("74_echf5")]
+position = Vector2(1091, 515.6131)
+
+[node name="VillageWheat5" parent="ForegroundProps" index="38" instance=ExtResource("75_5i11f")]
+position = Vector2(1079.5, 520.1131)
+
+[node name="VillageWheat4" parent="ForegroundProps" index="39" instance=ExtResource("75_xdy3b")]
+position = Vector2(1026.5, 518.1131)
+
+[node name="VillageWheat7" parent="ForegroundProps" index="40" instance=ExtResource("72_b6b0b")]
+position = Vector2(993.5, 519.1131)
+
+[node name="VillageWheat8" parent="ForegroundProps" index="41" instance=ExtResource("74_echf5")]
+position = Vector2(1011.5, 516.1131)
+
+[node name="VillageWheat9" parent="ForegroundProps" index="42" instance=ExtResource("75_5i11f")]
+position = Vector2(1039.5, 520.1131)
+
+[node name="VillageWheat10" parent="ForegroundProps" index="43" instance=ExtResource("75_xdy3b")]
+position = Vector2(986.5, 518.1131)
+
+[node name="VillageTableAppleBread" type="Node2D" parent="ForegroundProps" index="44"]
+position = Vector2(-1519, 531.5)
+metadata/_edit_group_ = true
+
+[node name="VillageWoodenTable" parent="ForegroundProps/VillageTableAppleBread" index="0" instance=ExtResource("8_7wo7h")]
+
+[node name="VillageChair3" parent="ForegroundProps/VillageTableAppleBread" index="1" instance=ExtResource("9_7wo7h")]
+position = Vector2(-53, -4.5)
+
+[node name="VillageChair4" parent="ForegroundProps/VillageTableAppleBread" index="2" instance=ExtResource("9_7wo7h")]
+position = Vector2(54, -4.5)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="VillageBreadPlate" parent="ForegroundProps/VillageTableAppleBread" index="3" instance=ExtResource("13_67k71")]
+position = Vector2(13, -17.5)
+
+[node name="VillageApple" parent="ForegroundProps/VillageTableAppleBread" index="4" instance=ExtResource("14_oylef")]
+position = Vector2(-18, -18.5)
+
+[node name="VillageCrate4" parent="ForegroundProps" index="45" instance=ExtResource("13_2awqr")]
+position = Vector2(466, 559)
+
+[node name="VillageArrow" parent="ForegroundProps" index="46" instance=ExtResource("63_wexfs")]
+position = Vector2(529, 538)
+rotation = 0.09599311
+
+[node name="VillageAxe" parent="ForegroundProps" index="47" instance=ExtResource("86_wb18f")]
+position = Vector2(828, 505)
+rotation = 0.991347
+
+[node name="VillageTreeTrunk" parent="ForegroundProps" index="48" instance=ExtResource("86_2js2e")]
+position = Vector2(832, 531)
+
+[node name="VillageLog" parent="ForegroundProps" index="49" instance=ExtResource("87_hmabm")]
+position = Vector2(829, 535)
+
+[node name="VillageTargetDummy" parent="ForegroundProps" index="50" instance=ExtResource("82_y7i30")]
+position = Vector2(675.99994, 511.00003)
+rotation = 0.034906585
+
+[node name="VillageArcheryTarget" parent="ForegroundProps" index="51" instance=ExtResource("64_jw0ur")]
+position = Vector2(729, 523)
+
+[node name="VillageCrate6" parent="ForegroundProps" index="52" instance=ExtResource("13_2awqr")]
+position = Vector2(-1430, 528)
+
+[node name="VillageCrate7" parent="ForegroundProps" index="53" instance=ExtResource("13_2awqr")]
+position = Vector2(500, 559)
+
+[node name="VillageCrate9" parent="ForegroundProps" index="54" instance=ExtResource("13_2awqr")]
+position = Vector2(484, 524)
+
+[node name="VillageCrate5" parent="ForegroundProps" index="55" instance=ExtResource("13_2awqr")]
+position = Vector2(535, 559)
+
+[node name="VillageBarrel" parent="ForegroundProps" index="56" instance=ExtResource("17_oylef")]
+position = Vector2(391, 559)
+
+[node name="VillageBarrel2" parent="ForegroundProps" index="57" instance=ExtResource("17_oylef")]
+position = Vector2(423, 559)
+
+[node name="VillageTiedSack" parent="ForegroundProps" index="58" instance=ExtResource("18_36g5p")]
+position = Vector2(530, 559)
+
+[node name="LightPole" type="Node2D" parent="ForegroundProps" index="59"]
+position = Vector2(-1431, 497)
+scale = Vector2(-1, 1)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="ForegroundProps/LightPole" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="ForegroundProps/LightPole" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="ForegroundProps/LightPole" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="ForegroundProps/LightPole" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="LightPole2" type="Node2D" parent="ForegroundProps" index="60"]
+position = Vector2(-1040, 497)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="ForegroundProps/LightPole2" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="ForegroundProps/LightPole2" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="ForegroundProps/LightPole2" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="ForegroundProps/LightPole2" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="LightPole3" type="Node2D" parent="ForegroundProps" index="61"]
+position = Vector2(105, 529)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="ForegroundProps/LightPole3" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="ForegroundProps/LightPole3" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="ForegroundProps/LightPole3" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="ForegroundProps/LightPole3" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="LightPole6" type="Node2D" parent="ForegroundProps" index="62"]
+position = Vector2(-281, 529)
+scale = Vector2(-1, 1)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="ForegroundProps/LightPole6" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="ForegroundProps/LightPole6" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="ForegroundProps/LightPole6" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="ForegroundProps/LightPole6" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="LightPole4" type="Node2D" parent="ForegroundProps" index="63"]
+position = Vector2(1265, 496.61307)
+metadata/_edit_group_ = true
+
+[node name="VillageChain" parent="ForegroundProps/LightPole4" index="0" instance=ExtResource("21_dsnwk")]
+position = Vector2(25, -33)
+region_rect = Rect2(296, 768, 3, 9)
+
+[node name="VillageLanternOn" parent="ForegroundProps/LightPole4" index="1" instance=ExtResource("19_dsnwk")]
+position = Vector2(25, -21)
+
+[node name="VillageWoodenPillarBranch" parent="ForegroundProps/LightPole4" index="2" instance=ExtResource("19_xau0n")]
+position = Vector2(15, -33)
+
+[node name="VillageWoodenPillar" parent="ForegroundProps/LightPole4" index="3" instance=ExtResource("20_dsnwk")]
+
+[node name="VillageWagonWheel" type="Node2D" parent="ForegroundProps" index="64"]
+position = Vector2(1786, 520.00006)
+rotation = 0.20769419
+metadata/_edit_group_ = true
+
+[node name="VillageWagon" parent="ForegroundProps/VillageWagonWheel" index="0" instance=ExtResource("25_j12ok")]
+position = Vector2(2, -10)
+
+[node name="VillageWagonWheel" parent="ForegroundProps/VillageWagonWheel" index="1" instance=ExtResource("26_ii8tv")]
+position = Vector2(-20, 12)
+
+[node name="VillageXCrate" parent="ForegroundProps" index="65" instance=ExtResource("7_3ag3b")]
+position = Vector2(1666, 522.6131)
+
+[node name="VillageCrate8" parent="ForegroundProps" index="66" instance=ExtResource("13_2awqr")]
+position = Vector2(1648.5, 528.00006)
+
+[node name="VillageSack" parent="ForegroundProps" index="67" instance=ExtResource("27_j11mb")]
+position = Vector2(1607.5, 530.00006)
+
+[node name="VillageTiedSack2" parent="ForegroundProps" index="68" instance=ExtResource("18_36g5p")]
+position = Vector2(1589, 528.6131)
+
+[node name="VillageGrainBox" parent="ForegroundProps" index="69" instance=ExtResource("28_5tepg")]
+position = Vector2(1646, 505.6131)
+
+[node name="VillageWoodenSign2" parent="ForegroundProps" index="70" instance=ExtResource("60_tq1v7")]
+position = Vector2(1448, 520.6131)
+metadata/_edit_group_ = true
+
+[node name="VillageTextLine5" parent="ForegroundProps/VillageWoodenSign2" index="0" instance=ExtResource("63_j0awi")]
+position = Vector2(0, -12.5)
+
+[node name="VillageTextLine6" parent="ForegroundProps/VillageWoodenSign2" index="1" instance=ExtResource("64_hqely")]
+position = Vector2(0, -4)
+
+[node name="VillageWoodenSign" parent="ForegroundProps" index="71" instance=ExtResource("60_tq1v7")]
+position = Vector2(-1367, 523)
+metadata/_edit_group_ = true
+
+[node name="VillageTextLine4" parent="ForegroundProps/VillageWoodenSign" index="0" instance=ExtResource("63_j0awi")]
+position = Vector2(0, -4)
+
+[node name="VillageTextLine3" parent="ForegroundProps/VillageWoodenSign" index="1" instance=ExtResource("64_hqely")]
+position = Vector2(1, -12.5)
+
+[node name="VillageXCrate2" parent="ForegroundProps" index="72" instance=ExtResource("7_3ag3b")]
+position = Vector2(-1078, 522)
+
+[node name="VillageMarketStall" type="Node2D" parent="ForegroundProps" index="73"]
+position = Vector2(-1702, 509)
+metadata/_edit_group_ = true
+
+[node name="VillageKettle" parent="ForegroundProps/VillageMarketStall" index="0" instance=ExtResource("103_saj6i")]
+position = Vector2(35, 3)
+
+[node name="VillageSpiceJar" parent="ForegroundProps/VillageMarketStall" index="1" instance=ExtResource("104_aldiw")]
+position = Vector2(23, 6)
+
+[node name="VillageMarketStall" parent="ForegroundProps/VillageMarketStall" index="2" instance=ExtResource("103_f21no")]
+position = Vector2(-1, 19)
+
+[node name="VillageSupportBeam" parent="ForegroundProps/VillageMarketStall" index="3" instance=ExtResource("104_7l8c1")]
+position = Vector2(-55, -8)
+
+[node name="VillageAwning" parent="ForegroundProps/VillageMarketStall" index="4" instance=ExtResource("105_paey5")]
+position = Vector2(-1, -25)
+
+[node name="VillageSupportBeam2" parent="ForegroundProps/VillageMarketStall" index="5" instance=ExtResource("104_7l8c1")]
+position = Vector2(53, -7)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="VillageProductPileRed1" parent="ForegroundProps/VillageMarketStall" index="6" instance=ExtResource("106_ghqai")]
+position = Vector2(-34, 11)
+
+[node name="VillageProductPileRed2" parent="ForegroundProps/VillageMarketStall" index="7" instance=ExtResource("107_se7i2")]
+position = Vector2(8, 11)
+
+[node name="VillageProductPileYellow" parent="ForegroundProps/VillageMarketStall" index="8" instance=ExtResource("108_olegf")]
+position = Vector2(-20, 11)
+
+[node name="VillageProductPileGreen" parent="ForegroundProps/VillageMarketStall" index="9" instance=ExtResource("109_66rwb")]
+position = Vector2(-6, 11)
+
+[node name="VillageBroom" parent="ForegroundProps/VillageMarketStall" index="10" instance=ExtResource("66_eh3rk")]
+position = Vector2(-56, -2)
+
+[node name="VillageCauldron" parent="ForegroundProps/VillageMarketStall" index="11" instance=ExtResource("110_66rwb")]
+position = Vector2(-60, 30)
+
+[node name="Ground" parent="." index="4" instance=ExtResource("1_35upl")]
+tile_map_data = PackedByteArray("AADT/xIAAAABAAEAAADT/xMAAAABAAEAAADT/xQAAAABAAEAAADT/xUAAAABAAIAAADU/xIAAAABAAEAAADU/xMAAAABAAEAAADU/xQAAAABAAEAAADU/xUAAAABAAQAAADV/xIAAAABAAEAAADV/xMAAAABAAEAAADV/xQAAAABAAEAAADV/xUAAAABAAQAAADW/xIAAAABAAEAAADW/xMAAAABAAEAAADW/xQAAAABAAEAAADW/xUAAAABAAQAAADX/xIAAAABAAEAAADX/xMAAAABAAEAAADX/xQAAAABAAEAAADX/xUAAAABAAQAAADY/xIAAAABAAEAAADY/xMAAAABAAEAAADY/xQAAAABAAEAAADY/xUAAAABAAIAAADZ/xIAAAABAAEAAADZ/xMAAAABAAEAAADZ/xQAAAABAAEAAADZ/xUAAAABAAQAAADa/xIAAAABAAEAAADa/xMAAAABAAEAAADa/xQAAAABAAEAAADa/xUAAAABAAIAAADb/xIAAAABAAEAAADb/xMAAAABAAEAAADb/xQAAAABAAEAAADb/xUAAAABAAQAAADc/xIAAAABAAEAAADc/xMAAAABAAEAAADc/xQAAAABAAEAAADc/xUAAAABAAIAAADd/xIAAAABAAEAAADd/xMAAAABAAEAAADd/xQAAAABAAEAAADd/xUAAAABAAQAAADe/xIAAAABAAEAAADe/xMAAAABAAEAAADe/xQAAAABAAEAAADe/xUAAAABAAIAAADf/xIAAAABAAEAAADf/xMAAAABAAEAAADf/xQAAAABAAEAAADf/xUAAAABAAQAAADg/xIAAAABAAEAAADg/xMAAAABAAEAAADg/xQAAAABAAEAAADg/xUAAAABAAQAAADh/xIAAAABAAEAAADh/xMAAAABAAEAAADh/xQAAAABAAEAAADh/xUAAAABAAQAAADi/xIAAAABAAEAAADi/xMAAAABAAEAAADi/xQAAAABAAEAAADi/xUAAAABAAQAAADj/xIAAAABAAEAAADj/xMAAAABAAEAAADj/xQAAAABAAEAAADj/xUAAAABAAQAAADk/xIAAAABAAEAAADk/xMAAAABAAEAAADk/xQAAAABAAEAAADk/xUAAAABAAIAAADl/xIAAAABAAEAAADl/xMAAAABAAEAAADl/xQAAAABAAEAAADl/xUAAAABAAQAAADm/xIAAAABAAEAAADm/xMAAAABAAEAAADm/xQAAAABAAEAAADm/xUAAAABAAIAAADn/xIAAAABAAEAAADn/xMAAAABAAEAAADn/xQAAAABAAEAAADn/xUAAAABAAQAAADo/xIAAAAAAAYAAADo/xMAAAABAAEAAADo/xQAAAABAAEAAADo/xUAAAABAAIAAADp/xIAAAABAAYAAADp/xMAAAABAAEAAADp/xQAAAABAAEAAADp/xUAAAABAAQAAADq/xIAAAABAAYAAADq/xMAAAABAAEAAADq/xQAAAABAAEAAADq/xUAAAABAAIAAADr/xIAAAABAAYAAADr/xMAAAABAAEAAADr/xQAAAABAAEAAADr/xUAAAABAAQAAADs/xIAAAABAAAAAADs/xMAAAABAAEAAADs/xQAAAABAAEAAADs/xUAAAABAAIAAADt/xIAAAABAAYAAADt/xMAAAABAAEAAADt/xQAAAABAAEAAADt/xUAAAABAAQAAADu/xIAAAABAAYAAADu/xMAAAABAAEAAADu/xQAAAABAAEAAADu/xUAAAABAAQAAADv/xIAAAABAAAAAADv/xMAAAABAAEAAADv/xQAAAABAAEAAADv/xUAAAABAAQAAADw/xIAAAABAAAAAADw/xMAAAABAAEAAADw/xQAAAABAAEAAADw/xUAAAABAAIAAADx/xIAAAABAAYAAADx/xMAAAABAAEAAADx/xQAAAABAAEAAADx/xUAAAABAAIAAADy/xIAAAABAAYAAADy/xMAAAABAAEAAADy/xQAAAABAAEAAADy/xUAAAABAAIAAADz/xIAAAABAAAAAADz/xMAAAABAAEAAADz/xQAAAABAAEAAADz/xUAAAABAAIAAAD0/xIAAAABAAAAAAD0/xMAAAABAAEAAAD0/xQAAAABAAEAAAD0/xUAAAABAAQAAAD1/xIAAAABAAAAAAD1/xMAAAABAAEAAAD1/xQAAAABAAEAAAD1/xUAAAABAAQAAAD2/xIAAAABAAAAAAD2/xMAAAABAAEAAAD2/xQAAAABAAEAAAD2/xUAAAABAAQAAAD3/xIAAAABAAAAAAD3/xMAAAABAAEAAAD3/xQAAAABAAEAAAD3/xUAAAABAAIAAAD4/xIAAAABAAYAAAD4/xMAAAABAAEAAAD4/xQAAAABAAEAAAD4/xUAAAABAAIAAAD5/xIAAAABAAAAAAD5/xMAAAABAAEAAAD5/xQAAAABAAEAAAD5/xUAAAABAAQAAAD6/xIAAAABAAAAAAD6/xMAAAABAAEAAAD6/xQAAAABAAEAAAD6/xUAAAABAAQAAAD7/xIAAAABAAAAAAD7/xMAAAABAAEAAAD7/xQAAAABAAEAAAD7/xUAAAABAAQAAAD8/xIAAAABAAYAAAD8/xMAAAABAAEAAAD8/xQAAAABAAEAAAD8/xUAAAABAAIAAAD9/xIAAAABAAYAAAD9/xMAAAABAAEAAAD9/xQAAAABAAEAAAD9/xUAAAABAAIAAAD+/xIAAAABAAYAAAD+/xMAAAABAAEAAAD+/xQAAAABAAEAAAD+/xUAAAABAAQAAAD//xIAAAABAAYAAAD//xMAAAABAAEAAAD//xQAAAABAAEAAAD//xUAAAABAAIAAAAAABIAAAABAAAAAAAAABMAAAABAAEAAAAAABQAAAABAAEAAAAAABUAAAABAAQAAAABABIAAAABAAYAAAABABMAAAABAAEAAAABABQAAAABAAEAAAABABUAAAABAAIAAAACABIAAAABAAAAAAACABMAAAABAAEAAAACABQAAAABAAEAAAACABUAAAABAAQAAAADABIAAAABAAYAAAADABMAAAABAAEAAAADABQAAAABAAEAAAADABUAAAABAAQAAAAEABIAAAABAAYAAAAEABMAAAABAAEAAAAEABQAAAABAAEAAAAEABUAAAABAAIAAAAFABIAAAABAAAAAAAFABMAAAABAAEAAAAFABQAAAABAAEAAAAFABUAAAABAAQAAAAGABIAAAABAAYAAAAGABMAAAABAAEAAAAGABQAAAABAAEAAAAGABUAAAABAAIAAAAHABIAAAABAAYAAAAHABMAAAABAAEAAAAHABQAAAABAAEAAAAHABUAAAABAAQAAAAIABIAAAABAAYAAAAIABMAAAABAAEAAAAIABQAAAABAAEAAAAIABUAAAABAAQAAAAJABIAAAABAAAAAAAJABMAAAABAAEAAAAJABQAAAABAAEAAAAJABUAAAABAAQAAAAKABIAAAABAAAAAAAKABMAAAABAAEAAAAKABQAAAABAAEAAAAKABUAAAABAAQAAAALABIAAAABAAYAAAALABMAAAABAAEAAAALABQAAAABAAEAAAALABUAAAABAAQAAAAMABIAAAABAAAAAAAMABMAAAABAAEAAAAMABQAAAABAAEAAAAMABUAAAABAAQAAAANABIAAAABAAYAAAANABMAAAABAAEAAAANABQAAAABAAEAAAANABUAAAABAAQAAAAOABIAAAABAAAAAAAOABMAAAABAAEAAAAOABQAAAABAAEAAAAOABUAAAABAAIAAAAPABIAAAABAAYAAAAPABMAAAABAAEAAAAPABQAAAABAAEAAAAPABUAAAABAAQAAAAQABIAAAABAAYAAAAQABMAAAABAAEAAAAQABQAAAABAAEAAAAQABUAAAABAAQAAAARABIAAAABAAYAAAARABMAAAABAAEAAAARABQAAAABAAEAAAARABUAAAABAAQAAAASABIAAAABAAAAAAASABMAAAABAAEAAAASABQAAAABAAEAAAASABUAAAABAAQAAAATABIAAAACAAYAAAATABMAAAABAAEAAAATABQAAAABAAEAAAATABUAAAABAAIAAAAUABIAAAABAAEAAAAUABMAAAABAAEAAAAUABQAAAABAAEAAAAUABUAAAABAAQAAAAVABIAAAABAAEAAAAVABMAAAABAAEAAAAVABQAAAABAAEAAAAVABUAAAABAAIAAAAWABIAAAABAAEAAAAWABMAAAABAAEAAAAWABQAAAABAAEAAAAWABUAAAABAAIAAAAXABIAAAABAAEAAAAXABMAAAABAAEAAAAXABQAAAABAAEAAAAXABUAAAABAAQAAAAYABIAAAABAAEAAAAYABMAAAABAAEAAAAYABQAAAABAAEAAAAYABUAAAABAAQAAAAZABEAAAABAAAAAAAZABIAAAABAAEAAAAZABMAAAABAAEAAAAZABQAAAABAAEAAAAZABUAAAABAAIAAAAaABEAAAABAAYAAAAaABIAAAABAAEAAAAaABMAAAABAAEAAAAaABQAAAABAAEAAAAaABUAAAABAAIAAAAbABEAAAABAAYAAAAbABIAAAABAAEAAAAbABMAAAABAAEAAAAbABQAAAABAAEAAAAbABUAAAABAAIAAAAcABEAAAABAAAAAAAcABIAAAABAAEAAAAcABMAAAABAAEAAAAcABQAAAABAAEAAAAcABUAAAABAAIAAAAdABEAAAABAAYAAAAdABIAAAABAAEAAAAdABMAAAABAAEAAAAdABQAAAABAAEAAAAdABUAAAABAAQAAAAeABEAAAABAAAAAAAeABIAAAABAAEAAAAeABMAAAABAAEAAAAeABQAAAABAAEAAAAeABUAAAABAAIAAAAfABEAAAABAAYAAAAfABIAAAABAAEAAAAfABMAAAABAAEAAAAfABQAAAABAAEAAAAfABUAAAABAAIAAAAgABEAAAABAAAAAAAgABIAAAABAAEAAAAgABMAAAABAAEAAAAgABQAAAABAAEAAAAgABUAAAABAAQAAAAhABEAAAABAAAAAAAhABIAAAABAAEAAAAhABMAAAABAAEAAAAhABQAAAABAAEAAAAhABUAAAABAAQAAAAiABEAAAABAAAAAAAiABIAAAABAAEAAAAiABMAAAABAAEAAAAiABQAAAABAAEAAAAiABUAAAABAAQAAAAjABEAAAABAAYAAAAjABIAAAABAAEAAAAjABMAAAABAAEAAAAjABQAAAABAAEAAAAjABUAAAABAAQAAAAkABEAAAABAAYAAAAkABIAAAABAAEAAAAkABMAAAABAAEAAAAkABQAAAABAAEAAAAkABUAAAABAAIAAAAlABEAAAABAAAAAAAlABIAAAABAAEAAAAlABMAAAABAAEAAAAlABQAAAABAAEAAAAlABUAAAABAAQAAAAmABEAAAABAAAAAAAmABIAAAABAAEAAAAmABMAAAABAAEAAAAmABQAAAABAAEAAAAmABUAAAABAAIAAAAnABEAAAABAAYAAAAnABIAAAABAAEAAAAnABMAAAABAAEAAAAnABQAAAABAAEAAAAnABUAAAABAAIAAAAoABEAAAABAAYAAAAoABIAAAABAAEAAAAoABMAAAABAAEAAAAoABQAAAABAAEAAAAoABUAAAABAAIAAAApABEAAAABAAAAAAApABIAAAABAAEAAAApABMAAAABAAEAAAApABQAAAABAAEAAAApABUAAAABAAIAAAAqABEAAAABAAAAAAAqABIAAAABAAEAAAAqABMAAAABAAEAAAAqABQAAAABAAEAAAAqABUAAAABAAIAAAArABEAAAABAAYAAAArABIAAAABAAEAAAArABMAAAABAAEAAAArABQAAAABAAEAAAArABUAAAABAAQAAAAsABEAAAABAAAAAAAsABIAAAABAAEAAAAsABMAAAABAAEAAAAsABQAAAABAAEAAAAsABUAAAABAAQAAAAtABEAAAABAAAAAAAtABIAAAABAAEAAAAtABMAAAABAAEAAAAtABQAAAABAAEAAAAtABUAAAABAAIAAADm/xEAAAABAAAAAADl/xEAAAABAAYAAADk/xEAAAABAAYAAADj/xEAAAABAAAAAADi/xEAAAABAAAAAADh/xEAAAABAAYAAADg/xEAAAABAAYAAADf/xEAAAABAAAAAADe/xEAAAABAAAAAADd/xEAAAABAAYAAADc/xEAAAABAAYAAADb/xEAAAABAAAAAADa/xEAAAABAAAAAADZ/xEAAAABAAYAAADY/xEAAAABAAAAAADX/xEAAAABAAYAAADW/xEAAAABAAYAAADV/xEAAAABAAAAAADU/xEAAAABAAAAAADT/xEAAAABAAAAAADn/xEAAAABAAAAAADS/xUAAAABAAIAAADS/xQAAAABAAEAAADS/xMAAAABAAEAAADS/xIAAAABAAEAAADS/xEAAAABAAYAAADR/xUAAAABAAQAAADR/xQAAAABAAEAAADR/xMAAAABAAEAAADR/xIAAAABAAEAAADR/xEAAAABAAAAAADQ/xUAAAABAAQAAADQ/xQAAAABAAEAAADQ/xMAAAABAAEAAADQ/xIAAAABAAEAAADQ/xEAAAABAAAAAADP/xUAAAABAAQAAADP/xQAAAABAAEAAADP/xMAAAABAAEAAADP/xIAAAABAAEAAADP/xEAAAABAAYAAADO/xUAAAABAAIAAADO/xQAAAABAAEAAADO/xMAAAABAAEAAADO/xIAAAABAAEAAADO/xEAAAABAAYAAADo/xEAAAACAAAAAAAYABEAAAABAAYAAAAXABEAAAABAAYAAAAWABEAAAABAAAAAAAVABEAAAABAAYAAAAUABEAAAABAAYAAAATABEAAAAAAAAAAABHABUAAAABAAQAAABHABQAAAABAAEAAABHABMAAAABAAEAAABHABIAAAABAAEAAABHABEAAAABAAYAAABGABUAAAABAAQAAABGABQAAAABAAEAAABGABMAAAABAAEAAABGABIAAAABAAEAAABGABEAAAABAAYAAABFABUAAAABAAQAAABFABQAAAABAAEAAABFABMAAAABAAEAAABFABIAAAABAAEAAABFABEAAAABAAAAAABEABUAAAABAAQAAABEABQAAAABAAEAAABEABMAAAABAAEAAABEABIAAAABAAEAAABEABEAAAABAAAAAABDABUAAAABAAIAAABDABQAAAABAAEAAABDABMAAAABAAEAAABDABIAAAABAAEAAABDABEAAAABAAAAAABCABUAAAABAAQAAABCABQAAAABAAEAAABCABMAAAABAAEAAABCABIAAAABAAEAAABCABEAAAABAAYAAABBABUAAAABAAIAAABBABQAAAABAAEAAABBABMAAAABAAEAAABBABIAAAABAAEAAABBABEAAAABAAYAAABAABUAAAABAAQAAABAABQAAAABAAEAAABAABMAAAABAAEAAABAABIAAAABAAEAAABAABEAAAABAAAAAAA/ABUAAAABAAQAAAA/ABQAAAABAAEAAAA/ABMAAAABAAEAAAA/ABIAAAABAAEAAAA/ABEAAAABAAYAAAA+ABUAAAABAAQAAAA+ABQAAAABAAEAAAA+ABMAAAABAAEAAAA+ABIAAAABAAEAAAA+ABEAAAABAAYAAAA9ABUAAAABAAQAAAA9ABQAAAABAAEAAAA9ABMAAAABAAEAAAA9ABIAAAABAAEAAAA9ABEAAAABAAYAAAA8ABUAAAABAAQAAAA8ABQAAAABAAEAAAA8ABMAAAABAAEAAAA8ABIAAAABAAEAAAA8ABEAAAABAAYAAAA7ABUAAAABAAQAAAA7ABQAAAABAAEAAAA7ABMAAAABAAEAAAA7ABIAAAABAAEAAAA7ABEAAAABAAYAAAA6ABUAAAABAAQAAAA6ABQAAAABAAEAAAA6ABMAAAABAAEAAAA6ABIAAAABAAEAAAA6ABEAAAABAAYAAAA5ABUAAAABAAIAAAA5ABQAAAABAAEAAAA5ABMAAAABAAEAAAA5ABIAAAABAAEAAAA5ABEAAAABAAYAAAA4ABUAAAABAAQAAAA4ABQAAAABAAEAAAA4ABMAAAABAAEAAAA4ABIAAAABAAEAAAA4ABEAAAABAAAAAAA3ABUAAAABAAQAAAA3ABQAAAABAAEAAAA3ABMAAAABAAEAAAA3ABIAAAABAAEAAAA3ABEAAAABAAAAAAA2ABUAAAABAAQAAAA2ABQAAAABAAEAAAA2ABMAAAABAAEAAAA2ABIAAAABAAEAAAA2ABEAAAABAAAAAAA1ABUAAAABAAQAAAA1ABQAAAABAAEAAAA1ABMAAAABAAEAAAA1ABIAAAABAAEAAAA1ABEAAAABAAAAAAA0ABUAAAABAAIAAAA0ABQAAAABAAEAAAA0ABMAAAABAAEAAAA0ABIAAAABAAEAAAA0ABEAAAABAAAAAAAzABUAAAABAAQAAAAzABQAAAABAAEAAAAzABMAAAABAAEAAAAzABIAAAABAAEAAAAzABEAAAABAAAAAAAyABUAAAABAAQAAAAyABQAAAABAAEAAAAyABMAAAABAAEAAAAyABIAAAABAAEAAAAyABEAAAABAAYAAAAxABUAAAABAAQAAAAxABQAAAABAAEAAAAxABMAAAABAAEAAAAxABIAAAABAAEAAAAxABEAAAABAAYAAAAwABUAAAABAAQAAAAwABQAAAABAAEAAAAwABMAAAABAAEAAAAwABIAAAABAAEAAAAwABEAAAABAAAAAAAvABUAAAABAAQAAAAvABQAAAABAAEAAAAvABMAAAABAAEAAAAvABIAAAABAAEAAAAvABEAAAABAAAAAAAuABUAAAABAAIAAAAuABQAAAABAAEAAAAuABMAAAABAAEAAAAuABIAAAABAAEAAAAuABEAAAABAAYAAADN/xUAAAABAAQAAADN/xQAAAABAAEAAADN/xMAAAABAAEAAADN/xIAAAABAAEAAADN/xEAAAABAAYAAADM/xUAAAABAAIAAADM/xQAAAABAAEAAADM/xMAAAABAAEAAADM/xIAAAABAAEAAADM/xEAAAABAAYAAADL/xUAAAABAAQAAADL/xQAAAABAAEAAADL/xMAAAABAAEAAADL/xIAAAABAAEAAADL/xEAAAABAAAAAADK/xUAAAABAAIAAADK/xQAAAABAAEAAADK/xMAAAABAAEAAADK/xIAAAABAAEAAADK/xEAAAABAAAAAADJ/xUAAAABAAQAAADJ/xQAAAABAAEAAADJ/xMAAAABAAEAAADJ/xIAAAABAAEAAADJ/xEAAAABAAYAAADI/xUAAAABAAIAAADI/xQAAAABAAEAAADI/xMAAAABAAEAAADI/xIAAAABAAEAAADI/xEAAAABAAYAAADH/xUAAAABAAQAAADH/xQAAAABAAEAAADH/xMAAAABAAEAAADH/xIAAAABAAEAAADH/xEAAAABAAYAAADG/xUAAAABAAQAAADG/xQAAAABAAEAAADG/xMAAAABAAEAAADG/xIAAAABAAEAAADG/xEAAAABAAYAAADF/xUAAAABAAQAAADF/xQAAAABAAEAAADF/xMAAAABAAEAAADF/xIAAAABAAEAAADF/xEAAAABAAAAAADE/xUAAAABAAQAAADE/xQAAAABAAEAAADE/xMAAAABAAEAAADE/xIAAAABAAEAAADE/xEAAAABAAYAAADD/xUAAAABAAQAAADD/xQAAAABAAEAAADD/xMAAAABAAEAAADD/xIAAAABAAEAAADD/xEAAAABAAAAAADC/xUAAAABAAIAAADC/xQAAAABAAEAAADC/xMAAAABAAEAAADC/xIAAAABAAEAAADC/xEAAAABAAAAAADB/xUAAAABAAIAAADB/xQAAAABAAEAAADB/xMAAAABAAEAAADB/xIAAAABAAEAAADB/xEAAAABAAAAAADA/xUAAAABAAIAAADA/xQAAAABAAEAAADA/xMAAAABAAEAAADA/xIAAAABAAEAAADA/xEAAAABAAYAAABLABUAAAABAAIAAABLABQAAAABAAEAAABLABMAAAABAAEAAABLABIAAAABAAEAAABLABEAAAABAAAAAABKABUAAAABAAIAAABKABQAAAABAAEAAABKABMAAAABAAEAAABKABIAAAABAAEAAABKABEAAAABAAAAAABJABUAAAABAAQAAABJABQAAAABAAEAAABJABMAAAABAAEAAABJABIAAAABAAEAAABJABEAAAABAAYAAABIABUAAAABAAIAAABIABQAAAABAAEAAABIABMAAAABAAEAAABIABIAAAABAAEAAABIABEAAAABAAYAAAC//xUAAAABAAQAAAC//xQAAAABAAEAAAC//xMAAAABAAEAAAC//xIAAAABAAEAAAC//xEAAAABAAAAAAC+/xUAAAABAAIAAAC+/xQAAAABAAEAAAC+/xMAAAABAAEAAAC+/xIAAAABAAEAAAC+/xEAAAAAAAYAAAC9/xUAAAAAAAIAAAC9/xQAAAACAAUAAAC9/xMAAAACAAUAAAC9/xIAAAAAAAEAAAC9/xEAAAAAAAEAAAC9/xAAAAACAAUAAAC9/w8AAAACAAUAAAC9/w4AAAACAAUAAAC+/xAAAAACAAEAAAC+/w8AAAACAAEAAAC+/w4AAAACAAEAAAC+/w0AAAAAAAUAAAC9/w0AAAACAAUAAAC+/wwAAAACAAEAAAC9/wwAAAACAAUAAABMABUAAAABAAIAAABMABQAAAABAAEAAABMABMAAAABAAEAAABMABIAAAABAAEAAABMABEAAAACAAYAAABNABUAAAACAAIAAABNABQAAAAAAAUAAABNABMAAAAAAAUAAABNABIAAAAAAAUAAABNABEAAAACAAEAAABNABAAAAAAAAUAAABNAA8AAAAAAAUAAABNAA4AAAAAAAUAAABNAA0AAAACAAEAAABMABAAAAAAAAEAAABMAA8AAAACAAUAAABMAA4AAAAAAAEAAABMAA0AAAAAAAEAAABNAAwAAAAAAAUAAABMAAwAAAAAAAEAAABNAAsAAAACAAAAAABMAAsAAAAAAAAAAAC+/wsAAAACAAAAAAC9/wsAAAAAAAAAAAA=")
+
+[node name="Grass" type="Node2D" parent="." index="5"]
+
+[node name="VillageGrass1" parent="Grass" index="0" instance=ExtResource("18_wkwxy")]
+position = Vector2(-237.5, 571)
+
+[node name="VillageGrass10" parent="Grass" index="1" instance=ExtResource("18_wkwxy")]
+position = Vector2(-445.5, 571)
+
+[node name="VillageGrass16" parent="Grass" index="2" instance=ExtResource("18_wkwxy")]
+position = Vector2(684, 539)
+
+[node name="VillageGrass2" parent="Grass" index="3" instance=ExtResource("19_t0jfg")]
+position = Vector2(-156.5, 571)
+
+[node name="VillageGrass15" parent="Grass" index="4" instance=ExtResource("19_t0jfg")]
+position = Vector2(248.5, 571)
+
+[node name="VillageGrass11" parent="Grass" index="5" instance=ExtResource("19_t0jfg")]
+position = Vector2(575, 571)
+
+[node name="VillageGrass3" parent="Grass" index="6" instance=ExtResource("20_fqvw6")]
+position = Vector2(-358.5, 570)
+
+[node name="VillageGrass4" parent="Grass" index="7" instance=ExtResource("21_gwkdq")]
+position = Vector2(-2.5, 569)
+
+[node name="VillageGrass14" parent="Grass" index="8" instance=ExtResource("21_gwkdq")]
+position = Vector2(-298.5, 569)
+
+[node name="VillageGrass5" parent="Grass" index="9" instance=ExtResource("22_gwkdq")]
+position = Vector2(154.5, 572)
+
+[node name="VillageGrass13" parent="Grass" index="10" instance=ExtResource("22_gwkdq")]
+position = Vector2(-82.5, 572)
+
+[node name="VillageGrass6" parent="Grass" index="11" instance=ExtResource("23_ngfgd")]
+position = Vector2(307.5, 571)
+
+[node name="VillageGrass7" parent="Grass" index="12" instance=ExtResource("24_unrpw")]
+position = Vector2(390.5, 572)
+
+[node name="VillageGrass8" parent="Grass" index="13" instance=ExtResource("25_fbxfr")]
+position = Vector2(482.5, 573)
+
+[node name="VillageGrass12" parent="Grass" index="14" instance=ExtResource("25_fbxfr")]
+position = Vector2(205.5, 573)
+
+[node name="VillageGrass9" parent="Grass" index="15" instance=ExtResource("21_xr47q")]
+position = Vector2(758, 541)
+
+[node name="SpawnPoint" parent="." index="6"]
+position = Vector2(-163, 539)
+
+[node name="DarkwoodsEntry" parent="." index="7" node_paths=PackedStringArray("current_map") instance=ExtResource("117_jdjy1")]
+position = Vector2(-2048, 512)
+current_map = NodePath("..")
+target_map = "res://maps/darkwoods/darkwoods.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkwoodsEntry" index="0"]
+shape = SubResource("RectangleShape2D_0n3fn")
+
+[node name="LightParallax1" type="Parallax2D" parent="." index="8"]
+scroll_scale = Vector2(1.1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="LightParallax1" index="0"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.48235294)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-1626, -201)
+rotation = 0.357081
+scale = Vector2(0.73622227, 1.7613147)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="LightParallax1" index="1"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.20392157)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(415, -172.99997)
+rotation = 0.357081
+scale = Vector2(1.860229, 2.004616)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D7" type="Sprite2D" parent="LightParallax1" index="2"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.20392157)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(2341, -239)
+rotation = 0.357081
+scale = Vector2(1.860229, 2.004616)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D2" type="Sprite2D" parent="LightParallax1" index="3"]
+modulate = Color(0.9490196, 0.9882353, 0.70980394, 0.2)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-1230.0001, -197.00002)
+rotation = 0.357081
+scale = Vector2(2.0706804, 1.8945093)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D5" type="Sprite2D" parent="LightParallax1" index="4"]
+modulate = Color(0.9490196, 0.9882353, 0.70980394, 0.11372549)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-352, -191)
+rotation = 0.357081
+scale = Vector2(2.5004327, 1.8945093)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D4" type="Sprite2D" parent="LightParallax1" index="5"]
+modulate = Color(0.9490196, 0.9882353, 0.70980394, 0.2)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(1235, -232.00003)
+rotation = 0.357081
+scale = Vector2(1.7163932, 2.1078532)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D6" type="Sprite2D" parent="LightParallax1" index="6"]
+modulate = Color(0.9490196, 0.9882353, 0.70980394, 0.38431373)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(2057.0002, -218.99994)
+rotation = 0.357081
+scale = Vector2(1.000928, 2.1078532)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="LightParallax2" type="Parallax2D" parent="." index="9"]
+scroll_scale = Vector2(1.2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="LightParallax2" index="0"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.2627451)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-930.00006, -164.00002)
+rotation = 0.43653116
+scale = Vector2(0.66751343, 1.7287416)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D2" type="Sprite2D" parent="LightParallax2" index="1"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.5254902)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-695.00006, -200.00003)
+rotation = 0.43653116
+scale = Vector2(0.9821056, 1.7915372)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D7" type="Sprite2D" parent="LightParallax2" index="2"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.15294118)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-44.999996, -172.00002)
+rotation = 0.43653116
+scale = Vector2(0.9821056, 1.7915372)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D8" type="Sprite2D" parent="LightParallax2" index="3"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.30588236)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(2662, -165.00003)
+rotation = 0.43653116
+scale = Vector2(0.9821056, 1.7915372)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="LightParallax2" index="4"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.5254902)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(158, -213)
+rotation = 0.43653116
+scale = Vector2(0.53134114, 1.8496454)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D9" type="Sprite2D" parent="LightParallax2" index="5"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.39215687)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(780.00006, -187)
+rotation = 0.43653116
+scale = Vector2(1.0503708, 1.8496454)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D4" type="Sprite2D" parent="LightParallax2" index="6"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.3019608)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(-2029.0002, -154)
+rotation = 0.43653116
+scale = Vector2(0.82069963, 1.8575628)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D5" type="Sprite2D" parent="LightParallax2" index="7"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.38039216)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(1539.0001, -213.99994)
+rotation = 0.43653116
+scale = Vector2(0.5701938, 1.8575628)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)
+
+[node name="Sprite2D6" type="Sprite2D" parent="LightParallax2" index="8"]
+modulate = Color(0.9490196, 0.9882353, 0.67058825, 0.09411765)
+material = SubResource("CanvasItemMaterial_475xm")
+position = Vector2(1826, -208)
+rotation = 0.43653116
+scale = Vector2(1.6722745, 1.8575628)
+texture = ExtResource("116_60mbm")
+offset = Vector2(0, 256)

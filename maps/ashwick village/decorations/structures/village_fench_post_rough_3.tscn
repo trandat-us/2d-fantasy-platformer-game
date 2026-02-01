@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3suawo2pc3qp"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_axv43"]
+
+[node name="VillageFenchPostRough3" type="Sprite2D"]
+texture = ExtResource("1_axv43")
+region_enabled = true
+region_rect = Rect2(70, 95, 9, 33)

@@ -1,0 +1,25 @@
+extends Control
+class_name ProgressTransition
+
+@onready var progress_bar: ProgressBar = %ProgressBar
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var show_screen_finished: Callable
+var hide_screen_finished: Callable
+
+func show_screen(cb: Callable):
+	show_screen_finished = cb
+	animation_player.play("appear")
+
+func hide_screen(cb: Callable):
+	hide_screen_finished = cb
+	animation_player.play("disappear")
+
+func update_progress(value: float):
+	progress_bar.value = value
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "appear" and show_screen_finished.is_valid():
+		show_screen_finished.call()
+	elif anim_name == "disappear" and hide_screen_finished.is_valid():
+		hide_screen_finished.call()

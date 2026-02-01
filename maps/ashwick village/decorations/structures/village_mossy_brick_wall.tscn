@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0n7yp6otyb02"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_gnpk8"]
+
+[node name="VillageMossyBrickWall" type="Sprite2D"]
+texture = ExtResource("1_gnpk8")
+region_enabled = true
+region_rect = Rect2(733, 629, 136, 43)

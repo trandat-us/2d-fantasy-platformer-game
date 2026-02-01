@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://byme2hphgeg8v"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_v41qd"]
+
+[node name="VillageHayPile" type="Sprite2D"]
+texture = ExtResource("1_v41qd")
+region_enabled = true
+region_rect = Rect2(192, 254, 62, 34)

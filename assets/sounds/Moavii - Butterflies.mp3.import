@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl888dq10kljo"
+path="res://.godot/imported/Moavii - Butterflies.mp3-edb710605eb18a62d2b767b1961aac00.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Moavii - Butterflies.mp3"
+dest_files=["res://.godot/imported/Moavii - Butterflies.mp3-edb710605eb18a62d2b767b1961aac00.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

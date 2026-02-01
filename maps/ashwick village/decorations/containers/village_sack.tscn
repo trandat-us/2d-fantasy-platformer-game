@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://5mknsc7nkfox"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_pgksd"]
+
+[node name="VillageSack" type="Sprite2D"]
+texture = ExtResource("1_pgksd")
+region_enabled = true
+region_rect = Rect2(514, 225, 29, 31)

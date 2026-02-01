@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ofi41xay3qkp"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_tqjjq"]
+
+[node name="VillageSupportBeam" type="Sprite2D"]
+texture = ExtResource("1_tqjjq")
+region_enabled = true
+region_rect = Rect2(483, 329, 20, 87)

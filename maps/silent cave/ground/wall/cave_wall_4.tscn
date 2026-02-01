@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn50shciwph23"]
+
+[ext_resource type="Texture2D" uid="uid://d22by1ipst2xb" path="res://assets/textures/tilemap/cave/tileset.png" id="1_bx5bx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipgqo"]
+size = Vector2(15, 32)
+
+[node name="CaveWall4" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bx5bx")
+region_enabled = true
+region_rect = Rect2(480, 320, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ipgqo")

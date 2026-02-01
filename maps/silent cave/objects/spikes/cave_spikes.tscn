@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c37xs6joprvil"]
+
+[ext_resource type="Script" uid="uid://dms7nnsu23ma0" path="res://maps/silent cave/objects/spikes/cave_spikes.gd" id="1_vxahr"]
+[ext_resource type="PackedScene" uid="uid://ftcbb1kkoffh" path="res://components/hazard component/hazard_component.tscn" id="2_0o0ng"]
+[ext_resource type="Texture2D" uid="uid://d22by1ipst2xb" path="res://assets/textures/tilemap/cave/tileset.png" id="2_ket8r"]
+[ext_resource type="PackedScene" uid="uid://qlg0oao6it2a" path="res://maps/silent cave/objects/spikes/cave_spikes_sprite.tscn" id="2_vxahr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r2p3"]
+resource_local_to_scene = true
+size = Vector2(16, 14)
+
+[node name="CaveSpikes" type="Node2D" unique_id=1647917818]
+script = ExtResource("1_vxahr")
+
+[node name="SpriteHolder" type="Node2D" parent="." unique_id=1142730330]
+
+[node name="CaveSpriteSprite" type="Sprite2D" parent="SpriteHolder" unique_id=1285477338 instance=ExtResource("2_vxahr")]
+texture = ExtResource("2_ket8r")
+region_enabled = true
+region_rect = Rect2(752, 288, 16, 16)
+
+[node name="HazardComponent" parent="." unique_id=382182477 node_paths=PackedStringArray("hazard") instance=ExtResource("2_0o0ng")]
+hazard = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardComponent" unique_id=1898988867]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2r2p3")

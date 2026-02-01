@@ -1,0 +1,143 @@
+[gd_resource type="Resource" script_class="KeyBindings" format=3 uid="uid://dlrw1ie82x2pm"]
+
+[ext_resource type="Script" uid="uid://r10cea4dyeku" path="res://data/definitions/settings/keybindings.gd" id="1_nimb7"]
+[ext_resource type="Script" uid="uid://1t1al0enthi8" path="res://data/definitions/settings/keybinding_info.gd" id="2_3gdo6"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_3gdo6"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="Resource" id="Resource_bucoo"]
+resource_local_to_scene = true
+script = ExtResource("2_3gdo6")
+action = "move_left"
+action_as_text = "KEYBINDINGS_ACTION_MOVE_LEFT"
+input = SubResource("InputEventKey_3gdo6")
+input_as_text = "A"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_fkrl4"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="Resource" id="Resource_3gdo6"]
+script = ExtResource("2_3gdo6")
+action = "move_right"
+action_as_text = "KEYBINDINGS_ACTION_MOVE_RIGHT"
+input = SubResource("InputEventKey_fkrl4")
+input_as_text = "D"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_lwfsf"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Resource" id="Resource_sm3di"]
+script = ExtResource("2_3gdo6")
+action = "jump"
+action_as_text = "KEYBINDINGS_ACTION_JUMP"
+input = SubResource("InputEventKey_lwfsf")
+input_as_text = "KEYBINDINGS_INPUT_SPACE"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_sm3di"]
+device = -1
+keycode = 4194326
+
+[sub_resource type="Resource" id="Resource_fkrl4"]
+script = ExtResource("2_3gdo6")
+action = "crouch"
+action_as_text = "KEYBINDINGS_ACTION_CROUCH"
+input = SubResource("InputEventKey_sm3di")
+input_as_text = "Ctrl"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_bucoo"]
+button_mask = 2
+position = Vector2(569, 16)
+global_position = Vector2(578, 64)
+button_index = 2
+pressed = true
+
+[sub_resource type="Resource" id="Resource_06843"]
+script = ExtResource("2_3gdo6")
+action = "dash"
+action_as_text = "KEYBINDINGS_ACTION_DASH"
+input = SubResource("InputEventMouseButton_bucoo")
+input_as_text = "KEYBINDINGS_INPUT_RIGHT_MOUSE_BUTTON"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_06843"]
+button_mask = 1
+position = Vector2(452, 18)
+global_position = Vector2(461, 66)
+button_index = 1
+pressed = true
+
+[sub_resource type="Resource" id="Resource_7bvso"]
+script = ExtResource("2_3gdo6")
+action = "attack"
+action_as_text = "KEYBINDINGS_ACTION_ATTACK"
+input = SubResource("InputEventMouseButton_06843")
+input_as_text = "KEYBINDINGS_INPUT_LEFT_MOUSE_BUTTON"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_b2x1y"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Resource" id="Resource_bgo73"]
+script = ExtResource("2_3gdo6")
+action = "shield_up"
+action_as_text = "KEYBINDINGS_ACTION_SHIELD_UP"
+input = SubResource("InputEventKey_b2x1y")
+input_as_text = "E"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_bgo73"]
+device = -1
+keycode = 88
+unicode = 120
+
+[sub_resource type="Resource" id="Resource_y6b5i"]
+script = ExtResource("2_3gdo6")
+action = "stop_grabbing"
+action_as_text = "KEYBINDINGS_ACTION_STOP_GRABBING"
+input = SubResource("InputEventKey_bgo73")
+input_as_text = "X"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_0o0mj"]
+device = -1
+keycode = 70
+unicode = 102
+
+[sub_resource type="Resource" id="Resource_u0sim"]
+script = ExtResource("2_3gdo6")
+action = "interact"
+action_as_text = "KEYBINDINGS_ACTION_INTERACT"
+input = SubResource("InputEventKey_0o0mj")
+input_as_text = "F"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[sub_resource type="InputEventKey" id="InputEventKey_u0sim"]
+device = -1
+keycode = 77
+unicode = 109
+
+[sub_resource type="Resource" id="Resource_2hj5y"]
+script = ExtResource("2_3gdo6")
+action = "open_map"
+action_as_text = "KEYBINDINGS_ACTION_OPEN_MAP"
+input = SubResource("InputEventKey_u0sim")
+input_as_text = "M"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
+[resource]
+script = ExtResource("1_nimb7")
+keybindings = Array[ExtResource("2_3gdo6")]([SubResource("Resource_bucoo"), SubResource("Resource_3gdo6"), SubResource("Resource_sm3di"), SubResource("Resource_fkrl4"), SubResource("Resource_06843"), SubResource("Resource_7bvso"), SubResource("Resource_bgo73"), SubResource("Resource_y6b5i"), SubResource("Resource_u0sim"), SubResource("Resource_2hj5y")])
+metadata/_custom_type_script = "uid://r10cea4dyeku"

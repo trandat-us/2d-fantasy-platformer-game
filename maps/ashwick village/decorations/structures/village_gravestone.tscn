@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctcnn87qnaf5l"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_81qsu"]
+
+[node name="VillageGravestone" type="Sprite2D"]
+texture = ExtResource("1_81qsu")
+region_enabled = true
+region_rect = Rect2(447, 167, 34, 25)

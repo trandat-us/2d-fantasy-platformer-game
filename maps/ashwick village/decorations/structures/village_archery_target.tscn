@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm2okatc3cvlu"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_qfuek"]
+
+[node name="VillageArcheryTarget" type="Sprite2D"]
+texture = ExtResource("1_qfuek")
+region_enabled = true
+region_rect = Rect2(717, 20, 38, 44)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://qlg0oao6it2a"]
+
+[ext_resource type="Texture2D" uid="uid://d22by1ipst2xb" path="res://assets/textures/tilemap/cave/tileset.png" id="1_bgfqr"]
+
+[node name="CaveSpriteSprite" type="Sprite2D" unique_id=1285477338]
+texture = ExtResource("1_bgfqr")
+region_enabled = true
+region_rect = Rect2(752, 288, 16, 16)

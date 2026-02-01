@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://f3k47s5rjyjr"]
+
+[ext_resource type="Texture2D" uid="uid://dytbpyou2j86q" path="res://assets/textures/sprites/others/fire_pit.png" id="1_5q3h5"]
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="2_vvifu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvifu"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0a4b"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btoaw"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivrja"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okhjc"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vysya"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5rh"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm6l1"]
+atlas = ExtResource("1_5q3h5")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bfvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvifu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0a4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btoaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivrja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okhjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vysya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm6l1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="VillageFirePit" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -27.5)
+scale = Vector2(1.03125, 0.8541667)
+sprite_frames = SubResource("SpriteFrames_7bfvi")
+autoplay = "default"
+frame_progress = 0.04517007
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vvifu")
+region_enabled = true
+region_rect = Rect2(797, 33, 39, 31)

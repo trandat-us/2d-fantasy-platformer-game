@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be3kde5dj2iyx"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_tgeui"]
+
+[node name="VillageMarketStall" type="Sprite2D"]
+texture = ExtResource("1_tgeui")
+region_enabled = true
+region_rect = Rect2(391, 383, 85, 33)

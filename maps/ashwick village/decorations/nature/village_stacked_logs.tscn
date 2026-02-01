@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1kcaaa0dtwqy"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_ehs4r"]
+
+[node name="VillageStackedLogs" type="Sprite2D"]
+texture = ExtResource("1_ehs4r")
+region_enabled = true
+region_rect = Rect2(163, 335, 90, 49)

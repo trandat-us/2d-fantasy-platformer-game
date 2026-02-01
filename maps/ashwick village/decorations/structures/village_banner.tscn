@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://03df6ocu2s1q"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_n5u6f"]
+
+[node name="VillageBanner" type="Sprite2D"]
+texture = ExtResource("1_n5u6f")
+region_enabled = true
+region_rect = Rect2(642, 226, 28, 59)

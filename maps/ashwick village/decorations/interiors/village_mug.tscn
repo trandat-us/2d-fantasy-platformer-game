@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3iiv4ux6l6id"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_s7ajm"]
+
+[node name="VillageMug" type="Sprite2D"]
+texture = ExtResource("1_s7ajm")
+region_enabled = true
+region_rect = Rect2(341, 183, 10, 9)

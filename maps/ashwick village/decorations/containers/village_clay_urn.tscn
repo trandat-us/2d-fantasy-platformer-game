@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ks1wmf01a3ja"]
+
+[ext_resource type="Texture2D" uid="uid://bw5uiedyrnx36" path="res://assets/textures/tilemap/village/props.png" id="1_fi617"]
+
+[node name="VillageClayUrn" type="Sprite2D"]
+texture = ExtResource("1_fi617")
+region_enabled = true
+region_rect = Rect2(328, 35, 19, 29)

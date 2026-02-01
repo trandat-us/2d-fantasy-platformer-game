@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ftcbb1kkoffh"]
+
+[ext_resource type="Script" uid="uid://bnonha4gsynl4" path="res://components/hazard component/hazard_component.gd" id="1_3od4m"]
+
+[node name="HazardComponent" type="Area2D" unique_id=382182477]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_3od4m")
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=1183773306]
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

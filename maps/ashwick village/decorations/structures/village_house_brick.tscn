@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqbmvot73n812"]
+
+[ext_resource type="Texture2D" uid="uid://dmmvyufft1hli" path="res://assets/textures/tilemap/village/housebrick.png" id="1_g1r7w"]
+
+[node name="VillageHouseBrick" type="Sprite2D"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_g1r7w")
+region_rect = Rect2(717, 20, 38, 44)

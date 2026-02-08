@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b15v7e22rhpqt"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_1vv7g"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_1idp2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q7c2"]
+atlas = ExtResource("2_1idp2")
+region = Rect2(0, 449, 32, 32)
+
+[resource]
+script = ExtResource("1_1vv7g")
+id = "item_apple"
+name = "Apple"
+description = "A round fruit with smooth, shiny red skin. It is crisp, juicy, and has a sweet flavor, often eaten fresh."
+texture = SubResource("AtlasTexture_8q7c2")
+type = 1
+metadata/_custom_type_script = "uid://60f72t0hir6j"

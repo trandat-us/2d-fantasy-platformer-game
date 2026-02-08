@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var hp_bar: ProgressBar = %HpBar
 @onready var damage_bar: ProgressBar = %DamageBar

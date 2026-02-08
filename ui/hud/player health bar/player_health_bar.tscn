@@ -14,20 +14,17 @@ bg_color = Color(0.18431373, 0.18431373, 0.18431373, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oybee"]
 bg_color = Color(0.8117647, 0.7921569, 0, 1)
 
-[node name="PlayerHealthBar" type="Control" unique_id=1403324126]
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 2
+[node name="PlayerHealthBar" type="CanvasLayer" unique_id=1065859975]
 script = ExtResource("1_oybee")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=602115910]
 custom_minimum_size = Vector2(40, 20)
-layout_mode = 1
 offset_left = 34.0
 offset_top = 31.0
 offset_right = 179.0
 offset_bottom = 51.0
 scale = Vector2(3, 3)
+mouse_behavior_recursive = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1108325913]
 layout_mode = 2

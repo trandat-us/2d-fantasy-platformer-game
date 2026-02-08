@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://feh55rqq86vm"]
+
+[ext_resource type="PackedScene" uid="uid://cad7rl11ufrdk" path="res://entities/npcs/npc.tscn" id="1_idu3l"]
+[ext_resource type="Texture2D" uid="uid://4kfeiyjbb54q" path="res://assets/textures/sprites/npcs/grocer.png" id="2_0ksr4"]
+[ext_resource type="Script" uid="uid://cgx5k2ga0pqul" path="res://entities/npcs/grocer/grocer.gd" id="2_sskbd"]
+[ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="4_0320a"]
+[ext_resource type="Resource" uid="uid://b15v7e22rhpqt" path="res://data/item/food/apple.tres" id="4_w1hwr"]
+[ext_resource type="Resource" uid="uid://bvyxc367k807l" path="res://data/item/food/banana.tres" id="5_htn43"]
+[ext_resource type="Resource" uid="uid://c6a72vves01lc" path="res://data/item/food/pear.tres" id="6_3ec06"]
+[ext_resource type="Script" uid="uid://4yluvhykulr8" path="res://data/definitions/item/shop_item.gd" id="6_6jasg"]
+[ext_resource type="Resource" uid="uid://btf4bi4pse30k" path="res://data/item/food/lemon.tres" id="7_amrwt"]
+[ext_resource type="Resource" uid="uid://nm58lc3ba3qn" path="res://data/item/food/grapes.tres" id="8_6jasg"]
+[ext_resource type="Resource" uid="uid://c3436bdy807ca" path="res://data/item/food/strawberry.tres" id="9_21e42"]
+[ext_resource type="Resource" uid="uid://d1a6xrdfbwffk" path="res://data/item/food/tomato.tres" id="10_m5jod"]
+
+[sub_resource type="Resource" id="Resource_htn43"]
+script = ExtResource("6_6jasg")
+item = ExtResource("4_w1hwr")
+price = 10
+amount = 5
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_3ec06"]
+script = ExtResource("6_6jasg")
+item = ExtResource("5_htn43")
+price = 20
+amount = 3
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_amrwt"]
+script = ExtResource("6_6jasg")
+item = ExtResource("6_3ec06")
+price = 30
+amount = 2
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_6jasg"]
+script = ExtResource("6_6jasg")
+item = ExtResource("7_amrwt")
+price = 50
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_21e42"]
+script = ExtResource("6_6jasg")
+item = ExtResource("8_6jasg")
+price = 30
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_m5jod"]
+script = ExtResource("6_6jasg")
+item = ExtResource("9_21e42")
+price = 50
+amount = 5
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_xl2eh"]
+script = ExtResource("6_6jasg")
+item = ExtResource("10_m5jod")
+price = 40
+amount = 3
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Animation" id="Animation_0ksr4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sskbd"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0320a"]
+_data = {
+&"RESET": SubResource("Animation_0ksr4"),
+&"idle": SubResource("Animation_sskbd")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ksr4"]
+radius = 12.0
+height = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sskbd"]
+radius = 18.0
+height = 80.0
+
+[node name="Grocer" unique_id=2060175977 instance=ExtResource("1_idu3l")]
+script = ExtResource("2_sskbd")
+item_shop_list = Array[ExtResource("6_6jasg")]([SubResource("Resource_htn43"), SubResource("Resource_3ec06"), SubResource("Resource_amrwt"), SubResource("Resource_6jasg"), SubResource("Resource_21e42"), SubResource("Resource_m5jod"), SubResource("Resource_xl2eh")])
+npc_name = "Amy"
+
+[node name="Pivot" parent="." index="0" unique_id=31451312]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" parent="Pivot" index="0" unique_id=1299652959]
+texture = ExtResource("2_0ksr4")
+flip_h = true
+hframes = 10
+vframes = 7
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1312779435]
+libraries/ = SubResource("AnimationLibrary_0320a")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1201620783]
+position = Vector2(-1, 14)
+shape = SubResource("CapsuleShape2D_0ksr4")
+
+[node name="InteractiveHint" parent="InteractiveComponent" parent_id_path=PackedInt32Array(437063996) index="0" unique_id=649978554 instance=ExtResource("4_0320a")]
+offset_top = -46.0
+offset_bottom = -22.0
+hint_text = "[F] Talk to Amy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveComponent" parent_id_path=PackedInt32Array(437063996) index="1" unique_id=474075655]
+position = Vector2(-1, 14)
+shape = SubResource("CapsuleShape2D_sskbd")

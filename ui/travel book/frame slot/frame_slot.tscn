@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dcxl0usa61v3o"]
+
+[ext_resource type="Texture2D" uid="uid://0tr8oceiooi8" path="res://assets/textures/ui/travel book/slot_frame.png" id="1_ax6bc"]
+[ext_resource type="Script" uid="uid://c2iu6lei81ycu" path="res://ui/travel book/frame slot/frame_slot.gd" id="1_ivx44"]
+[ext_resource type="Texture2D" uid="uid://bxgbysfin6mjq" path="res://assets/textures/ui/travel book/slot cursor/slot_cursor_1.png" id="2_82mbk"]
+[ext_resource type="Texture2D" uid="uid://cdblb5sdlvfj8" path="res://assets/textures/ui/travel book/slot cursor/slot_cursor_3.png" id="4_3u6dq"]
+[ext_resource type="Texture2D" uid="uid://cw51qb0ijiwb8" path="res://assets/textures/ui/travel book/slot cursor/slot_cursor_4.png" id="5_7nhr4"]
+
+[sub_resource type="Animation" id="Animation_vwjg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotCursor:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlotCursor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ivx44"]
+resource_name = "on_focus"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotCursor:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlotCursor:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_82mbk"), ExtResource("5_7nhr4"), ExtResource("4_3u6dq"), ExtResource("5_7nhr4"), ExtResource("2_82mbk")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwjg3"]
+_data = {
+&"RESET": SubResource("Animation_vwjg3"),
+&"on_focus": SubResource("Animation_ivx44")
+}
+
+[node name="FrameSlot" type="TextureButton" unique_id=302030203]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = -1
+anchor_right = 0.041666668
+anchor_bottom = 0.074074075
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_ax6bc")
+stretch_mode = 0
+script = ExtResource("1_ivx44")
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1238615673]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AmountLabel" type="Label" parent="." unique_id=1952570717]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -18.958334
+offset_right = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+
+[node name="SlotCursor" type="TextureRect" parent="." unique_id=1478073697]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=362076045]
+libraries/ = SubResource("AnimationLibrary_vwjg3")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

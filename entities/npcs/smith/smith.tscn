@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://chnhyab24fbny"]
+
+[ext_resource type="PackedScene" uid="uid://cad7rl11ufrdk" path="res://entities/npcs/npc.tscn" id="1_rqske"]
+[ext_resource type="Script" uid="uid://cbfalox332ktf" path="res://entities/npcs/smith/smith.gd" id="2_ax6yr"]
+[ext_resource type="Texture2D" uid="uid://cp3lefjebivau" path="res://assets/textures/sprites/npcs/smith.png" id="2_n20fv"]
+[ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="3_klttk"]
+[ext_resource type="Script" uid="uid://4yluvhykulr8" path="res://data/definitions/item/shop_item.gd" id="3_omdqf"]
+[ext_resource type="Resource" uid="uid://2yqr0u43nlav" path="res://data/item/weapon/axe.tres" id="4_kolnh"]
+[ext_resource type="Resource" uid="uid://c4ggujlnxis36" path="res://data/item/weapon/pickaxe.tres" id="5_5icaw"]
+[ext_resource type="Resource" uid="uid://cobqdjga3iu4i" path="res://data/item/weapon/shovel.tres" id="6_p41v1"]
+
+[sub_resource type="Resource" id="Resource_xlnbs"]
+script = ExtResource("3_omdqf")
+item = ExtResource("4_kolnh")
+price = 200
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_wjpcp"]
+script = ExtResource("3_omdqf")
+item = ExtResource("5_5icaw")
+price = 250
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_lu3ug"]
+script = ExtResource("3_omdqf")
+item = ExtResource("6_p41v1")
+price = 175
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Animation" id="Animation_n20fv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rqske"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n20fv"]
+_data = {
+&"RESET": SubResource("Animation_n20fv"),
+&"idle": SubResource("Animation_rqske")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n20fv"]
+radius = 12.0
+height = 78.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klttk"]
+radius = 24.0
+height = 96.0
+
+[node name="Smith" unique_id=2060175977 instance=ExtResource("1_rqske")]
+script = ExtResource("2_ax6yr")
+item_shop_list = Array[ExtResource("3_omdqf")]([SubResource("Resource_xlnbs"), SubResource("Resource_wjpcp"), SubResource("Resource_lu3ug")])
+npc_name = "Johnson"
+
+[node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(31451312) index="0" unique_id=1299652959]
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_n20fv")
+hframes = 10
+vframes = 7
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1312779435]
+libraries/ = SubResource("AnimationLibrary_n20fv")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1201620783]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_n20fv")
+
+[node name="InteractiveHint" parent="InteractiveComponent" parent_id_path=PackedInt32Array(437063996) index="0" unique_id=649978554 instance=ExtResource("3_klttk")]
+offset_top = -47.0
+offset_bottom = -23.0
+hint_text = "[F] Talk to Johnson"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveComponent" parent_id_path=PackedInt32Array(437063996) index="1" unique_id=1208550923]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_klttk")

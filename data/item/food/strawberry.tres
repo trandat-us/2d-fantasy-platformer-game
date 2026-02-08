@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c3436bdy807ca"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_lqvfb"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_hlste"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crv64"]
+atlas = ExtResource("2_hlste")
+region = Rect2(128, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_lqvfb")
+id = "item_strawberry"
+name = "Strawberry"
+description = "Small, red fruits with a sweet and slightly tangy flavor. They have a juicy texture, a pleasant aroma, and tiny seeds on the outside. Strawberries are often eaten fresh or used in desserts, drinks, and jams, and they are rich in vitamin C and antioxidants."
+texture = SubResource("AtlasTexture_crv64")
+type = 1
+metadata/_custom_type_script = "uid://60f72t0hir6j"

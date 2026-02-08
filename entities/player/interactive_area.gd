@@ -21,9 +21,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is InteractiveComponent:
 		interactable_objects.append(area)
-		area.show_hint.call()
+		area.show_hint()
 
 func _on_area_exited(area: Area2D) -> void:
 	if area is InteractiveComponent:
 		interactable_objects.erase(area)
-		area.hide_hint.call()
+		area.hide_hint()

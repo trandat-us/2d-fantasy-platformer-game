@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d1a6xrdfbwffk"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_4umok"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_0bkpp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crv64"]
+atlas = ExtResource("2_0bkpp")
+region = Rect2(288, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_4umok")
+id = "item_tomato"
+name = "Tomato"
+description = "Round fruits with smooth red skin and a juicy, slightly sweet and tangy flavor. They are commonly used in salads, sauces, soups, and many cooked dishes. Tomatoes are rich in vitamins A and C and contain antioxidants that are good for health."
+texture = SubResource("AtlasTexture_crv64")
+type = 1
+metadata/_custom_type_script = "uid://60f72t0hir6j"

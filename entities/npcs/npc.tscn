@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cad7rl11ufrdk"]
+
+[ext_resource type="Script" uid="uid://34b114b1sbj8" path="res://entities/npcs/npc.gd" id="1_aqmvp"]
+[ext_resource type="PackedScene" uid="uid://r7dvt8vpcyk4" path="res://components/interactive component/interactive_component.tscn" id="2_ii8d2"]
+
+[node name="Npc" type="CharacterBody2D" unique_id=2060175977]
+collision_layer = 32
+script = ExtResource("1_aqmvp")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=31451312]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=1299652959]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1312779435]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1201620783]
+
+[node name="InteractiveComponent" parent="." unique_id=437063996 instance=ExtResource("2_ii8d2")]

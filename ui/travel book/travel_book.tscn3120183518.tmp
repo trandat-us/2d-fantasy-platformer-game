@@ -1,0 +1,681 @@
+[gd_scene format=3 uid="uid://b2884bwnctdyl"]
+
+[ext_resource type="Script" uid="uid://dvamlpqh4p12y" path="res://ui/travel book/travel_book.gd" id="1_8rgil"]
+[ext_resource type="Texture2D" uid="uid://by4l3wtx1m2u3" path="res://assets/textures/ui/travel book/cover.png" id="1_qnq48"]
+[ext_resource type="Texture2D" uid="uid://rvrbio1cy3i4" path="res://assets/textures/ui/travel book/page_left.png" id="2_xb5cu"]
+[ext_resource type="Texture2D" uid="uid://bond47ou8jdcm" path="res://assets/textures/ui/travel book/page_right.png" id="3_h3a2i"]
+[ext_resource type="Script" uid="uid://c7qyax21ljtko" path="res://ui/travel book/pages_h_box.gd" id="3_kejms"]
+[ext_resource type="PackedScene" uid="uid://68cn77ypvh6y" path="res://ui/travel book/inventory container/inventory_container.tscn" id="3_slwg8"]
+[ext_resource type="Script" uid="uid://dl2akrh5dpyjy" path="res://ui/travel book/inventory_section.gd" id="4_a7i4n"]
+[ext_resource type="PackedScene" uid="uid://ef72ls3s030h" path="res://ui/travel book/marker button/marker_button.tscn" id="4_fsqgi"]
+[ext_resource type="Texture2D" uid="uid://bhda2qxp0by4d" path="res://assets/textures/ui/travel book/button sprites/button_5.png" id="4_mdi3v"]
+[ext_resource type="Texture2D" uid="uid://b8lfmu7jbxey4" path="res://assets/textures/ui/travel book/button sprites/button_1.png" id="5_0kf0h"]
+[ext_resource type="Texture2D" uid="uid://qnvmok4gc752" path="res://assets/textures/ui/travel book/spritesheet.png" id="6_h0rhl"]
+[ext_resource type="Script" uid="uid://cbw38ms4hregm" path="res://ui/travel book/item_detail_container.gd" id="10_d0em0"]
+[ext_resource type="Texture2D" uid="uid://0tr8oceiooi8" path="res://assets/textures/ui/travel book/slot_frame.png" id="10_ipde7"]
+[ext_resource type="Texture2D" uid="uid://bngrp5dnuikni" path="res://assets/textures/ui/travel book/header.png" id="11_2dg1y"]
+[ext_resource type="Texture2D" uid="uid://cr24r0topu3fg" path="res://assets/textures/ui/travel book/barfill.png" id="11_a2kpw"]
+[ext_resource type="Texture2D" uid="uid://bffiguyuv42x6" path="res://assets/textures/ui/travel book/pad_left.png" id="12_nfux2"]
+[ext_resource type="Texture2D" uid="uid://cdhf1e081xjrj" path="res://assets/textures/ui/travel book/h_bar.png" id="13_4qnq7"]
+[ext_resource type="Texture2D" uid="uid://bgh1a05pxh0n5" path="res://assets/textures/ui/travel book/pad_right.png" id="13_sovy7"]
+[ext_resource type="PackedScene" uid="uid://ck1mtbh1n6etv" path="res://ui/travel book/selection frame button/selection_frame_button.tscn" id="15_4qnq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kejms"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(148, 676, 8, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dg1y"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(131, 676, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15re5"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(180, 676, 7, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfux2"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(163, 676, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0rhl"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(165, 694, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rgil"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(181, 694, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7i4n"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(132, 711, 7, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipde7"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(149, 709, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2kpw"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(165, 710, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0em0"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(149, 694, 6, 6)
+
+[node name="TravelBook" type="Control" unique_id=639469822]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8rgil")
+
+[node name="Cover" type="NinePatchRect" parent="." unique_id=343739407]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -180.0
+offset_right = 272.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qnq48")
+region_rect = Rect2(0, 0, 224, 160)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="Cover" unique_id=720898188]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PagesHBox" type="HBoxContainer" parent="Cover/MarginContainer" unique_id=2142912984]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("3_kejms")
+
+[node name="PageLeft" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox" unique_id=1698954394]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_xb5cu")
+region_rect = Rect2(0, 0, 104, 147)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 19
+
+[node name="MarkerHBox" type="HBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft" unique_id=613208790]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = -28.0
+offset_right = 96.0
+offset_bottom = 2.0
+grow_horizontal = 2
+
+[node name="InventoryMarker" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=1096551561 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox/InventoryMarker" unique_id=1972586421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -10.0
+offset_right = 10.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_kejms")
+
+[node name="EquipmentMarker" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=55923826 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox/EquipmentMarker" unique_id=1468993325]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -10.0
+offset_right = 11.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_2dg1y")
+
+[node name="JournalMarker" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=418407281 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox/JournalMarker" unique_id=477116823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -9.0
+offset_right = 11.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_15re5")
+
+[node name="SettingsMarker" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=86448552 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox/SettingsMarker" unique_id=1376354579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -10.0
+offset_right = 11.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_nfux2")
+
+[node name="LeftSectionsContainer" type="MarginContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft" unique_id=1352461271]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 16
+
+[node name="InventorySection" type="VBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=2036593735]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("4_a7i4n")
+
+[node name="ButtonTypesHBox" type="HBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection" unique_id=38870337]
+layout_mode = 2
+alignment = 1
+
+[node name="GeneralButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=1476149527]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/GeneralButton" unique_id=660151843]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_h0rhl")
+
+[node name="FoodButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=682003317]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/FoodButton" unique_id=1380904839]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8rgil")
+
+[node name="KeyButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=675145585]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/KeyButton" unique_id=944639554]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(21, 9)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_a7i4n")
+expand_mode = 2
+
+[node name="WeaponButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=994406678]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/WeaponButton" unique_id=1360912842]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ipde7")
+expand_mode = 2
+
+[node name="ChestButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=980488033]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/ChestButton" unique_id=1271697736]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_a2kpw")
+expand_mode = 2
+
+[node name="InventoryTypesContainer" type="Control" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection" unique_id=1741459622]
+custom_minimum_size = Vector2(212, 224)
+layout_mode = 2
+
+[node name="GeneralInventory" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=960653195 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="FoodInventory" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=1855239518 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="KeyInventory" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=1194629279 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="WeaponInventory" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=536803850 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="ChestInventory" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=97743921 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="EquipmentSection" type="VBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=116477993]
+layout_mode = 2
+
+[node name="Header" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" unique_id=43298022]
+custom_minimum_size = Vector2(202, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_2dg1y")
+region_rect = Rect2(0, 0, 62, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/Header" unique_id=902326806]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -10.833333
+offset_right = 42.0
+offset_bottom = 10.833333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_colors/font_shadow_color = Color(0.34033942, 0.34033927, 0.3403393, 0.18039216)
+theme_override_font_sizes/font_size = 20
+text = "Weapons"
+uppercase = true
+
+[node name="EquipmentNavigationBar" type="HBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" unique_id=1814342915]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LeftButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar" unique_id=956659458]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+texture_normal = ExtResource("12_nfux2")
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar" unique_id=1287661472]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="WeaponPartButton" type="Button" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer" unique_id=1279724999]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer/WeaponPartButton" unique_id=375545159]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="ArmorPartButton" type="Button" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer" unique_id=1351594952]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer/ArmorPartButton" unique_id=1654960453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="ToolPartButton" type="Button" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer" unique_id=552376722]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer/ToolPartButton" unique_id=510704425]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="Other1PartButton" type="Button" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer" unique_id=1779286836]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer/Other1PartButton" unique_id=901694808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="Other2PartButton" type="Button" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer" unique_id=1710835251]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/HBoxContainer/Other2PartButton" unique_id=447524872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="RightButton" type="TextureButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar" unique_id=223622152]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+texture_normal = ExtResource("13_sovy7")
+stretch_mode = 0
+
+[node name="SelectionFrames" type="Control" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" unique_id=1226489753]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WeaponSelectionFrame" type="VBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames" unique_id=1303429989]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SelectionFrameButton" parent="Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=742874875 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="PageRight" type="NinePatchRect" parent="Cover/MarginContainer/PagesHBox" unique_id=358566424]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_h3a2i")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 19
+
+[node name="RightSectionContainer" type="MarginContainer" parent="Cover/MarginContainer/PagesHBox/PageRight" unique_id=506540615]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="ItemDetailContainer" type="VBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=1907202212]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("10_d0em0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer" unique_id=1511855374]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer" unique_id=1971782673]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("10_ipde7")
+
+[node name="IconTexture" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/TextureRect" unique_id=1287695741]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer" unique_id=837936384]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="ItemNameLabel" type="Label" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=501569634]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 16
+text = "Item Name"
+
+[node name="BarFill" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=1697587607]
+layout_mode = 2
+texture = ExtResource("11_a2kpw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=1555121703]
+layout_mode = 2
+
+[node name="ChestIcon" type="TextureRect" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=704546864]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_d0em0")
+
+[node name="ItemAmountLabel" type="Label" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2005450749]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 12
+text = "1"
+
+[node name="ItemDescriptionLabel" type="Label" parent="Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer" unique_id=2015984778]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 10
+text = "Item description"
+autowrap_mode = 2

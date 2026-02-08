@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c6a72vves01lc"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_inu3p"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_iofmh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q7c2"]
+atlas = ExtResource("2_iofmh")
+region = Rect2(64, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_inu3p")
+id = "item_pear"
+name = "Pear"
+description = "A juicy, sweet fruit with a soft texture and thin skin. They are rich in fiber and vitamins, making them a healthy and refreshing choice."
+texture = SubResource("AtlasTexture_8q7c2")
+type = 1
+metadata/_custom_type_script = "uid://60f72t0hir6j"

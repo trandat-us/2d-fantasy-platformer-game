@@ -10,6 +10,7 @@ class_name Player
 @onready var point_light_2d: PointLight2D = $PointLight2D
 
 @export var stats: PlayerStats
+@export var inventory: Inventory
 @export var input_enabled = false
 
 var event_bus: EventBus
@@ -22,7 +23,6 @@ var direction: float = 1.0:
 
 func _ready() -> void:
 	hurt_box_component.get_hurt = _on_getting_hurt
-	
 	event_bus = get_tree().get_first_node_in_group("event_bus")
 	apply_floor_snap()
 

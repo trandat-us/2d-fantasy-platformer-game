@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvapbio6wbmo1"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_fhk24"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_n8wml"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kjxl"]
+atlas = ExtResource("2_n8wml")
+region = Rect2(64, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_fhk24")
+id = "item_speed_potion"
+name = "Speed Potion"
+texture = SubResource("AtlasTexture_8kjxl")
+metadata/_custom_type_script = "uid://60f72t0hir6j"

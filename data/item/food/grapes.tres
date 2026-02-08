@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://nm58lc3ba3qn"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_7t284"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_b4vr3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm5nl"]
+atlas = ExtResource("2_b4vr3")
+region = Rect2(160, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_7t284")
+id = "item_grapes"
+name = "Grapes"
+description = "Small, round fruits with a deep purple skin and a sweet, juicy taste. They can be eaten fresh or used to make juice, wine, and desserts. Purple grapes are rich in antioxidants, especially resveratrol, which is good for heart health."
+texture = SubResource("AtlasTexture_bm5nl")
+type = 1
+metadata/_custom_type_script = "uid://60f72t0hir6j"

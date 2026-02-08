@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c84pabqu1lfcs"]
+
+[ext_resource type="PackedScene" uid="uid://cad7rl11ufrdk" path="res://entities/npcs/npc.tscn" id="1_hauo4"]
+[ext_resource type="Script" uid="uid://budpcjv6oubgw" path="res://entities/npcs/alchemist/alchemist.gd" id="2_ndalc"]
+[ext_resource type="Texture2D" uid="uid://dkbkfhkpdeexb" path="res://assets/textures/sprites/npcs/alchemist.png" id="2_teqc1"]
+[ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="3_57cw2"]
+[ext_resource type="Script" uid="uid://4yluvhykulr8" path="res://data/definitions/item/shop_item.gd" id="3_necat"]
+[ext_resource type="Resource" uid="uid://n52qc3ocg8ws" path="res://data/item/general/health_potion.tres" id="4_a1ke3"]
+[ext_resource type="Resource" uid="uid://bv1fm1yt1j3eh" path="res://data/item/general/stamina_potion.tres" id="5_vf1vy"]
+[ext_resource type="Resource" uid="uid://cg0v86tpeohsy" path="res://data/item/general/energy_potion.tres" id="6_x2upv"]
+[ext_resource type="Resource" uid="uid://bvapbio6wbmo1" path="res://data/item/general/speed_potion.tres" id="7_6gffn"]
+
+[sub_resource type="Resource" id="Resource_necat"]
+script = ExtResource("3_necat")
+item = ExtResource("4_a1ke3")
+price = 100
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_otj2r"]
+script = ExtResource("3_necat")
+item = ExtResource("5_vf1vy")
+price = 80
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_j346x"]
+script = ExtResource("3_necat")
+item = ExtResource("6_x2upv")
+price = 70
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_yngil"]
+script = ExtResource("3_necat")
+item = ExtResource("7_6gffn")
+price = 70
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Animation" id="Animation_57cw2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_teqc1"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57cw2"]
+_data = {
+&"RESET": SubResource("Animation_57cw2"),
+&"idle": SubResource("Animation_teqc1")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_teqc1"]
+radius = 12.0
+height = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57cw2"]
+radius = 24.0
+height = 82.0
+
+[node name="Alchemist" unique_id=2060175977 instance=ExtResource("1_hauo4")]
+script = ExtResource("2_ndalc")
+item_shop_list = Array[ExtResource("3_necat")]([SubResource("Resource_necat"), SubResource("Resource_otj2r"), SubResource("Resource_j346x"), SubResource("Resource_yngil")])
+npc_name = "Charlotte"
+
+[node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(31451312) index="0" unique_id=1299652959]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_teqc1")
+flip_h = true
+hframes = 10
+vframes = 7
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1312779435]
+libraries/ = SubResource("AnimationLibrary_57cw2")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1201620783]
+position = Vector2(-1, 14)
+shape = SubResource("CapsuleShape2D_teqc1")
+
+[node name="InteractiveHint" parent="InteractiveComponent" parent_id_path=PackedInt32Array(437063996) index="0" unique_id=649978554 instance=ExtResource("3_57cw2")]
+offset_top = -47.0
+offset_bottom = -23.0
+hint_text = "[F] Talk to Charlotte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveComponent" parent_id_path=PackedInt32Array(437063996) index="1" unique_id=1204129120]
+position = Vector2(-1, 13)
+shape = SubResource("CapsuleShape2D_57cw2")

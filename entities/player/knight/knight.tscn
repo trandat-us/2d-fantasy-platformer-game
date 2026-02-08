@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dt7xxqhpp1b0r" path="res://data/definitions/stats/player_stats.gd" id="2_rswjn"]
 [ext_resource type="Texture2D" uid="uid://bmnfmruy68pq2" path="res://assets/textures/sprites/players/knight/idle.png" id="3_asebd"]
 [ext_resource type="Script" uid="uid://biet5xjjtlg2c" path="res://entities/player/knight/fsm/states/ground.gd" id="4_0ounq"]
+[ext_resource type="Script" uid="uid://dtxm72yt1guls" path="res://data/definitions/item/inventory_item.gd" id="4_1rll2"]
+[ext_resource type="Script" uid="uid://vtm4b727hsm4" path="res://data/definitions/inventory.gd" id="5_63a1p"]
 [ext_resource type="Texture2D" uid="uid://cpvvcnfd57mn3" path="res://assets/textures/sprites/players/knight/attack_4.png" id="7_1bg7k"]
 [ext_resource type="Script" uid="uid://dhqtvdwycok4r" path="res://entities/player/knight/fsm/states/jump.gd" id="9_mxwpa"]
 [ext_resource type="Script" uid="uid://ckew5wg04dqpx" path="res://entities/player/knight/fsm/states/fall.gd" id="10_t1448"]
@@ -39,6 +41,10 @@
 [sub_resource type="Resource" id="Resource_opmwg"]
 script = ExtResource("2_rswjn")
 metadata/_custom_type_script = "uid://dt7xxqhpp1b0r"
+
+[sub_resource type="Resource" id="Resource_1rll2"]
+script = ExtResource("5_63a1p")
+metadata/_custom_type_script = "uid://vtm4b727hsm4"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vdbmp"]
 radius = 13.0
@@ -1252,6 +1258,7 @@ collision_mask = 9
 floor_snap_length = 16.0
 script = ExtResource("1_sangq")
 stats = SubResource("Resource_opmwg")
+inventory = SubResource("Resource_1rll2")
 
 [node name="Camera2D" parent="." index="0" unique_id=822148082]
 offset = Vector2(0, -80)

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cobqdjga3iu4i"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_k1c8w"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_22024"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guuuk"]
+atlas = ExtResource("2_22024")
+region = Rect2(96, 320, 32, 32)
+
+[resource]
+script = ExtResource("1_k1c8w")
+id = "item_shovel"
+name = "Shovel"
+texture = SubResource("AtlasTexture_guuuk")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://60f72t0hir6j"

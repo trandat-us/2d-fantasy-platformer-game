@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://2yqr0u43nlav"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_yll0n"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_5pwbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guuuk"]
+atlas = ExtResource("2_5pwbk")
+region = Rect2(32, 320, 32, 32)
+
+[resource]
+script = ExtResource("1_yll0n")
+id = "item_axe"
+name = "Axe"
+texture = SubResource("AtlasTexture_guuuk")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://60f72t0hir6j"

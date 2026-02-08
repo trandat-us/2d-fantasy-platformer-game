@@ -6,3 +6,6 @@
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_ingvl")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

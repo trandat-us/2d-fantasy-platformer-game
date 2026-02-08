@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 class_name PauseMenu
 
 signal option_pressed(option: String)

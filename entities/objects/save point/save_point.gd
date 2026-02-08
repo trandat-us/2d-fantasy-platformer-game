@@ -8,8 +8,6 @@ class_name SavePoint
 
 func _ready() -> void:
 	interactive_component.interact = _on_interact
-	interactive_component.show_hint = _on_show_hint
-	interactive_component.hide_hint = _on_hide_hint
 	
 	_update_input_hint_label()
 

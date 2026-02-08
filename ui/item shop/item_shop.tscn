@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://ku0ksu6vrwa0"]
+
+[ext_resource type="Script" uid="uid://6uggulea51g3" path="res://ui/item shop/item_shop.gd" id="1_flwig"]
+[ext_resource type="Texture2D" uid="uid://nra3a02nkseo" path="res://assets/textures/ui/item shop/main_frame.png" id="1_nkgoq"]
+[ext_resource type="Texture2D" uid="uid://bubsmgavu18ex" path="res://assets/textures/ui/item shop/banner.png" id="2_dxsbo"]
+[ext_resource type="Texture2D" uid="uid://xdx3s4vuf546" path="res://assets/textures/ui/item shop/cross_button.png" id="4_flwig"]
+
+[node name="ItemShop" type="CanvasLayer" unique_id=1627052872]
+script = ExtResource("1_flwig")
+
+[node name="Control" type="Control" parent="." unique_id=15241179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="NinePatchRect" parent="Control" unique_id=1608522985]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -260.0
+offset_right = -32.0
+offset_bottom = 252.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_nkgoq")
+region_rect = Rect2(0, 0, 96, 64)
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Frame" unique_id=1909719626]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 28
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Frame/MarginContainer" unique_id=1900588754]
+layout_mode = 2
+
+[node name="ItemInventoryVBox" type="VBoxContainer" parent="Control/Frame/MarginContainer/ScrollContainer" unique_id=1355575482]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="Banner" type="NinePatchRect" parent="Control" unique_id=748554913]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -276.0
+offset_right = -64.0
+offset_bottom = -236.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_dxsbo")
+patch_margin_left = 13
+patch_margin_right = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Banner" unique_id=233866673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="ShopNameLabel" type="Label" parent="Control/Banner/MarginContainer" unique_id=1198187656]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Food Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="Control" unique_id=875670955]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 66.0
+offset_right = 1119.0
+offset_bottom = 97.0
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_flwig")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://be5buena6e8et"]
+
+[ext_resource type="Texture2D" uid="uid://ddvd45qs1uck1" path="res://assets/textures/ui/item shop/bar_frame.png" id="1_hpsok"]
+[ext_resource type="Script" uid="uid://cxjeygst1yd8p" path="res://ui/item shop/item_shop_bar.gd" id="2_4jg4d"]
+[ext_resource type="Texture2D" uid="uid://ccb2srwbb5mbi" path="res://assets/textures/ui/item shop/slot_frame.png" id="2_hts0m"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_uwq4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jg4d"]
+atlas = ExtResource("3_uwq4l")
+region = Rect2(224, 384, 32, 32)
+
+[node name="ItemShopBar" type="NinePatchRect" unique_id=1566149706]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = -1
+anchor_right = 0.33333334
+anchor_bottom = 0.16049382
+texture = ExtResource("1_hpsok")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_4jg4d")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1406889334]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=270667278]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ItemTextureHolder" type="NinePatchRect" parent="MarginContainer/HBoxContainer" unique_id=1811932128]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_hts0m")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="ItemTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/ItemTextureHolder" unique_id=98352515]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemAmount" type="Label" parent="MarginContainer/HBoxContainer/ItemTextureHolder" unique_id=1199242443]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -22.0
+offset_right = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+
+[node name="ItemDetail" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1149063645]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ItemName" type="Label" parent="MarginContainer/HBoxContainer/ItemDetail" unique_id=1335238394]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ItemDetail" unique_id=1034145899]
+layout_mode = 2
+
+[node name="CoinTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/ItemDetail/HBoxContainer" unique_id=856488200]
+layout_mode = 2
+texture = SubResource("AtlasTexture_4jg4d")
+
+[node name="ItemPrice" type="Label" parent="MarginContainer/HBoxContainer/ItemDetail/HBoxContainer" unique_id=105972371]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1425574813]
+texture_filter = 2
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "Buy"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

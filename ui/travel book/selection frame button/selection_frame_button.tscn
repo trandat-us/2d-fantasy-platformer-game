@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ck1mtbh1n6etv"]
+
+[ext_resource type="Texture2D" uid="uid://bma8my28weplh" path="res://assets/textures/ui/travel book/selection_frame.png" id="1_13i2s"]
+[ext_resource type="Script" uid="uid://b5eja1h705hcl" path="res://ui/travel book/selection frame button/selection_frame_button.gd" id="1_vun2i"]
+[ext_resource type="Texture2D" uid="uid://bit1c8ln1hcgq" path="res://assets/textures/ui/travel book/selection_frame_selected.png" id="3_e777y"]
+
+[node name="SelectionFrameButton" type="Button" unique_id=742874875]
+custom_minimum_size = Vector2(200, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+flat = true
+script = ExtResource("1_vun2i")
+
+[node name="NormalTexture" type="NinePatchRect" parent="." unique_id=1006768194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_13i2s")
+patch_margin_left = 6
+patch_margin_top = 2
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="FocusedTexture" type="NinePatchRect" parent="." unique_id=1110631700]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_e777y")
+patch_margin_left = 6
+patch_margin_top = 2
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="." unique_id=742365303]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -10.500006
+offset_right = 41.0
+offset_bottom = 11.16666
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

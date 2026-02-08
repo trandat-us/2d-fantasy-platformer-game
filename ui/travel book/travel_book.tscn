@@ -1,0 +1,859 @@
+[gd_scene format=3 uid="uid://b2884bwnctdyl"]
+
+[ext_resource type="Script" uid="uid://dvamlpqh4p12y" path="res://ui/travel book/travel_book.gd" id="1_8rgil"]
+[ext_resource type="Texture2D" uid="uid://by4l3wtx1m2u3" path="res://assets/textures/ui/travel book/cover.png" id="1_qnq48"]
+[ext_resource type="Texture2D" uid="uid://rvrbio1cy3i4" path="res://assets/textures/ui/travel book/page_left.png" id="2_xb5cu"]
+[ext_resource type="Texture2D" uid="uid://bond47ou8jdcm" path="res://assets/textures/ui/travel book/page_right.png" id="3_h3a2i"]
+[ext_resource type="Script" uid="uid://c7qyax21ljtko" path="res://ui/travel book/pages_h_box.gd" id="3_kejms"]
+[ext_resource type="PackedScene" uid="uid://68cn77ypvh6y" path="res://ui/travel book/inventory container/inventory_container.tscn" id="3_slwg8"]
+[ext_resource type="Script" uid="uid://dl2akrh5dpyjy" path="res://ui/travel book/inventory_section.gd" id="4_a7i4n"]
+[ext_resource type="PackedScene" uid="uid://ef72ls3s030h" path="res://ui/travel book/marker button/marker_button.tscn" id="4_fsqgi"]
+[ext_resource type="Texture2D" uid="uid://bhda2qxp0by4d" path="res://assets/textures/ui/travel book/button sprites/button_5.png" id="4_mdi3v"]
+[ext_resource type="Texture2D" uid="uid://b8lfmu7jbxey4" path="res://assets/textures/ui/travel book/button sprites/button_1.png" id="5_0kf0h"]
+[ext_resource type="Texture2D" uid="uid://qnvmok4gc752" path="res://assets/textures/ui/travel book/spritesheet.png" id="6_h0rhl"]
+[ext_resource type="Script" uid="uid://cbw38ms4hregm" path="res://ui/travel book/item_detail_container.gd" id="10_d0em0"]
+[ext_resource type="Texture2D" uid="uid://0tr8oceiooi8" path="res://assets/textures/ui/travel book/slot_frame.png" id="10_ipde7"]
+[ext_resource type="Texture2D" uid="uid://bngrp5dnuikni" path="res://assets/textures/ui/travel book/header.png" id="11_2dg1y"]
+[ext_resource type="Texture2D" uid="uid://cr24r0topu3fg" path="res://assets/textures/ui/travel book/barfill.png" id="11_a2kpw"]
+[ext_resource type="Script" uid="uid://ccmkbnlsx5krj" path="res://ui/travel book/equipment_section.gd" id="11_j0h8o"]
+[ext_resource type="Texture2D" uid="uid://bffiguyuv42x6" path="res://assets/textures/ui/travel book/pad_left.png" id="12_nfux2"]
+[ext_resource type="Texture2D" uid="uid://cdhf1e081xjrj" path="res://assets/textures/ui/travel book/h_bar.png" id="13_4qnq7"]
+[ext_resource type="Texture2D" uid="uid://bgh1a05pxh0n5" path="res://assets/textures/ui/travel book/pad_right.png" id="13_sovy7"]
+[ext_resource type="PackedScene" uid="uid://ck1mtbh1n6etv" path="res://ui/travel book/selection frame button/selection_frame_button.tscn" id="15_4qnq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0h8o"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(148, 676, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl4f3"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(131, 676, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjjvm"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(179, 676, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqei3"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(163, 676, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0rhl"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(165, 694, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rgil"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(181, 694, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7i4n"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(132, 711, 7, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipde7"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(149, 709, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2kpw"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(165, 710, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0em0"]
+atlas = ExtResource("6_h0rhl")
+region = Rect2(149, 694, 6, 6)
+
+[node name="TravelBook" type="CanvasLayer" unique_id=1809368321]
+script = ExtResource("1_8rgil")
+
+[node name="TravelBook" type="Control" parent="." unique_id=639469822]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+
+[node name="Header" type="NinePatchRect" parent="TravelBook" unique_id=501875649]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -236.0
+offset_right = 272.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_h0rhl")
+region_rect = Rect2(64, 208, 224, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="TravelBook/Header" unique_id=133785391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="LineAbove" type="NinePatchRect" parent="TravelBook/Header/MarginContainer" unique_id=1496565042]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("6_h0rhl")
+region_rect = Rect2(64, 256, 32, 16)
+patch_margin_left = 12
+patch_margin_top = 8
+patch_margin_right = 12
+patch_margin_bottom = 8
+
+[node name="HeaderLabel" type="Label" parent="TravelBook/Header/MarginContainer" unique_id=852452146]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 28
+uppercase = true
+
+[node name="LineBelow" type="NinePatchRect" parent="TravelBook/Header/MarginContainer" unique_id=1149211446]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("6_h0rhl")
+region_rect = Rect2(64, 256, 32, 16)
+patch_margin_left = 12
+patch_margin_top = 8
+patch_margin_right = 12
+patch_margin_bottom = 8
+
+[node name="Cover" type="NinePatchRect" parent="TravelBook" unique_id=343739407]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -124.0
+offset_right = 272.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qnq48")
+region_rect = Rect2(0, 0, 224, 160)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="TravelBook/Cover" unique_id=720898188]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PagesHBox" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer" unique_id=2142912984]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("3_kejms")
+
+[node name="PageLeft" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox" unique_id=1698954394]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_xb5cu")
+region_rect = Rect2(0, 0, 104, 147)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 19
+
+[node name="MarkerHBox" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft" unique_id=613208790]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = -36.0
+offset_right = 114.0
+offset_bottom = 1.0
+grow_horizontal = 2
+
+[node name="InventoryMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=1096551561 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+icon_texture = SubResource("AtlasTexture_j0h8o")
+metadata/header_name = "inventory"
+
+[node name="EquipmentMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=55923826 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+icon_texture = SubResource("AtlasTexture_gl4f3")
+metadata/header_name = "equipment"
+
+[node name="JournalMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=418407281 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+icon_texture = SubResource("AtlasTexture_wjjvm")
+metadata/header_name = "journal"
+
+[node name="SettingsMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=86448552 instance=ExtResource("4_fsqgi")]
+layout_mode = 2
+icon_texture = SubResource("AtlasTexture_bqei3")
+metadata/header_name = "settings"
+
+[node name="LeftSectionsContainer" type="MarginContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft" unique_id=1352461271]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 16
+
+[node name="InventorySection" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=2036593735]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("4_a7i4n")
+
+[node name="ButtonTypesHBox" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection" unique_id=38870337]
+layout_mode = 2
+alignment = 1
+
+[node name="GeneralButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=1476149527]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/GeneralButton" unique_id=660151843]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_h0rhl")
+
+[node name="FoodButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=682003317]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/FoodButton" unique_id=1380904839]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8rgil")
+
+[node name="KeyButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=675145585]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/KeyButton" unique_id=944639554]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(21, 9)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_a7i4n")
+expand_mode = 2
+
+[node name="WeaponButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=994406678]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/WeaponButton" unique_id=1360912842]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ipde7")
+expand_mode = 2
+
+[node name="ChestButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox" unique_id=980488033]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_mdi3v")
+texture_pressed = ExtResource("5_0kf0h")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/ButtonTypesHBox/ChestButton" unique_id=1271697736]
+self_modulate = Color(1.4954206, 1.4954206, 1.4954206, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_a2kpw")
+expand_mode = 2
+
+[node name="InventoryTypesContainer" type="Control" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection" unique_id=1741459622]
+custom_minimum_size = Vector2(212, 224)
+layout_mode = 2
+
+[node name="GeneralInventory" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=960653195 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="FoodInventory" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=1855239518 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="KeyInventory" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=1194629279 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="WeaponInventory" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=536803850 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="ChestInventory" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/InventorySection/InventoryTypesContainer" unique_id=97743921 node_paths=PackedStringArray("inventory_section") instance=ExtResource("3_slwg8")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -112.0
+offset_right = 99.0
+offset_bottom = 112.0
+inventory_section = NodePath("../..")
+
+[node name="EquipmentSection" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=116477993]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("11_j0h8o")
+
+[node name="EquipmentHeader" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" unique_id=43298022]
+custom_minimum_size = Vector2(202, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_2dg1y")
+region_rect = Rect2(0, 0, 62, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="EquipmentHeaderLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentHeader" unique_id=902326806]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -13.541667
+offset_right = 52.0
+offset_bottom = 13.541667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_colors/font_shadow_color = Color(0.34033942, 0.34033927, 0.3403393, 0.18039216)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+uppercase = true
+
+[node name="EquipmentNavigationBar" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" unique_id=1814342915]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LeftButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar" unique_id=956659458]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_nfux2")
+stretch_mode = 0
+
+[node name="EquipmentPartButton" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar" unique_id=1287661472]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="WeaponPartButton" type="Button" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton" unique_id=1279724999]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton/WeaponPartButton" unique_id=375545159]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="ArmorPartButton" type="Button" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton" unique_id=1351594952]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton/ArmorPartButton" unique_id=1654960453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="ToolPartButton" type="Button" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton" unique_id=552376722]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton/ToolPartButton" unique_id=510704425]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="Other1PartButton" type="Button" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton" unique_id=1779286836]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton/Other1PartButton" unique_id=901694808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="Other2PartButton" type="Button" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton" unique_id=1710835251]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/EquipmentPartButton/Other2PartButton" unique_id=447524872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_4qnq7")
+region_rect = Rect2(0, 0, 62, 4)
+patch_margin_left = 4
+patch_margin_right = 4
+
+[node name="RightButton" type="TextureButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar" unique_id=223622152]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_sovy7")
+stretch_mode = 0
+
+[node name="SelectionFrames" type="Control" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" unique_id=1226489753]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WeaponSelectionFrame" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames" unique_id=1303429989]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+metadata/frame_name = "weapon"
+
+[node name="SelectionFrameButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=742874875 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton2" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=281562089 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton3" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=664450088 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton4" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=1939973761 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton5" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=1994114198 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton6" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=507802382 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton7" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/WeaponSelectionFrame" unique_id=1059809147 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="ArmorSelectionFrame" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames" unique_id=1140627642]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+metadata/frame_name = "armor"
+
+[node name="SelectionFrameButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=547352340 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton2" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=1893129965 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton3" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=824183475 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton4" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=964668635 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton5" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=854683314 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton6" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=1711439623 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton7" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ArmorSelectionFrame" unique_id=59864943 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="ToolSelectionFrame" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames" unique_id=1595986304]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+metadata/frame_name = "tool"
+
+[node name="SelectionFrameButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=511183612 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton2" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=163986166 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton3" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=699812964 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton4" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=1272519388 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton5" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=2119913047 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton6" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=764429515 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton7" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/ToolSelectionFrame" unique_id=1642502723 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="Other1SelectionFrame" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames" unique_id=1748380310]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+metadata/frame_name = "other1"
+
+[node name="SelectionFrameButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=1201250381 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton2" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=1431734427 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton3" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=802553964 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton4" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=438676896 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton5" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=1653623522 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton6" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=1802249267 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton7" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other1SelectionFrame" unique_id=863583006 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="Other2SelectionFrame" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames" unique_id=1760831262]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+metadata/frame_name = "other2"
+
+[node name="SelectionFrameButton" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=402761326 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton2" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=2056945745 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton3" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=1965592615 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton4" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=1195513794 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton5" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=2145164905 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton6" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=528212333 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="SelectionFrameButton7" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=860815735 instance=ExtResource("15_4qnq7")]
+layout_mode = 2
+
+[node name="PageRight" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox" unique_id=358566424]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_h3a2i")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 19
+
+[node name="RightSectionContainer" type="MarginContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight" unique_id=506540615]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="ItemDetailContainer" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=1907202212]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("10_d0em0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer" unique_id=1511855374]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer" unique_id=1971782673]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("10_ipde7")
+
+[node name="IconTexture" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/TextureRect" unique_id=1287695741]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer" unique_id=837936384]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="ItemNameLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=501569634]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="BarFill" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=1697587607]
+layout_mode = 2
+texture = ExtResource("11_a2kpw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=1555121703]
+layout_mode = 2
+
+[node name="ChestIcon" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=704546864]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_d0em0")
+
+[node name="ItemAmountLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2005450749]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 12
+
+[node name="ItemDescriptionLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer" unique_id=2015984778]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 2
+
+[connection signal="pressed" from="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/LeftButton" to="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" method="_on_left_button_pressed"]
+[connection signal="pressed" from="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/RightButton" to="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" method="_on_right_button_pressed"]

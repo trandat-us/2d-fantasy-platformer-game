@@ -15,11 +15,20 @@ script = ExtResource("3_ah02m")
 
 [node name="MapContainer" type="Node2D" parent="." unique_id=1662906411]
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1988327369]
+[node name="HUD" type="Control" parent="." unique_id=445902256]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PlayerHealthBar" parent="HUD" unique_id=1177663320 instance=ExtResource("7_ah02m")]
 
 [node name="PauseMenu" parent="HUD" unique_id=368787748 instance=ExtResource("2_vc4nx")]
 
-[connection signal="player_died" from="EventBus" to="." method="_on_event_bus_player_died"]
+[connection signal="player_died" from="EventBus" to="." method="_on_player_died"]
+[connection signal="player_finish_dialogue" from="EventBus" to="." method="_on_player_finish_dialogue"]
+[connection signal="player_open_item_shop" from="EventBus" to="." method="_on_player_open_item_shop"]
+[connection signal="player_start_dialogue" from="EventBus" to="." method="_on_player_start_dialogue"]
 [connection signal="option_pressed" from="HUD/PauseMenu" to="." method="_on_pause_menu_option_pressed"]

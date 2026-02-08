@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://btf4bi4pse30k"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_k0xyx"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_yxm4p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbl0j"]
+atlas = ExtResource("2_yxm4p")
+region = Rect2(96, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_k0xyx")
+id = "item_lemon"
+name = "Lemon"
+description = "Bright yellow citrus fruits with a sour taste and refreshing aroma. They are rich in vitamin C and are commonly used in drinks, cooking, and desserts."
+texture = SubResource("AtlasTexture_tbl0j")
+type = 1
+metadata/_custom_type_script = "uid://60f72t0hir6j"

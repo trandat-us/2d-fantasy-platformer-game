@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://csber84rdm2qg"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_ah6m2"]
+[ext_resource type="Script" uid="uid://bvkyqwfq3vtps" path="res://data/definitions/item/equipment_item.gd" id="2_n80up"]
+[ext_resource type="Script" uid="uid://cqsl6hbhoqck7" path="res://data/definitions/effect/effect_boost_atk_flat.gd" id="2_t1ks4"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_n80up"]
+
+[sub_resource type="Resource" id="Resource_t1ks4"]
+script = ExtResource("2_t1ks4")
+amount = 15
+metadata/_custom_type_script = "uid://cqsl6hbhoqck7"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah6m2"]
+atlas = ExtResource("3_n80up")
+region = Rect2(0, 160, 32, 32)
+
+[resource]
+script = ExtResource("2_n80up")
+effects = Array[ExtResource("1_ah6m2")]([SubResource("Resource_t1ks4")])
+id = "item_wooden_sword"
+name = "Wooden Sword"
+description = "A wooden sword will give you 15 ATK"
+texture = SubResource("AtlasTexture_ah6m2")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://bvkyqwfq3vtps"

@@ -1,31 +1,41 @@
 [gd_scene format=3 uid="uid://68cn77ypvh6y"]
 
-[ext_resource type="Texture2D" uid="uid://c53ttmi08pnqt" path="res://assets/textures/ui/travel book/scroll_grabber.png" id="1_bsp3n"]
 [ext_resource type="Script" uid="uid://4fgkyu3an5fp" path="res://ui/travel book/inventory container/inventory_container.gd" id="1_gi771"]
-[ext_resource type="Texture2D" uid="uid://beqiylbcbtri2" path="res://assets/textures/ui/travel book/v_bar.png" id="3_bek0b"]
 [ext_resource type="PackedScene" uid="uid://dcxl0usa61v3o" path="res://ui/travel book/frame slot/frame_slot.tscn" id="4_u1cos"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdi3v"]
-atlas = ExtResource("1_bsp3n")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t2qhv"]
+load_path = "res://.godot/imported/scroll_grabber.png-249a6be541424fbe8a7b68b94ef79b7d.ctex"
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slwg8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ryo"]
+atlas = SubResource("CompressedTexture2D_t2qhv")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdi3v"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bek0b"]
+load_path = "res://.godot/imported/scroll_grabber.png-249a6be541424fbe8a7b68b94ef79b7d.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_slwg8"]
-texture = ExtResource("3_bek0b")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa2jk"]
+atlas = SubResource("CompressedTexture2D_bek0b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5a7qb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6hve"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fk3v0"]
+load_path = "res://.godot/imported/v_bar.png-d78c1d03b8075a2a74130327d393c1fb.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t5vj2"]
+texture = SubResource("CompressedTexture2D_fk3v0")
 texture_margin_top = 3.0
 texture_margin_bottom = 3.0
 expand_margin_left = 2.0
 expand_margin_right = 2.0
 region_rect = Rect2(0, 0, 4, 62)
 
-[sub_resource type="Theme" id="Theme_h3a2i"]
-VSlider/icons/grabber = SubResource("AtlasTexture_mdi3v")
-VSlider/icons/grabber_highlight = SubResource("AtlasTexture_mdi3v")
-VSlider/styles/grabber_area = SubResource("StyleBoxEmpty_slwg8")
-VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_mdi3v")
-VSlider/styles/slider = SubResource("StyleBoxTexture_slwg8")
+[sub_resource type="Theme" id="Theme_215a6"]
+VSlider/icons/grabber = SubResource("AtlasTexture_f8ryo")
+VSlider/icons/grabber_highlight = SubResource("AtlasTexture_fa2jk")
+VSlider/styles/grabber_area = SubResource("StyleBoxEmpty_5a7qb")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_v6hve")
+VSlider/styles/slider = SubResource("StyleBoxTexture_t5vj2")
 
 [node name="InventoryContainer" type="Control" unique_id=960653195]
 custom_minimum_size = Vector2(212, 224)
@@ -65,7 +75,8 @@ offset_right = 4.285713
 offset_bottom = 64.285706
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_h3a2i")
+focus_mode = 0
+theme = SubResource("Theme_215a6")
 max_value = 1.0
 step = 0.001
 value = 1.0

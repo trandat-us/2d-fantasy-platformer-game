@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://furkatl7mro6"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_80mgu"]
+[ext_resource type="Script" uid="uid://cqsl6hbhoqck7" path="res://data/definitions/effect/effect_boost_atk_flat.gd" id="2_6a6jh"]
+[ext_resource type="Script" uid="uid://bvkyqwfq3vtps" path="res://data/definitions/item/equipment_item.gd" id="2_saasl"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_saasl"]
+
+[sub_resource type="Resource" id="Resource_6a6jh"]
+script = ExtResource("2_6a6jh")
+amount = 30
+metadata/_custom_type_script = "uid://cqsl6hbhoqck7"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a6jh"]
+atlas = ExtResource("3_saasl")
+region = Rect2(32, 160, 32, 32)
+
+[resource]
+script = ExtResource("2_saasl")
+effects = Array[ExtResource("1_80mgu")]([SubResource("Resource_6a6jh")])
+id = "item_iron_sword"
+name = "Iron Sword"
+description = "A iron sword will give you 30 ATK"
+texture = SubResource("AtlasTexture_6a6jh")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://bvkyqwfq3vtps"

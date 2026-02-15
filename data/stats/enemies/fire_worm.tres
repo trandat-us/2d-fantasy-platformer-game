@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://b1cr3fqsmoti8"]
+
+[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="1_bjqf3"]
+[ext_resource type="Script" uid="uid://c6q16a53ch1m7" path="res://data/definitions/stats/modifiable_stat.gd" id="1_obf5d"]
+[ext_resource type="Script" uid="uid://cgbr6jwrbw4m" path="res://data/definitions/item/loot_item.gd" id="2_bqbup"]
+[ext_resource type="Resource" uid="uid://dtavktu2a7h0m" path="res://data/item/loot/raw_meat.tres" id="3_xcfor"]
+
+[sub_resource type="Resource" id="Resource_bqbup"]
+script = ExtResource("1_obf5d")
+base = 15.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_xcfor"]
+script = ExtResource("1_obf5d")
+base = 3.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_7rsuc"]
+script = ExtResource("2_bqbup")
+item = ExtResource("3_xcfor")
+metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
+
+[sub_resource type="Resource" id="Resource_3yo03"]
+script = ExtResource("1_obf5d")
+base = 150.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_ao3qt"]
+script = ExtResource("1_obf5d")
+base = 30.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_bjqf3")
+speed = SubResource("Resource_ao3qt")
+attack_damage = SubResource("Resource_bqbup")
+loot_box = Array[ExtResource("2_bqbup")]([SubResource("Resource_7rsuc")])
+max_health = SubResource("Resource_3yo03")
+defense = SubResource("Resource_xcfor")
+metadata/_custom_type_script = "uid://cejj3rlveapht"

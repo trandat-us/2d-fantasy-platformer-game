@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dtavktu2a7h0m"]
+
+[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_qfygg"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_6qaje"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6pr0"]
+atlas = ExtResource("2_6qaje")
+region = Rect2(32, 480, 32, 32)
+
+[resource]
+script = ExtResource("1_qfygg")
+id = "item_raw_meat"
+name = "Raw Meat"
+texture = SubResource("AtlasTexture_l6pr0")
+type = 2
+metadata/_custom_type_script = "uid://60f72t0hir6j"

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://dft1ji5hx2wv5"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_wu5d3"]
+[ext_resource type="Script" uid="uid://bvkyqwfq3vtps" path="res://data/definitions/item/equipment_item.gd" id="2_73bms"]
+[ext_resource type="Script" uid="uid://jiq4872ydggi" path="res://data/definitions/effect/effect_boost_def_flat.gd" id="2_b6nkf"]
+[ext_resource type="Script" uid="uid://bu18eljxdk3lw" path="res://data/definitions/effect/effect_boost_speed_flat.gd" id="3_dxbmm"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="4_b6nkf"]
+
+[sub_resource type="Resource" id="Resource_6iu5h"]
+script = ExtResource("2_b6nkf")
+amount = 3
+metadata/_custom_type_script = "uid://jiq4872ydggi"
+
+[sub_resource type="Resource" id="Resource_2yva2"]
+script = ExtResource("3_dxbmm")
+metadata/_custom_type_script = "uid://bu18eljxdk3lw"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iu5h"]
+atlas = ExtResource("4_b6nkf")
+region = Rect2(64, 256, 32, 32)
+
+[resource]
+script = ExtResource("2_73bms")
+slot = 4
+effects = Array[ExtResource("1_wu5d3")]([SubResource("Resource_6iu5h"), SubResource("Resource_2yva2")])
+id = "item_leather_boots"
+name = "Leather Boots"
+description = "A leather boots will give you 3 DEF and 25 Speed"
+texture = SubResource("AtlasTexture_6iu5h")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://bvkyqwfq3vtps"

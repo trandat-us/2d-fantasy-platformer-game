@@ -1,15 +1,30 @@
-[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvapbio6wbmo1"]
+[gd_resource type="Resource" script_class="ConsumableItem" format=3 uid="uid://bvapbio6wbmo1"]
 
-[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_fhk24"]
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_n8wml"]
+[ext_resource type="Script" uid="uid://jrxjkc0x8v4u" path="res://data/definitions/item/consumable_item.gd" id="2_8r05d"]
 [ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_n8wml"]
+[ext_resource type="Script" uid="uid://bnv0qcpi45exc" path="res://data/definitions/effect/effect_boost_speed_percent.gd" id="2_ojwm6"]
+[ext_resource type="Script" uid="uid://bg853r0eekf5j" path="res://data/definitions/effect/limited_effect.gd" id="3_enjjt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kjxl"]
+[sub_resource type="Resource" id="Resource_qv3iw"]
+script = ExtResource("2_ojwm6")
+metadata/_custom_type_script = "uid://bnv0qcpi45exc"
+
+[sub_resource type="Resource" id="Resource_hh4rj"]
+script = ExtResource("3_enjjt")
+duration = 10.0
+effects = Array[ExtResource("1_n8wml")]([SubResource("Resource_qv3iw")])
+metadata/_custom_type_script = "uid://bg853r0eekf5j"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8wml"]
 atlas = ExtResource("2_n8wml")
 region = Rect2(64, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_fhk24")
+script = ExtResource("2_8r05d")
+effects = Array[ExtResource("1_n8wml")]([SubResource("Resource_hh4rj")])
 id = "item_speed_potion"
 name = "Speed Potion"
-texture = SubResource("AtlasTexture_8kjxl")
-metadata/_custom_type_script = "uid://60f72t0hir6j"
+description = "Consume to gain 25% speed in 10s"
+texture = SubResource("AtlasTexture_n8wml")
+metadata/_custom_type_script = "uid://jrxjkc0x8v4u"

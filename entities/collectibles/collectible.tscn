@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cwif3e5rm6fov"]
+
+[ext_resource type="Script" uid="uid://cdmramkce6gat" path="res://entities/collectibles/collectible.gd" id="1_jqchv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uacbk"]
+size = Vector2(28, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uacbk"]
+radius = 30.0
+
+[node name="Collectible" type="RigidBody2D" unique_id=867537411]
+collision_layer = 64
+script = ExtResource("1_jqchv")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1607567976]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=496092242]
+region_rect = Rect2(224, 384, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=911773444]
+shape = SubResource("RectangleShape2D_uacbk")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=1719970596]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=1398422745]
+shape = SubResource("CircleShape2D_uacbk")

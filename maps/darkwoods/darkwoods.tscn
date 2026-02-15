@@ -4,15 +4,51 @@
 [ext_resource type="PackedScene" uid="uid://cyonabm0jv5ky" path="res://maps/darkwoods/decorations/darkwoods_background.tscn" id="2_dx0wo"]
 [ext_resource type="Script" uid="uid://cbah4bnhne6n0" path="res://maps/darkwoods/darkwoods.gd" id="2_ktn2m"]
 [ext_resource type="PackedScene" uid="uid://c6j6ptelx5isj" path="res://entities/objects/save point/save_point.tscn" id="5_46igs"]
+[ext_resource type="PackedScene" uid="uid://tr7qmvxfslwp" path="res://entities/enemy/fire worm/fire_worm.tscn" id="6_ay4fo"]
 [ext_resource type="PackedScene" uid="uid://cm32nlbnx756p" path="res://maps/darkwoods/decorations/props/mushrooms/darkwoods_mushroom_1.tscn" id="6_fkxro"]
 [ext_resource type="PackedScene" uid="uid://cxlqvqyrkxhms" path="res://maps/darkwoods/decorations/props/mushrooms/darkwoods_mushroom_2.tscn" id="7_82jsc"]
+[ext_resource type="Script" uid="uid://c6q16a53ch1m7" path="res://data/definitions/stats/modifiable_stat.gd" id="7_mikp2"]
 [ext_resource type="PackedScene" uid="uid://bn5hhvcbjkvoj" path="res://maps/darkwoods/decorations/props/mushrooms/darkwoods_mushroom_3.tscn" id="7_nwv2r"]
+[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="8_snq0n"]
 [ext_resource type="PackedScene" uid="uid://dskowapd31etk" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_2.tscn" id="9_crrw2"]
 [ext_resource type="PackedScene" uid="uid://f5jcgupxjkqx" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_4.tscn" id="10_dx0wo"]
 [ext_resource type="PackedScene" uid="uid://cwxmb1xk81n0i" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_6.tscn" id="11_hnmrb"]
 [ext_resource type="PackedScene" uid="uid://c37wfjvfch253" path="res://maps/darkwoods/decorations/darkwoods_tileset.tscn" id="11_lf44e"]
 [ext_resource type="PackedScene" uid="uid://byqo2ihktqid0" path="res://utils/map transition area/map_transition_area.tscn" id="12_hnmrb"]
 [ext_resource type="PackedScene" uid="uid://50xyg2y2ip7d" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_3.tscn" id="12_ktn2m"]
+
+[sub_resource type="Resource" id="Resource_2ecsl"]
+script = ExtResource("7_mikp2")
+base = 20.0
+return_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_muudq"]
+script = ExtResource("7_mikp2")
+base = 5.0
+return_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_hfjr7"]
+script = ExtResource("7_mikp2")
+base = 200.0
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_ay4fo"]
+resource_local_to_scene = true
+script = ExtResource("7_mikp2")
+base = 30.0
+return_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_mikp2"]
+resource_local_to_scene = true
+script = ExtResource("8_snq0n")
+speed = SubResource("Resource_ay4fo")
+attack_damage = SubResource("Resource_2ecsl")
+max_health = SubResource("Resource_hfjr7")
+defense = SubResource("Resource_muudq")
+metadata/_custom_type_script = "uid://cejj3rlveapht"
 
 [sub_resource type="Gradient" id="Gradient_64kkl"]
 offsets = PackedFloat32Array(0.3224299, 0.9953271, 1)
@@ -37,7 +73,7 @@ size = Vector2(66, 130)
 [node name="Darkwoods" unique_id=1153311426 instance=ExtResource("1_4j8ru")]
 script = ExtResource("2_ktn2m")
 
-[node name="LevelBounds" parent="." index="0"]
+[node name="LevelBounds" parent="." index="0" unique_id=1979604406]
 position = Vector2(-430, 0)
 width = 2220
 height = 900
@@ -67,7 +103,11 @@ position = Vector2(956, 455)
 
 [node name="Enemies" type="Node2D" parent="." index="5" unique_id=523488073]
 
-[node name="SpawnPoint" parent="." index="6"]
+[node name="FireWorm" parent="Enemies" index="0" unique_id=696222517 instance=ExtResource("6_ay4fo")]
+position = Vector2(1353, 492)
+stats = SubResource("Resource_mikp2")
+
+[node name="SpawnPoint" parent="." index="6" unique_id=137230786]
 position = Vector2(1390, 460)
 
 [node name="ForegroundProps" type="Node2D" parent="." index="7" unique_id=772574232]

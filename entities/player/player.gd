@@ -10,7 +10,8 @@ class_name Player
 @onready var point_light_2d: PointLight2D = $PointLight2D
 
 @export var stats: PlayerStats
-@export var inventory: Inventory
+@export var inventory: Inventory = Inventory.new()
+@export var equipment: Equipment = Equipment.new()
 @export var input_enabled = false
 
 var event_bus: EventBus
@@ -25,6 +26,9 @@ func _ready() -> void:
 	hurt_box_component.get_hurt = _on_getting_hurt
 	event_bus = get_tree().get_first_node_in_group("event_bus")
 	apply_floor_snap()
+	
+	equipment.equipper = self
+	equipment.stats = stats
 
 func check_horizontal_movement_input() -> float:
 	var axis = Input.get_axis("move_left", "move_right")
@@ -54,9 +58,18 @@ func disable_light_point():
 	point_light_2d.enabled = false
 
 func revive():
-	stats.reset_current_stats()
+	stats.health = stats.max_health.value
 	event_bus.player_revived.emit()
-	event_bus.player_health_changed.emit(stats.current_health, stats.current_max_health)
+
+func equip(item: EquipmentItem) -> bool:
+	if equipment:
+		return equipment.equip(item)
+	return false
+
+func unequip(slot: EquipmentItem.Slot) -> bool:
+	if equipment:
+		return equipment.unequip(slot)
+	return false
 
 func _update_facing_direction() -> void:
 	if direction == 1.0:

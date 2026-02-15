@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="3_57cw2"]
 [ext_resource type="Script" uid="uid://4yluvhykulr8" path="res://data/definitions/item/shop_item.gd" id="3_necat"]
 [ext_resource type="Resource" uid="uid://n52qc3ocg8ws" path="res://data/item/general/health_potion.tres" id="4_a1ke3"]
-[ext_resource type="Resource" uid="uid://bv1fm1yt1j3eh" path="res://data/item/general/stamina_potion.tres" id="5_vf1vy"]
-[ext_resource type="Resource" uid="uid://cg0v86tpeohsy" path="res://data/item/general/energy_potion.tres" id="6_x2upv"]
+[ext_resource type="Resource" uid="uid://bv1fm1yt1j3eh" path="res://data/item/general/defense_potion.tres" id="5_vf1vy"]
+[ext_resource type="Resource" uid="uid://cg0v86tpeohsy" path="res://data/item/general/strength_potion.tres" id="6_x2upv"]
 [ext_resource type="Resource" uid="uid://bvapbio6wbmo1" path="res://data/item/general/speed_potion.tres" id="7_6gffn"]
 
 [sub_resource type="Resource" id="Resource_necat"]

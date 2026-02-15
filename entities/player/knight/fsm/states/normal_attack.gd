@@ -20,9 +20,13 @@ func enter():
 			current_attack = next_attack[current_attack]
 			combo_timer.stop()
 	
-	var damage = Damage.new()
-	damage.amount = stats.normal_attack_damage
-	damage.type = Damage.DamageType.REMOVAL
+	var damage = Damage.new(
+		Utils.roll_crit_damage(
+			stats.attack.value,
+			stats.crit_rate.value,
+			stats.crit_damage.value
+		)
+	)
 	
 	melee_attack_component.damage = damage
 	animation_playback.travel(current_attack)

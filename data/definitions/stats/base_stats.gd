@@ -1,39 +1,24 @@
-extends Resource
+extends Stats
 class_name BaseStats
 
-@export var max_health: int = 100
-@export var defense: int = 5
+@export var max_health: ModifiableStat
+@export var defense: ModifiableStat
 
-var current_max_health: int
-var current_health: int:
+var health: int:
 	set(value):
-		current_health = clampi(value, 0, current_max_health)
-var current_defense: int
+		health = clampi(value, 0, max_health.value)
+		stat_changed.emit(StatName.HEALTH, health)
 
-func _init() -> void:
-	init_stats()
+func _init_stats() -> void:
+	health = max_health.value
+	
+	max_health.changed.connect(func():
+		stat_changed.emit(StatName.MAX_HEALTH, max_health.value)
+		health = min(health, max_health.value)
+	)
+	defense.changed.connect(func():
+		stat_changed.emit(StatName.DEFENSE, defense.value)
+	)
 
-func init_stats() -> void:
-	current_max_health = max_health
-	current_health = current_max_health
-	
-	current_defense = defense
-
-func reset_current_stats():
-	current_health = current_max_health
-	current_defense = defense
-
-func receive_attack(attack: Attack) -> bool:
-	var damage = attack.damage
-	
-	if damage.type == Damage.DamageType.DEATHBLOW:
-		current_health = 0
-		return true
-	
-	var amount = damage.amount
-	if amount < 0:
-		return false
-	
-	var real_amount = amount - current_defense
-	current_health -= real_amount
-	return true
+func set_max_health():
+	health = max_health.value

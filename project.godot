@@ -31,6 +31,8 @@ buses/default_bus_layout="res://audio_bus_layout.tres"
 SceneManager="*res://autoloads/scene_manager.gd"
 SettingsManager="*res://autoloads/settings_manager.gd"
 SaveManager="*res://autoloads/save_manager.gd"
+ItemDatabase="*uid://bef65kqpadrff"
+Utils="*uid://b416xfyqqu1b"
 GlobalWorldEnvironment="*res://autoloads/world_environment.tscn"
 
 [debug]
@@ -119,6 +121,7 @@ locale/locale_filter_mode=0
 2d_physics/layer_4="floating platform"
 2d_physics/layer_5="hazards"
 2d_physics/layer_6="interactives"
+2d_physics/layer_7="collectibles"
 
 [rendering]
 

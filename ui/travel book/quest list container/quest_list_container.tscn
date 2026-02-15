@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://blcgw2qt8le7q"]
+
+[ext_resource type="Script" uid="uid://sa0xsy5ycg7v" path="res://ui/travel book/quest list container/quest_list_container.gd" id="1_yecy5"]
+[ext_resource type="PackedScene" uid="uid://dhbpu511d1fsv" path="res://ui/travel book/quest list container/quest_preview_button.tscn" id="3_tp4cs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ap6gf"]
+load_path = "res://.godot/imported/scroll_grabber.png-249a6be541424fbe8a7b68b94ef79b7d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp4cs"]
+atlas = SubResource("CompressedTexture2D_ap6gf")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yecy5"]
+load_path = "res://.godot/imported/scroll_grabber.png-249a6be541424fbe8a7b68b94ef79b7d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvn44"]
+atlas = SubResource("CompressedTexture2D_yecy5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khlmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmxne"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_noi5k"]
+load_path = "res://.godot/imported/v_bar.png-d78c1d03b8075a2a74130327d393c1fb.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7xvn"]
+texture = SubResource("CompressedTexture2D_noi5k")
+texture_margin_top = 3.0
+texture_margin_bottom = 3.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+region_rect = Rect2(0, 0, 4, 62)
+
+[sub_resource type="Theme" id="Theme_ycyhw"]
+VSlider/icons/grabber = SubResource("AtlasTexture_tp4cs")
+VSlider/icons/grabber_highlight = SubResource("AtlasTexture_nvn44")
+VSlider/styles/grabber_area = SubResource("StyleBoxEmpty_khlmb")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_fmxne")
+VSlider/styles/slider = SubResource("StyleBoxTexture_j7xvn")
+
+[node name="QuestListContainer" type="Control" unique_id=910383928]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchor_right = 0.1736111
+anchor_bottom = 0.2962963
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yecy5")
+metadata/_edit_use_anchors_ = true
+
+[node name="QuestListSlider" type="Control" parent="." unique_id=1309142852]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(1.75, 1.75)
+
+[node name="ScrollSlider" type="VSlider" parent="QuestListSlider" unique_id=1050482824]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -56.0
+offset_right = 8.0
+offset_bottom = 55.428566
+grow_vertical = 2
+theme = SubResource("Theme_ycyhw")
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2145430574]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.135
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="QuestListVBox" type="VBoxContainer" parent="ScrollContainer" unique_id=1486424989]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="QuestPreviewButton" parent="ScrollContainer/QuestListVBox" unique_id=203766098 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+mouse_behavior_recursive = 0
+mouse_default_cursor_shape = 2
+quest_name = "A New Beginning"
+
+[node name="QuestPreviewButton2" parent="ScrollContainer/QuestListVBox" unique_id=101760690 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+mouse_behavior_recursive = 0
+mouse_default_cursor_shape = 2
+quest_name = "Merchant Little Wish"
+
+[node name="QuestPreviewButton3" parent="ScrollContainer/QuestListVBox" unique_id=509418691 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+mouse_behavior_recursive = 0
+mouse_default_cursor_shape = 2
+quest_name = "Greatest Magical Girl"
+
+[node name="QuestPreviewButton4" parent="ScrollContainer/QuestListVBox" unique_id=592791500 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+mouse_behavior_recursive = 0
+mouse_default_cursor_shape = 2
+quest_name = "Noway Home"
+
+[node name="QuestPreviewButton5" parent="ScrollContainer/QuestListVBox" unique_id=1365941942 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+
+[node name="QuestPreviewButton6" parent="ScrollContainer/QuestListVBox" unique_id=89451731 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+
+[node name="QuestPreviewButton7" parent="ScrollContainer/QuestListVBox" unique_id=550067929 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+
+[node name="QuestPreviewButton8" parent="ScrollContainer/QuestListVBox" unique_id=1334639828 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+
+[node name="QuestPreviewButton9" parent="ScrollContainer/QuestListVBox" unique_id=2135240152 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+
+[node name="QuestPreviewButton10" parent="ScrollContainer/QuestListVBox" unique_id=596475769 instance=ExtResource("3_tp4cs")]
+layout_mode = 2
+
+[connection signal="value_changed" from="QuestListSlider/ScrollSlider" to="." method="_on_scroll_slider_value_changed"]
+[connection signal="gui_input" from="ScrollContainer" to="." method="_on_scroll_container_gui_input"]

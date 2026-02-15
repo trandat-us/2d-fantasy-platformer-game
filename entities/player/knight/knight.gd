@@ -26,17 +26,21 @@ func _update_facing_direction():
 		melee_attack_component.scale.x = -1.0
 		hurt_box_component.scale.x = -1.0
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_up"):
+		stats.current_health += 10
+	elif event.is_action_pressed("ui_down"):
+		stats.current_health -= 10
+
 func _on_getting_hurt(attack: Attack) -> void:
 	if fsm.current_state == die_state:
 		return
 	
-	var success = stats.receive_attack(attack)
-	
-	if not success:
+	if not attack.is_valid():
 		return
 	
-	if is_instance_valid(event_bus):
-		event_bus.player_health_changed.emit(stats.current_health, stats.current_max_health)
+	var damage = Utils.calculate_damage(attack.damage, stats.defense.value)
+	stats.health -= damage
 	
 	match attack.attack_type:
 		Attack.AttackType.ON_HIT:
@@ -48,7 +52,7 @@ func _on_getting_hurt(attack: Attack) -> void:
 			velocity.y = hazard_knockback_velocity.y
 	move_and_slide()
 	
-	if stats.current_health > 0:
+	if stats.health > 0:
 		fsm.force_state_transition(hurt_state)
 	else:
 		fsm.force_state_transition(die_state)

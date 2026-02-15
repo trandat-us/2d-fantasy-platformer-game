@@ -15,14 +15,15 @@ var inventory_item: InventoryItem:
 func refresh():
 	if inventory_item == null or inventory_item.is_empty():
 		mouse_default_cursor_shape = Control.CURSOR_ARROW
-		return
-	
-	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	item_icon.texture = inventory_item.item.texture
-	if inventory_item.amount > 1:
-		amount_label.text = str(inventory_item.amount)
-	else:
+		item_icon.texture = null
 		amount_label.text = ""
+	else:
+		mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		item_icon.texture = inventory_item.item.texture
+		if inventory_item.amount > 1:
+			amount_label.text = str(inventory_item.amount)
+		else:
+			amount_label.text = ""
 
 func _on_focus_entered() -> void:
 	slot_focused.emit(inventory_item)

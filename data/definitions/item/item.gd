@@ -4,8 +4,8 @@ class_name Item
 enum ItemType {
 	GENERAL,
 	FOOD,
-	KEY,
-	WEAPON,
+	LOOT,
+	EQUIPMENT,
 	CHEST
 }
 
@@ -15,3 +15,6 @@ enum ItemType {
 @export var texture: Texture2D
 @export var type: ItemType
 @export var can_stack: bool = true
+
+func use(context: Variant) -> bool:
+	return false

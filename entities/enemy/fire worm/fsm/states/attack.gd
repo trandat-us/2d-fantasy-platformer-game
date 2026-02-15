@@ -76,7 +76,7 @@ func _calculate_firing_direction() -> void:
 
 func _init_attack() -> void:
 	var _damage = Damage.new()
-	_damage.amount = stats.attack_damage
+	_damage.amount = stats.attack_damage.value
 	
 	_attack = Attack.new()
 	_attack.damage = _damage

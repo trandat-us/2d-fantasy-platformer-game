@@ -6,6 +6,9 @@ func enter():
 	animation_playback.travel("die")
 	hurt_box_component.enabled = false
 
+func exit() -> void:
+	hurt_box_component.enabled = true
+
 func state_physics_process(delta: float):
 	movement_component.apply_gravity(delta)
 	movement_component.stop_x_axis()
@@ -13,4 +16,5 @@ func state_physics_process(delta: float):
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "die":
-		fire_worm.queue_free()
+		fire_worm.drop_loot_box()
+		fire_worm.revive()

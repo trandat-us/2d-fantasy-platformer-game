@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="PlayerStats" format=3 uid="uid://oj6syepga1fm"]
+
+[ext_resource type="Script" uid="uid://c6q16a53ch1m7" path="res://data/definitions/stats/modifiable_stat.gd" id="1_55gyc"]
+[ext_resource type="Script" uid="uid://dt7xxqhpp1b0r" path="res://data/definitions/stats/player_stats.gd" id="2_tts3k"]
+
+[sub_resource type="Resource" id="Resource_phr8b"]
+script = ExtResource("1_55gyc")
+base = 400.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_bhdjp"]
+script = ExtResource("1_55gyc")
+base = 105.0
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_6rss4"]
+script = ExtResource("1_55gyc")
+base = 5.0
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_vj8b8"]
+script = ExtResource("1_55gyc")
+base = 5.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_is1gf"]
+script = ExtResource("1_55gyc")
+base = 100.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_63a1p"]
+script = ExtResource("1_55gyc")
+base = 300.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[resource]
+script = ExtResource("2_tts3k")
+speed = SubResource("Resource_63a1p")
+attack = SubResource("Resource_phr8b")
+crit_rate = SubResource("Resource_6rss4")
+crit_damage = SubResource("Resource_bhdjp")
+max_health = SubResource("Resource_is1gf")
+defense = SubResource("Resource_vj8b8")
+metadata/_custom_type_script = "uid://dt7xxqhpp1b0r"

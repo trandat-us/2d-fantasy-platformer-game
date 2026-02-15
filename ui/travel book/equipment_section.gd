@@ -3,6 +3,7 @@ extends VBoxContainer
 @onready var equipment_header_label: Label = %EquipmentHeaderLabel
 @onready var equipment_part_button: HBoxContainer = %EquipmentPartButton
 @onready var selection_frames: Control = %SelectionFrames
+@onready var equipment_detail_container: EquipmentDetailContainer = %EquipmentDetailContainer
 
 var frame_count: int
 var current_frame = 0
@@ -25,9 +26,15 @@ func _set_selection_frame(idx: int):
 
 func display():
 	visible = true
+	equipment_detail_container.visible = true
 
 func conceal():
 	visible = false
+	equipment_detail_container.visible = false
+
+func init_stats_detail(opener: Node2D):
+	if opener is Player:
+		equipment_detail_container.init_stats(opener.stats)
 
 func _on_left_button_pressed() -> void:
 	_set_selection_frame((current_frame - 1 + frame_count) % frame_count)

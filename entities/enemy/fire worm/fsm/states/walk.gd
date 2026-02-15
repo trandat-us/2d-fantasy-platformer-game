@@ -25,7 +25,7 @@ func state_physics_process(delta: float):
 			fire_worm.direction = -fire_worm.direction
 	
 	movement_component.apply_gravity(delta)
-	movement_component.move_x_axis(stats.patrol_speed, fire_worm.direction)
+	movement_component.move_x_axis(stats.speed.value, fire_worm.direction)
 	movement_component.move_and_slide()
 
 func _on_walk_timer_timeout() -> void:

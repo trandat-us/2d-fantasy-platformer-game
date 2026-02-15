@@ -1,15 +1,23 @@
-[gd_resource type="Resource" script_class="Item" format=3 uid="uid://n52qc3ocg8ws"]
+[gd_resource type="Resource" script_class="ConsumableItem" format=3 uid="uid://n52qc3ocg8ws"]
 
-[ext_resource type="Script" uid="uid://60f72t0hir6j" path="res://data/definitions/item/item.gd" id="1_4t18e"]
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_xaf3f"]
+[ext_resource type="Script" uid="uid://jrxjkc0x8v4u" path="res://data/definitions/item/consumable_item.gd" id="2_8kjxl"]
 [ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_w1pj3"]
+[ext_resource type="Script" uid="uid://ciwij1vahakk" path="res://data/definitions/effect/effect_heal_flat.gd" id="2_xaf3f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kjxl"]
+[sub_resource type="Resource" id="Resource_xaf3f"]
+script = ExtResource("2_xaf3f")
+metadata/_custom_type_script = "uid://ciwij1vahakk"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoifa"]
 atlas = ExtResource("2_w1pj3")
 region = Rect2(0, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_4t18e")
+script = ExtResource("2_8kjxl")
+effects = Array[ExtResource("1_xaf3f")]([SubResource("Resource_xaf3f")])
 id = "item_health_potion"
 name = "Health Potion"
-texture = SubResource("AtlasTexture_8kjxl")
-metadata/_custom_type_script = "uid://60f72t0hir6j"
+description = "Consume to heal 10 HP"
+texture = SubResource("AtlasTexture_yoifa")
+metadata/_custom_type_script = "uid://jrxjkc0x8v4u"

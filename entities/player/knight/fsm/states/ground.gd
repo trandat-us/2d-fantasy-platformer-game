@@ -47,8 +47,8 @@ func state_physics_process(delta: float):
 		
 		axis = knight.check_horizontal_movement_input()
 		if axis:
-			movement_component.move_x_axis(stats.walk_speed, axis)
+			movement_component.move_x_axis(stats.speed.get_current_value(), axis)
 		else:
-			movement_component.move_x_axis(stats.walk_speed, axis)
+			movement_component.move_x_axis(stats.speed.get_current_value(), axis)
 	
 	movement_component.move_and_slide()

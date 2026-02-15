@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://u1vm5d50aprr"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_ofqt6"]
+[ext_resource type="Script" uid="uid://bvkyqwfq3vtps" path="res://data/definitions/item/equipment_item.gd" id="2_kn7ch"]
+[ext_resource type="Script" uid="uid://ccxdt0743vhu4" path="res://data/definitions/effect/effect_boost_max_hp_flat.gd" id="2_rrpqr"]
+[ext_resource type="Script" uid="uid://jiq4872ydggi" path="res://data/definitions/effect/effect_boost_def_flat.gd" id="3_6vspo"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_kn7ch"]
+
+[sub_resource type="Resource" id="Resource_8s0io"]
+script = ExtResource("2_rrpqr")
+amount = 20
+metadata/_custom_type_script = "uid://ccxdt0743vhu4"
+
+[sub_resource type="Resource" id="Resource_qnjtt"]
+script = ExtResource("3_6vspo")
+metadata/_custom_type_script = "uid://jiq4872ydggi"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cglxc"]
+atlas = ExtResource("3_kn7ch")
+region = Rect2(320, 224, 32, 32)
+
+[resource]
+script = ExtResource("2_kn7ch")
+slot = 3
+effects = Array[ExtResource("1_ofqt6")]([SubResource("Resource_8s0io"), SubResource("Resource_qnjtt")])
+id = "item_leather_leggings"
+name = "Leather Leggings"
+description = "A leather leggings will give you 20 Max HP and 10 DEF"
+texture = SubResource("AtlasTexture_cglxc")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://bvkyqwfq3vtps"

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://b5goktx0wrg0p"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_ma2p5"]
+[ext_resource type="Script" uid="uid://bvkyqwfq3vtps" path="res://data/definitions/item/equipment_item.gd" id="2_vxrbe"]
+[ext_resource type="Script" uid="uid://ccxdt0743vhu4" path="res://data/definitions/effect/effect_boost_max_hp_flat.gd" id="2_wo87k"]
+[ext_resource type="Script" uid="uid://jiq4872ydggi" path="res://data/definitions/effect/effect_boost_def_flat.gd" id="3_40dry"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_vxrbe"]
+
+[sub_resource type="Resource" id="Resource_3c70u"]
+script = ExtResource("2_wo87k")
+metadata/_custom_type_script = "uid://ccxdt0743vhu4"
+
+[sub_resource type="Resource" id="Resource_wo87k"]
+script = ExtResource("3_40dry")
+amount = 20
+metadata/_custom_type_script = "uid://jiq4872ydggi"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u0wh"]
+atlas = ExtResource("3_vxrbe")
+region = Rect2(192, 224, 32, 32)
+
+[resource]
+script = ExtResource("2_vxrbe")
+slot = 2
+effects = Array[ExtResource("1_ma2p5")]([SubResource("Resource_3c70u"), SubResource("Resource_wo87k")])
+id = "item_leather_chest"
+name = "Leather Chest"
+description = "A leather chest will give you 40 Max HP and 20 DEF"
+texture = SubResource("AtlasTexture_7u0wh")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://bvkyqwfq3vtps"

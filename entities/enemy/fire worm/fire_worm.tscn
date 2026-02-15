@@ -3,26 +3,79 @@
 [ext_resource type="PackedScene" uid="uid://derpn2hvab42v" path="res://entities/enemy/enemy.tscn" id="1_qe7or"]
 [ext_resource type="Texture2D" uid="uid://bshm35heueyem" path="res://assets/textures/sprites/enemies/fire worm/idle.png" id="2_1yrmp"]
 [ext_resource type="Script" uid="uid://drxc7qq7olx14" path="res://entities/enemy/fire worm/fire_worm.gd" id="2_snfvi"]
+[ext_resource type="Script" uid="uid://c6q16a53ch1m7" path="res://data/definitions/stats/modifiable_stat.gd" id="3_jufag"]
 [ext_resource type="Texture2D" uid="uid://b2ef0nmv5oca8" path="res://assets/textures/sprites/enemies/fire worm/walk.png" id="3_pcqih"]
-[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="3_q6fud"]
 [ext_resource type="Script" uid="uid://603bl2tb1eyi" path="res://entities/enemy/fire worm/fsm/fire_worm_fsm.gd" id="4_j2oco"]
+[ext_resource type="Script" uid="uid://cgbr6jwrbw4m" path="res://data/definitions/item/loot_item.gd" id="4_muudq"]
+[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="4_rq58i"]
+[ext_resource type="Resource" uid="uid://dtavktu2a7h0m" path="res://data/item/loot/raw_meat.tres" id="5_hfjr7"]
+[ext_resource type="Resource" uid="uid://db0axebdykcv6" path="res://data/item/coin.tres" id="6_hfjr7"]
 [ext_resource type="Texture2D" uid="uid://5cosjcutlf8p" path="res://assets/textures/sprites/enemies/fire worm/take_hit.png" id="6_jxw0w"]
 [ext_resource type="Script" uid="uid://dwv1s8qsq6amo" path="res://entities/enemy/fire worm/fsm/states/idle.gd" id="6_x2e8q"]
 [ext_resource type="Texture2D" uid="uid://c7f2pkxwi5k5u" path="res://assets/textures/sprites/enemies/fire worm/die.png" id="7_hgyta"]
 [ext_resource type="Script" uid="uid://skkyrw4f74ym" path="res://entities/enemy/fire worm/fsm/states/walk.gd" id="8_po08s"]
+[ext_resource type="Resource" uid="uid://n52qc3ocg8ws" path="res://data/item/general/health_potion.tres" id="8_rq58i"]
 [ext_resource type="Texture2D" uid="uid://b7ucin0vy1n23" path="res://assets/textures/sprites/enemies/fire worm/attack.png" id="8_yiji3"]
 [ext_resource type="Script" uid="uid://tbr7kagnjqb0" path="res://entities/enemy/fire worm/fsm/states/hurt.gd" id="9_vfb26"]
 [ext_resource type="Script" uid="uid://gvbmjfcqmb4n" path="res://entities/enemy/fire worm/vision_area.gd" id="11_muudq"]
 [ext_resource type="Script" uid="uid://dvmnnea2dt77f" path="res://entities/enemy/fire worm/fsm/states/die.gd" id="11_thhh1"]
 [ext_resource type="Script" uid="uid://q0jrexnv80c7" path="res://entities/enemy/fire worm/fsm/states/attack.gd" id="13_q6fud"]
 
-[sub_resource type="Resource" id="Resource_q6fud"]
+[sub_resource type="Resource" id="Resource_bqbup"]
+script = ExtResource("3_jufag")
+base = 15.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_xcfor"]
+script = ExtResource("3_jufag")
+base = 3.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_3yo03"]
+script = ExtResource("3_jufag")
+base = 150.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_ao3qt"]
+script = ExtResource("3_jufag")
+base = 30.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_muudq"]
 resource_local_to_scene = true
-script = ExtResource("3_q6fud")
-attack_range = 400.0
-detect_range = 400.0
-max_health = 150
+script = ExtResource("4_rq58i")
+speed = SubResource("Resource_ao3qt")
+attack_damage = SubResource("Resource_bqbup")
+max_health = SubResource("Resource_3yo03")
+defense = SubResource("Resource_xcfor")
 metadata/_custom_type_script = "uid://cejj3rlveapht"
+
+[sub_resource type="Resource" id="Resource_jufag"]
+script = ExtResource("4_muudq")
+item = ExtResource("6_hfjr7")
+possibility = 100.0
+min_amount = 5
+max_amount = 12
+metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
+
+[sub_resource type="Resource" id="Resource_hfjr7"]
+script = ExtResource("4_muudq")
+item = ExtResource("5_hfjr7")
+possibility = 100.0
+min_amount = 2
+max_amount = 4
+metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
+
+[sub_resource type="Resource" id="Resource_rq58i"]
+script = ExtResource("4_muudq")
+item = ExtResource("8_rq58i")
+possibility = 40.0
+max_amount = 2
+metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcqih"]
 radius = 20.5
@@ -358,30 +411,31 @@ graph_offset = Vector2(-75, 58)
 
 [node name="FireWorm" unique_id=696222517 instance=ExtResource("1_qe7or")]
 script = ExtResource("2_snfvi")
-stats = SubResource("Resource_q6fud")
+stats = SubResource("Resource_muudq")
+loot_box = Array[ExtResource("4_muudq")]([SubResource("Resource_jufag"), SubResource("Resource_hfjr7"), SubResource("Resource_rq58i")])
 
-[node name="WallDetector" type="RayCast2D" parent="FlipNodes" index="0" unique_id=83385720]
+[node name="WallDetector" type="RayCast2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="0" unique_id=83385720]
 position = Vector2(22, 2)
 target_position = Vector2(22.984425, -0.06791496)
 
-[node name="FloorDetector" type="RayCast2D" parent="FlipNodes" index="1" unique_id=1519811059]
+[node name="FloorDetector" type="RayCast2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="1" unique_id=1519811059]
 position = Vector2(36, 19)
 target_position = Vector2(0, 28)
 hit_from_inside = true
 
-[node name="Sprite2D" parent="FlipNodes" index="2"]
+[node name="Sprite2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="2" unique_id=725267121]
 scale = Vector2(1.5, 1.5)
 
-[node name="FireBallEmittingPosition" type="Marker2D" parent="FlipNodes" index="3" unique_id=1663955572]
+[node name="FireBallEmittingPosition" type="Marker2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="3" unique_id=1663955572]
 unique_name_in_owner = true
 position = Vector2(35, -10)
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1" unique_id=815486512]
 position = Vector2(10, -1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pcqih")
 
-[node name="MovementComponent" parent="." index="2" node_paths=PackedStringArray("character")]
+[node name="MovementComponent" parent="." index="2" unique_id=1558296955 node_paths=PackedStringArray("character")]
 character = NodePath("..")
 
 [node name="VisionArea" type="Area2D" parent="." index="3" unique_id=1903943749]
@@ -392,23 +446,22 @@ script = ExtResource("11_muudq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="0" unique_id=977773683]
 polygon = PackedVector2Array(0, -13, 222, -141, 251, -119, 277, -90, 294, -54, 300, -13, 294, 28, 277, 64, 251, 93, 222, 115)
-disabled = true
 
 [node name="DetectorsPivot" type="Node2D" parent="VisionArea" index="1" unique_id=2078285380]
 position = Vector2(0, -13)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" index="0" unique_id=999092648]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" parent_id_path=PackedInt32Array(2034383655) index="0" unique_id=999092648]
 position = Vector2(13.125, -0.5)
 shape = SubResource("RectangleShape2D_po08s")
 
-[node name="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" parent="." index="5" unique_id=318307434]
 libraries/ = SubResource("AnimationLibrary_j2oco")
 
-[node name="AnimationTree" parent="." index="6"]
+[node name="AnimationTree" parent="." index="6" unique_id=1609971640]
 tree_root = SubResource("AnimationNodeStateMachine_qe7or")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="EnemyHealthBar" parent="." index="7"]
+[node name="EnemyHealthBar" parent="." index="7" unique_id=1092102701]
 offset_left = -26.0
 offset_top = -38.0
 offset_right = 25.0

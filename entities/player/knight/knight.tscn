@@ -2,11 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d0h40664kdbv0" path="res://entities/player/player.tscn" id="1_g0cdu"]
 [ext_resource type="Script" uid="uid://b1f41iymdklnd" path="res://entities/player/knight/knight.gd" id="1_sangq"]
-[ext_resource type="Script" uid="uid://dt7xxqhpp1b0r" path="res://data/definitions/stats/player_stats.gd" id="2_rswjn"]
 [ext_resource type="Texture2D" uid="uid://bmnfmruy68pq2" path="res://assets/textures/sprites/players/knight/idle.png" id="3_asebd"]
+[ext_resource type="Resource" uid="uid://oj6syepga1fm" path="res://data/stats/player/player_stats.tres" id="3_w1qeh"]
 [ext_resource type="Script" uid="uid://biet5xjjtlg2c" path="res://entities/player/knight/fsm/states/ground.gd" id="4_0ounq"]
-[ext_resource type="Script" uid="uid://dtxm72yt1guls" path="res://data/definitions/item/inventory_item.gd" id="4_1rll2"]
-[ext_resource type="Script" uid="uid://vtm4b727hsm4" path="res://data/definitions/inventory.gd" id="5_63a1p"]
 [ext_resource type="Texture2D" uid="uid://cpvvcnfd57mn3" path="res://assets/textures/sprites/players/knight/attack_4.png" id="7_1bg7k"]
 [ext_resource type="Script" uid="uid://dhqtvdwycok4r" path="res://entities/player/knight/fsm/states/jump.gd" id="9_mxwpa"]
 [ext_resource type="Script" uid="uid://ckew5wg04dqpx" path="res://entities/player/knight/fsm/states/fall.gd" id="10_t1448"]
@@ -38,14 +36,6 @@
 [ext_resource type="Script" uid="uid://n3rvrefpf0o7" path="res://entities/player/knight/fsm/states/hurt.gd" id="32_0o7l4"]
 [ext_resource type="Script" uid="uid://cc0qe1bcoshr3" path="res://entities/player/knight/fsm/states/die.gd" id="35_rjwrb"]
 
-[sub_resource type="Resource" id="Resource_opmwg"]
-script = ExtResource("2_rswjn")
-metadata/_custom_type_script = "uid://dt7xxqhpp1b0r"
-
-[sub_resource type="Resource" id="Resource_1rll2"]
-script = ExtResource("5_63a1p")
-metadata/_custom_type_script = "uid://vtm4b727hsm4"
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vdbmp"]
 radius = 13.0
 height = 58.0
@@ -64,6 +54,10 @@ height = 42.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bg7k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjwrb"]
+radius = 19.0
+height = 78.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4umo1"]
 radius = 19.0
 height = 78.0
 
@@ -1257,8 +1251,7 @@ texture_filter = 1
 collision_mask = 9
 floor_snap_length = 16.0
 script = ExtResource("1_sangq")
-stats = SubResource("Resource_opmwg")
-inventory = SubResource("Resource_1rll2")
+stats = ExtResource("3_w1qeh")
 
 [node name="Camera2D" parent="." index="0" unique_id=822148082]
 offset = Vector2(0, -80)
@@ -1313,18 +1306,18 @@ disabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" parent_id_path=PackedInt32Array(1054160542) index="0" unique_id=1377337944]
 shape = SubResource("CapsuleShape2D_rjwrb")
 
-[node name="AnimationPlayer" parent="." index="8" unique_id=845040554]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" parent_id_path=PackedInt32Array(474793618) index="0" unique_id=137994961]
+shape = SubResource("CapsuleShape2D_4umo1")
+
+[node name="AnimationPlayer" parent="." index="9" unique_id=845040554]
 libraries/ = SubResource("AnimationLibrary_2ky0q")
 
-[node name="AnimationTree" parent="." index="9" unique_id=1008060817]
+[node name="AnimationTree" parent="." index="10" unique_id=1008060817]
 tree_root = SubResource("AnimationNodeStateMachine_37w8x")
 anim_player = NodePath("../AnimationPlayer")
 parameters/crouch/blend_position = -0.0014925599
 parameters/ground/blend_position = 0.0
 parameters/take_hit/TimeSeek/seek_request = -1.0
-
-[node name="PointLight2D" parent="." index="10" unique_id=437396018]
-color = Color(0.8601507, 0.6141432, 0.20123908, 1)
 
 [node name="FSM" type="Node" parent="." index="11" unique_id=1348077227 node_paths=PackedStringArray("knight", "animation_tree", "movement_component", "initial_state")]
 script = ExtResource("26_ds6uk")
@@ -1424,6 +1417,9 @@ metadata/_custom_type_script = "uid://bqc3u6ma4j24n"
 script = ExtResource("35_rjwrb")
 hurt_box_component = NodePath("../../HurtBoxComponent")
 metadata/_custom_type_script = "uid://crfe33xwuv112"
+
+[node name="PointLight2D" parent="." index="12" unique_id=437396018]
+color = Color(0.8601507, 0.6141432, 0.20123908, 1)
 
 [connection signal="animation_finished" from="AnimationTree" to="FSM/Shield" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="FSM/Crouch" method="_on_animation_tree_animation_finished"]

@@ -2,12 +2,15 @@ extends CanvasLayer
 class_name TravelBook
 
 @onready var inventory_section: VBoxContainer = %InventorySection
-
-var inventory: Inventory
+@onready var equipment_section: VBoxContainer = %EquipmentSection
+var opener: Node2D
 
 func _ready() -> void:
-	if inventory:
-		inventory_section.init_inventory(inventory)
+	if opener is Player:
+		inventory_section.init_inventory(opener)
+		equipment_section.init_stats_detail(opener)
 
-func refresh_inventory():
-	inventory_section.refresh()
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		queue_free()

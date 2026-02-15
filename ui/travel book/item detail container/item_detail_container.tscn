@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://btde6dgsjtm15"]
+
+[ext_resource type="Script" uid="uid://cbw38ms4hregm" path="res://ui/travel book/item_detail_container.gd" id="1_t3qov"]
+[ext_resource type="Texture2D" uid="uid://0tr8oceiooi8" path="res://assets/textures/ui/travel book/slot_frame.png" id="2_noa52"]
+[ext_resource type="Texture2D" uid="uid://cr24r0topu3fg" path="res://assets/textures/ui/travel book/barfill.png" id="3_0k4y6"]
+[ext_resource type="Texture2D" uid="uid://qnvmok4gc752" path="res://assets/textures/ui/travel book/spritesheet.png" id="4_moyl5"]
+[ext_resource type="FontFile" uid="uid://dls532il25ydj" path="res://assets/fonts/roboto_stab_bold.ttf" id="5_moyl5"]
+[ext_resource type="Texture2D" uid="uid://bhda2qxp0by4d" path="res://assets/textures/ui/travel book/button sprites/button_5.png" id="5_noa52"]
+[ext_resource type="Texture2D" uid="uid://b8lfmu7jbxey4" path="res://assets/textures/ui/travel book/button sprites/button_1.png" id="6_0k4y6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0em0"]
+atlas = ExtResource("4_moyl5")
+region = Rect2(149, 694, 6, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_noa52"]
+texture = ExtResource("5_noa52")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 6.0
+texture_margin_bottom = 7.0
+modulate_color = Color(1.0309138, 1.0309138, 1.0309138, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3qov"]
+texture = ExtResource("5_noa52")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 6.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(0, 0, 30, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0k4y6"]
+texture = ExtResource("6_0k4y6")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 6.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(0, 0, 30, 31)
+
+[sub_resource type="Theme" id="Theme_t3qov"]
+Button/font_sizes/font_size = 14
+Button/fonts/font = ExtResource("5_moyl5")
+Button/styles/hover = SubResource("StyleBoxTexture_noa52")
+Button/styles/normal = SubResource("StyleBoxTexture_t3qov")
+Button/styles/pressed = SubResource("StyleBoxTexture_0k4y6")
+
+[node name="ItemDetailContainer" type="VBoxContainer" unique_id=559571076]
+offset_right = 166.0
+offset_bottom = 122.0
+theme_override_constants/separation = 12
+script = ExtResource("1_t3qov")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1771748437]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1061932383]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_noa52")
+
+[node name="IconTexture" type="TextureRect" parent="HBoxContainer/TextureRect" unique_id=1370367120]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1073021757]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="ItemNameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=468944131]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="BarFill" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1880956218]
+layout_mode = 2
+texture = ExtResource("3_0k4y6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=624005166]
+layout_mode = 2
+
+[node name="ChestIcon" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1412786332]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_d0em0")
+
+[node name="ItemAmountLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2095135840]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 12
+
+[node name="ItemDescriptionLabel" type="Label" parent="." unique_id=812218529]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 2
+
+[node name="ItemUseButton" type="Button" parent="." unique_id=664942220]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 8
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_t3qov")
+text = "Use"
+
+[connection signal="pressed" from="ItemUseButton" to="." method="_on_item_use_button_pressed"]

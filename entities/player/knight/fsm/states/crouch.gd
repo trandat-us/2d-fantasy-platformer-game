@@ -16,9 +16,11 @@ var blend_animation = "parameters/crouch/blend_position"
 func enter():
 	can_move = false
 	animation_playback.travel("enter_crouching")
+	stats.speed.add_modifier_flat(-200.0)
 
 func exit():
 	_disable_crouch_collision()
+	stats.speed.remove_modifier_flat(-200.0)
 
 func state_process(delta: float):
 	animation_tree.set(blend_animation, axis)
@@ -27,16 +29,21 @@ func state_physics_process(delta: float):
 	if not knight.is_on_floor():
 		state_transition.emit(self, fall_state)
 		return
-		
-	if Input.is_action_just_pressed("crouch") and not above_ground_detector.is_colliding():
-		state_transition.emit(self, ground_state)
-		return
 	
-	axis = knight.check_horizontal_movement_input()
-	if axis and can_move:
-		movement_component.move_x_axis(stats.crouch_speed, axis)
-	else:
+	if not knight.input_enabled:
+		axis = 0.0
 		movement_component.stop_x_axis()
+	else:
+		if Input.is_action_just_pressed("crouch") and not above_ground_detector.is_colliding():
+			state_transition.emit(self, ground_state)
+			return
+		
+		axis = knight.check_horizontal_movement_input()
+		if axis and can_move:
+			movement_component.move_x_axis(stats.speed.get_current_value(), axis)
+		else:
+			movement_component.stop_x_axis()
+	
 	movement_component.move_and_slide()
 
 func _enable_crouch_collision():

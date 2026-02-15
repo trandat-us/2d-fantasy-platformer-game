@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://chesxf0oimjgq"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_5qtek"]
+[ext_resource type="Script" uid="uid://jiq4872ydggi" path="res://data/definitions/effect/effect_boost_def_flat.gd" id="2_0xeq3"]
+[ext_resource type="Script" uid="uid://bvkyqwfq3vtps" path="res://data/definitions/item/equipment_item.gd" id="2_8gjr7"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_8gjr7"]
+
+[sub_resource type="Resource" id="Resource_0xeq3"]
+script = ExtResource("2_0xeq3")
+amount = 5
+metadata/_custom_type_script = "uid://jiq4872ydggi"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xeq3"]
+atlas = ExtResource("3_8gjr7")
+region = Rect2(64, 224, 32, 32)
+
+[resource]
+script = ExtResource("2_8gjr7")
+slot = 1
+effects = Array[ExtResource("1_5qtek")]([SubResource("Resource_0xeq3")])
+id = "item_leather_helmet"
+name = "Leather Helmet"
+description = "A leather helmet will give you 5
+DEF"
+texture = SubResource("AtlasTexture_0xeq3")
+type = 3
+can_stack = false
+metadata/_custom_type_script = "uid://bvkyqwfq3vtps"

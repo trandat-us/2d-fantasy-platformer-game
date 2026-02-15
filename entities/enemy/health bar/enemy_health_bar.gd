@@ -15,26 +15,27 @@ func _ready() -> void:
 	if show_mode == SHOW_MODE.WHEN_UPDATED:
 		hide()
 
-func _get_final_value(cur_value: int, maximum_value: int) -> float:
-	return (float(cur_value) / float(maximum_value)) * 100.0
-
-func init_health_bar(current_health: int, max_health: int):
-	var final_value := _get_final_value(current_health, max_health)
-	value = final_value
-	damage_bar.value = final_value
-
-func update_health_bar(current_health: int, max_health: int):
-	var final_value := _get_final_value(current_health, max_health)
+func init_health_bar(stats: EnemyStats):
+	max_value = stats.max_health.value
+	damage_bar.max_value = stats.max_health.value
 	
-	if final_value < value:
+	value = stats.health
+	damage_bar.value = stats.health
+	
+	#stats.current_health_changed.connect(update_health_bar)
+
+func update_health_bar(cur_hp: int) -> void:
+	if cur_hp < value:
 		show()
 		damage_timer.start()
 		show_timer.start()
 	
-	value = final_value
+	value = cur_hp
 
 func _on_damage_timer_timeout() -> void:
-	create_tween().tween_property(damage_bar, "value", value, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	create_tween().tween_property(damage_bar, "value", value, 0.4) \
+		.set_trans(Tween.TRANS_SINE) \
+		.set_ease(Tween.EASE_OUT)
 
 func _on_show_timer_timeout() -> void:
 	if show_mode == SHOW_MODE.WHEN_UPDATED:

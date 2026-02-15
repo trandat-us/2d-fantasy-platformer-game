@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bhda2qxp0by4d" path="res://assets/textures/ui/travel book/button sprites/button_5.png" id="4_mdi3v"]
 [ext_resource type="Texture2D" uid="uid://b8lfmu7jbxey4" path="res://assets/textures/ui/travel book/button sprites/button_1.png" id="5_0kf0h"]
 [ext_resource type="Texture2D" uid="uid://qnvmok4gc752" path="res://assets/textures/ui/travel book/spritesheet.png" id="6_h0rhl"]
-[ext_resource type="Script" uid="uid://cbw38ms4hregm" path="res://ui/travel book/item_detail_container.gd" id="10_d0em0"]
-[ext_resource type="Texture2D" uid="uid://0tr8oceiooi8" path="res://assets/textures/ui/travel book/slot_frame.png" id="10_ipde7"]
 [ext_resource type="Texture2D" uid="uid://bngrp5dnuikni" path="res://assets/textures/ui/travel book/header.png" id="11_2dg1y"]
 [ext_resource type="Texture2D" uid="uid://cr24r0topu3fg" path="res://assets/textures/ui/travel book/barfill.png" id="11_a2kpw"]
 [ext_resource type="Script" uid="uid://ccmkbnlsx5krj" path="res://ui/travel book/equipment_section.gd" id="11_j0h8o"]
@@ -20,6 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://cdhf1e081xjrj" path="res://assets/textures/ui/travel book/h_bar.png" id="13_4qnq7"]
 [ext_resource type="Texture2D" uid="uid://bgh1a05pxh0n5" path="res://assets/textures/ui/travel book/pad_right.png" id="13_sovy7"]
 [ext_resource type="PackedScene" uid="uid://ck1mtbh1n6etv" path="res://ui/travel book/selection frame button/selection_frame_button.tscn" id="15_4qnq7"]
+[ext_resource type="Script" uid="uid://st8kg07qdp62" path="res://ui/travel book/journal_section.gd" id="17_bqei3"]
+[ext_resource type="Texture2D" uid="uid://bma8my28weplh" path="res://assets/textures/ui/travel book/selection_frame.png" id="17_gl4f3"]
+[ext_resource type="PackedScene" uid="uid://blcgw2qt8le7q" path="res://ui/travel book/quest list container/quest_list_container.tscn" id="19_wjjvm"]
+[ext_resource type="Script" uid="uid://dq3jb4ba4n0r1" path="res://ui/travel book/other_section.gd" id="21_whuqp"]
+[ext_resource type="PackedScene" uid="uid://btde6dgsjtm15" path="res://ui/travel book/item detail container/item_detail_container.tscn" id="23_bqei3"]
+[ext_resource type="Script" uid="uid://dt4i3vsveipk7" path="res://ui/travel book/equipment_detail_container.gd" id="24_whuqp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0h8o"]
 atlas = ExtResource("6_h0rhl")
@@ -57,10 +61,6 @@ region = Rect2(149, 709, 6, 6)
 atlas = ExtResource("6_h0rhl")
 region = Rect2(165, 710, 6, 6)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d0em0"]
-atlas = ExtResource("6_h0rhl")
-region = Rect2(149, 694, 6, 6)
-
 [node name="TravelBook" type="CanvasLayer" unique_id=1809368321]
 script = ExtResource("1_8rgil")
 
@@ -73,7 +73,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.25, 1.25)
+scale = Vector2(1.35, 1.35)
 
 [node name="Header" type="NinePatchRect" parent="TravelBook" unique_id=501875649]
 layout_mode = 1
@@ -82,10 +82,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.0
-offset_top = -236.0
-offset_right = 272.0
-offset_bottom = -181.0
+offset_left = -273.3333
+offset_top = -217.77777
+offset_right = 270.6667
+offset_bottom = -162.77777
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_h0rhl")
@@ -141,10 +141,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.0
-offset_top = -124.0
-offset_right = 272.0
-offset_bottom = 228.0
+offset_left = -271.85184
+offset_top = -128.14815
+offset_right = 272.14816
+offset_bottom = 223.85185
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_qnq48")
@@ -190,10 +190,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -114.0
-offset_top = -36.0
-offset_right = 114.0
-offset_bottom = 1.0
+offset_left = -114.37038
+offset_top = -35.259266
+offset_right = 113.62962
+offset_bottom = 1.7407341
 grow_horizontal = 2
 
 [node name="InventoryMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=1096551561 instance=ExtResource("4_fsqgi")]
@@ -211,10 +211,10 @@ layout_mode = 2
 icon_texture = SubResource("AtlasTexture_wjjvm")
 metadata/header_name = "journal"
 
-[node name="SettingsMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=86448552 instance=ExtResource("4_fsqgi")]
+[node name="OtherMarker" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/MarkerHBox" unique_id=86448552 instance=ExtResource("4_fsqgi")]
 layout_mode = 2
 icon_texture = SubResource("AtlasTexture_bqei3")
-metadata/header_name = "settings"
+metadata/header_name = "other"
 
 [node name="LeftSectionsContainer" type="MarginContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft" unique_id=1352461271]
 unique_name_in_owner = true
@@ -433,6 +433,7 @@ offset_bottom = 112.0
 inventory_section = NodePath("../..")
 
 [node name="EquipmentSection" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=116477993]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 8
@@ -762,6 +763,68 @@ layout_mode = 2
 [node name="SelectionFrameButton7" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/SelectionFrames/Other2SelectionFrame" unique_id=860815735 instance=ExtResource("15_4qnq7")]
 layout_mode = 2
 
+[node name="JournalSection" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=124817118]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+script = ExtResource("17_bqei3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/JournalSection" unique_id=717684380]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="JournalHeader" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/JournalSection/VBoxContainer" unique_id=1792012787]
+custom_minimum_size = Vector2(202, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("17_gl4f3")
+patch_margin_left = 4
+patch_margin_top = 2
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/JournalSection/VBoxContainer/JournalHeader" unique_id=358407697]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.0
+offset_right = 0.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+theme_override_font_sizes/font_size = 20
+text = "quests"
+uppercase = true
+
+[node name="BarFill" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/JournalSection/VBoxContainer" unique_id=1917426669]
+custom_minimum_size = Vector2(202, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_a2kpw")
+region_rect = Rect2(1, 0, 28, 2)
+patch_margin_top = 1
+
+[node name="QuestListContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/JournalSection" unique_id=910383928 instance=ExtResource("19_wjjvm")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OtherSection" type="CenterContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer" unique_id=1366618963]
+visible = false
+layout_mode = 2
+script = ExtResource("21_whuqp")
+
+[node name="Label" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/OtherSection" unique_id=186124234]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Other Section"
+
 [node name="PageRight" type="NinePatchRect" parent="TravelBook/Cover/MarginContainer/PagesHBox" unique_id=358566424]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -784,76 +847,132 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 32
 
-[node name="ItemDetailContainer" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=1907202212]
+[node name="ItemDetailContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=559571076 instance=ExtResource("23_bqei3")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 12
-script = ExtResource("10_d0em0")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer" unique_id=1511855374]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="TextureRect" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer" unique_id=1971782673]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-texture = ExtResource("10_ipde7")
-
-[node name="IconTexture" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/TextureRect" unique_id=1287695741]
+[node name="EquipmentDetailContainer" type="MarginContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=762497294]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer" unique_id=837936384]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 28
+script = ExtResource("24_whuqp")
 
-[node name="ItemNameLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=501569634]
-unique_name_in_owner = true
+[node name="StatsDetailContainer" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer" unique_id=679600896]
+layout_mode = 2
+
+[node name="StatsNameVBox" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer" unique_id=1913001497]
 texture_filter = 2
-layout_mode = 2
-theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
-theme_override_font_sizes/font_size = 16
-
-[node name="BarFill" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=1697587607]
-layout_mode = 2
-texture = ExtResource("11_a2kpw")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer" unique_id=1555121703]
-layout_mode = 2
-
-[node name="ChestIcon" type="TextureRect" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=704546864]
-custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_d0em0")
 
-[node name="ItemAmountLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2005450749]
-unique_name_in_owner = true
+[node name="MaxHpLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=1791367535]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Max HP"
+
+[node name="AtkLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=710461681]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "ATK"
+
+[node name="DefLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=1123315627]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "DEF"
+
+[node name="CritRateLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=1442992476]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Crit Rate"
+
+[node name="CritDmgLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=66432374]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Crit Dmg"
+
+[node name="SpeedLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=777875471]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Speed"
+
+[node name="AtkSpeedLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsNameVBox" unique_id=1176204583]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Attack Speed"
+
+[node name="StatsValueVBox" type="VBoxContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer" unique_id=88243989]
 texture_filter = 2
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
-theme_override_font_sizes/font_size = 12
+size_flags_horizontal = 10
 
-[node name="ItemDescriptionLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/ItemDetailContainer" unique_id=2015984778]
+[node name="MaxHpValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=560485916]
 unique_name_in_owner = true
-texture_filter = 2
-custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
-theme_override_font_sizes/font_size = 10
-autowrap_mode = 2
+horizontal_alignment = 2
+
+[node name="AtkValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=231978358]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+horizontal_alignment = 2
+
+[node name="DefValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=1560459028]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+horizontal_alignment = 2
+
+[node name="CritRateValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=613390606]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+horizontal_alignment = 2
+
+[node name="CritDmgValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=1000943297]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+horizontal_alignment = 2
+
+[node name="SpeedValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=103009375]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+horizontal_alignment = 2
+
+[node name="AtkSpeedValueLabel" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/EquipmentDetailContainer/StatsDetailContainer/StatsValueVBox" unique_id=2042795735]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "1.0"
+horizontal_alignment = 2
+
+[node name="JournalThings" type="CenterContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=127579158]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/JournalThings" unique_id=1153478139]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Journal Things"
+
+[node name="OtherThings" type="CenterContainer" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer" unique_id=1478216200]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TravelBook/Cover/MarginContainer/PagesHBox/PageRight/RightSectionContainer/OtherThings" unique_id=1211978057]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.16470589, 1)
+text = "Other Things"
 
 [connection signal="pressed" from="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/LeftButton" to="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" method="_on_left_button_pressed"]
 [connection signal="pressed" from="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection/EquipmentNavigationBar/RightButton" to="TravelBook/Cover/MarginContainer/PagesHBox/PageLeft/LeftSectionsContainer/EquipmentSection" method="_on_right_button_pressed"]

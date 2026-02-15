@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ConsumableItem" format=3 uid="uid://bv1fm1yt1j3eh"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_3rnx8"]
+[ext_resource type="Script" uid="uid://jrxjkc0x8v4u" path="res://data/definitions/item/consumable_item.gd" id="2_quo1y"]
+[ext_resource type="Script" uid="uid://jiq4872ydggi" path="res://data/definitions/effect/effect_boost_def_flat.gd" id="2_rpl52"]
+[ext_resource type="Script" uid="uid://bg853r0eekf5j" path="res://data/definitions/effect/limited_effect.gd" id="3_0w1s1"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_rpl52"]
+
+[sub_resource type="Resource" id="Resource_epdbd"]
+script = ExtResource("2_rpl52")
+metadata/_custom_type_script = "uid://jiq4872ydggi"
+
+[sub_resource type="Resource" id="Resource_6py31"]
+script = ExtResource("3_0w1s1")
+duration = 10.0
+effects = Array[ExtResource("1_3rnx8")]([SubResource("Resource_epdbd")])
+metadata/_custom_type_script = "uid://bg853r0eekf5j"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpl52"]
+atlas = ExtResource("3_rpl52")
+region = Rect2(32, 288, 32, 32)
+
+[resource]
+script = ExtResource("2_quo1y")
+effects = Array[ExtResource("1_3rnx8")]([SubResource("Resource_6py31")])
+id = "item_defense_potion"
+name = "Defense Potion"
+description = "Consume to gain 10 DEF in 10s"
+texture = SubResource("AtlasTexture_rpl52")
+metadata/_custom_type_script = "uid://60f72t0hir6j"

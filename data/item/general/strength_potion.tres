@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ConsumableItem" format=3 uid="uid://cg0v86tpeohsy"]
+
+[ext_resource type="Script" uid="uid://da7pl8v2eggjq" path="res://data/definitions/effect/effect.gd" id="1_7owqt"]
+[ext_resource type="Script" uid="uid://cqsl6hbhoqck7" path="res://data/definitions/effect/effect_boost_atk_flat.gd" id="2_1jcs6"]
+[ext_resource type="Script" uid="uid://jrxjkc0x8v4u" path="res://data/definitions/item/consumable_item.gd" id="2_63fcj"]
+[ext_resource type="Script" uid="uid://bg853r0eekf5j" path="res://data/definitions/effect/limited_effect.gd" id="2_bw86r"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="3_1jcs6"]
+
+[sub_resource type="Resource" id="Resource_pytw7"]
+script = ExtResource("2_1jcs6")
+metadata/_custom_type_script = "uid://cqsl6hbhoqck7"
+
+[sub_resource type="Resource" id="Resource_1jcs6"]
+script = ExtResource("2_bw86r")
+duration = 10.0
+effects = Array[ExtResource("1_7owqt")]([SubResource("Resource_pytw7")])
+metadata/_custom_type_script = "uid://bg853r0eekf5j"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63fcj"]
+atlas = ExtResource("3_1jcs6")
+region = Rect2(96, 288, 32, 32)
+
+[resource]
+script = ExtResource("2_63fcj")
+effects = Array[ExtResource("1_7owqt")]([SubResource("Resource_1jcs6")])
+id = "item_strength_potion"
+name = "Strength Potion"
+description = "Consume to gain 25 ATK in 10s"
+texture = SubResource("AtlasTexture_63fcj")
+metadata/_custom_type_script = "uid://jrxjkc0x8v4u"

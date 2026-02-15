@@ -11,8 +11,11 @@ enum DamageType {
 	set(value):
 		type = value
 		notify_property_list_changed()
-
 var amount: int = 1
+
+func _init(_amount: int = 1, _type: DamageType = DamageType.REMOVAL) -> void:
+	amount = _amount
+	type = _type
 
 func _get_property_list():
 	var ret = []

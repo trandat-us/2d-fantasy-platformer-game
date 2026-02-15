@@ -5,7 +5,7 @@ const ITEM_SHOP = preload("uid://ku0ksu6vrwa0")
 const TRAVEL_BOOK = preload("uid://b2884bwnctdyl")
 
 @onready var map_container: Node2D = $MapContainer
-@onready var player_health_bar: CanvasLayer = $HUD/PlayerHealthBar
+@onready var player_health_bar: PlayerHealthBar = $HUD/PlayerHealthBar
 @onready var pause_menu: PauseMenu = $HUD/PauseMenu
 @onready var hud: Control = $HUD
 
@@ -39,7 +39,7 @@ func init_scene(scene_data: Variant) -> void:
 	current_map.add_player(player)
 	current_map.setup_player()
 	
-	player_health_bar.init_health_bar(player.stats.current_health, player.stats.current_max_health)
+	player_health_bar.init_stats(player.stats)
 	player.direction = save_data.player.direction
 
 func disable_player_input():
@@ -60,7 +60,7 @@ func _handle_tackle_travel_book():
 		disable_player_input()
 		travel_book = TRAVEL_BOOK.instantiate()
 		travel_book.tree_exited.connect(enable_player_input)
-		travel_book.inventory = player.inventory
+		travel_book.opener = player
 		hud.add_child(travel_book)
 
 func _on_pause_menu_option_pressed(option: String) -> void:

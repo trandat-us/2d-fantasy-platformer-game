@@ -86,7 +86,6 @@
 [ext_resource type="PackedScene" uid="uid://bsthinadh346p" path="res://maps/silent cave/objects/tunnel/cave_tunnel.tscn" id="82_rkjfe"]
 [ext_resource type="PackedScene" uid="uid://tr7qmvxfslwp" path="res://entities/enemy/fire worm/fire_worm.tscn" id="83_q0nmb"]
 [ext_resource type="Script" uid="uid://cga46ri1md3jo" path="res://data/definitions/combat/damage.gd" id="83_whju2"]
-[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="84_ue7e6"]
 [ext_resource type="Script" uid="uid://bsvilnv1mu2j8" path="res://maps/silent cave/player_direction_detector.gd" id="88_ue7e6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqwb7"]
@@ -442,35 +441,19 @@ sources/1 = SubResource("TileSetScenesCollectionSource_u73m6")
 sources/2 = SubResource("TileSetScenesCollectionSource_12eab")
 sources/3 = SubResource("TileSetScenesCollectionSource_m5qgu")
 
-[sub_resource type="Curve2D" id="Curve2D_ue7e6"]
+[sub_resource type="Curve2D" id="Curve2D_q0nmb"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, -6.1035156e-05, 0, 0, 0, 0, 0, -417.7)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_h6ufp"]
+[sub_resource type="Curve2D" id="Curve2D_ue7e6"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 354.3952, 0, 0, 0, 0, 0, -256)
 }
 point_count = 2
-
-[sub_resource type="Resource" id="Resource_odvpi"]
-resource_local_to_scene = true
-script = ExtResource("84_ue7e6")
-attack_range = 400.0
-detect_range = 400.0
-max_health = 150
-metadata/_custom_type_script = "uid://cejj3rlveapht"
-
-[sub_resource type="Resource" id="Resource_awyug"]
-resource_local_to_scene = true
-script = ExtResource("84_ue7e6")
-attack_range = 400.0
-detect_range = 400.0
-max_health = 150
-metadata/_custom_type_script = "uid://cejj3rlveapht"
 
 [sub_resource type="Resource" id="Resource_lqkfl"]
 script = ExtResource("83_whju2")
@@ -816,13 +799,13 @@ position = Vector2(238, 168)
 
 [node name="CaveElevator" parent="OnGroundObjects" index="1" unique_id=1662741907 instance=ExtResource("81_vqwb7")]
 position = Vector2(1952, 912.00006)
-curve = SubResource("Curve2D_ue7e6")
+curve = SubResource("Curve2D_q0nmb")
 moving_duration = 5.0
 number_of_sprites = 2
 
 [node name="CaveElevator2" parent="OnGroundObjects" index="2" unique_id=1941154926 instance=ExtResource("81_vqwb7")]
 position = Vector2(-840, 719.00006)
-curve = SubResource("Curve2D_h6ufp")
+curve = SubResource("Curve2D_ue7e6")
 moving_duration = 4.0
 
 [node name="CaveTunnel" parent="OnGroundObjects" index="3" unique_id=1247384637 node_paths=PackedStringArray("end_tunnel") instance=ExtResource("82_rkjfe")]
@@ -837,11 +820,9 @@ end_tunnel = NodePath("../CaveTunnel")
 
 [node name="FireWorm" parent="Enemies" index="0" unique_id=696222517 instance=ExtResource("83_q0nmb")]
 position = Vector2(-1247, 1100)
-stats = SubResource("Resource_odvpi")
 
 [node name="FireWorm2" parent="Enemies" index="1" unique_id=103981380 instance=ExtResource("83_q0nmb")]
 position = Vector2(-2336, 236)
-stats = SubResource("Resource_awyug")
 
 [node name="SpawnPoint" parent="." index="6" unique_id=137230786]
 position = Vector2(237, 153)

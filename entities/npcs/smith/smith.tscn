@@ -5,26 +5,41 @@
 [ext_resource type="Texture2D" uid="uid://cp3lefjebivau" path="res://assets/textures/sprites/npcs/smith.png" id="2_n20fv"]
 [ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="3_klttk"]
 [ext_resource type="Script" uid="uid://4yluvhykulr8" path="res://data/definitions/item/shop_item.gd" id="3_omdqf"]
-[ext_resource type="Resource" uid="uid://2yqr0u43nlav" path="res://data/item/weapon/axe.tres" id="4_kolnh"]
-[ext_resource type="Resource" uid="uid://c4ggujlnxis36" path="res://data/item/weapon/pickaxe.tres" id="5_5icaw"]
-[ext_resource type="Resource" uid="uid://cobqdjga3iu4i" path="res://data/item/weapon/shovel.tres" id="6_p41v1"]
+[ext_resource type="Resource" uid="uid://csber84rdm2qg" path="res://data/item/equipment/wooden_sword.tres" id="4_kolnh"]
+[ext_resource type="Resource" uid="uid://furkatl7mro6" path="res://data/item/equipment/iron_sword.tres" id="5_5icaw"]
+[ext_resource type="Resource" uid="uid://chesxf0oimjgq" path="res://data/item/equipment/leather_helmet.tres" id="6_p41v1"]
+[ext_resource type="Resource" uid="uid://b5goktx0wrg0p" path="res://data/item/equipment/leather_chest.tres" id="7_5icaw"]
+[ext_resource type="Resource" uid="uid://dft1ji5hx2wv5" path="res://data/item/equipment/leather_boots.tres" id="8_p41v1"]
+[ext_resource type="Resource" uid="uid://u1vm5d50aprr" path="res://data/item/equipment/leather_leggings.tres" id="9_xlnbs"]
 
-[sub_resource type="Resource" id="Resource_xlnbs"]
+[sub_resource type="Resource" id="Resource_omdqf"]
 script = ExtResource("3_omdqf")
 item = ExtResource("4_kolnh")
-price = 200
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_8ave4"]
+script = ExtResource("3_omdqf")
+item = ExtResource("5_5icaw")
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_n6ei3"]
+script = ExtResource("3_omdqf")
+item = ExtResource("6_p41v1")
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_p41v1"]
+script = ExtResource("3_omdqf")
+item = ExtResource("7_5icaw")
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_wjpcp"]
 script = ExtResource("3_omdqf")
-item = ExtResource("5_5icaw")
-price = 250
+item = ExtResource("9_xlnbs")
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
-[sub_resource type="Resource" id="Resource_lu3ug"]
+[sub_resource type="Resource" id="Resource_xlnbs"]
 script = ExtResource("3_omdqf")
-item = ExtResource("6_p41v1")
-price = 175
+item = ExtResource("8_p41v1")
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Animation" id="Animation_n20fv"]
@@ -75,7 +90,7 @@ height = 96.0
 
 [node name="Smith" unique_id=2060175977 instance=ExtResource("1_rqske")]
 script = ExtResource("2_ax6yr")
-item_shop_list = Array[ExtResource("3_omdqf")]([SubResource("Resource_xlnbs"), SubResource("Resource_wjpcp"), SubResource("Resource_lu3ug")])
+item_shop_list = Array[ExtResource("3_omdqf")]([SubResource("Resource_omdqf"), SubResource("Resource_8ave4"), SubResource("Resource_n6ei3"), SubResource("Resource_p41v1"), SubResource("Resource_wjpcp"), SubResource("Resource_xlnbs")])
 npc_name = "Johnson"
 
 [node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(31451312) index="0" unique_id=1299652959]

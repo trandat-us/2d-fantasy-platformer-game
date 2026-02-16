@@ -5,7 +5,9 @@ The player can move, defeat enemies, collect loot boxes, and purchase items.
 This project was created to practice 2D side-scrolling game development and gameplay programming. 
 It applies techniques such as a state machine architecture and an Entity Component System (ECS).
 
-## 📸 Visual
+## 📸 Demo & Visual
+Check web demo at [here](https://2d-fantasy-platformer-game.vercel.app/)
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2d9a8d14-09b0-4d1a-8be5-fc130a6eaa89" />
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/24476718-d6c9-429b-90b0-52a469cf25a8" />
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/edfec282-8f2c-46e6-9c0f-026f2b3d4fa9" />

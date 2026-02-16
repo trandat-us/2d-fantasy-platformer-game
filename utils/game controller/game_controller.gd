@@ -34,6 +34,7 @@ func init_scene(scene_data: Variant) -> void:
 	
 	var map_scene = load(save_data.map_scene) as PackedScene
 	current_map = map_scene.instantiate()
+	
 	map_container.add_child(current_map)
 	current_map.init_scene(null)
 	current_map.move_spawn_point(save_data.player.position)
@@ -42,6 +43,9 @@ func init_scene(scene_data: Variant) -> void:
 	
 	player_health_bar.init_stats(player.stats)
 	player.direction = save_data.player.direction
+	for inv_item in save_data.player.inv_data.inv_items:
+		player.inventory.add_item_by_id(inv_item.id, inv_item.amount)
+	player.inventory.coins = save_data.player.inv_data.coins
 
 func disable_player_input():
 	pause_menu.enabled = false
@@ -80,15 +84,26 @@ func _on_scene_manager_transition_ended() -> void:
 func _on_player_died() -> void:
 	await get_tree().create_timer(2).timeout
 	
-	current_map.cleanup_scene()
-	
 	var save_data = SaveManager.get_save_data()
-	current_map.move_spawn_point(save_data.player.position)
-	current_map.add_player(player)
-	current_map.setup_player()
-	
-	player.revive()
-	player.direction = save_data.player.direction
+	if save_data.map_scene == ResourceUID.path_to_uid(current_map.scene_file_path):
+		current_map.cleanup_scene()
+		current_map.move_spawn_point(save_data.player.position)
+		current_map.add_player(player)
+		current_map.setup_player()
+		player.revive()
+		player.direction = save_data.player.direction
+	else:
+		var map_save_point_data = MapSavePointData.new()
+		map_save_point_data.player = player
+		map_save_point_data.player_direction = save_data.player.direction
+		map_save_point_data.save_point_position = save_data.player.position
+		
+		SceneManager.change_to_scene_file(
+			save_data.map_scene,
+			current_map,
+			map_save_point_data,
+			SceneManager.SceneTransitionType.FADE
+		)
 
 func _on_player_start_dialogue(talker_name: String) -> void:
 	# Create dialogue session here

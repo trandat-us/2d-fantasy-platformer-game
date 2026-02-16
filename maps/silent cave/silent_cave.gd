@@ -11,6 +11,8 @@ func _ready() -> void:
 func init_scene(scene_data: Variant) -> void:
 	if scene_data is MapHandoffData:
 		_handle_map_handoff_data(scene_data)
+	elif scene_data is MapSavePointData:
+		_handle_map_save_point_data(scene_data)
 	
 	for enemy in enemies.get_children():
 		if enemy is Enemy and enemy.has_method("enable_point_light"):
@@ -35,6 +37,13 @@ func _handle_map_handoff_data(data: MapHandoffData) -> void:
 	
 	add_player(data.player)
 	setup_player()
+
+func _handle_map_save_point_data(data: MapSavePointData) -> void:
+	move_spawn_point(data.save_point_position)
+	add_player(data.player)
+	setup_player()
+	player.revive()
+	player.direction = data.player_direction
 
 func _on_player_head_to_darkwoods_entry():
 	level_bounds.width = 4480

@@ -28,9 +28,9 @@ func _update_facing_direction():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
-		stats.current_health += 10
+		inventory.coins += 10
 	elif event.is_action_pressed("ui_down"):
-		stats.current_health -= 10
+		inventory.coins -= 10
 
 func _on_getting_hurt(attack: Attack) -> void:
 	if fsm.current_state == die_state:

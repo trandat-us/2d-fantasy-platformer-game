@@ -35,5 +35,5 @@ func _load_all_item_recursive(path: String, result: Dictionary) -> void:
 func get_item(id: String) -> Item:
 	var item = item_database.get(id)
 	if item:
-		return item.duplicate()
+		return item
 	return null

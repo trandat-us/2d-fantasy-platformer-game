@@ -2,31 +2,22 @@ extends Node
 
 const SAVES_DIR_PATH = "user://saves"
 
-const TEST_SAVE = "user://test_save.tres"
+const SAVE = "user://save.tres"
 
 var saves_dir: DirAccess
 
 func _ready() -> void:
-	#if not DirAccess.dir_exists_absolute(SAVES_DIR_PATH):
-		#DirAccess.make_dir_absolute(SAVES_DIR_PATH)
-	#
-	#saves_dir = DirAccess.open(SAVES_DIR_PATH)
-	if not FileAccess.file_exists(TEST_SAVE):
+	if not FileAccess.file_exists(SAVE):
 		var save_data = SaveData.new()
 		
-		save_data.map_scene = "uid://cpjfhh0pawy5q"
+		save_data.map_scene = "uid://dt7mtt5j61v01"
 		
-		save_data.player.position = Vector2(1390.0, 460.0)
+		save_data.player.position = Vector2(-163.0, 539.0)
 		save_data.player.direction = 1.0
+		save_data.player.inv_data.inv_items.clear()
+		save_data.player.inv_data.coins = 0
 		
-		ResourceSaver.save(save_data, TEST_SAVE)
-
-#func _unhandled_key_input(event: InputEvent) -> void:
-	#if event is InputEventKey and event.is_pressed():
-		#if event.keycode == KEY_R:
-			#save_game()
-		#elif event.keycode == KEY_L:
-			#load_game()
+		ResourceSaver.save(save_data, SAVE)
 
 func save_game():
 	var save_data = SaveData.new()
@@ -38,13 +29,25 @@ func save_game():
 	save_data.player.position = player.global_position
 	save_data.player.direction = player.direction
 	
-	ResourceSaver.save(save_data, TEST_SAVE)
+	save_data.player.inv_data.inv_items.clear()
+	for inv_item in player.inventory.get_all_items():
+		if inv_item == null or inv_item.is_empty():
+			continue
+		
+		var inv_item_data = InvItemData.new()
+		inv_item_data.id = inv_item.item.id
+		inv_item_data.amount = inv_item.amount
+		
+		save_data.player.inv_data.inv_items.append(inv_item_data)
+	save_data.player.inv_data.coins = player.inventory.coins
+	
+	ResourceSaver.save(save_data, SAVE)
 
 func get_save_data() -> SaveData:
-	if not FileAccess.file_exists(TEST_SAVE):
+	if not FileAccess.file_exists(SAVE):
 		return null
 	
-	return load(TEST_SAVE) as SaveData
+	return load(SAVE) as SaveData
 
 func load_game():
 	pass

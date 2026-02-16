@@ -35,3 +35,6 @@ func get_handoff_data() -> MapHandoffData:
 
 func _handle_map_handoff_data(data: MapHandoffData) -> void:
 	pass
+
+func _handle_map_save_point_data(data: MapSavePointData) -> void:
+	pass

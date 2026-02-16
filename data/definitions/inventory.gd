@@ -97,7 +97,7 @@ func add_item(item: Item, amount: int = 1) -> bool:
 		if empty_slot == null:
 			return false
 		else:
-			empty_slot.item = ItemDatabase.get_item(item.id)
+			empty_slot.item = item.duplicate(true)
 			empty_slot.amount = amount
 			_sort_inventory(target_inventory)
 			return true
@@ -108,10 +108,17 @@ func add_item(item: Item, amount: int = 1) -> bool:
 				_sort_inventory(target_inventory)
 				return false
 			else:
-				empty_slot.item = ItemDatabase.get_item(item.id)
+				empty_slot.item = item.duplicate(true)
 				empty_slot.amount = 1
 		_sort_inventory(target_inventory)
 		return true
+
+func add_item_by_id(id: String, amount: int = 1) -> bool:
+	var item = ItemDatabase.get_item(id)
+	if item == null or amount < 1:
+		return false
+	
+	return add_item(item, amount)
 
 func add_coins(amount: int = 1) -> void:
 	if amount < 1:
@@ -151,3 +158,19 @@ func reduce_coins(amount: int = 1) -> void:
 	if amount < 1:
 		return
 	coins = max(0, coins - amount)
+
+func get_all_items() -> Array[InventoryItem]:
+	var items: Array[InventoryItem] = []
+	
+	for item in general:
+		items.append(item)
+	for item in food:
+		items.append(item)
+	for item in loot:
+		items.append(item)
+	for item in equipment:
+		items.append(item)
+	for item in chest:
+		items.append(item)
+	
+	return items

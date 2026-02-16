@@ -1,7 +1,7 @@
 extends Effect
 class_name EffectBoostAtkFlat
 
-@export_range(1, 1000000, 1, "or_greater", "hide_control") var amount: int = 25
+@export_range(1, 1000000, 1, "or_greater", "hide_control") var amount: int = 10
 
 func is_applicable(context: Variant) -> bool:
 	if applying_context:

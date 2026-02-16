@@ -16,28 +16,27 @@
 [sub_resource type="Resource" id="Resource_htn43"]
 script = ExtResource("6_6jasg")
 item = ExtResource("4_w1hwr")
-price = 10
-amount = 5
+price = 20
+amount = 3
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_3ec06"]
 script = ExtResource("6_6jasg")
 item = ExtResource("5_htn43")
-price = 20
-amount = 3
-metadata/_custom_type_script = "uid://4yluvhykulr8"
-
-[sub_resource type="Resource" id="Resource_amrwt"]
-script = ExtResource("6_6jasg")
-item = ExtResource("6_3ec06")
-price = 30
+price = 25
 amount = 2
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_6jasg"]
 script = ExtResource("6_6jasg")
 item = ExtResource("7_amrwt")
-price = 50
+price = 25
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_amrwt"]
+script = ExtResource("6_6jasg")
+item = ExtResource("6_3ec06")
+price = 30
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_21e42"]
@@ -49,15 +48,13 @@ metadata/_custom_type_script = "uid://4yluvhykulr8"
 [sub_resource type="Resource" id="Resource_m5jod"]
 script = ExtResource("6_6jasg")
 item = ExtResource("9_21e42")
-price = 50
-amount = 5
+price = 30
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_xl2eh"]
 script = ExtResource("6_6jasg")
 item = ExtResource("10_m5jod")
-price = 40
-amount = 3
+price = 30
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Animation" id="Animation_0ksr4"]
@@ -109,7 +106,7 @@ height = 80.0
 
 [node name="Grocer" unique_id=2060175977 instance=ExtResource("1_idu3l")]
 script = ExtResource("2_sskbd")
-item_shop_list = Array[ExtResource("6_6jasg")]([SubResource("Resource_htn43"), SubResource("Resource_3ec06"), SubResource("Resource_amrwt"), SubResource("Resource_6jasg"), SubResource("Resource_21e42"), SubResource("Resource_m5jod"), SubResource("Resource_xl2eh")])
+item_shop_list = Array[ExtResource("6_6jasg")]([SubResource("Resource_htn43"), SubResource("Resource_3ec06"), SubResource("Resource_6jasg"), SubResource("Resource_amrwt"), SubResource("Resource_21e42"), SubResource("Resource_m5jod"), SubResource("Resource_xl2eh")])
 npc_name = "Amy"
 
 [node name="Pivot" parent="." index="0" unique_id=31451312]

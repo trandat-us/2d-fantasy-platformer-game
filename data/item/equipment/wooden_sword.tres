@@ -7,7 +7,6 @@
 
 [sub_resource type="Resource" id="Resource_t1ks4"]
 script = ExtResource("2_t1ks4")
-amount = 15
 metadata/_custom_type_script = "uid://cqsl6hbhoqck7"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ah6m2"]
@@ -19,7 +18,7 @@ script = ExtResource("2_n80up")
 effects = Array[ExtResource("1_ah6m2")]([SubResource("Resource_t1ks4")])
 id = "item_wooden_sword"
 name = "Wooden Sword"
-description = "A wooden sword will give you 15 ATK"
+description = "A wooden sword will give you 10 ATK"
 texture = SubResource("AtlasTexture_ah6m2")
 type = 3
 can_stack = false

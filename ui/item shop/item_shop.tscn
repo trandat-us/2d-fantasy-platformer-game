@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://nra3a02nkseo" path="res://assets/textures/ui/item shop/main_frame.png" id="1_nkgoq"]
 [ext_resource type="Texture2D" uid="uid://bubsmgavu18ex" path="res://assets/textures/ui/item shop/banner.png" id="2_dxsbo"]
 [ext_resource type="Texture2D" uid="uid://xdx3s4vuf546" path="res://assets/textures/ui/item shop/cross_button.png" id="4_flwig"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="5_o5eku"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvhp3"]
+atlas = ExtResource("5_o5eku")
+region = Rect2(224, 384, 32, 32)
 
 [node name="ItemShop" type="CanvasLayer" unique_id=1627052872]
 script = ExtResource("1_flwig")
@@ -107,5 +112,32 @@ mouse_default_cursor_shape = 2
 icon = ExtResource("4_flwig")
 flat = true
 expand_icon = true
+
+[node name="CoinsPanel" type="Panel" parent="." unique_id=1932578953]
+offset_right = 197.0
+offset_bottom = 69.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CoinsPanel" unique_id=1602649715]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="CoinsPanel/HBoxContainer" unique_id=1955239175]
+layout_mode = 2
+texture = SubResource("AtlasTexture_jvhp3")
+expand_mode = 2
+
+[node name="CoinAmountLabel" type="Label" parent="CoinsPanel/HBoxContainer" unique_id=928644122]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
 
 [connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]

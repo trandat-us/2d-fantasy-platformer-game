@@ -2,8 +2,7 @@
 extends Node2D
 
 @onready var interactive_component: InteractiveComponent = $InteractiveComponent
-@onready var animation_player: AnimationPlayer = $InputHint/AnimationPlayer
-@onready var input_hint_label: Label = $InputHint/Label
+@onready var interactive_hint: InteractiveHint = $InteractiveComponent/InteractiveHint
 
 @export var end_tunnel: Node2D:
 	set(value):
@@ -43,11 +42,11 @@ func _ready() -> void:
 	_update_input_hint_label()
 
 func _notification(what: int) -> void:
-	if what == NOTIFICATION_TRANSLATION_CHANGED and is_instance_valid(input_hint_label):
+	if what == NOTIFICATION_TRANSLATION_CHANGED and is_instance_valid(interactive_hint):
 		_update_input_hint_label()
 
 func _update_input_hint_label():
-	input_hint_label.text = "[F] " + tr("GAME_DOOR_LABEL_ENTER")
+	interactive_hint.hint_text = "[F] " + tr("GAME_DOOR_LABEL_ENTER")
 
 func _on_interact(interactor: Node2D):
 	if not _is_end_tunnel_valid():
@@ -55,9 +54,3 @@ func _on_interact(interactor: Node2D):
 	
 	if interactor is Player:
 		interactor.global_position = end_tunnel.global_position
-
-func _on_show_hint():
-	animation_player.play("show_hint")
-
-func _on_hide_hint():
-	animation_player.play("hide_hint")

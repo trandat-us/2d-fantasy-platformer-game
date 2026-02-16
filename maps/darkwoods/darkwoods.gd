@@ -3,9 +3,15 @@ extends Map
 @onready var village_entry: MapTransitionArea = $VillageEntry
 @onready var cave_entry: MapTransitionArea = $CaveEntry
 
+@onready var enemies: Node2D = $Enemies
+
 func init_scene(scene_data: Variant) -> void:
 	if scene_data is MapHandoffData:
 		_handle_map_handoff_data(scene_data)
+	
+	for enemy in enemies.get_children():
+		if enemy is Enemy and enemy.has_method("enable_light_point"):
+			enemy.enable_light_point()
 
 func cleanup_scene() -> void:
 	player.disable_light_point()

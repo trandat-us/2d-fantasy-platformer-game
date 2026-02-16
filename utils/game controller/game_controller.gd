@@ -35,6 +35,7 @@ func init_scene(scene_data: Variant) -> void:
 	var map_scene = load(save_data.map_scene) as PackedScene
 	current_map = map_scene.instantiate()
 	map_container.add_child(current_map)
+	current_map.init_scene(null)
 	current_map.move_spawn_point(save_data.player.position)
 	current_map.add_player(player)
 	current_map.setup_player()

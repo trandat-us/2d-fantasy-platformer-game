@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://d0h40664kdbv0" path="res://entities/player/player.tscn" id="1_g0cdu"]
 [ext_resource type="Script" uid="uid://b1f41iymdklnd" path="res://entities/player/knight/knight.gd" id="1_sangq"]
+[ext_resource type="Script" uid="uid://c6q16a53ch1m7" path="res://data/definitions/stats/modifiable_stat.gd" id="3_4umo1"]
 [ext_resource type="Texture2D" uid="uid://bmnfmruy68pq2" path="res://assets/textures/sprites/players/knight/idle.png" id="3_asebd"]
-[ext_resource type="Resource" uid="uid://oj6syepga1fm" path="res://data/stats/player/player_stats.tres" id="3_w1qeh"]
 [ext_resource type="Script" uid="uid://biet5xjjtlg2c" path="res://entities/player/knight/fsm/states/ground.gd" id="4_0ounq"]
+[ext_resource type="Script" uid="uid://dt7xxqhpp1b0r" path="res://data/definitions/stats/player_stats.gd" id="4_1rll2"]
 [ext_resource type="Texture2D" uid="uid://cpvvcnfd57mn3" path="res://assets/textures/sprites/players/knight/attack_4.png" id="7_1bg7k"]
 [ext_resource type="Script" uid="uid://dhqtvdwycok4r" path="res://entities/player/knight/fsm/states/jump.gd" id="9_mxwpa"]
 [ext_resource type="Script" uid="uid://ckew5wg04dqpx" path="res://entities/player/knight/fsm/states/fall.gd" id="10_t1448"]
@@ -35,6 +36,50 @@
 [ext_resource type="Script" uid="uid://cp8fcllpxpiqv" path="res://entities/player/knight/fsm/states/ledge_grab.gd" id="29_ln2e5"]
 [ext_resource type="Script" uid="uid://n3rvrefpf0o7" path="res://entities/player/knight/fsm/states/hurt.gd" id="32_0o7l4"]
 [ext_resource type="Script" uid="uid://cc0qe1bcoshr3" path="res://entities/player/knight/fsm/states/die.gd" id="35_rjwrb"]
+
+[sub_resource type="Resource" id="Resource_phr8b"]
+script = ExtResource("3_4umo1")
+base = 20.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_bhdjp"]
+script = ExtResource("3_4umo1")
+base = 105.0
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_6rss4"]
+script = ExtResource("3_4umo1")
+base = 5.0
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_vj8b8"]
+script = ExtResource("3_4umo1")
+base = 5.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_is1gf"]
+script = ExtResource("3_4umo1")
+base = 100.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_63a1p"]
+script = ExtResource("3_4umo1")
+base = 300.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_w1qeh"]
+script = ExtResource("4_1rll2")
+speed = SubResource("Resource_63a1p")
+attack = SubResource("Resource_phr8b")
+crit_rate = SubResource("Resource_6rss4")
+crit_damage = SubResource("Resource_bhdjp")
+max_health = SubResource("Resource_is1gf")
+defense = SubResource("Resource_vj8b8")
+metadata/_custom_type_script = "uid://dt7xxqhpp1b0r"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vdbmp"]
 radius = 13.0
@@ -1251,7 +1296,7 @@ texture_filter = 1
 collision_mask = 9
 floor_snap_length = 16.0
 script = ExtResource("1_sangq")
-stats = ExtResource("3_w1qeh")
+stats = SubResource("Resource_w1qeh")
 
 [node name="Camera2D" parent="." index="0" unique_id=822148082]
 offset = Vector2(0, -80)

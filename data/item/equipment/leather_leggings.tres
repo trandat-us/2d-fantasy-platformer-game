@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_8s0io"]
 script = ExtResource("2_rrpqr")
-amount = 20
+amount = 10
 metadata/_custom_type_script = "uid://ccxdt0743vhu4"
 
 [sub_resource type="Resource" id="Resource_qnjtt"]
@@ -25,7 +25,7 @@ slot = 3
 effects = Array[ExtResource("1_ofqt6")]([SubResource("Resource_8s0io"), SubResource("Resource_qnjtt")])
 id = "item_leather_leggings"
 name = "Leather Leggings"
-description = "A leather leggings will give you 20 Max HP and 10 DEF"
+description = "A leather leggings will give you 10 Max HP and 5 DEF"
 texture = SubResource("AtlasTexture_cglxc")
 type = 3
 can_stack = false

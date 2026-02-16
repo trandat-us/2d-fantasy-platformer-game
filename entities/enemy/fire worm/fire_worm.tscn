@@ -45,7 +45,7 @@ base = 30.0
 use_integer = true
 metadata/_custom_type_script = "uid://c6q16a53ch1m7"
 
-[sub_resource type="Resource" id="Resource_muudq"]
+[sub_resource type="Resource" id="Resource_aykhp"]
 resource_local_to_scene = true
 script = ExtResource("4_rq58i")
 speed = SubResource("Resource_ao3qt")
@@ -58,23 +58,21 @@ metadata/_custom_type_script = "uid://cejj3rlveapht"
 script = ExtResource("4_muudq")
 item = ExtResource("6_hfjr7")
 possibility = 100.0
-min_amount = 5
-max_amount = 12
+min_amount = 15
+max_amount = 20
 metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
 
 [sub_resource type="Resource" id="Resource_hfjr7"]
 script = ExtResource("4_muudq")
 item = ExtResource("5_hfjr7")
 possibility = 100.0
-min_amount = 2
-max_amount = 4
+max_amount = 2
 metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
 
 [sub_resource type="Resource" id="Resource_rq58i"]
 script = ExtResource("4_muudq")
 item = ExtResource("8_rq58i")
-possibility = 40.0
-max_amount = 2
+possibility = 30.0
 metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcqih"]
@@ -409,9 +407,21 @@ states/walk/position = Vector2(562, 25)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vfb26")]
 graph_offset = Vector2(-75, 58)
 
+[sub_resource type="Gradient" id="Gradient_rq58i"]
+offsets = PackedFloat32Array(0.22289157, 0.57228917, 0.74698794)
+colors = PackedColorArray(1, 1, 0, 1, 0.9403621, 3.4172833e-06, 3.85046e-07, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aykhp"]
+gradient = SubResource("Gradient_rq58i")
+width = 160
+height = 160
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
 [node name="FireWorm" unique_id=696222517 instance=ExtResource("1_qe7or")]
 script = ExtResource("2_snfvi")
-stats = SubResource("Resource_muudq")
+stats = SubResource("Resource_aykhp")
 loot_box = Array[ExtResource("4_muudq")]([SubResource("Resource_jufag"), SubResource("Resource_hfjr7"), SubResource("Resource_rq58i")])
 
 [node name="WallDetector" type="RayCast2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="0" unique_id=83385720]
@@ -440,6 +450,7 @@ character = NodePath("..")
 
 [node name="VisionArea" type="Area2D" parent="." index="3" unique_id=1903943749]
 unique_name_in_owner = true
+visible = false
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("11_muudq")
@@ -450,7 +461,10 @@ polygon = PackedVector2Array(0, -13, 222, -141, 251, -119, 277, -90, 294, -54, 3
 [node name="DetectorsPivot" type="Node2D" parent="VisionArea" index="1" unique_id=2078285380]
 position = Vector2(0, -13)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" parent_id_path=PackedInt32Array(2034383655) index="0" unique_id=999092648]
+[node name="HurtBoxComponent" parent="." index="4" unique_id=2034383655]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" index="0" unique_id=999092648]
 position = Vector2(13.125, -0.5)
 shape = SubResource("RectangleShape2D_po08s")
 
@@ -515,6 +529,9 @@ metadata/_custom_type_script = "uid://dv0yd6kqidgyp"
 script = ExtResource("11_thhh1")
 hurt_box_component = NodePath("../../HurtBoxComponent")
 metadata/_custom_type_script = "uid://dv0yd6kqidgyp"
+
+[node name="PointLight2D" parent="." index="9" unique_id=1461308176]
+texture = SubResource("GradientTexture2D_aykhp")
 
 [connection signal="body_entered" from="VisionArea" to="VisionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="VisionArea" method="_on_body_exited"]

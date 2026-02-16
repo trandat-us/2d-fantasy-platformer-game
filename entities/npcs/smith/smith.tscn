@@ -15,31 +15,37 @@
 [sub_resource type="Resource" id="Resource_omdqf"]
 script = ExtResource("3_omdqf")
 item = ExtResource("4_kolnh")
+price = 175
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_8ave4"]
 script = ExtResource("3_omdqf")
 item = ExtResource("5_5icaw")
+price = 300
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_n6ei3"]
 script = ExtResource("3_omdqf")
 item = ExtResource("6_p41v1")
+price = 150
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_p41v1"]
 script = ExtResource("3_omdqf")
 item = ExtResource("7_5icaw")
+price = 200
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_wjpcp"]
 script = ExtResource("3_omdqf")
 item = ExtResource("9_xlnbs")
+price = 180
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_xlnbs"]
 script = ExtResource("3_omdqf")
 item = ExtResource("8_p41v1")
+price = 160
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Animation" id="Animation_n20fv"]

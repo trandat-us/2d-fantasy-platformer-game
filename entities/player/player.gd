@@ -58,6 +58,7 @@ func disable_light_point():
 	point_light_2d.enabled = false
 
 func revive():
+	camera_2d.reset()
 	stats.health = stats.max_health.value
 	event_bus.player_revived.emit()
 

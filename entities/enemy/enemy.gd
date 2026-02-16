@@ -9,6 +9,7 @@ const COLLECTIBLE = preload("uid://cwif3e5rm6fov")
 @onready var movement_component: MovementComponent = $MovementComponent
 @onready var hurt_box_component: HurtBoxComponent = $HurtBoxComponent
 @onready var enemy_health_bar: ProgressBar = $EnemyHealthBar
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 @export var stats: EnemyStats
 @export var loot_box: Array[LootItem]
@@ -20,11 +21,13 @@ var direction: float:
 		direction = signf(value)
 		_update_facing_direction()
 var event_bus: EventBus
+var initial_position: Vector2
 
 func _ready() -> void:
+	initial_position = global_position
 	hurt_box_component.get_hurt = _on_getting_hurt
 	direction = 1.0 if sprite_2d.flip_h == false else -1.0
-	enemy_health_bar.init_health_bar(stats)
+	enemy_health_bar.init_stats(stats)
 	
 	event_bus = get_tree().get_first_node_in_group("event_bus")
 	if is_instance_valid(event_bus):
@@ -51,7 +54,13 @@ func drop_loot_box() -> void:
 		map.add_child(instance)
 		
 		randomize()
-		instance.apply_impulse(Vector2(randf_range(-100, 100), randf_range(-150, -200)))
+		instance.apply_impulse(Vector2(randf_range(-150, 150), randf_range(-200, -250)))
+
+func enable_point_light():
+	point_light_2d.enabled = true
+
+func disable_point_light():
+	point_light_2d.enabled = false
 
 func revive():
 	pass

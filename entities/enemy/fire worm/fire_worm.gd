@@ -7,14 +7,12 @@ class_name FireWorm
 @onready var hurt_state: FireWormState = $FSM/Hurt
 @onready var die_state: FireWormState = $FSM/Die
 
-
 func _on_getting_hurt(attack: Attack) -> void:
 	if not attack.is_valid():
 		return
 	
 	var amount = Utils.calculate_damage(attack.damage, stats.defense.value)
 	stats.health -= amount
-	
 	
 	direction = -attack.attack_direction
 	if stats.health > 0:
@@ -29,6 +27,9 @@ func _on_getting_hurt(attack: Attack) -> void:
 func revive():
 	await get_tree().create_timer(4.0).timeout
 	stats.health = stats.max_health.value
+	global_position = initial_position
+	vision_area.target = null
+	await get_tree().physics_frame
 	fsm.force_state_transition(idle_state)
 
 func _update_facing_direction() -> void:

@@ -13,24 +13,24 @@
 [sub_resource type="Resource" id="Resource_necat"]
 script = ExtResource("3_necat")
 item = ExtResource("4_a1ke3")
-price = 100
+price = 50
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_otj2r"]
 script = ExtResource("3_necat")
 item = ExtResource("5_vf1vy")
-price = 80
-metadata/_custom_type_script = "uid://4yluvhykulr8"
-
-[sub_resource type="Resource" id="Resource_j346x"]
-script = ExtResource("3_necat")
-item = ExtResource("6_x2upv")
-price = 70
+price = 60
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
 [sub_resource type="Resource" id="Resource_yngil"]
 script = ExtResource("3_necat")
 item = ExtResource("7_6gffn")
+price = 60
+metadata/_custom_type_script = "uid://4yluvhykulr8"
+
+[sub_resource type="Resource" id="Resource_j346x"]
+script = ExtResource("3_necat")
+item = ExtResource("6_x2upv")
 price = 70
 metadata/_custom_type_script = "uid://4yluvhykulr8"
 
@@ -82,7 +82,7 @@ height = 82.0
 
 [node name="Alchemist" unique_id=2060175977 instance=ExtResource("1_hauo4")]
 script = ExtResource("2_ndalc")
-item_shop_list = Array[ExtResource("3_necat")]([SubResource("Resource_necat"), SubResource("Resource_otj2r"), SubResource("Resource_j346x"), SubResource("Resource_yngil")])
+item_shop_list = Array[ExtResource("3_necat")]([SubResource("Resource_necat"), SubResource("Resource_otj2r"), SubResource("Resource_yngil"), SubResource("Resource_j346x")])
 npc_name = "Charlotte"
 
 [node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(31451312) index="0" unique_id=1299652959]

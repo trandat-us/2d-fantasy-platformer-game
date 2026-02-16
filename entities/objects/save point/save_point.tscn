@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="4_a806s"]
 
 [sub_resource type="Gradient" id="Gradient_867kr"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.24698795, 0.52409637, 0.77710843, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.6245339, 0.6245339, 0.6245339, 1, 0.27722776, 0.27722776, 0.27722776, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b8oqj"]
 gradient = SubResource("Gradient_867kr")
-width = 128
-height = 128
+width = 144
+height = 144
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 1)
@@ -120,8 +121,8 @@ texture = SubResource("GradientTexture2D_b8oqj")
 [node name="InteractiveComponent" parent="." unique_id=548170075 instance=ExtResource("3_b8oqj")]
 
 [node name="InteractiveHint" parent="InteractiveComponent" unique_id=649978554 instance=ExtResource("4_a806s")]
-offset_top = -54.0
-offset_bottom = -30.0
+offset_top = -50.0
+offset_bottom = -26.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveComponent" unique_id=1672519823]
 shape = SubResource("RectangleShape2D_a806s")

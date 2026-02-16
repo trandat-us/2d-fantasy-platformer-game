@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://ccxdt0743vhu4"
 
 [sub_resource type="Resource" id="Resource_wo87k"]
 script = ExtResource("3_40dry")
-amount = 20
+amount = 10
 metadata/_custom_type_script = "uid://jiq4872ydggi"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7u0wh"]
@@ -25,7 +25,7 @@ slot = 2
 effects = Array[ExtResource("1_ma2p5")]([SubResource("Resource_3c70u"), SubResource("Resource_wo87k")])
 id = "item_leather_chest"
 name = "Leather Chest"
-description = "A leather chest will give you 40 Max HP and 20 DEF"
+description = "A leather chest will give you 20 Max HP and 10 DEF"
 texture = SubResource("AtlasTexture_7u0wh")
 type = 3
 can_stack = false

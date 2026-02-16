@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_0xeq3"]
 script = ExtResource("2_0xeq3")
-amount = 5
+amount = 3
 metadata/_custom_type_script = "uid://jiq4872ydggi"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xeq3"]
@@ -20,8 +20,7 @@ slot = 1
 effects = Array[ExtResource("1_5qtek")]([SubResource("Resource_0xeq3")])
 id = "item_leather_helmet"
 name = "Leather Helmet"
-description = "A leather helmet will give you 5
-DEF"
+description = "A leather helmet will give you 3 DEF"
 texture = SubResource("AtlasTexture_0xeq3")
 type = 3
 can_stack = false

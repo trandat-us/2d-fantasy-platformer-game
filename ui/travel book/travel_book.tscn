@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvamlpqh4p12y" path="res://ui/travel book/travel_book.gd" id="1_8rgil"]
 [ext_resource type="Texture2D" uid="uid://by4l3wtx1m2u3" path="res://assets/textures/ui/travel book/cover.png" id="1_qnq48"]
+[ext_resource type="Texture2D" uid="uid://dybnr1y7b3vnv" path="res://assets/textures/ui/item_icon.png" id="2_t7ixk"]
 [ext_resource type="Texture2D" uid="uid://rvrbio1cy3i4" path="res://assets/textures/ui/travel book/page_left.png" id="2_xb5cu"]
 [ext_resource type="Texture2D" uid="uid://bond47ou8jdcm" path="res://assets/textures/ui/travel book/page_right.png" id="3_h3a2i"]
 [ext_resource type="Script" uid="uid://c7qyax21ljtko" path="res://ui/travel book/pages_h_box.gd" id="3_kejms"]
@@ -24,6 +25,10 @@
 [ext_resource type="Script" uid="uid://dq3jb4ba4n0r1" path="res://ui/travel book/other_section.gd" id="21_whuqp"]
 [ext_resource type="PackedScene" uid="uid://btde6dgsjtm15" path="res://ui/travel book/item detail container/item_detail_container.tscn" id="23_bqei3"]
 [ext_resource type="Script" uid="uid://dt4i3vsveipk7" path="res://ui/travel book/equipment_detail_container.gd" id="24_whuqp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj2hi"]
+atlas = ExtResource("2_t7ixk")
+region = Rect2(224, 384, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0h8o"]
 atlas = ExtResource("6_h0rhl")
@@ -63,6 +68,37 @@ region = Rect2(165, 710, 6, 6)
 
 [node name="TravelBook" type="CanvasLayer" unique_id=1809368321]
 script = ExtResource("1_8rgil")
+
+[node name="CoinsPanel" type="Panel" parent="." unique_id=1194899046]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_bottom = 69.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CoinsPanel" unique_id=1841914555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="CoinsPanel/HBoxContainer" unique_id=865772617]
+layout_mode = 2
+texture = SubResource("AtlasTexture_pj2hi")
+expand_mode = 2
+
+[node name="CoinAmountLabel" type="Label" parent="CoinsPanel/HBoxContainer" unique_id=341522222]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
 
 [node name="TravelBook" type="Control" parent="." unique_id=639469822]
 layout_mode = 3

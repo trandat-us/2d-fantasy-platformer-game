@@ -5,6 +5,7 @@ const ITEM_SHOP_BAR = preload("res://ui/item shop/item_shop_bar.tscn")
 
 @onready var item_inventory_v_box: VBoxContainer = %ItemInventoryVBox
 @onready var shop_name_label: Label = %ShopNameLabel
+@onready var coin_amount_label: Label = %CoinAmountLabel
 
 @export var item_list: Array[ShopItem]
 var shop_name: String
@@ -29,10 +30,19 @@ func _create_shop():
 		bar.shop_item = shop_item
 		bar.item_bought.connect(_on_item_bought)
 		item_inventory_v_box.add_child(bar)
+	
+	if opener is Player:
+		coin_amount_label.text = str(opener.inventory.coins)
 
 func _on_item_bought(item_info: ShopItem):
 	if opener is Player:
-		opener.inventory.add_item(item_info.item, item_info.amount)
+		var inv = opener.inventory
+		if inv.coins < item_info.price:
+			return
+		
+		if inv.add_item(item_info.item, item_info.amount):
+			inv.reduce_coins(item_info.price)
+			coin_amount_label.text = str(inv.coins)
 
 func _on_close_button_pressed() -> void:
 	queue_free()

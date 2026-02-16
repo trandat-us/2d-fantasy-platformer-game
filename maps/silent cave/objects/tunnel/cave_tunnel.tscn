@@ -3,63 +3,10 @@
 [ext_resource type="Script" uid="uid://dvpjwfpabfbn7" path="res://maps/silent cave/objects/tunnel/cave_tunnel.gd" id="1_5ag2a"]
 [ext_resource type="Texture2D" uid="uid://d22by1ipst2xb" path="res://assets/textures/tilemap/cave/tileset.png" id="1_nostv"]
 [ext_resource type="PackedScene" uid="uid://r7dvt8vpcyk4" path="res://components/interactive component/interactive_component.tscn" id="3_dvuj7"]
+[ext_resource type="PackedScene" uid="uid://brf8ux6cwa8cp" path="res://ui/input hint/interactive_hint.tscn" id="4_c6yy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvuj7"]
 size = Vector2(48, 64)
-
-[sub_resource type="Animation" id="Animation_achmo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_dvuj7"]
-resource_name = "hide_hint"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_c6yy5"]
-resource_name = "appear"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_achmo"]
-_data = {
-&"RESET": SubResource("Animation_achmo"),
-&"hide_hint": SubResource("Animation_dvuj7"),
-&"show_hint": SubResource("Animation_c6yy5")
-}
 
 [node name="CaveTunnel" type="Node2D" unique_id=1247384637]
 script = ExtResource("1_5ag2a")
@@ -71,43 +18,9 @@ region_rect = Rect2(960, 16, 48, 64)
 
 [node name="InteractiveComponent" parent="." unique_id=437063996 instance=ExtResource("3_dvuj7")]
 
+[node name="InteractiveHint" parent="InteractiveComponent" unique_id=649978554 instance=ExtResource("4_c6yy5")]
+offset_top = -58.0
+offset_bottom = -34.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveComponent" unique_id=2047669134]
 shape = SubResource("RectangleShape2D_dvuj7")
-
-[node name="InputHint" type="Control" parent="." unique_id=649561651]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = -56.0
-offset_right = 178.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="InputHint" unique_id=1952329819]
-texture_filter = 2
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -124.5
-offset_top = -10.833333
-offset_right = 124.5
-offset_bottom = 10.833333
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "[F] GAME_DOOR_LABEL_ENTER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InputHint" unique_id=1630874020]
-libraries/ = SubResource("AnimationLibrary_achmo")

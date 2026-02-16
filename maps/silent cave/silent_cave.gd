@@ -2,6 +2,7 @@ extends Map
 
 @onready var darkwoods_entry: MapTransitionArea = $DarkwoodsEntry
 @onready var player_direction_detector: Area2D = $PlayerDirectionDetector
+@onready var enemies: Node2D = $Enemies
 
 func _ready() -> void:
 	player_direction_detector.player_go_to_right.connect(_on_player_head_to_darkwoods_entry)
@@ -10,8 +11,13 @@ func _ready() -> void:
 func init_scene(scene_data: Variant) -> void:
 	if scene_data is MapHandoffData:
 		_handle_map_handoff_data(scene_data)
+	
+	for enemy in enemies.get_children():
+		if enemy is Enemy and enemy.has_method("enable_point_light"):
+			enemy.enable_point_light()
 
 func setup_player() -> void:
+	player.enable_light_point()
 	player.disable_camera_smoothing()
 	player.position = Vector2.ZERO
 	
@@ -19,6 +25,7 @@ func setup_player() -> void:
 	player.enable_camera_smoothing()
 
 func cleanup_scene() -> void:
+	player.disable_light_point()
 	spawn_point.remove_child(player)
 
 func _handle_map_handoff_data(data: MapHandoffData) -> void:

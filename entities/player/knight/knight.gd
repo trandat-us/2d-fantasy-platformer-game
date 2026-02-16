@@ -39,8 +39,11 @@ func _on_getting_hurt(attack: Attack) -> void:
 	if not attack.is_valid():
 		return
 	
-	var damage = Utils.calculate_damage(attack.damage, stats.defense.value)
-	stats.health -= damage
+	var damage = attack.damage
+	if damage.type == Damage.DamageType.DEATHBLOW:
+		stats.health = 0
+	else:
+		stats.health -= Utils.calculate_damage(damage, stats.defense.value)
 	
 	match attack.attack_type:
 		Attack.AttackType.ON_HIT:
@@ -53,6 +56,8 @@ func _on_getting_hurt(attack: Attack) -> void:
 	move_and_slide()
 	
 	if stats.health > 0:
+		camera_2d.show_and_hide_blood_screen()
 		fsm.force_state_transition(hurt_state)
 	else:
+		camera_2d.show_blood_screen()
 		fsm.force_state_transition(die_state)

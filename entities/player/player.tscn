@@ -1,10 +1,104 @@
 [gd_scene format=3 uid="uid://d0h40664kdbv0"]
 
 [ext_resource type="Script" uid="uid://deffhhq36a3i1" path="res://entities/player/player.gd" id="1_nqnt1"]
+[ext_resource type="Script" uid="uid://dxyqwwjn21ea3" path="res://entities/player/camera_2d.gd" id="2_8fjmc"]
 [ext_resource type="Script" uid="uid://bp21l5note7pw" path="res://entities/player/interactive_area.gd" id="3_bls4j"]
+[ext_resource type="Texture2D" uid="uid://bsi15lbtx81ou" path="res://assets/textures/ui/blood_screen.png" id="3_qiwj3"]
 [ext_resource type="Script" uid="uid://basaewtkngybq" path="res://entities/player/pickup_area.gd" id="5_fkugw"]
 [ext_resource type="PackedScene" uid="uid://chrse6p5qhosa" path="res://components/hurtbox/hurt_box_component.tscn" id="16_d0p3g"]
 [ext_resource type="PackedScene" uid="uid://dpr1frg0w0y41" path="res://components/movement/movement_component.tscn" id="22_3dig0"]
+
+[sub_resource type="Animation" id="Animation_26q78"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.353256, 1.353256, 1.353256, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bectd"]
+resource_name = "show"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.353256, 1.353256, 1.353256, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qiwj3"]
+resource_name = "show"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1.353256, 1.353256, 1.353256, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26q78"]
+_data = {
+&"RESET": SubResource("Animation_26q78"),
+&"show": SubResource("Animation_bectd"),
+&"show_and_hide": SubResource("Animation_qiwj3")
+}
 
 [sub_resource type="Gradient" id="Gradient_yf4s0"]
 resource_local_to_scene = true
@@ -25,12 +119,29 @@ collision_layer = 2
 floor_snap_length = 32.0
 script = ExtResource("1_nqnt1")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=822148082]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=134280179]
 offset = Vector2(0, -100)
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("2_8fjmc")
+
+[node name="BloodScreen" type="CanvasLayer" parent="Camera2D" unique_id=787942120]
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/BloodScreen" unique_id=117656890]
+visible = false
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qiwj3")
+expand_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/BloodScreen" unique_id=1641351939]
+libraries/ = SubResource("AnimationLibrary_26q78")
 
 [node name="FlipNodes" type="Node2D" parent="." unique_id=2047166497]
 
@@ -62,6 +173,7 @@ player = NodePath("..")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=437396018]
 enabled = false
 color = Color(0.81167305, 0.48620504, 0.21515435, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_37l4b")
 
 [connection signal="area_entered" from="InteractiveArea" to="InteractiveArea" method="_on_area_entered"]

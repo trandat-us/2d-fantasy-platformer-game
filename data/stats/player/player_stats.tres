@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_phr8b"]
 script = ExtResource("1_55gyc")
-base = 400.0
+base = 20.0
 use_integer = true
 metadata/_custom_type_script = "uid://c6q16a53ch1m7"
 

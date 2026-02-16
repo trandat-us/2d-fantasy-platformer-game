@@ -19,6 +19,8 @@ enum ReducedItemResult {
 @export var equipment: Array[InventoryItem]
 @export var chest: Array[InventoryItem]
 
+@export_range(0, 1_000_000, 1, "hide_control", "or_greater") var coins: int = 0
+
 var inventories = {
 	Item.ItemType.GENERAL: general,
 	Item.ItemType.FOOD: food,
@@ -75,7 +77,11 @@ func _sort_inventory(inv: Array[InventoryItem]) -> void:
 func add_item(item: Item, amount: int = 1) -> bool:
 	if amount < 1 or item == null:
 		return false
-
+		
+	if item.id == "item_coin":
+		add_coins(amount)
+		return true
+	
 	var target_inventory: Array[InventoryItem] = inventories.get(item.type)
 	if target_inventory == null:
 		return false
@@ -107,9 +113,22 @@ func add_item(item: Item, amount: int = 1) -> bool:
 		_sort_inventory(target_inventory)
 		return true
 
+func add_coins(amount: int = 1) -> void:
+	if amount < 1:
+		return
+	
+	coins += amount
+
 func reduce_item(inv_item: InventoryItem, amount: int = 1) -> ReducedItemResult:
 	if amount < 1 or inv_item.is_empty():
 		return REDUCED_ITEM_FAILED as ReducedItemResult
+	
+	if inv_item.item.id == "item_coin":
+		reduce_coins(amount)
+		if coins == 0:
+			return REDUCED_ITEM_EMPTY as ReducedItemResult
+		else:
+			return REDUCED_ITEM_REMAINING as ReducedItemResult
 	
 	var target_inventory: Array[InventoryItem] = inventories.get(inv_item.item.type)
 	if target_inventory == null:
@@ -127,3 +146,8 @@ func reduce_item(inv_item: InventoryItem, amount: int = 1) -> ReducedItemResult:
 				return REDUCED_ITEM_REMAINING as ReducedItemResult
 	
 	return REDUCED_ITEM_FAILED as ReducedItemResult
+
+func reduce_coins(amount: int = 1) -> void:
+	if amount < 1:
+		return
+	coins = max(0, coins - amount)

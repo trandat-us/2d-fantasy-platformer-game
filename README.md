@@ -33,6 +33,7 @@ It applies techniques such as a state machine architecture and an Entity Compone
 - Shield Up / Bash: E
 - Attack: Left Mouse Button (Click and Hold)
 - Interact: F
+- Open Travel Book: B
 
 ## 👤 Authors
 Tran Minh Dat  

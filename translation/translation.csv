@@ -10,6 +10,7 @@ KEYBINDINGS_ACTION_JUMP,Jump,Saltar,ジャンプ,Nhảy
 KEYBINDINGS_ACTION_MOVE_LEFT,Move left,Mover a la izquierda,左に移動,Di chuyển trái
 KEYBINDINGS_ACTION_MOVE_RIGHT,Move right,Mover a la derecha,右に移動,Di chuyển phải
 KEYBINDINGS_ACTION_OPEN_MAP,Open map,Abrir mapa,マップを開く,Mở bản đồ
+KEYBINDINGS_ACTION_OPEN_TRAVEL_BOOK,Open Travel Book,Abrir libro de viajes,旅行の本を開く,Mở sách thám hiểm
 KEYBINDINGS_ACTION_SHIELD_UP,Shield up,Levantar escudo,ガード,Giơ khiên
 KEYBINDINGS_ACTION_STOP_GRABBING,Stop grabbing,Soltar borde,掴み解除,Buông bám
 KEYBINDINGS_INPUT_LEFT_MOUSE_BUTTON,Left mouse button,Botón izquierdo del ratón,マウス左,Chuột trái

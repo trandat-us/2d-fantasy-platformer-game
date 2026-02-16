@@ -124,6 +124,19 @@ input = SubResource("InputEventKey_0o0mj")
 input_as_text = "F"
 metadata/_custom_type_script = "uid://1t1al0enthi8"
 
+[sub_resource type="InputEventKey" id="InputEventKey_bucoo"]
+device = -1
+keycode = 66
+unicode = 98
+
+[sub_resource type="Resource" id="Resource_lwfsf"]
+script = ExtResource("2_3gdo6")
+action = "tackle_travel_book"
+action_as_text = "KEYBINDINGS_ACTION_OPEN_TRAVEL_BOOK"
+input = SubResource("InputEventKey_bucoo")
+input_as_text = "B"
+metadata/_custom_type_script = "uid://1t1al0enthi8"
+
 [sub_resource type="InputEventKey" id="InputEventKey_u0sim"]
 device = -1
 keycode = 77
@@ -139,5 +152,5 @@ metadata/_custom_type_script = "uid://1t1al0enthi8"
 
 [resource]
 script = ExtResource("1_nimb7")
-keybindings = Array[ExtResource("2_3gdo6")]([SubResource("Resource_bucoo"), SubResource("Resource_3gdo6"), SubResource("Resource_sm3di"), SubResource("Resource_fkrl4"), SubResource("Resource_06843"), SubResource("Resource_7bvso"), SubResource("Resource_bgo73"), SubResource("Resource_y6b5i"), SubResource("Resource_u0sim"), SubResource("Resource_2hj5y")])
+keybindings = Array[ExtResource("2_3gdo6")]([SubResource("Resource_bucoo"), SubResource("Resource_3gdo6"), SubResource("Resource_sm3di"), SubResource("Resource_fkrl4"), SubResource("Resource_06843"), SubResource("Resource_7bvso"), SubResource("Resource_bgo73"), SubResource("Resource_y6b5i"), SubResource("Resource_u0sim"), SubResource("Resource_lwfsf"), SubResource("Resource_2hj5y")])
 metadata/_custom_type_script = "uid://r10cea4dyeku"

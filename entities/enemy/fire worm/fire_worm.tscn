@@ -17,7 +17,6 @@
 [ext_resource type="Resource" uid="uid://n52qc3ocg8ws" path="res://data/item/general/health_potion.tres" id="8_rq58i"]
 [ext_resource type="Texture2D" uid="uid://b7ucin0vy1n23" path="res://assets/textures/sprites/enemies/fire worm/attack.png" id="8_yiji3"]
 [ext_resource type="Script" uid="uid://tbr7kagnjqb0" path="res://entities/enemy/fire worm/fsm/states/hurt.gd" id="9_vfb26"]
-[ext_resource type="Script" uid="uid://gvbmjfcqmb4n" path="res://entities/enemy/fire worm/vision_area.gd" id="11_muudq"]
 [ext_resource type="Script" uid="uid://dvmnnea2dt77f" path="res://entities/enemy/fire worm/fsm/states/die.gd" id="11_thhh1"]
 [ext_resource type="Script" uid="uid://q0jrexnv80c7" path="res://entities/enemy/fire worm/fsm/states/attack.gd" id="13_q6fud"]
 
@@ -75,9 +74,9 @@ item = ExtResource("8_rq58i")
 possibility = 30.0
 metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcqih"]
-radius = 20.5
-height = 46.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jufag"]
+radius = 17.0
+height = 36.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po08s"]
 size = Vector2(36.25, 40)
@@ -87,7 +86,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FlipNodes/Sprite2D:texture")
+tracks/0/path = NodePath("Pivot/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -99,7 +98,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FlipNodes/Sprite2D:hframes")
+tracks/1/path = NodePath("Pivot/Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -111,7 +110,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FlipNodes/Sprite2D:frame")
+tracks/2/path = NodePath("Pivot/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -125,49 +124,13 @@ tracks/2/keys = {
 resource_name = "attack"
 length = 1.6
 step = 0.1
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FlipNodes/Sprite2D:texture")
+tracks/0/path = NodePath("FSM/Attack")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_yiji3")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FlipNodes/Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [16]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("FlipNodes/Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("FSM/Attack")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.4, 1, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
@@ -184,19 +147,55 @@ tracks/3/keys = {
 "method": &"_unlock_direction"
 }]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("FSM/Attack")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/Attack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_lock_direction"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_yiji3")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Sprite2D:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 }
 
 [sub_resource type="Animation" id="Animation_yiji3"]
@@ -206,7 +205,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FlipNodes/Sprite2D:texture")
+tracks/0/path = NodePath("Pivot/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -218,7 +217,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FlipNodes/Sprite2D:hframes")
+tracks/1/path = NodePath("Pivot/Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -230,7 +229,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FlipNodes/Sprite2D:frame")
+tracks/2/path = NodePath("Pivot/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -248,7 +247,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FlipNodes/Sprite2D:texture")
+tracks/0/path = NodePath("Pivot/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -260,7 +259,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FlipNodes/Sprite2D:hframes")
+tracks/1/path = NodePath("Pivot/Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -272,7 +271,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FlipNodes/Sprite2D:frame")
+tracks/2/path = NodePath("Pivot/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -289,7 +288,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FlipNodes/Sprite2D:texture")
+tracks/0/path = NodePath("Pivot/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -301,7 +300,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FlipNodes/Sprite2D:hframes")
+tracks/1/path = NodePath("Pivot/Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -313,7 +312,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FlipNodes/Sprite2D:frame")
+tracks/2/path = NodePath("Pivot/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -331,7 +330,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FlipNodes/Sprite2D:texture")
+tracks/0/path = NodePath("Pivot/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -343,7 +342,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FlipNodes/Sprite2D:hframes")
+tracks/1/path = NodePath("Pivot/Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -355,7 +354,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FlipNodes/Sprite2D:frame")
+tracks/2/path = NodePath("Pivot/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -375,37 +374,36 @@ _data = {
 &"walk": SubResource("Animation_j2oco")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1v08x"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rq58i"]
 animation = &"attack"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hgyta"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aykhp"]
 animation = &"die"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tnsuo"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ysax5"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yiji3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vmbpd"]
 animation = &"take_hit"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_po08s"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lxb57"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vfb26"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rq58i"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qe7or"]
-states/attack/node = SubResource("AnimationNodeAnimation_1v08x")
-states/attack/position = Vector2(442, 188)
-states/die/node = SubResource("AnimationNodeAnimation_hgyta")
-states/die/position = Vector2(700, 100)
-states/idle/node = SubResource("AnimationNodeAnimation_tnsuo")
-states/idle/position = Vector2(440, 100)
-states/take_hit/node = SubResource("AnimationNodeAnimation_yiji3")
-states/take_hit/position = Vector2(640, 188)
-states/walk/node = SubResource("AnimationNodeAnimation_po08s")
-states/walk/position = Vector2(562, 25)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vfb26")]
-graph_offset = Vector2(-75, 58)
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rq58i"]
+states/attack/node = SubResource("AnimationNodeAnimation_rq58i")
+states/attack/position = Vector2(711, 78)
+states/die/node = SubResource("AnimationNodeAnimation_aykhp")
+states/die/position = Vector2(593, 78)
+states/idle/node = SubResource("AnimationNodeAnimation_ysax5")
+states/idle/position = Vector2(318, 100)
+states/take_hit/node = SubResource("AnimationNodeAnimation_vmbpd")
+states/take_hit/position = Vector2(425, 78)
+states/walk/node = SubResource("AnimationNodeAnimation_lxb57")
+states/walk/position = Vector2(525, 154)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_rq58i")]
 
 [sub_resource type="Gradient" id="Gradient_rq58i"]
 offsets = PackedFloat32Array(0.22289157, 0.57228917, 0.74698794)
@@ -424,55 +422,45 @@ script = ExtResource("2_snfvi")
 stats = SubResource("Resource_aykhp")
 loot_box = Array[ExtResource("4_muudq")]([SubResource("Resource_jufag"), SubResource("Resource_hfjr7"), SubResource("Resource_rq58i")])
 
-[node name="WallDetector" type="RayCast2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="0" unique_id=83385720]
+[node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(1331089653) index="0" unique_id=725267121]
+scale = Vector2(1.5, 1.5)
+
+[node name="WallDetector" type="RayCast2D" parent="Pivot" parent_id_path=PackedInt32Array(1331089653) index="1" unique_id=83385720]
 position = Vector2(22, 2)
 target_position = Vector2(22.984425, -0.06791496)
 
-[node name="FloorDetector" type="RayCast2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="1" unique_id=1519811059]
+[node name="FloorDetector" type="RayCast2D" parent="Pivot" parent_id_path=PackedInt32Array(1331089653) index="2" unique_id=1519811059]
 position = Vector2(36, 19)
 target_position = Vector2(0, 28)
 hit_from_inside = true
 
-[node name="Sprite2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="2" unique_id=725267121]
-scale = Vector2(1.5, 1.5)
-
-[node name="FireBallEmittingPosition" type="Marker2D" parent="FlipNodes" parent_id_path=PackedInt32Array(1331089653) index="3" unique_id=1663955572]
+[node name="FireBallEmittingPosition" type="Marker2D" parent="Pivot" parent_id_path=PackedInt32Array(1331089653) index="3" unique_id=1663955572]
 unique_name_in_owner = true
 position = Vector2(35, -10)
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=815486512]
-position = Vector2(10, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=16147433]
+position = Vector2(13, 2)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_pcqih")
+shape = SubResource("CapsuleShape2D_jufag")
 
 [node name="MovementComponent" parent="." index="2" unique_id=1558296955 node_paths=PackedStringArray("character")]
 character = NodePath("..")
 
-[node name="VisionArea" type="Area2D" parent="." index="3" unique_id=1903943749]
-unique_name_in_owner = true
-visible = false
-collision_layer = 0
-collision_mask = 3
-script = ExtResource("11_muudq")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="0" unique_id=977773683]
-polygon = PackedVector2Array(0, -13, 222, -141, 251, -119, 277, -90, 294, -54, 300, -13, 294, 28, 277, 64, 251, 93, 222, 115)
-
-[node name="DetectorsPivot" type="Node2D" parent="VisionArea" index="1" unique_id=2078285380]
-position = Vector2(0, -13)
-
-[node name="HurtBoxComponent" parent="." index="4" unique_id=2034383655]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" index="0" unique_id=999092648]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" parent_id_path=PackedInt32Array(2034383655) index="0" unique_id=999092648]
 position = Vector2(13.125, -0.5)
 shape = SubResource("RectangleShape2D_po08s")
+
+[node name="VisionArea" parent="." index="4" unique_id=1094819260]
+position = Vector2(0, -13)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="1" unique_id=1654250834]
+polygon = PackedVector2Array(0, 0, 222, -128, 251, -106, 277, -77, 294, -41, 300, 0, 294, 41, 277, 77, 251, 106, 222, 128)
 
 [node name="AnimationPlayer" parent="." index="5" unique_id=318307434]
 libraries/ = SubResource("AnimationLibrary_j2oco")
 
 [node name="AnimationTree" parent="." index="6" unique_id=1609971640]
-tree_root = SubResource("AnimationNodeStateMachine_qe7or")
+tree_root = SubResource("AnimationNodeStateMachine_rq58i")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="EnemyHealthBar" parent="." index="7" unique_id=1092102701]
@@ -481,7 +469,10 @@ offset_top = -38.0
 offset_right = 25.0
 offset_bottom = -36.0
 
-[node name="FSM" type="Node" parent="." index="8" unique_id=1613119683 node_paths=PackedStringArray("fire_worm", "animation_tree", "movement_component", "initial_state")]
+[node name="PointLight2D" parent="." index="8" unique_id=1461308176]
+texture = SubResource("GradientTexture2D_aykhp")
+
+[node name="FSM" type="Node" parent="." index="9" unique_id=1613119683 node_paths=PackedStringArray("fire_worm", "animation_tree", "movement_component", "initial_state")]
 script = ExtResource("4_j2oco")
 fire_worm = NodePath("..")
 animation_tree = NodePath("../AnimationTree")
@@ -493,7 +484,7 @@ metadata/_custom_type_script = "uid://c3oymjqb2w67p"
 script = ExtResource("6_x2e8q")
 walk_state = NodePath("../Walk")
 attack_state = NodePath("../Attack")
-floor_detector = NodePath("../../FlipNodes/FloorDetector")
+floor_detector = NodePath("../../Pivot/FloorDetector")
 metadata/_custom_type_script = "uid://dv0yd6kqidgyp"
 
 [node name="IdleTimer" type="Timer" parent="FSM/Idle" index="0" unique_id=1033029753]
@@ -503,15 +494,16 @@ one_shot = true
 script = ExtResource("8_po08s")
 idle_state = NodePath("../Idle")
 attack_state = NodePath("../Attack")
-wall_detector = NodePath("../../FlipNodes/WallDetector")
-floor_detector = NodePath("../../FlipNodes/FloorDetector")
+wall_detector = NodePath("../../Pivot/WallDetector")
+floor_detector = NodePath("../../Pivot/FloorDetector")
 metadata/_custom_type_script = "uid://dv0yd6kqidgyp"
 
 [node name="WalkTimer" type="Timer" parent="FSM/Walk" index="0" unique_id=289978993]
 autostart = true
 
-[node name="Attack" type="Node" parent="FSM" index="2" unique_id=988866653 node_paths=PackedStringArray("idle_state")]
+[node name="Attack" type="Node" parent="FSM" index="2" unique_id=988866653 node_paths=PackedStringArray("vision_area", "idle_state")]
 script = ExtResource("13_q6fud")
+vision_area = NodePath("../../VisionArea")
 idle_state = NodePath("../Idle")
 target_mask = 3
 metadata/_custom_type_script = "uid://dv0yd6kqidgyp"
@@ -530,14 +522,9 @@ script = ExtResource("11_thhh1")
 hurt_box_component = NodePath("../../HurtBoxComponent")
 metadata/_custom_type_script = "uid://dv0yd6kqidgyp"
 
-[node name="PointLight2D" parent="." index="9" unique_id=1461308176]
-texture = SubResource("GradientTexture2D_aykhp")
-
-[connection signal="body_entered" from="VisionArea" to="VisionArea" method="_on_body_entered"]
-[connection signal="body_exited" from="VisionArea" to="VisionArea" method="_on_body_exited"]
-[connection signal="target_detected" from="VisionArea" to="FSM/Idle" method="_on_vision_area_target_detected"]
-[connection signal="target_detected" from="VisionArea" to="FSM/Walk" method="_on_vision_area_target_detected"]
-[connection signal="target_undetected" from="VisionArea" to="FSM/Attack" method="_on_vision_area_target_undetected"]
+[connection signal="target_detected" from="VisionArea" to="FSM/Idle" method="_on_target_detected"]
+[connection signal="target_detected" from="VisionArea" to="FSM/Walk" method="_on_target_detected"]
+[connection signal="target_undetected" from="VisionArea" to="FSM/Attack" method="_on_target_undetected"]
 [connection signal="animation_finished" from="AnimationTree" to="FSM/Attack" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="FSM/Die" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="FSM/Idle/IdleTimer" to="FSM/Idle" method="_on_idle_timer_timeout"]

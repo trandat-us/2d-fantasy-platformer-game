@@ -25,5 +25,5 @@ func _on_idle_timer_timeout() -> void:
 	
 	state_transition.emit(self, walk_state)
 
-func _on_vision_area_target_detected(target: Node2D) -> void:
+func _on_target_detected(target: Node2D) -> void:
 	state_transition.emit(self, attack_state)

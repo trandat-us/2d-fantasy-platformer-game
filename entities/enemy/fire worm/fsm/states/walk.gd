@@ -31,5 +31,5 @@ func state_physics_process(delta: float):
 func _on_walk_timer_timeout() -> void:
 	state_transition.emit(self, idle_state)
 
-func _on_vision_area_target_detected(target: Node2D) -> void:
+func _on_target_detected(target: Node2D) -> void:
 	state_transition.emit(self, attack_state)

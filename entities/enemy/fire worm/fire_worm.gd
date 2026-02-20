@@ -1,11 +1,15 @@
 extends Enemy
 class_name FireWorm
 
-@onready var vision_area: Area2D = $VisionArea
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var fsm: FireWormFSM = $FSM
 @onready var idle_state: FireWormState = $FSM/Idle
 @onready var hurt_state: FireWormState = $FSM/Hurt
 @onready var die_state: FireWormState = $FSM/Die
+
+func _ready() -> void:
+	super._ready()
+	register_node_dir(collision_shape_2d, "position:x", 13.0, -13.0)
 
 func _on_getting_hurt(attack: Attack) -> void:
 	if not attack.is_valid():
@@ -32,14 +36,9 @@ func revive():
 	await get_tree().physics_frame
 	fsm.force_state_transition(idle_state)
 
-func _update_facing_direction() -> void:
-	super._update_facing_direction()
-	
-	vision_area.flip(direction)
-
 func _on_player_revived():
-	vision_area.set_deferred("monitoring", true)
+	vision_area.enabled = true
 
 func _on_player_died():
-	vision_area.set_deferred("monitoring", false)
+	vision_area.enabled = false
 	vision_area.target = null

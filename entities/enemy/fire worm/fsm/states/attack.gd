@@ -2,10 +2,11 @@ extends FireWormState
 
 const FIRE_BALL = preload("res://entities/enemy/fire worm/fire ball/fire_worm_fire_ball.tscn")
 
-@onready var vision_area: Area2D = %VisionArea
+
 @onready var fire_ball_emitting_position: Marker2D = %FireBallEmittingPosition
 @onready var cooldown: Timer = $Cooldown
 
+@export var vision_area: VisionArea
 @export var idle_state: FireWormState
 @export_flags_2d_physics var target_mask: int
 @export var max_angle: float = 30.0:
@@ -93,7 +94,7 @@ func _spawn_fire_ball():
 	var parent_node = get_tree().get_first_node_in_group("map")
 	parent_node.add_child(fire_ball)
 
-func _on_vision_area_target_undetected() -> void:
+func _on_target_undetected() -> void:
 	if is_attacking:
 		_should_transition_to_idle = true
 	else:

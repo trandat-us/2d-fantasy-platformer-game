@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cm32nlbnx756p" path="res://maps/darkwoods/decorations/props/mushrooms/darkwoods_mushroom_1.tscn" id="6_fkxro"]
 [ext_resource type="PackedScene" uid="uid://cxlqvqyrkxhms" path="res://maps/darkwoods/decorations/props/mushrooms/darkwoods_mushroom_2.tscn" id="7_82jsc"]
 [ext_resource type="PackedScene" uid="uid://bn5hhvcbjkvoj" path="res://maps/darkwoods/decorations/props/mushrooms/darkwoods_mushroom_3.tscn" id="7_nwv2r"]
+[ext_resource type="PackedScene" uid="uid://tr7qmvxfslwp" path="res://entities/enemy/fire worm/fire_worm.tscn" id="7_snq0n"]
+[ext_resource type="Script" uid="uid://c6q16a53ch1m7" path="res://data/definitions/stats/modifiable_stat.gd" id="8_rsjvl"]
 [ext_resource type="PackedScene" uid="uid://dskowapd31etk" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_2.tscn" id="9_crrw2"]
+[ext_resource type="Script" uid="uid://cejj3rlveapht" path="res://data/definitions/stats/enemy_stats.gd" id="9_lf44e"]
 [ext_resource type="PackedScene" uid="uid://f5jcgupxjkqx" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_4.tscn" id="10_dx0wo"]
 [ext_resource type="PackedScene" uid="uid://cwxmb1xk81n0i" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_6.tscn" id="11_hnmrb"]
 [ext_resource type="PackedScene" uid="uid://c37wfjvfch253" path="res://maps/darkwoods/decorations/darkwoods_tileset.tscn" id="11_lf44e"]
@@ -16,11 +19,38 @@
 [ext_resource type="PackedScene" uid="uid://50xyg2y2ip7d" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_3.tscn" id="12_ktn2m"]
 [ext_resource type="Texture2D" uid="uid://cyu63j52aom34" path="res://assets/textures/light_stream.png" id="14_jpdo2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktn2m"]
-size = Vector2(64, 64)
+[sub_resource type="Resource" id="Resource_bqbup"]
+script = ExtResource("8_rsjvl")
+base = 15.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpdo2"]
-size = Vector2(66, 130)
+[sub_resource type="Resource" id="Resource_xcfor"]
+script = ExtResource("8_rsjvl")
+base = 3.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_3yo03"]
+script = ExtResource("8_rsjvl")
+base = 150.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_ao3qt"]
+script = ExtResource("8_rsjvl")
+base = 30.0
+use_integer = true
+metadata/_custom_type_script = "uid://c6q16a53ch1m7"
+
+[sub_resource type="Resource" id="Resource_g1woc"]
+resource_local_to_scene = true
+script = ExtResource("9_lf44e")
+speed = SubResource("Resource_ao3qt")
+attack_damage = SubResource("Resource_bqbup")
+max_health = SubResource("Resource_3yo03")
+defense = SubResource("Resource_xcfor")
+metadata/_custom_type_script = "uid://cejj3rlveapht"
 
 [sub_resource type="Gradient" id="Gradient_64kkl"]
 offsets = PackedFloat32Array(0.3224299, 0.9953271, 1)
@@ -35,6 +65,12 @@ color_ramp = SubResource("Gradient_64kkl")
 seamless = true
 normalize = false
 seamless_blend_skirt = 0.05
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktn2m"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpdo2"]
+size = Vector2(66, 130)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_46igs"]
 blend_mode = 1
@@ -72,10 +108,11 @@ position = Vector2(959, 775)
 [node name="Enemies" type="Node2D" parent="." index="5" unique_id=523488073]
 
 [node name="Sporeling" parent="Enemies" index="0" unique_id=176745515 instance=ExtResource("6_46igs")]
-position = Vector2(361, 681)
+position = Vector2(412, 666)
 
-[node name="Sporeling2" parent="Enemies" index="1" unique_id=695867129 instance=ExtResource("6_46igs")]
-position = Vector2(1439, 682)
+[node name="FireWorm" parent="Enemies" index="1" unique_id=696222517 instance=ExtResource("7_snq0n")]
+position = Vector2(790, 780)
+stats = SubResource("Resource_g1woc")
 
 [node name="SpawnPoint" parent="." index="6" unique_id=137230786]
 position = Vector2(1386, 782)
@@ -103,7 +140,17 @@ position = Vector2(1275, 827)
 [node name="DarkwoodsGrass3" parent="ForegroundProps" index="6" unique_id=213841311 instance=ExtResource("12_ktn2m")]
 position = Vector2(1623, 853)
 
-[node name="VillageEntry" parent="." index="8" unique_id=278367085 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
+[node name="FogParallax" type="Parallax2D" parent="." index="8" unique_id=1544410920]
+scroll_scale = Vector2(1.1, 1)
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(20, 0)
+repeat_times = 2
+
+[node name="FogSprite" type="Sprite2D" parent="FogParallax" index="0" unique_id=1929637206]
+position = Vector2(699, 338)
+texture = SubResource("NoiseTexture2D_ktn2m")
+
+[node name="VillageEntry" parent="." index="9" unique_id=278367085 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
 position = Vector2(1918, 829)
 current_map = NodePath("..")
 target_map = "res://maps/ashwick village/ashwick_village.tscn"
@@ -111,7 +158,7 @@ target_map = "res://maps/ashwick village/ashwick_village.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VillageEntry" index="0" unique_id=677427572]
 shape = SubResource("RectangleShape2D_ktn2m")
 
-[node name="CaveEntry" parent="." index="9" unique_id=1947341304 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
+[node name="CaveEntry" parent="." index="10" unique_id=1947341304 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
 position = Vector2(-607, 1021)
 current_map = NodePath("..")
 target_map = "uid://w6pvilx1602b"
@@ -120,19 +167,7 @@ target_map = "uid://w6pvilx1602b"
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_jpdo2")
 
-[node name="ParallaxFog" type="Parallax2D" parent="." index="10" unique_id=1544410920]
-visible = false
-scroll_scale = Vector2(1.1, 1)
-repeat_size = Vector2(512, 512)
-autoscroll = Vector2(20, 0)
-repeat_times = 2
-
-[node name="FogSprite" type="Sprite2D" parent="ParallaxFog" index="0" unique_id=1929637206]
-position = Vector2(699, 338)
-texture = SubResource("NoiseTexture2D_ktn2m")
-
 [node name="ParallaxLight" type="Parallax2D" parent="." index="11" unique_id=492719959]
-visible = false
 scroll_scale = Vector2(1.2, 0.001)
 scroll_offset = Vector2(-54, 108)
 

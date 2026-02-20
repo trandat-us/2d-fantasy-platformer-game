@@ -4,7 +4,7 @@ extends KnightState
 
 func enter():
 	animation_playback.travel("jump")
-	movement_component.apply_jump_velocity(stats.jump_velocity)
+	movement_component.apply_jump_power(stats.jump_velocity)
 	movement_component.move_and_slide()
 
 func state_physics_process(delta: float):

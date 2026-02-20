@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c40wtlmsu36jb"]
+
+[ext_resource type="Script" uid="uid://gvbmjfcqmb4n" path="res://components/vision area/vision_area.gd" id="1_6ocjr"]
+
+[node name="VisionArea" type="Area2D" unique_id=1094819260]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_6ocjr")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=2077264876]
+remote_path = NodePath("../DetectorsPivot")
+update_rotation = false
+update_scale = false
+
+[node name="DetectorsPivot" type="Node2D" parent="." unique_id=1619979332]
+top_level = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

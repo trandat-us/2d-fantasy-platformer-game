@@ -34,7 +34,7 @@ collision_mask = 0
 
 [node name="Platform" type="Node2D" parent="AnimatableBody2D" unique_id=1753407488]
 
-[node name="Sprite" type="Node2D" parent="AnimatableBody2D/Platform" unique_id=826561453 instance=ExtResource("2_ig1a0")]
+[node name="@Node2D@146676" type="Node2D" parent="AnimatableBody2D/Platform" unique_id=1016964025 instance=ExtResource("2_ig1a0")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1613964003]
 shape = SubResource("RectangleShape2D_ig1a0")

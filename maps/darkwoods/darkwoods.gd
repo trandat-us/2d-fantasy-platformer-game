@@ -12,8 +12,8 @@ func init_scene(scene_data: Variant) -> void:
 		_handle_map_save_point_data(scene_data)
 	
 	for enemy in enemies.get_children():
-		if enemy is Enemy and enemy.has_method("enable_light_point"):
-			enemy.enable_light_point()
+		if enemy is Enemy:
+			enemy.enable_point_light()
 
 func cleanup_scene() -> void:
 	player.disable_light_point()

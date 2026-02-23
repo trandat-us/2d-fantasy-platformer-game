@@ -20,8 +20,9 @@ class NodeDirection:
 @onready var movement_component: MovementComponent = $MovementComponent
 @onready var hurt_box_component: HurtBoxComponent = $HurtBoxComponent
 @onready var vision_area: VisionArea = $VisionArea
-@onready var enemy_health_bar: ProgressBar = $EnemyHealthBar
+@onready var health_bar: ProgressBar = $HealthBar
 @onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var fsm: EnemyFiniteStateMachine = $FSM
 
 @export_range(1, 1000000, 0.01, "or_greater", "hide_control", "suffix:px") var max_init_pos_gap: float = 500.0
 @export var stats: EnemyStats
@@ -38,14 +39,10 @@ var event_bus: EventBus
 var initial_position: Vector2
 
 func _ready() -> void:
-	register_node_dir(pivot, "scale:x", 1.0, -1.0)
-	register_node_dir(hurt_box_component, "scale:x", 1.0, -1.0)
-	register_node_dir(vision_area, "scale:x", 1.0, -1.0)
-	
 	initial_position = global_position
 	hurt_box_component.get_hurt = _on_getting_hurt
 	direction = 1.0 if pivot.scale.x == 1.0 else -1.0
-	enemy_health_bar.init_stats(stats)
+	health_bar.init_stats(stats)
 	
 	event_bus = get_tree().get_first_node_in_group("event_bus")
 	if is_instance_valid(event_bus):
@@ -53,6 +50,8 @@ func _ready() -> void:
 		event_bus.player_died.connect(_on_player_died)
 	
 	apply_floor_snap()
+	
+	_register_node_dirs()
 
 func register_node_dir(node: Node, property: NodePath, right_value: Variant, left_value: Variant) -> void:
 	if node_dirs.has(node):
@@ -107,6 +106,11 @@ func drop_loot_box() -> void:
 
 func revive():
 	pass
+
+func _register_node_dirs():
+	register_node_dir(pivot, "scale:x", 1.0, -1.0)
+	register_node_dir(hurt_box_component, "scale:x", 1.0, -1.0)
+	register_node_dir(vision_area, "scale:x", 1.0, -1.0)
 
 func _on_getting_hurt(attack: Attack) -> void:
 	pass

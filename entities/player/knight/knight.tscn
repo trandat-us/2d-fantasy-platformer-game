@@ -1298,7 +1298,7 @@ floor_snap_length = 16.0
 script = ExtResource("1_sangq")
 stats = SubResource("Resource_w1qeh")
 
-[node name="Camera2D" parent="." index="0" unique_id=822148082]
+[node name="Camera2D" parent="." index="0" unique_id=134280179]
 offset = Vector2(0, -80)
 zoom = Vector2(1.75, 1.75)
 position_smoothing_speed = 10.0
@@ -1364,7 +1364,10 @@ parameters/crouch/blend_position = -0.0014925599
 parameters/ground/blend_position = 0.0
 parameters/take_hit/TimeSeek/seek_request = -1.0
 
-[node name="FSM" type="Node" parent="." index="11" unique_id=1348077227 node_paths=PackedStringArray("knight", "animation_tree", "movement_component", "initial_state")]
+[node name="PointLight2D" parent="." index="11" unique_id=437396018]
+color = Color(0.8601507, 0.6141432, 0.20123908, 1)
+
+[node name="FSM" type="Node" parent="." index="12" unique_id=1348077227 node_paths=PackedStringArray("knight", "animation_tree", "movement_component", "initial_state")]
 script = ExtResource("26_ds6uk")
 knight = NodePath("..")
 animation_tree = NodePath("../AnimationTree")
@@ -1462,9 +1465,6 @@ metadata/_custom_type_script = "uid://bqc3u6ma4j24n"
 script = ExtResource("35_rjwrb")
 hurt_box_component = NodePath("../../HurtBoxComponent")
 metadata/_custom_type_script = "uid://crfe33xwuv112"
-
-[node name="PointLight2D" parent="." index="12" unique_id=437396018]
-color = Color(0.8601507, 0.6141432, 0.20123908, 1)
 
 [connection signal="animation_finished" from="AnimationTree" to="FSM/Shield" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="FSM/Crouch" method="_on_animation_tree_animation_finished"]

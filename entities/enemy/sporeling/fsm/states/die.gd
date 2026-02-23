@@ -1,8 +1,5 @@
 extends SporelingState
 
-@export var hurt_box_component: HurtBoxComponent
-@export var vision_area: VisionArea
-
 func enter() -> void:
 	vision_area.enabled = false
 	hurt_box_component.enabled = false

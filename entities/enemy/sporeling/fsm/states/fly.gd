@@ -4,8 +4,6 @@ extends SporelingState
 
 @export var idle_state: SporelingState
 @export var chase_state: SporelingState
-@export var floor_detector: RayCast2D
-@export var wall_detector: RayCast2D
 
 var _y_speed_multiplier: float = 0.7
 

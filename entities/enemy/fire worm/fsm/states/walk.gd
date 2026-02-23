@@ -4,8 +4,6 @@ extends FireWormState
 
 @export var idle_state: FireWormState
 @export var attack_state: FireWormState
-@export var wall_detector: RayCast2D
-@export var floor_detector: RayCast2D
 
 func enter():
 	animation_playback.travel("walk")
@@ -26,7 +24,7 @@ func state_physics_process(delta: float):
 	
 	movement_component.apply_gravity(delta)
 	movement_component.move_x_axis(stats.speed.value, fire_worm.direction)
-	movement_component.move_and_slide()
+	move_and_slide()
 
 func _on_walk_timer_timeout() -> void:
 	state_transition.emit(self, idle_state)

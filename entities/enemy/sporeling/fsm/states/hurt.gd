@@ -1,7 +1,6 @@
 extends SporelingState
 
 @export var chase_state: SporelingState
-@export var floor_detector: RayCast2D
 
 @export var max_rise_speed: float = 300.0
 @export var rise_acceleration: float = 500.0

@@ -11,4 +11,4 @@ func state_physics_process(delta: float):
 		return
 	
 	movement_component.apply_gravity(delta)
-	movement_component.move_and_slide()
+	move_and_slide()

@@ -2,7 +2,6 @@ extends Enemy
 class_name FireWorm
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var fsm: FireWormFSM = $FSM
 @onready var idle_state: FireWormState = $FSM/Idle
 @onready var hurt_state: FireWormState = $FSM/Hurt
 @onready var die_state: FireWormState = $FSM/Die
@@ -25,7 +24,7 @@ func _on_getting_hurt(attack: Attack) -> void:
 		
 		fsm.force_state_transition(hurt_state)
 	else:
-		enemy_health_bar.hide()
+		health_bar.hide()
 		fsm.force_state_transition(die_state)
 
 func revive():

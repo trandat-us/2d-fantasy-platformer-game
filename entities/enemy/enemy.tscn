@@ -4,7 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://dpr1frg0w0y41" path="res://components/movement/movement_component.tscn" id="2_pqkjo"]
 [ext_resource type="PackedScene" uid="uid://chrse6p5qhosa" path="res://components/hurtbox/hurt_box_component.tscn" id="2_vbcv0"]
 [ext_resource type="PackedScene" uid="uid://c40wtlmsu36jb" path="res://components/vision area/vision_area.tscn" id="4_4wwj3"]
-[ext_resource type="PackedScene" uid="uid://c38ixe7yt4v2f" path="res://entities/enemy/health bar/enemy_health_bar.tscn" id="4_dt443"]
+[ext_resource type="Script" uid="uid://csjofjgcbttfw" path="res://entities/enemy/health_bar.gd" id="5_d50e0"]
+[ext_resource type="Script" uid="uid://cbhanq1tckgwu" path="res://entities/enemy/enemy_fsm.gd" id="6_d50e0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psspj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wwj3"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psspj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg7tt"]
+bg_color = Color(0.8784314, 0.84313726, 0.050980393, 1)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=176745515 groups=["enemy"]]
 collision_layer = 4
@@ -25,8 +37,46 @@ collision_layer = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1609971640]
 
-[node name="EnemyHealthBar" parent="." unique_id=1092102701 instance=ExtResource("4_dt443")]
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1092102701]
+custom_minimum_size = Vector2(30, 2)
+anchors_preset = -1
+anchor_right = 0.026
+anchor_bottom = 0.003
+offset_right = 0.048000336
+offset_bottom = 0.055999994
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_psspj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4wwj3")
+value = 50.0
+show_percentage = false
+script = ExtResource("5_d50e0")
 show_mode = 1
+
+[node name="DamageBar" type="ProgressBar" parent="HealthBar" unique_id=999341045]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_psspj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wg7tt")
+value = 70.0
+show_percentage = false
+
+[node name="DamageTimer" type="Timer" parent="HealthBar" unique_id=2009041898]
+wait_time = 0.5
+one_shot = true
+
+[node name="ShowTimer" type="Timer" parent="HealthBar" unique_id=1859612931]
+one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1461308176]
 enabled = false
+
+[node name="FSM" type="Node" parent="." unique_id=897996525]
+script = ExtResource("6_d50e0")
+
+[connection signal="timeout" from="HealthBar/DamageTimer" to="HealthBar" method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="HealthBar/ShowTimer" to="HealthBar" method="_on_show_timer_timeout"]

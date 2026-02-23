@@ -7,8 +7,9 @@ var states: Array[State]
 var current_state: State
 
 func _ready() -> void:
-	store_state_children()
-	enter_initial_state()
+	_read_children_states()
+	_assign_state_vars()
+	_enter_initial_state()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if current_state:
@@ -35,18 +36,21 @@ func _on_state_transition(cur_state: State, next_state: State):
 	current_state = next_state
 	current_state.enter()
 
-func store_state_children():
+func _read_children_states() -> void:
 	for child in get_children():
 		if child is State:
 			child.state_transition.connect(_on_state_transition)
 			states.append(child)
 
-func enter_initial_state():
+func _assign_state_vars() -> void:
+	return
+
+func _enter_initial_state() -> void:
 	if initial_state:
 		current_state = initial_state
 		current_state.enter()
 
-func force_state_transition(next_state: State):
+func force_state_transition(next_state: State) -> void:
 	if current_state:
 		current_state.exit()
 	

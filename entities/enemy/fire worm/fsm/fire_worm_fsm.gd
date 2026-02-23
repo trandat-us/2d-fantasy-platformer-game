@@ -1,19 +1,13 @@
-extends FiniteStateMachine
-class_name FireWormFSM
+extends EnemyFiniteStateMachine
+class_name FireWormFiniteStateMachine
 
-@export var fire_worm: FireWorm
-@export var animation_tree: AnimationTree
-@export var movement_component: MovementComponent
+@export var wall_detector: RayCast2D
+@export var floor_detector: RayCast2D
 
-func _ready() -> void:
-	store_state_children()
+func _assign_state_vars():
+	super._assign_state_vars()
 	
 	for state in states:
 		if state is FireWormState:
-			state.fire_worm = fire_worm
-			state.stats = fire_worm.stats
-			state.animation_tree = animation_tree
-			state.animation_playback = animation_tree["parameters/playback"]
-			state.movement_component = movement_component
-			
-	enter_initial_state()
+			state.wall_detector = wall_detector
+			state.floor_detector = floor_detector

@@ -1,8 +1,8 @@
-extends State
+extends EnemyState
 class_name FireWormState
 
-var fire_worm: FireWorm
-var stats: EnemyStats
-var animation_tree: AnimationTree
-var animation_playback: AnimationNodeStateMachinePlayback
-var movement_component: MovementComponent
+var fire_worm: FireWorm:
+	get:
+		return enemy
+var wall_detector: RayCast2D
+var floor_detector: RayCast2D

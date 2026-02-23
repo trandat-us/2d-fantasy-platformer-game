@@ -1,5 +1,14 @@
 extends SporelingState
 
+@onready var cooldown: Timer = $Cooldown
+
+@export var idle_state: SporelingState
+@export var chase_state: SporelingState
+
+@export_group("Attack Settings")
+@export_range(0.001, 1000000, 0.001, "hide_control", "or_greater", "suffix:px") var attack_range: float = 5.0
+@export_range(0.001, 1000000, 0.001, "hide_control", "or_greater") var rise_speed_multiplier: float = 1.2
+
 enum AttackPhase {
 	READY,
 	STARTING,
@@ -8,18 +17,6 @@ enum AttackPhase {
 	RISING
 }
 
-@onready var cooldown: Timer = $Cooldown
-
-@export var idle_state: SporelingState
-@export var chase_state: SporelingState
-@export var floor_detector: RayCast2D
-@export var vision_area: VisionArea
-@export var melee_attack_component: MeleeAttackComponent
-
-@export_group("Attack Settings")
-@export_range(0.001, 1000000, 0.001, "hide_control", "or_greater", "suffix:px") var attack_range: float = 5.0
-@export_range(0.001, 1000000, 0.001, "hide_control", "or_greater") var rise_speed_multiplier: float = 1.2
-
 var attack_phase: AttackPhase = AttackPhase.READY
 
 func enter() -> void:
@@ -27,7 +24,7 @@ func enter() -> void:
 		_start_attack()
 	else:
 		attack_phase = AttackPhase.READY
-		
+	
 	var damage = Damage.new()
 	damage.amount = stats.attack_damage.value
 	melee_attack_component.damage = damage

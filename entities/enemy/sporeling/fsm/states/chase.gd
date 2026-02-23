@@ -3,9 +3,6 @@ extends SporelingState
 @export var idle_state: SporelingState
 @export var attack_state: SporelingState
 
-@export var vision_area: VisionArea
-@export var floor_detector: RayCast2D
-
 var _y_speed_multiplier: float = 0.7
 var _chase_speed_multiplier: float = 1.5
 var _attack_range: float = 5.0

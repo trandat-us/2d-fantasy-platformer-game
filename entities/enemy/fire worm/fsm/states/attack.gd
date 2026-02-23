@@ -1,12 +1,10 @@
 extends FireWormState
 
-const FIRE_BALL = preload("res://entities/enemy/fire worm/fire ball/fire_worm_fire_ball.tscn")
-
+const FIRE_BALL = preload("uid://hvjf773iq5or")
 
 @onready var fire_ball_emitting_position: Marker2D = %FireBallEmittingPosition
 @onready var cooldown: Timer = $Cooldown
 
-@export var vision_area: VisionArea
 @export var idle_state: FireWormState
 @export_flags_2d_physics var target_mask: int
 @export var max_angle: float = 30.0:
@@ -103,7 +101,7 @@ func _on_target_undetected() -> void:
 func _on_cooldown_timeout() -> void:
 	can_attack = true
 
-func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack":
 		is_attacking = false
 		can_attack = false

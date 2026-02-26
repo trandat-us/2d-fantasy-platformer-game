@@ -15,12 +15,42 @@
 [ext_resource type="PackedScene" uid="uid://byqo2ihktqid0" path="res://utils/map transition area/map_transition_area.tscn" id="12_hnmrb"]
 [ext_resource type="PackedScene" uid="uid://50xyg2y2ip7d" path="res://maps/darkwoods/decorations/props/grass/darkwoods_grass_3.tscn" id="12_ktn2m"]
 [ext_resource type="Texture2D" uid="uid://cyu63j52aom34" path="res://assets/textures/light_stream.png" id="14_jpdo2"]
+[ext_resource type="Texture2D" uid="uid://dqg4ejeydes3l" path="res://assets/textures/firefly.png" id="15_ay4fo"]
+[ext_resource type="Script" uid="uid://dasyjwngknw42" path="res://maps/darkwoods/firefly_particles.gd" id="16_mikp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktn2m"]
 size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpdo2"]
 size = Vector2(66, 130)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mikp2"]
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_46igs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14691943, 1), 0.0, 0.0, 0, 0, Vector2(0.8483413, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ay4fo"]
+curve = SubResource("Curve_46igs")
+
+[sub_resource type="Gradient" id="Gradient_46igs"]
+colors = PackedColorArray(0.27171794, 0.97980326, 0.42635587, 1, 1, 0.61960787, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ay4fo"]
+gradient = SubResource("Gradient_46igs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_46igs"]
+emission_shape = 3
+emission_box_extents = Vector3(1500, 500, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 1.9999977
+scale_min = 0.29999998
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_ay4fo")
+alpha_curve = SubResource("CurveTexture_ay4fo")
+turbulence_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_64kkl"]
 offsets = PackedFloat32Array(0.3224299, 0.9953271, 1)
@@ -47,17 +77,13 @@ position = Vector2(-421, 243)
 width = 2220
 height = 900
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="1" unique_id=59209551]
-color = Color(0.19490263, 0.39050516, 0.44836026, 1)
-blend_mode = 2
+[node name="Background" parent="." index="1" unique_id=1557952 instance=ExtResource("2_dx0wo")]
 
-[node name="Background" parent="." index="2" unique_id=1557952 instance=ExtResource("2_dx0wo")]
-
-[node name="HighGround" parent="." index="3" unique_id=1358419245 instance=ExtResource("11_lf44e")]
+[node name="HighGround" parent="." index="2" unique_id=1358419245 instance=ExtResource("11_lf44e")]
 tile_map_data = PackedByteArray("AAAAABcABwANAAYAAAAAABgABwANAAcAAAAAABkABwANAAcAAAAAABoABwANAAcAAAAAABsABwANAAcAAAAAABwABwANAAcAAAAAAB0ABwANAAgAAAABABcABwAOAAYAAAABABgABwAOAAcAAAABABkABwAOAAcAAAABABoABwAOAAcAAAABABsABwAOAAcAAAABABwABwAOAAcAAAABAB0ABwAOAAgAAAACABcABwAOAAYAAAACABgABwAOAAcAAAACABkABwAOAAcAAAACABoABwAOAAcAAAACABsABwAOAAcAAAACABwABwAOAAcAAAACAB0ABwAOAAgAAAADABcABwAOAAYAAAADABgABwAOAAcAAAADABkABwAOAAcAAAADABoABwAOAAcAAAADABsABwAOAAcAAAADABwABwAOAAcAAAADAB0ABwAOAAgAAAAEABcABwAOAAYAAAAEABgABwAOAAcAAAAEABkABwAOAAcAAAAEABoABwAOAAcAAAAEABsABwAOAAcAAAAEABwABwAOAAcAAAAEAB0ABwAOAAgAAAAFABcABwAOAAYAAAAFABgABwAOAAcAAAAFABkABwAOAAcAAAAFABoABwAOAAcAAAAFABsABwAOAAcAAAAFABwABwAOAAcAAAAFAB0ABwAOAAgAAAAGABcABwAPAAYAAAAGABgABwAPAAcAAAAGABkABwAOAAEAAAAGABoABwAOAAcAAAAGABsABwAOAAcAAAAGABwABwAOAAcAAAAGAB0ABwAOAAgAAAAHABkABwAOAAYAAAAHABoABwAOAAcAAAAHABsABwAOAAcAAAAHABwABwAOAAcAAAAHAB0ABwAPAAAAAAAHAB4ABwANAAgAAAAIABkABwAOAAYAAAAIABoABwAOAAcAAAAIABsABwAOAAcAAAAIABwABwAOAAcAAAAIAB0ABwAOAAcAAAAIAB4ABwAPAAgAAAAJABkABwAOAAYAAAAJABoABwAOAAcAAAAJABsABwAOAAcAAAAJABwABwAOAAcAAAAJAB0ABwAOAAAAAAAKABkABwAPAAYAAAAKABoABwAPAAcAAAAKABsABwAPAAcAAAAKABwABwAPAAcAAAAKAB0ABwAPAAgAAAAPABYABwANAAYAAAAPABcABwANAAcAAAAPABgABwANAAcAAAAPABkABwANAAcAAAAPABoABwANAAgAAAAQABYABwAOAAYAAAAQABcABwAOAAcAAAAQABgABwAOAAcAAAAQABkABwAOAAcAAAAQABoABwAOAAgAAAARABYABwAOAAYAAAARABcABwAOAAcAAAARABgABwAOAAcAAAARABkABwAOAAcAAAARABoABwAOAAgAAAASABYABwAPAAYAAAASABcABwAPAAcAAAASABgABwAOAAEAAAASABkABwAOAAcAAAASABoABwAOAAgAAAATABgABwAOAAYAAAATABkABwAOAAcAAAATABoABwAOAAgAAAAUABgABwAOAAYAAAAUABkABwAOAAcAAAAUABoABwAOAAgAAAAVABgABwAPAAYAAAAVABkABwAPAAcAAAAVABoABwAPAAgAAAAkABgABwANAAYAAAAkABkABwANAAcAAAAkABoABwANAAcAAAAkABsABwANAAgAAAAlABgABwAOAAYAAAAlABkABwAOAAcAAAAlABoABwAOAAcAAAAlABsABwAOAAgAAAAmABgABwAOAAYAAAAmABkABwAOAAcAAAAmABoABwAOAAcAAAAmABsABwAOAAgAAAAnABgABwAOAAYAAAAnABkABwAOAAcAAAAnABoABwAOAAcAAAAnABsABwAOAAgAAAAoABcABwANAAYAAAAoABgABwAPAAEAAAAoABkABwAOAAcAAAAoABoABwAOAAcAAAAoABsABwAOAAgAAAApABcABwAOAAYAAAApABgABwAOAAcAAAApABkABwAOAAcAAAApABoABwAOAAcAAAApABsABwAOAAgAAAAqABcABwAOAAYAAAAqABgABwAOAAcAAAAqABkABwAOAAcAAAAqABoABwAOAAcAAAAqABsABwAOAAgAAAArABcABwAOAAYAAAArABgABwAOAAcAAAArABkABwAOAAcAAAArABoABwAOAAcAAAArABsABwAOAAgAAAAsABYABwANAAYAAAAsABcABwAPAAEAAAAsABgABwAOAAcAAAAsABkABwAOAAcAAAAsABoABwAOAAcAAAAsABsABwAOAAgAAAAtABYABwAOAAYAAAAtABcABwAOAAcAAAAtABgABwAOAAcAAAAtABkABwAOAAcAAAAtABoABwAOAAcAAAAtABsABwAOAAgAAAAuABYABwAOAAYAAAAuABcABwAOAAcAAAAuABgABwAOAAcAAAAuABkABwAOAAcAAAAuABoABwAOAAcAAAAuABsABwAOAAgAAAAvABYABwAOAAYAAAAvABcABwAOAAcAAAAvABgABwAOAAcAAAAvABkABwAOAAcAAAAvABoABwAOAAcAAAAvABsABwAOAAgAAAAwABYABwAOAAYAAAAwABcABwAOAAcAAAAwABgABwAOAAcAAAAwABkABwAOAAcAAAAwABoABwAOAAcAAAAwABsABwAOAAgAAAAxABYABwAPAAYAAAAxABcABwAPAAcAAAAxABgABwAPAAcAAAAxABkABwAPAAcAAAAxABoABwAPAAcAAAAxABsABwAPAAgAAAA0ABkABwANAAYAAAA0ABoABwANAAcAAAA0ABsABwANAAgAAAA1ABkABwAOAAYAAAA1ABoABwAOAAcAAAA1ABsABwAOAAgAAAA2ABkABwAOAAYAAAA2ABoABwAOAAcAAAA2ABsABwAOAAgAAAA3ABkABwAPAAYAAAA3ABoABwAPAAcAAAA3ABsABwAPAAgAAAA=")
 collision_enabled = false
 
-[node name="Ground" type="Node2D" parent="." index="4" unique_id=1865664426]
+[node name="Ground" type="Node2D" parent="." index="3" unique_id=1865664426]
 
 [node name="Props" type="Node2D" parent="Ground" index="0" unique_id=58640539]
 
@@ -68,7 +94,7 @@ collision_visibility_mode = 2
 [node name="SavePoint" parent="Ground" index="2" unique_id=745850858 instance=ExtResource("5_46igs")]
 position = Vector2(959, 775)
 
-[node name="Enemies" type="Node2D" parent="." index="5" unique_id=523488073]
+[node name="Enemies" type="Node2D" parent="." index="4" unique_id=523488073]
 
 [node name="Sporeling" parent="Enemies" index="0" unique_id=176745515 instance=ExtResource("6_46igs")]
 position = Vector2(361, 681)
@@ -76,10 +102,10 @@ position = Vector2(361, 681)
 [node name="Sporeling2" parent="Enemies" index="1" unique_id=695867129 instance=ExtResource("6_46igs")]
 position = Vector2(1439, 682)
 
-[node name="SpawnPoint" parent="." index="6" unique_id=137230786]
+[node name="SpawnPoint" parent="." index="5" unique_id=137230786]
 position = Vector2(1386, 782)
 
-[node name="ForegroundProps" type="Node2D" parent="." index="7" unique_id=772574232]
+[node name="ForegroundProps" type="Node2D" parent="." index="6" unique_id=772574232]
 
 [node name="DarkwoodsGrass2" parent="ForegroundProps" index="0" unique_id=54455438 instance=ExtResource("9_crrw2")]
 position = Vector2(208, 854)
@@ -102,7 +128,7 @@ position = Vector2(1275, 827)
 [node name="DarkwoodsGrass3" parent="ForegroundProps" index="6" unique_id=213841311 instance=ExtResource("12_ktn2m")]
 position = Vector2(1623, 853)
 
-[node name="VillageEntry" parent="." index="8" unique_id=278367085 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
+[node name="VillageEntry" parent="." index="7" unique_id=278367085 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
 position = Vector2(1918, 829)
 current_map = NodePath("..")
 target_map = "res://maps/ashwick village/ashwick_village.tscn"
@@ -110,7 +136,7 @@ target_map = "res://maps/ashwick village/ashwick_village.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VillageEntry" index="0" unique_id=677427572]
 shape = SubResource("RectangleShape2D_ktn2m")
 
-[node name="CaveEntry" parent="." index="9" unique_id=1947341304 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
+[node name="CaveEntry" parent="." index="8" unique_id=1947341304 node_paths=PackedStringArray("current_map") instance=ExtResource("12_hnmrb")]
 position = Vector2(-607, 1021)
 current_map = NodePath("..")
 target_map = "uid://w6pvilx1602b"
@@ -118,6 +144,16 @@ target_map = "uid://w6pvilx1602b"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveEntry" index="0" unique_id=577668962]
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_jpdo2")
+
+[node name="FireflyParticles" type="GPUParticles2D" parent="." index="9" unique_id=1028823026]
+material = SubResource("CanvasItemMaterial_mikp2")
+position = Vector2(616, 692)
+amount = 224
+texture = ExtResource("15_ay4fo")
+lifetime = 30.0
+visibility_rect = Rect2(-1500, -500, 3000, 1000)
+process_material = SubResource("ParticleProcessMaterial_46igs")
+script = ExtResource("16_mikp2")
 
 [node name="ParallaxFog" type="Parallax2D" parent="." index="10" unique_id=1544410920]
 scroll_scale = Vector2(1.1, 1)
@@ -130,7 +166,7 @@ position = Vector2(699, 338)
 texture = SubResource("NoiseTexture2D_ktn2m")
 
 [node name="ParallaxLight" type="Parallax2D" parent="." index="11" unique_id=492719959]
-scroll_scale = Vector2(1.2, 0.001)
+scroll_scale = Vector2(1.2, 0.05)
 scroll_offset = Vector2(-54, 108)
 
 [node name="LightStream" type="Sprite2D" parent="ParallaxLight" index="0" unique_id=893598633]
@@ -168,3 +204,7 @@ position = Vector2(-281, 336.00003)
 rotation = 0.23391572
 scale = Vector2(1.7732996, 3.5319)
 texture = ExtResource("14_jpdo2")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="12" unique_id=59209551]
+color = Color(0.19490263, 0.39050516, 0.44836026, 1)
+blend_mode = 2

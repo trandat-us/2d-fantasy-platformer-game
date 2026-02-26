@@ -10,6 +10,11 @@ const TRAVEL_BOOK = preload("uid://b2884bwnctdyl")
 @onready var hud: Control = $HUD
 
 @export var player_scene: PackedScene
+@export var enemy_vision: bool = true:
+	set(value):
+		enemy_vision = value
+		if is_node_ready():
+			set_enemy_vision()
 
 var current_map: Map
 var player: Player
@@ -41,6 +46,8 @@ func init_scene(scene_data: Variant) -> void:
 	current_map.add_player(player)
 	current_map.setup_player()
 	
+	set_enemy_vision()
+	
 	player_health_bar.init_stats(player.stats)
 	player.direction = save_data.player.direction
 	for inv_item in save_data.player.inv_data.inv_items:
@@ -54,6 +61,14 @@ func disable_player_input():
 func enable_player_input():
 	pause_menu.enabled = true
 	player.enable_input()
+
+func set_enemy_vision():
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for e in enemies:
+		if e is Enemy and enemy_vision:
+			e.enable_vision_area()
+		else:
+			e.disable_vision_area()
 
 func _handle_tackle_travel_book():
 	if item_shop:
@@ -79,6 +94,7 @@ func _on_scene_manager_transition_started() -> void:
 
 func _on_scene_manager_transition_ended() -> void:
 	enable_player_input()
+	set_enemy_vision()
 	current_map = get_tree().get_first_node_in_group("map")
 
 func _on_player_died() -> void:

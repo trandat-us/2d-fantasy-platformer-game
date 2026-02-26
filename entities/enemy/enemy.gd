@@ -81,8 +81,14 @@ func pick_random_direction():
 func enable_point_light():
 	point_light_2d.enabled = true
 
+func enable_vision_area():
+	vision_area.enabled = true
+
 func disable_point_light():
 	point_light_2d.enabled = false
+
+func disable_vision_area():
+	vision_area.enabled = false
 
 func drop_loot_box() -> void:
 	for loot in loot_box:

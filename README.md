@@ -9,8 +9,10 @@ It applies techniques such as a state machine architecture and an Entity Compone
 Check web demo at [here](https://2d-fantasy-platformer-game.vercel.app/)
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2d9a8d14-09b0-4d1a-8be5-fc130a6eaa89" />
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/24476718-d6c9-429b-90b0-52a469cf25a8" />
+<img width="1919" height="1079" alt="Screenshot 2026-03-08 142047" src="https://github.com/user-attachments/assets/aaf086b0-3586-4fe8-a32e-e7f8b102c3ae" />
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/edfec282-8f2c-46e6-9c0f-026f2b3d4fa9" />
+
+*Note: In the web demo, the amount of firefly particles in darkwoods map has been significantly reduced for better performance.*
 
 ## 🚀 Features
 - Player movement system (walk, jump, dash, attack)

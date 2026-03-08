@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="2D Fantasy Platformer Game"
 config/tags=PackedStringArray("2d", "fantasy", "platformer")
-run/main_scene="uid://c3amc4riqkix8"
+run/main_scene="uid://bo36yngvyp4ll"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -123,6 +123,7 @@ locale/locale_filter_mode=0
 2d_physics/layer_5="hazards"
 2d_physics/layer_6="interactives"
 2d_physics/layer_7="collectibles"
+2d_physics/layer_8="water"
 
 [rendering]
 

@@ -77,6 +77,11 @@ item = ExtResource("8_tlyyh")
 possibility = 30.0
 metadata/_custom_type_script = "uid://cgbr6jwrbw4m"
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlyyh"]
+resource_local_to_scene = true
+radius = 16.0
+height = 50.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5u1ml"]
 radius = 17.0
 height = 54.0
@@ -125,31 +130,31 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("MeleeAttackComponent/AttackAreaShape:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(0, -25, 13, -21, 21, -12, 17, -2, 13, 3, 13, 13, 11, 24, -4, 24, -10, 21, -12, 10, -12, 2, -18, -3, -20, -13, -13, -22)]
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MeleeAttackComponent/CollisionShape2D:disabled")
+tracks/4/path = NodePath("MeleeAttackComponent/AttackAreaShape:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MeleeAttackComponent/CollisionShape2D:position")
+tracks/5/path = NodePath("CollisionShape2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -157,6 +162,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CollisionShape2D:shape:height")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
 }
 
 [sub_resource type="Animation" id="Animation_uibxg"]
@@ -202,38 +219,50 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("MeleeAttackComponent/AttackAreaShape:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [PackedVector2Array(0, -13, 12, -9, 21, -1, 21, 7, 12, 14, 14, 21, 15, 32, -14, 32, -12, 21, -12, 13, -15, 11, -20, 4, -18, -4, -13, -10), PackedVector2Array(0, 0, 11, 3, 19, 9, 21, 18, 14, 19, 14, 24, 20, 32, -18, 32, -16, 29, -13, 25, -14, 20, -19, 17, -17, 8, -9, 1), PackedVector2Array(-2, -3, 11, 0, 20, 7, 20, 13, 13, 18, 14, 24, 17, 32, -16, 32, -14, 28, -12, 22, -13, 17, -19, 14, -19, 7, -11, -2), PackedVector2Array(0, -6, 12, -2, 20, 5, 20, 13, 13, 18, 14, 24, 17, 32, -16, 32, -14, 28, -12, 22, -13, 17, -19, 14, -19, 5, -13, -4), PackedVector2Array(0, -10, 13, -5, 20, 2, 20, 9, 13, 14, 14, 22, 16, 32, -14, 32, -13, 27, -12, 20, -13, 13, -19, 8, -19, 1, -11, -7), PackedVector2Array(0, -17, 12, -13, 20, -5, 19, 0, 13, 7, 13, 19, 11, 29, -4, 31, -10, 26, -12, 17, -11, 6, -19, 0, -20, -6, -11, -14), PackedVector2Array(0, -25, 13, -21, 21, -12, 17, -2, 13, 3, 13, 13, 11, 24, -4, 24, -10, 21, -12, 10, -12, 2, -18, -3, -20, -13, -13, -22)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MeleeAttackComponent/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MeleeAttackComponent/CollisionShape2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeleeAttackComponent/AttackAreaShape:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2(1, 23)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 9), Vector2(0, 16), Vector2(0, 14), Vector2(0, 11), Vector2(0, 6), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CollisionShape2D:shape:height")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [46.0, 32.0, 36.0, 42.0, 50.0]
 }
 
 [sub_resource type="Animation" id="Animation_5u1ml"]
@@ -280,38 +309,50 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("MeleeAttackComponent/AttackAreaShape:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(0, -27, 13, -23, 21, -14, 17, -3, 13, 3, 13, 13, 12, 24, -4, 24, -12, 21, -12, 10, -12, 2, -19, -6, -20, -15, -14, -23)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MeleeAttackComponent/CollisionShape2D:disabled")
+tracks/4/path = NodePath("MeleeAttackComponent/AttackAreaShape:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, 15.5)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MeleeAttackComponent/CollisionShape2D:position")
+tracks/5/path = NodePath("CollisionShape2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 15.5)]
+"values": [Vector2(0, -2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CollisionShape2D:shape:height")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [52.0]
 }
 
 [sub_resource type="Animation" id="Animation_ay4ot"]
@@ -357,14 +398,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8, 0.90000004, 1, 1.1),
+"times": PackedFloat32Array(0, 0.7, 0.8, 0.90000004, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedVector2Array(0, -25, 13, -21, 21, -12, 17, -2, 13, 3, 13, 13, 11, 24, -4, 24, -10, 21, -12, 10, -12, 2, -18, -3, -20, -13, -13, -22), PackedVector2Array(0, -27, 16, -22, 21, -12, 16, -8, 13, -2, 13, 6, 13, 12, 12, 17, -8, 17, -11, 9, -12, 1, -18, -5, -20, -13, -15, -23), PackedVector2Array(0, -28, 16, -22, 21, -15, 21, -11, 13, -6, 13, 4, 15, 9, 12, 13, -10, 13, -12, 8, -12, 0, -18, -5, -20, -13, -16, -23), PackedVector2Array(0, -29, 13, -25, 20, -19, 21, -14, 13, -10, 13, -2, 14, 5, 12, 9, -9, 9, -11, 6, -12, -2, -19, -8, -20, -16, -16, -24), PackedVector2Array(0, -29, 13, -25, 20, -19, 21, -14, 13, -10, 13, -2, 14, 5, 12, 8, -9, 8, -11, 6, -12, -2, -19, -8, -20, -16, -16, -24)]
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, -6), Vector2(0, -7), Vector2(0, -9)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:shape:height")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8, 0.90000004, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [50.0, 44.0, 40.0, 38.0]
 }
 
 [sub_resource type="Animation" id="Animation_f3mdr"]
@@ -449,18 +502,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionPolygon2D:polygon")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(0, -25, 13, -21, 15, -12, 13, -1, 13, 3, 13, 13, 7, 24, -4, 24, -10, 21, -11, 11, -11, 2, -17, -3, -20, -13, -13, -22)]
-}
 
 [sub_resource type="Animation" id="Animation_ydp0v"]
 resource_name = "hurt"
@@ -544,18 +585,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionPolygon2D:polygon")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(0, -25, 13, -21, 21, -12, 17, -2, 13, 3, 13, 13, 11, 24, -4, 24, -10, 21, -12, 10, -12, 2, -18, -3, -20, -13, -13, -22)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_myjeh"]
 _data = {
@@ -569,13 +598,13 @@ _data = {
 &"idle": SubResource("Animation_2a86x")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0puhk"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c68rx"]
 animation = &"attack_smash_end"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v30g2"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2wfsp"]
 animation = &"attack_smash_loop"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f3mdr"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2cij3"]
 animation = &"attack_smash_start"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ydp0v"]
@@ -606,21 +635,21 @@ animation = &"idle"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uov7k"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ydp0v"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ihut6"]
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0puhk"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tcfxy"]
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fffb6"]
-states/attack_smash_end/node = SubResource("AnimationNodeAnimation_0puhk")
-states/attack_smash_end/position = Vector2(324, 203)
-states/attack_smash_loop/node = SubResource("AnimationNodeAnimation_v30g2")
-states/attack_smash_loop/position = Vector2(484, 272)
-states/attack_smash_start/node = SubResource("AnimationNodeAnimation_f3mdr")
-states/attack_smash_start/position = Vector2(244, 272)
+states/attack_smash_end/node = SubResource("AnimationNodeAnimation_c68rx")
+states/attack_smash_end/position = Vector2(288, 192)
+states/attack_smash_loop/node = SubResource("AnimationNodeAnimation_2wfsp")
+states/attack_smash_loop/position = Vector2(457, 267)
+states/attack_smash_start/node = SubResource("AnimationNodeAnimation_2cij3")
+states/attack_smash_start/position = Vector2(209, 267)
 states/chase/node = SubResource("AnimationNodeBlendTree_ydp0v")
 states/chase/position = Vector2(721, 29)
 states/die/node = SubResource("AnimationNodeAnimation_yls2l")
@@ -631,8 +660,8 @@ states/hurt/node = SubResource("AnimationNodeAnimation_tlyyh")
 states/hurt/position = Vector2(538, 146)
 states/idle/node = SubResource("AnimationNodeAnimation_fffb6")
 states/idle/position = Vector2(387, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_uov7k"), "attack_smash_start", "attack_smash_loop", SubResource("AnimationNodeStateMachineTransition_ydp0v"), "attack_smash_end", "idle", SubResource("AnimationNodeStateMachineTransition_0puhk")]
-graph_offset = Vector2(-105, 83)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_uov7k"), "attack_smash_start", "attack_smash_loop", SubResource("AnimationNodeStateMachineTransition_ihut6"), "attack_smash_end", "idle", SubResource("AnimationNodeStateMachineTransition_tcfxy")]
+graph_offset = Vector2(-96, 94)
 
 [sub_resource type="Gradient" id="Gradient_xo35s"]
 offsets = PackedFloat32Array(0.1474359, 0.3653846, 0.61538464, 0.9358974)
@@ -654,13 +683,15 @@ loot_box = Array[ExtResource("5_4mpo0")]([SubResource("Resource_ui6gc"), SubReso
 
 [node name="FloorDetector" type="RayCast2D" parent="Pivot" parent_id_path=PackedInt32Array(1331089653) index="1" unique_id=610085216]
 target_position = Vector2(0, 150)
+collision_mask = 129
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="WallDetector" type="RayCast2D" parent="Pivot" parent_id_path=PackedInt32Array(1331089653) index="2" unique_id=2031333196]
 target_position = Vector2(29, 0)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1" unique_id=1961238145]
-polygon = PackedVector2Array(0, -25, 13, -21, 21, -12, 17, -2, 13, 3, 13, 13, 11, 24, -4, 24, -10, 21, -12, 10, -12, 2, -18, -3, -20, -13, -13, -22)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=262954071]
+shape = SubResource("CapsuleShape2D_tlyyh")
 
 [node name="MovementComponent" parent="." index="2" unique_id=1558296955 node_paths=PackedStringArray("character")]
 character = NodePath("..")
@@ -680,12 +711,13 @@ collision_layer = 4
 collision_mask = 2
 character = NodePath("..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttackComponent" index="0" unique_id=7207176]
+[node name="AttackAreaShape" type="CollisionShape2D" parent="MeleeAttackComponent" index="0" unique_id=7207176]
 shape = SubResource("RectangleShape2D_f3mdr")
 disabled = true
 
 [node name="AnimationPlayer" parent="." index="6" unique_id=318307434]
 libraries/ = SubResource("AnimationLibrary_myjeh")
+autoplay = &"idle"
 
 [node name="AnimationTree" parent="." index="7" unique_id=1609971640]
 tree_root = SubResource("AnimationNodeStateMachine_fffb6")

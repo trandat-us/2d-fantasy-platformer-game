@@ -1,6 +1,8 @@
 extends Node
 class_name GameController
 
+const PLAYGROUND_UID = "uid://1g2yt6qvpyup"
+
 const ITEM_SHOP = preload("uid://ku0ksu6vrwa0")
 const TRAVEL_BOOK = preload("uid://b2884bwnctdyl")
 
@@ -36,7 +38,6 @@ func init_scene(scene_data: Variant) -> void:
 	pause_menu.enabled = false
 	
 	var save_data = SaveManager.get_save_data()
-	
 	var map_scene = load(save_data.map_scene) as PackedScene
 	current_map = map_scene.instantiate()
 	
@@ -94,8 +95,8 @@ func _on_scene_manager_transition_started() -> void:
 
 func _on_scene_manager_transition_ended() -> void:
 	enable_player_input()
-	set_enemy_vision()
 	current_map = get_tree().get_first_node_in_group("map")
+	set_enemy_vision()
 
 func _on_player_died() -> void:
 	await get_tree().create_timer(2).timeout

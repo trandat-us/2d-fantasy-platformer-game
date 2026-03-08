@@ -2,7 +2,6 @@ extends Enemy
 class_name Sporeling
 
 @onready var floor_detector: RayCast2D = $Pivot/FloorDetector
-@onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var melee_attack_component: MeleeAttackComponent = $MeleeAttackComponent
 @onready var idle_state: SporelingState = $FSM/Idle
 @onready var hurt_state: SporelingState = $FSM/Hurt

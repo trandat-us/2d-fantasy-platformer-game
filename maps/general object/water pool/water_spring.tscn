@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bs4kbl7hsfldw"]
+
+[ext_resource type="Shader" uid="uid://cjqvuvgo3btih" path="res://maps/general object/water pool/water_spring.tres" id="1_4ncup"]
+[ext_resource type="Script" uid="uid://qsnd5toci13g" path="res://maps/general object/water pool/water_spring.gd" id="1_e5yld"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lr5wc"]
+shader = ExtResource("1_4ncup")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1vlwr"]
+
+[node name="WaterSpring" type="Sprite2D" unique_id=301745202]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("ShaderMaterial_lr5wc")
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_1vlwr")
+script = ExtResource("1_e5yld")
